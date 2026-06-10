@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns – SITEFORUM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #003366;
+      --secondary: #006699;
+      --blue-50:   #e6f0f7;
+      --blue-100:  #cce0ee;
+      --blue-200:  #99c2dd;
+      --blue-600:  #006699;
+      --blue-700:  #003366;
+      --navy:      #003366;
+      --slate-600: #475569;
+      --slate-100: #f1f5f9;
+      --white:     #ffffff;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+    }
+
+    html { scroll-behavior: smooth; }
+    h1, h2, h3, h4 { overflow-wrap: break-word; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 10px 24px; pointer-events: none;
+    }
+    .nav-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+      border: 1px solid #e5e7eb; border-radius: 999px;
+      padding: .5rem .6rem .5rem 1.5rem;
+      box-shadow: 0 1px 2px 0 rgba(10,13,18,0.05);
+      pointer-events: all;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
+    .nav-links li { display: flex; align-items: center; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.9rem; font-weight: 500; color: #374151;
+      padding: 8px 14px; border-radius: 8px; transition: background 0.15s, color 0.15s;
+      display: inline-flex; align-items: center;
+    }
+    .nav-links a:hover { background: var(--slate-100); color: var(--navy); }
+    .nav-links a.active { color: var(--navy); background: var(--blue-50); font-weight: 600; }
+    .nav-has-dropdown { position: relative; }
+    .nav-has-dropdown > a { gap: 2px; }
+    .nav-chevron { font-size: 16px !important; opacity: 0.55; transition: transform 0.2s; }
+    .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); }
+    .nav-has-dropdown::after {
+      content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 24px;
+    }
+    .nav-dropdown-menu {
+      position: absolute; top: calc(100% + 20px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
+      border: 1px solid #e5e7eb; border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.05);
+      min-width: 220px; padding: 6px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+      z-index: 200;
+    }
+    .nav-has-dropdown:hover .nav-dropdown-menu {
+      opacity: 1; visibility: visible; pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu a {
+      display: block; padding: 8px 14px; border-radius: 8px;
+      color: #374151; text-decoration: none; font-size: 0.875rem; font-weight: 500;
+      white-space: nowrap; transition: background 0.12s, color 0.12s;
+      background: none;
+    }
+    .nav-dropdown-menu a:hover { background: var(--slate-100); color: var(--navy); }
+    .nav-dropdown-menu a.active { color: var(--blue-600); background: #eff6ff; }
+    .nav-dropdown-divider { height: 1px; background: #e5e7eb; margin: 4px 8px; }
+    .nav-cta {
+      background: var(--blue-600); color: var(--white);
+      padding: 11px 22px; border-radius: 999px;
+      font-size: 0.9rem; font-weight: 600; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .nav-cta::after { content: "→"; }
+    .nav-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
+
+    /* ─── HERO ──────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+      padding: 140px 40px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
+      background-size: 28px 28px; pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .solution-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 6px 16px;
+      border-radius: 999px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 800; letter-spacing: -1.5px;
+      line-height: 1.1; margin: 0 0 24px; color: var(--white);
+    }
+    .hero h1 em { font-style: normal; color: #93c5fd; }
+    .hero-sub {
+      font-size: 1.1rem; color: rgba(255,255,255,0.7);
+      max-width: 640px; margin: 0 0 40px; font-weight: 400; line-height: 1.65;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      padding: 5px 12px; border-radius: 999px;
+    }
+    .hero-tag .material-symbols-rounded { font-size: 14px; color: #93c5fd; }
+
+    /* ─── SECTION WRAPPER ───────────────────────────────────── */
+    section { padding: 100px 40px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .ani-fade-in { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease !important; }
+    .ani-fade-in.visible { opacity: 1; transform: none; }
+
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--blue-600); margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.15; color: var(--navy); margin-bottom: 20px;
+    }
+    .section-title em { font-style: normal; color: var(--secondary); }
+    .section-sub {
+      font-size: 1.05rem; color: var(--slate-600);
+      max-width: 580px; margin-bottom: 60px;
+    }
+    .cta-banner .section-label { color: #93c5fd; }
+    .cta-banner .section-title em { color: #93c5fd; }
+
+    /* ─── STATS STRIP ───────────────────────────────────────── */
+    .stats-strip {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      background: var(--white); border-bottom: 1px solid #e5e7eb;
+    }
+    .stat-item {
+      text-align: center; padding: 36px 56px; flex: 1; min-width: 180px;
+      border-right: 1px solid #e5e7eb;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 2.6rem; font-weight: 800; color: var(--navy);
+      line-height: 1; letter-spacing: -1px;
+    }
+    .stat-label {
+      font-size: 0.82rem; color: var(--slate-600); margin-top: 8px; line-height: 1.4;
+    }
+
+    /* ─── VISION ────────────────────────────────────────────── */
+    .vision-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+    .vision-quote {
+      font-size: 1.35rem; font-weight: 700; line-height: 1.55; color: var(--navy);
+      padding: 36px 32px 36px 36px;
+      border-left: 4px solid var(--secondary);
+      background: var(--blue-50);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .vision-quote em { font-style: normal; color: var(--secondary); }
+    .vision-body p {
+      font-size: 0.98rem; color: var(--slate-600); line-height: 1.8; margin-bottom: 20px;
+    }
+    .vision-body p:last-child { margin-bottom: 0; }
+    .vision-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .vision-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; font-weight: 600; color: var(--blue-600);
+      background: var(--blue-50); border: 1.5px solid var(--blue-100);
+      padding: 6px 14px; border-radius: 999px;
+    }
+    .vision-tag .material-symbols-rounded { font-size: 14px; }
+
+    /* ─── MANAGEMENT ────────────────────────────────────────── */
+    .mgmt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .mgmt-card {
+      background: var(--white); border-radius: var(--radius-md);
+      border: 1.5px solid #e5e7eb; overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .mgmt-card:hover { box-shadow: 0 8px 32px rgba(0,51,102,0.1); border-color: var(--blue-200); }
+    .mgmt-photo { height: 300px; overflow: hidden; background: var(--blue-50); }
+    .mgmt-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .mgmt-body { padding: 28px 28px 32px; }
+    .mgmt-name { font-size: 1.3rem; font-weight: 800; color: var(--navy); }
+    .mgmt-title {
+      font-size: 0.78rem; font-weight: 700; color: var(--blue-600);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-top: 4px; margin-bottom: 16px;
+    }
+    .mgmt-desc { font-size: 0.9rem; color: var(--slate-600); line-height: 1.65; }
+
+    /* ─── TEAM GRID ─────────────────────────────────────────── */
+    .team-separator { border: none; border-top: 1px solid #e5e7eb; margin: 64px 0 48px; }
+    .team-sub-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--slate-600); margin-bottom: 28px;
+    }
+    .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .team-card {
+      background: var(--white); border-radius: var(--radius-sm);
+      border: 1px solid #e5e7eb; overflow: hidden; text-align: center;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .team-card:hover { box-shadow: 0 4px 16px rgba(0,51,102,0.08); border-color: var(--blue-200); }
+    .team-photo { height: 150px; overflow: hidden; background: var(--blue-50); }
+    .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .team-body { padding: 12px 10px 14px; }
+    .team-name { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+    .team-role { font-size: 0.75rem; color: var(--slate-600); margin-top: 3px; line-height: 1.35; }
+
+    /* ─── CULTURE GRID ──────────────────────────────────────── */
+    .culture-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .culture-card {
+      background: var(--white); border-radius: var(--radius-md);
+      border: 1.5px solid #e5e7eb; padding: 36px 32px;
+    }
+    .culture-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; margin-bottom: 20px;
+    }
+    .culture-icon .material-symbols-rounded { font-size: 26px; color: var(--blue-600); }
+    .culture-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .culture-card p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.75; }
+
+    /* ─── LOCATION CARD ─────────────────────────────────────── */
+    .location-card {
+      background: var(--white); border-radius: var(--radius-md);
+      border: 1.5px solid #e5e7eb; padding: 48px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .location-details { display: flex; flex-direction: column; gap: 20px; }
+    .location-row { display: flex; gap: 14px; align-items: flex-start; }
+    .location-icon {
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      background: var(--blue-50); display: flex; align-items: center; justify-content: center;
+    }
+    .location-icon .material-symbols-rounded { font-size: 18px; color: var(--blue-600); }
+    .location-text strong { display: block; font-size: 0.8rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+    .location-text span { font-size: 0.9rem; color: var(--slate-600); line-height: 1.5; }
+    .location-visual {
+      height: 220px; border-radius: var(--radius-sm); overflow: hidden;
+      background: linear-gradient(160deg, var(--blue-50), var(--blue-100));
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: var(--blue-600);
+    }
+    .location-visual .material-symbols-rounded { font-size: 48px; opacity: 0.5; }
+    .location-visual span { font-size: 0.88rem; font-weight: 600; color: var(--slate-600); }
+
+    /* ─── CTA BANNER ────────────────────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+      border-radius: var(--radius-lg); margin: 0 40px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
+      background-size: 28px 28px; pointer-events: none; z-index: 0;
+    }
+    .cta-banner .section-inner { padding: 80px 60px; position: relative; z-index: 1; text-align: center; }
+    .cta-banner .section-title { max-width: 640px; margin: 0 auto 16px; color: var(--white); }
+    .cta-banner .section-sub { margin: 0 auto 40px; text-align: center; color: #94a3b8; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--white); color: var(--primary);
+      padding: 16px 32px; border-radius: var(--radius-sm);
+      font-size: 0.95rem; font-weight: 700; text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent; color: var(--white);
+      padding: 16px 32px; border-radius: var(--radius-sm);
+      font-size: 0.95rem; font-weight: 600; text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      transition: border-color 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-1px); }
+    .cta-contact-block {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 4px; margin: 40px 0; padding: 32px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .cta-contact-label-top { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 20px; }
+    .cta-contact-avatar { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255,255,255,0.2); flex-shrink: 0; margin-bottom: 16px; }
+    .cta-contact-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cta-contact-name { font-size: 1.05rem; font-weight: 700; color: var(--white); }
+    .cta-contact-role { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+    .cta-contact-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .cta-contact-link { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.15s; }
+    .cta-contact-link:hover { color: var(--white); }
+    .cta-contact-link .material-symbols-rounded { font-size: 16px; color: #93c5fd; }
+
+    /* ─── FOOTER ────────────────────────────────────────────── */
+    footer { background: var(--navy); color: #94a3b8; padding: 64px 40px 32px; margin-top: 100px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand .nav-logo { color: var(--white); display: block; margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { text-decoration: none; color: #94a3b8; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; font-size: 0.82rem; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom a { color: #94a3b8; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--white); }
+
+    /* ─── HAMBURGER ─────────────────────────────────────────── */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; pointer-events: all; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; display: block; }
+    .nav-mobile-menu { display: none; position: fixed; top: 76px; left: 16px; right: 16px; background: white; border: 1px solid #e5e7eb; border-radius: var(--radius-md); box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 16px; z-index: 99; flex-direction: column; gap: 4px; }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu > a { text-decoration: none; font-size: 0.95rem; font-weight: 500; color: #374151; padding: 12px 16px; border-radius: 10px; transition: background 0.15s; display: block; }
+    .nav-mobile-menu > a:hover { background: var(--slate-100); }
+    .mob-group { display: flex; flex-direction: column; }
+    .mob-group-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; font-size: 0.95rem; font-weight: 500; color: #374151; padding: 12px 16px; border-radius: 10px; cursor: pointer; text-align: left; transition: background 0.15s; font-family: inherit; }
+    .mob-group-toggle:hover { background: var(--slate-100); }
+    .mob-chevron { font-size: 18px !important; transition: transform 0.2s; line-height: 1; flex-shrink: 0; }
+    .mob-group.open .mob-chevron { transform: rotate(180deg); }
+    .mob-sub { display: none; flex-direction: column; padding-left: 12px; }
+    .mob-group.open .mob-sub { display: flex; }
+    .mob-sub a { text-decoration: none; font-size: 0.88rem; font-weight: 400; color: #6b7280; padding: 8px 16px; border-radius: 8px; transition: background 0.15s; display: block; }
+    .mob-sub a:hover { background: var(--slate-100); color: var(--navy); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-cta { display: none; }
+      .vision-layout { grid-template-columns: 1fr; gap: 40px; }
+      .mgmt-grid { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: repeat(4, 1fr); }
+      .location-card { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .stats-strip { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid #e5e7eb; }
+      .stat-item:last-child { border-bottom: none; }
+      .mgmt-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
+      .culture-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      h1, h2, h3, h4 { hyphens: auto; }
+      section { padding: 64px 20px; }
+      .hero { padding: 120px 20px 80px; }
+      .cta-banner { margin: 0 16px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .location-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="SITEFORUM_logo_blue.png" alt="SITEFORUM" style="height:32px; width:auto;" />
+    </a>
+    <ul class="nav-links">
+      <li class="nav-has-dropdown">
+        <a href="index.html#produkte">Produkte &amp; Services <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="plattform.html">Digitalisierungsplattform</a>
+          <a href="ki.html">Künstliche Intelligenz</a>
+          <a href="managed-cloud.html">Managed Cloud Infrastructure</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#">Implementierung &amp; Services</a>
+        </div>
+      </li>
+      <li class="nav-has-dropdown">
+        <a href="index.html#loesungen">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="mitgliederportale.html">Mitgliederportale</a>
+          <a href="#">Kundenportale</a>
+          <a href="#">Mitarbeiterportale</a>
+          <a href="#">Intranet</a>
+          <a href="#">Community</a>
+          <a href="#">Corporate Websites</a>
+          <a href="#">Informationsmanagement</a>
+        </div>
+      </li>
+      <li class="nav-has-dropdown">
+        <a href="index.html#branchen">Branchen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="index.html#branchen">Kammern &amp; Verbände</a>
+          <a href="index.html#branchen">Finanzen</a>
+          <a href="index.html#branchen">Verkehrs- und Transportwesen</a>
+          <a href="index.html#branchen">Personaldienstleistungen</a>
+          <a href="index.html#branchen">Gesundheitswesen</a>
+          <a href="index.html#branchen">Medienbranche</a>
+        </div>
+      </li>
+      <li><a href="index.html#referenzen">Referenzen</a></li>
+      <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+    </ul>
+    <a href="#kontakt" class="nav-cta">Gespräch anfragen</a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Produkte &amp; Services <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="plattform.html" onclick="closeMenu()">Digitalisierungsplattform</a>
+      <a href="ki.html" onclick="closeMenu()">Künstliche Intelligenz</a>
+      <a href="managed-cloud.html" onclick="closeMenu()">Managed Cloud Infrastructure</a>
+      <a href="index.html#produkte" onclick="closeMenu()">Implementierung &amp; Services</a>
+    </div>
+  </div>
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Lösungen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="mitgliederportale.html" onclick="closeMenu()">Mitgliederportale</a>
+      <a href="#" onclick="closeMenu()">Kundenportale</a>
+      <a href="#" onclick="closeMenu()">Mitarbeiterportale</a>
+      <a href="#" onclick="closeMenu()">Intranet</a>
+      <a href="#" onclick="closeMenu()">Community</a>
+      <a href="#" onclick="closeMenu()">Corporate Websites</a>
+      <a href="#" onclick="closeMenu()">Informationsmanagement</a>
+    </div>
+  </div>
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Branchen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="index.html#branchen" onclick="closeMenu()">Kammern &amp; Verbände</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Finanzen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Personaldienstleistungen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Gesundheitswesen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Medienbranche</a>
+    </div>
+  </div>
+  <a href="index.html#referenzen" onclick="closeMenu()">Referenzen</a>
+  <a href="ueber-uns.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Über uns</a>
+</div>
+<script>
+  var navToggle = document.getElementById('nav-toggle');
+  var navMenu = document.getElementById('nav-mobile-menu');
+  navToggle.addEventListener('click', function() { navMenu.classList.toggle('open'); });
+  function closeMenu() { navMenu.classList.remove('open'); }
+  function toggleMobGroup(btn) { btn.closest('.mob-group').classList.toggle('open'); }
+</script>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="solution-badge">
+      <span class="material-symbols-rounded" style="font-size:14px;">groups</span>
+      Über uns
+    </div>
+    <h1>Wir machen Digitalisierung <em>greifbar.</em></h1>
+    <p class="hero-sub">
+      Seit 1998 entwickeln wir webbasierte Portale und intelligente Digitalisierungslösungen –
+      inhabergeführt, leidenschaftlich und mit einem internationalen Team aus acht Nationen.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag"><span class="material-symbols-rounded">calendar_today</span> Gegründet 1998</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">groups</span> 20+ Mitarbeiter</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">public</span> 8 Nationalitäten</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">handshake</span> 150+ Projekte</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Made in Erfurt</span>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div style="background:var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem;">
+      <a href="index.html" style="color:var(--slate-600); text-decoration:none;">Startseite</a>
+      <span class="material-symbols-rounded" style="font-size:14px; color:#94a3b8;">chevron_right</span>
+      <span style="color:var(--navy); font-weight:600;">Über uns</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item ani-fade-in">
+    <div class="stat-num">1998</div>
+    <div class="stat-label">Gründungsjahr – über 25 Jahre Erfahrung</div>
+  </div>
+  <div class="stat-item ani-fade-in" data-delay="80">
+    <div class="stat-num">20+</div>
+    <div class="stat-label">Mitarbeiterinnen &amp; Mitarbeiter</div>
+  </div>
+  <div class="stat-item ani-fade-in" data-delay="160">
+    <div class="stat-num">8</div>
+    <div class="stat-label">Nationalitäten im Team</div>
+  </div>
+  <div class="stat-item ani-fade-in" data-delay="240">
+    <div class="stat-num">150+</div>
+    <div class="stat-label">Erfolgreich umgesetzte Projekte</div>
+  </div>
+  <div class="stat-item ani-fade-in" data-delay="320">
+    <div class="stat-num">4 Mio.</div>
+    <div class="stat-label">Täglich aktive Nutzer unserer Produkte</div>
+  </div>
+</div>
+
+<!-- VISION & MISSION -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Unsere Mission</p>
+      <h2 class="section-title">Wer wir sind – und <em>was uns antreibt</em></h2>
+    </div>
+    <div class="vision-layout" style="margin-top:48px;">
+      <div class="vision-quote ani-fade-in">
+        „Wir reden nicht nur über Digitalisierung – SITEFORUM macht Digitalisierung erlebbar, indem wir Menschen, Daten, Infrastruktur und Prozesse <em>leidenschaftlich</em> miteinander verbinden."
+      </div>
+      <div class="vision-body ani-fade-in" data-delay="100">
+        <p>
+          SITEFORUM wurde 1998 gegründet und ist bis heute inhabergeführt. Was als Vision zweier Gründer begann,
+          ist heute eine bewährte Digitalisierungsplattform, auf die über 150 Organisationen weltweit vertrauen.
+        </p>
+        <p>
+          Wir entwickeln partnerschaftlich mit unseren Kunden die richtige Digitalisierungsstrategie – und setzen
+          sie schnell und kosteneffizient auf Basis unserer Plattform um. Dabei begleiten wir Projekte von der ersten
+          Idee bis zum laufenden Betrieb.
+        </p>
+        <p>
+          Unser Team vereint über 8 Nationalitäten unter einem Dach in Erfurt. Diese Vielfalt ist kein Zufall –
+          sie ist der Grund, warum wir Probleme anders denken und Lösungen entwickeln, die wirklich funktionieren.
+        </p>
+        <div class="vision-tags">
+          <span class="vision-tag"><span class="material-symbols-rounded">verified_user</span> ISO 27001 zertifiziert</span>
+          <span class="vision-tag"><span class="material-symbols-rounded">lock</span> DSGVO-konform</span>
+          <span class="vision-tag"><span class="material-symbols-rounded">location_on</span> Made in Germany</span>
+          <span class="vision-tag"><span class="material-symbols-rounded">devices</span> SaaS &amp; Managed Cloud</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section style="background:var(--slate-100);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Das Team</p>
+      <h2 class="section-title">Qualifiziert, motiviert – und <em>echt.</em></h2>
+      <p class="section-sub">Eine Gruppe von Expertinnen und Experten, die Ihre Digitalisierungsprojekte mit Leidenschaft und Erfahrung umsetzen.</p>
+    </div>
+
+    <!-- Management -->
+    <div class="mgmt-grid">
+      <div class="mgmt-card ani-fade-in">
+        <div class="mgmt-photo">
+          <img src="team/SF_Team_Dirk.jpg" alt="Dirk" />
+        </div>
+        <div class="mgmt-body">
+          <div class="mgmt-name">Dirk</div>
+          <div class="mgmt-title">Cofounder &amp; Geschäftsführer – Sales &amp; Innovation</div>
+          <p class="mgmt-desc">Als Mitgründer von SITEFORUM treibt Dirk seit 1998 die strategische Weiterentwicklung des Unternehmens voran. Sein Fokus liegt auf Kundenbeziehungen, Innovation und der Frage: Wie digitalisieren wir das, was wirklich zählt?</p>
+        </div>
+      </div>
+      <div class="mgmt-card ani-fade-in" data-delay="100">
+        <div class="mgmt-photo">
+          <img src="team/SF_Team_Mark.jpg" alt="Mark" />
+        </div>
+        <div class="mgmt-body">
+          <div class="mgmt-name">Mark</div>
+          <div class="mgmt-title">Cofounder &amp; Geschäftsführer – Product &amp; Projects</div>
+          <p class="mgmt-desc">Mark verantwortet Produktstrategie und Projektdurchführung. Mit seinem tiefen technischen Verständnis und seinem Gespür für nutzerzentriertes Design hat er die SITEFORUM-Plattform über 25 Jahre kontinuierlich weiterentwickelt.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="team-separator" />
+
+    <p class="team-sub-label">Alle Teammitglieder</p>
+    <div class="team-grid">
+      <div class="team-card ani-fade-in" data-delay="0">
+        <div class="team-photo"><img src="team/SF_Team_Benjamin.jpg" alt="Benjamin" /></div>
+        <div class="team-body"><div class="team-name">Benjamin</div><div class="team-role">System Engineer</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="40">
+        <div class="team-photo"><img src="team/SF_Team_Caroline.jpg" alt="Caroline" /></div>
+        <div class="team-body"><div class="team-name">Caroline</div><div class="team-role">Account Management</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="80">
+        <div class="team-photo"><img src="team/SF_Team_Chris.jpg" alt="Chris" /></div>
+        <div class="team-body"><div class="team-name">Chris</div><div class="team-role">Web Engineer</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="120">
+        <div class="team-photo"><img src="team/SF_Team_Christian.jpg" alt="Christian" /></div>
+        <div class="team-body"><div class="team-name">Christian</div><div class="team-role">System Engineer</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="160">
+        <div class="team-photo"><img src="team/SF_Team_Christopher.jpg" alt="Christopher" /></div>
+        <div class="team-body"><div class="team-name">Christopher</div><div class="team-role">System Engineer</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="0">
+        <div class="team-photo"><img src="team/SF_Team_Denny.jpg" alt="Denny" /></div>
+        <div class="team-body"><div class="team-name">Denny</div><div class="team-role">System Engineer</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="40">
+        <div class="team-photo"><img src="team/SF_Team_Falk.jpg" alt="Falk" /></div>
+        <div class="team-body"><div class="team-name">Falk</div><div class="team-role">Network Operations</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="80">
+        <div class="team-photo"><img src="team/SF_Team_Frank.jpg" alt="Frank" /></div>
+        <div class="team-body"><div class="team-name">Frank</div><div class="team-role">Support</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="120">
+        <div class="team-photo"><img src="team/SF_Team_Kim.jpg" alt="Kim" /></div>
+        <div class="team-body"><div class="team-name">Kim</div><div class="team-role">QA &amp; Support</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="160">
+        <div class="team-photo"><img src="team/SF_Team_Kimberly.jpg" alt="Kimberly" /></div>
+        <div class="team-body"><div class="team-name">Kimberly</div><div class="team-role">Frontend Engineer</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="0">
+        <div class="team-photo"><img src="team/SF_Team_Leila.jpg" alt="Leila" /></div>
+        <div class="team-body"><div class="team-name">Leila</div><div class="team-role">Marketing &amp; Communications</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="40">
+        <div class="team-photo"><img src="team/SF_Team_Mathias.jpg" alt="Mathias" /></div>
+        <div class="team-body"><div class="team-name">Mathias</div><div class="team-role">Head of Product</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="80">
+        <div class="team-photo"><img src="team/SF_Team_Matthias.jpg" alt="Matthias" /></div>
+        <div class="team-body"><div class="team-name">Matthias</div><div class="team-role">Network Operations</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="120">
+        <div class="team-photo"><img src="team/SF_Team_Mayra.jpg" alt="Mayra" /></div>
+        <div class="team-body"><div class="team-name">Mayra</div><div class="team-role">Support Engineer</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="160">
+        <div class="team-photo"><img src="team/SF_Team_Nick.jpg" alt="Nick" /></div>
+        <div class="team-body"><div class="team-name">Nick</div><div class="team-role">Product &amp; Project Manager</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="0">
+        <div class="team-photo"><img src="team/SF_Team_Peter.jpg" alt="Peter" /></div>
+        <div class="team-body"><div class="team-name">Peter</div><div class="team-role">Product &amp; Project Manager</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="40">
+        <div class="team-photo"><img src="team/SF_Team_Susie.jpg" alt="Susie" /></div>
+        <div class="team-body"><div class="team-name">Susie</div><div class="team-role">Accounting</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="80">
+        <div class="team-photo"><img src="team/SF_Team_Tanja.jpg" alt="Tanja" /></div>
+        <div class="team-body"><div class="team-name">Tanja</div><div class="team-role">Sales &amp; Support</div></div>
+      </div>
+      <div class="team-card ani-fade-in" data-delay="120">
+        <div class="team-photo"><img src="team/SF_Team_Tomasz.jpg" alt="Tomasz" /></div>
+        <div class="team-body"><div class="team-name">Tomasz</div><div class="team-role">System Engineer</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KULTUR & WERTE -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Kultur &amp; Werte</p>
+      <h2 class="section-title">Was uns zusammenhält – <em>abseits des Codes</em></h2>
+      <p class="section-sub">Teamgeist, Authentizität und Freude an der Arbeit sind für uns keine Buzzwords – sie sind die Grundlage unseres Erfolgs seit 1998.</p>
+    </div>
+    <div class="culture-grid">
+      <div class="culture-card ani-fade-in">
+        <div class="culture-icon"><span class="material-symbols-rounded">coffee</span></div>
+        <h4>Die Kaffeemaschine macht niemals Pause</h4>
+        <p>Kaffee ist unser inoffizielles Teamritual. Und weil wir unsere Kunden wirklich schätzen, trinken wir unseren Kaffee ausschließlich aus Tassen, die von eben diesen gebrandeten Exemplaren stammen.</p>
+      </div>
+      <div class="culture-card ani-fade-in" data-delay="100">
+        <div class="culture-icon"><span class="material-symbols-rounded">sports_soccer</span></div>
+        <h4>Sport als Ausgleich zum Coding-Alltag</h4>
+        <p>Fußball, Basketball und Cycling – unsere liebsten Wege, den Kopf freizubekommen. Bewegung hält uns kreativ, und ein bisschen Teamgeist auf dem Platz schadet auch im Büro nicht.</p>
+      </div>
+      <div class="culture-card ani-fade-in" data-delay="0">
+        <div class="culture-icon"><span class="material-symbols-rounded">ramen_dining</span></div>
+        <h4>Asiatische Küche verbindet 8 Nationalitäten</h4>
+        <p>Mindestens dreimal pro Woche bestellen wir gemeinsam asiatisches Essen. Was als Mittagskompromiss begann, ist heute festes Teamritual – und der Beweis, dass Vielfalt auch am Esstisch funktioniert.</p>
+      </div>
+      <div class="culture-card ani-fade-in" data-delay="100">
+        <div class="culture-icon"><span class="material-symbols-rounded">handshake</span></div>
+        <h4>Authentizität statt Buzzwords</h4>
+        <p>Echte Kollegialität, eine angenehme Atmosphäre und Freude an der gemeinsamen Arbeit – das sind unsere wichtigsten Erfolgsfaktoren. Nicht weil es im Leitbild steht, sondern weil wir es täglich so erleben.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDORT -->
+<section style="background:var(--slate-100);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Standort</p>
+      <h2 class="section-title">Zu Hause in <em>Erfurt</em></h2>
+      <p class="section-sub">Mitten in Deutschland, nah an unseren Kunden – unser Stammsitz und gleichzeitig Standort unserer Rechenzentren.</p>
+    </div>
+    <div class="location-card ani-fade-in" style="margin-top:0;">
+      <div class="location-details">
+        <div class="location-row">
+          <div class="location-icon"><span class="material-symbols-rounded">location_on</span></div>
+          <div class="location-text">
+            <strong>Adresse</strong>
+            <span>Straße des Friedens 15a<br />99094 Erfurt, Deutschland</span>
+          </div>
+        </div>
+        <div class="location-row">
+          <div class="location-icon"><span class="material-symbols-rounded">phone</span></div>
+          <div class="location-text">
+            <strong>Telefon</strong>
+            <span><a href="tel:+493616661510" style="color:inherit;text-decoration:none;">+49 361 6661 5810</a></span>
+          </div>
+        </div>
+        <div class="location-row">
+          <div class="location-icon"><span class="material-symbols-rounded">mail</span></div>
+          <div class="location-text">
+            <strong>E-Mail</strong>
+            <span><a href="mailto:info@siteforum.com" style="color:inherit;text-decoration:none;">info@siteforum.com</a></span>
+          </div>
+        </div>
+        <div class="location-row">
+          <div class="location-icon"><span class="material-symbols-rounded">schedule</span></div>
+          <div class="location-text">
+            <strong>Erreichbarkeit</strong>
+            <span>Mo – Fr, 9:00 – 17:30 Uhr</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-visual">
+        <span class="material-symbols-rounded">location_city</span>
+        <span>Erfurt, Thüringen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner" id="kontakt" style="margin-top: 0;">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Kontakt aufnehmen</p>
+      <h2 class="section-title">Lassen Sie uns <em>gemeinsam starten.</em></h2>
+      <p class="section-sub">Ob Erstgespräch, Demo oder konkretes Projekt – wir freuen uns auf den Austausch mit Ihnen.</p>
+    </div>
+    <div class="cta-contact-block">
+      <div class="cta-contact-label-top">Ihr Ansprechpartner</div>
+      <div class="cta-contact-avatar">
+        <img src="team/SF_Team_Nick.jpg" alt="Nick Walter" />
+      </div>
+      <div class="cta-contact-name">Nick Walter</div>
+      <div class="cta-contact-role">Product &amp; Project Manager</div>
+      <div class="cta-contact-links">
+        <a href="mailto:n.walter@siteforum.com" class="cta-contact-link">
+          <span class="material-symbols-rounded">mail</span>
+          n.walter@siteforum.com
+        </a>
+        <a href="tel:+493616661811" class="cta-contact-link">
+          <span class="material-symbols-rounded">phone</span>
+          +49 361 6661 5811
+        </a>
+      </div>
+    </div>
+    <div class="cta-actions">
+      <a href="mailto:info@siteforum.com" class="btn-primary">Nachricht schreiben</a>
+      <a href="tel:+493616661510" class="btn-secondary">+49 361 6661 5810</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="SITEFORUM_logo_white.png" alt="SITEFORUM" style="height:28px; width:auto;" /></a>
+        <p>Webbasierte Portale und intelligente Digitalisierungslösungen aus Erfurt – seit über 25 Jahren.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produkte &amp; Lösungen</h4>
+        <ul>
+          <li><a href="plattform.html">Digitalisierungsplattform</a></li>
+          <li><a href="ki.html">Künstliche Intelligenz</a></li>
+          <li><a href="managed-cloud.html">Managed Cloud</a></li>
+          <li><a href="#">Kundenportale</a></li>
+          <li><a href="mitgliederportale.html">Mitgliederportale</a></li>
+          <li><a href="#">Factoringportale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="#">Referenzen</a></li>
+          <li><a href="#">Karriere</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:info@siteforum.com">info@siteforum.com</a></li>
+          <li><a href="tel:+493616661510">+49 361 6661 5810</a></li>
+          <li><a href="#">Straße des Friedens 15a</a></li>
+          <li><a href="#">99094 Erfurt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
+      <div style="display:flex;gap:24px;">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      var delay = parseInt(entry.target.dataset.delay || 0, 10);
+      var el = entry.target;
+      setTimeout(function() { el.classList.add('visible'); }, delay);
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.ani-fade-in').forEach(function(el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
