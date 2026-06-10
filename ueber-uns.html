@@ -288,6 +288,25 @@
     .location-visual .material-symbols-rounded { font-size: 48px; opacity: 0.5; }
     .location-visual span { font-size: 0.88rem; font-weight: 600; color: var(--slate-600); }
 
+    /* ─── NEWS CARDS ────────────────────────────────────────── */
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .news-card {
+      background: var(--white); border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+      padding: 28px 24px; text-decoration: none; color: inherit;
+      transition: box-shadow 0.2s, border-color 0.2s; display: block;
+    }
+    .news-card:hover { box-shadow: 0 4px 20px rgba(0,51,102,0.08); border-color: var(--blue-200); }
+    .news-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .news-date { font-size: 0.75rem; font-weight: 600; color: var(--slate-600); }
+    .news-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blue-600); background: var(--blue-50); padding: 2px 8px; border-radius: 999px; }
+    .news-title { font-size: 0.98rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.45; }
+    .news-teaser { font-size: 0.86rem; color: var(--slate-600); line-height: 1.65; }
+    .news-link { font-size: 0.84rem; font-weight: 600; color: var(--blue-600); display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; }
+    .news-link::after { content: "→"; }
+    .news-section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+    .news-all-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--blue-600); text-decoration: none; white-space: nowrap; }
+    .news-all-link .material-symbols-rounded { font-size: 16px; }
+
     /* ─── CTA BANNER ────────────────────────────────────────── */
     .cta-banner {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
@@ -440,7 +459,7 @@
       <li><a href="index.html#referenzen">Referenzen</a></li>
       <li><a href="ueber-uns.html" class="active">Über uns</a></li>
     </ul>
-    <a href="#kontakt" class="nav-cta">Gespräch anfragen</a>
+    <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
     <button class="nav-hamburger" id="nav-toggle" aria-label="Menü">
       <span></span><span></span><span></span>
     </button>
@@ -481,6 +500,7 @@
   </div>
   <a href="index.html#referenzen" onclick="closeMenu()">Referenzen</a>
   <a href="ueber-uns.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Über uns</a>
+  <a href="kontakt.html" onclick="closeMenu()" style="color:var(--blue-600);font-weight:600;">Gespräch anfragen</a>
 </div>
 <script>
   var navToggle = document.getElementById('nav-toggle');
@@ -780,6 +800,51 @@
   </div>
 </section>
 
+<!-- AKTUELLES -->
+<section style="background:var(--slate-100);">
+  <div class="section-inner">
+    <div class="news-section-header ani-fade-in">
+      <div>
+        <p class="section-label">Aktuelles</p>
+        <h2 class="section-title" style="margin-bottom:0;">News aus dem Hause <em>SITEFORUM</em></h2>
+      </div>
+      <a href="news.html" class="news-all-link">Alle News <span class="material-symbols-rounded">arrow_forward</span></a>
+    </div>
+    <div class="news-grid">
+      <a href="news.html" class="news-card ani-fade-in">
+        <div class="news-meta"><span class="news-date">14. November 2025</span><span class="news-tag">Kundenprojekt</span></div>
+        <div class="news-title">Digitalisierung der Mitglieder-Services bei der Landesapothekerkammer Baden-Württemberg</div>
+        <div class="news-teaser">Die LAK BW ist die Berufsvertretung der mehr als 13.500 Apothekerinnen und Apotheker in Baden-Württemberg.</div>
+        <span class="news-link">Weiterlesen</span>
+      </a>
+      <a href="news.html" class="news-card ani-fade-in" data-delay="80">
+        <div class="news-meta"><span class="news-date">6. August 2024</span><span class="news-tag">Kundenprojekt</span></div>
+        <div class="news-title">Teilnehmer-Management für mehr als 10.000 Läufer beim „RUN Thüringer Unternehmenslauf"</div>
+        <div class="news-teaser">Der „RUN Thüringer Unternehmenslauf" ist ein Teambuilding-Sport-Event für Unternehmen und deren Mitarbeiter aus ganz Thüringen.</div>
+        <span class="news-link">Weiterlesen</span>
+      </a>
+      <a href="news.html" class="news-card ani-fade-in" data-delay="160">
+        <div class="news-meta"><span class="news-date">5. März 2024</span><span class="news-tag">Unternehmen</span></div>
+        <div class="news-title">SITEFORUM im Podcast „MITTELSTÄNDISCH"</div>
+        <div class="news-teaser">Projektleiter Nick Walter spricht über den partnerschaftlichen Ansatz des Unternehmens und digitale Transformationsprojekte.</div>
+        <span class="news-link">Weiterlesen</span>
+      </a>
+      <a href="news.html" class="news-card ani-fade-in" data-delay="0">
+        <div class="news-meta"><span class="news-date">24. Januar 2024</span><span class="news-tag">Wissen</span></div>
+        <div class="news-title">Wie entwickelt man als Unternehmen die richtige Digitalisierungs-Strategie?</div>
+        <div class="news-teaser">Welche Schritte helfen Unternehmen, trotz technologischem Wandel eine wirksame Digitalisierungsstrategie zu entwickeln?</div>
+        <span class="news-link">Weiterlesen</span>
+      </a>
+      <a href="news.html" class="news-card ani-fade-in" data-delay="80">
+        <div class="news-meta"><span class="news-date">25. September 2023</span><span class="news-tag">Unternehmen</span></div>
+        <div class="news-title">SITEFORUM ist umgezogen</div>
+        <div class="news-teaser">Nach 15 Jahren hat SITEFORUM seinen Erfurter Standort in moderne Räumlichkeiten auf der Straße des Friedens verlegt.</div>
+        <span class="news-link">Weiterlesen</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BANNER -->
 <div class="cta-banner" id="kontakt" style="margin-top: 0;">
   <div class="section-inner">
@@ -836,9 +901,9 @@
         <h4>Unternehmen</h4>
         <ul>
           <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="news.html">News</a></li>
           <li><a href="#">Referenzen</a></li>
           <li><a href="#">Karriere</a></li>
-          <li><a href="#">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col">
