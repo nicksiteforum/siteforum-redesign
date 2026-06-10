@@ -444,66 +444,54 @@
     .mob-sub a { text-decoration: none; font-size: 0.88rem; font-weight: 400; color: #6b7280; padding: 8px 16px; border-radius: 8px; transition: background 0.15s; display: block; }
     .mob-sub a:hover { background: var(--slate-100); color: var(--navy); }
 
-    /* ─── RESPONSIVE ────────────────────────────────────────── */
     /* ─── MODULE GRID ───────────────────────────────────────── */
     .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .module-card {
-      padding: 24px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
-      background: var(--white); display: flex; flex-direction: column; gap: 14px;
+      padding: 24px 20px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+      background: var(--white); display: flex; flex-direction: column; gap: 12px;
     }
-    .module-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
     .module-icon {
       width: 44px; height: 44px; border-radius: var(--radius-sm);
       background: var(--blue-50); display: flex; align-items: center;
       justify-content: center; color: var(--secondary); flex-shrink: 0;
     }
     .module-icon .material-symbols-rounded { font-size: 22px; }
-    .module-tag {
-      font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--blue-600); background: var(--blue-50); padding: 3px 10px; border-radius: 999px;
-      white-space: nowrap; align-self: flex-start;
-    }
     .module-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
     .module-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
 
     /* ─── SUCCESS STORIES ───────────────────────────────────── */
-    .success-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; align-items: start; }
-    .success-card { border-radius: var(--radius-md); border: 1.5px solid #e5e7eb; background: var(--white); overflow: hidden; }
-    .success-card-header {
-      background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-      padding: 28px 32px; position: relative; overflow: hidden;
+    .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .story-card {
+      background: var(--white); border-radius: var(--radius-md);
+      overflow: hidden; border: 1.5px solid #e5e7eb;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      text-decoration: none; display: block; color: inherit;
     }
-    .success-card-header::before {
-      content: ''; position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
-      background-size: 24px 24px; pointer-events: none;
+    .story-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--blue-200); }
+    .story-img-wrap { position: relative; height: 180px; overflow: hidden; background: var(--blue-50); }
+    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .story-customer-badge {
+      position: absolute; bottom: 14px; left: 14px;
+      width: 64px; height: 64px; border-radius: 10px; border: 1.5px solid #e5e7eb;
+      background: #fff; overflow: hidden;
     }
-    .success-card-org { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 8px; position: relative; }
-    .success-card-title { font-size: 1.1rem; font-weight: 700; color: var(--white); line-height: 1.3; position: relative; }
-    .success-card-body { padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; }
-    .success-quote { font-size: 0.92rem; color: var(--slate-600); line-height: 1.65; border-left: 3px solid var(--blue-100); padding-left: 16px; font-style: italic; }
-    .success-metrics { display: flex; gap: 28px; flex-wrap: wrap; }
-    .success-metric { display: flex; flex-direction: column; gap: 2px; }
-    .success-metric-num { font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: -1px; line-height: 1.1; }
-    .success-metric-num span { color: var(--secondary); font-size: 1rem; }
-    .success-metric-lbl { font-size: 0.75rem; color: var(--slate-600); }
-    .success-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .success-tag { font-size: 0.75rem; font-weight: 500; color: var(--navy); background: var(--slate-100); padding: 4px 12px; border-radius: 999px; }
-    .success-card-placeholder {
-      border-radius: var(--radius-md); border: 2px dashed #e5e7eb;
-      background: #fafafa; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; padding: 60px 32px;
-      text-align: center; gap: 12px; min-height: 280px;
+    .story-customer-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .story-body { padding: 24px 24px 28px; }
+    .story-tag {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--secondary); margin-bottom: 10px; display: block;
     }
-    .success-card-placeholder .placeholder-icon {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary);
+    .story-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
+    .story-result {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--blue-50); border-radius: 10px; padding: 12px 16px; margin-bottom: 20px;
     }
-    .success-card-placeholder .placeholder-icon .material-symbols-rounded { font-size: 28px; }
-    .success-card-placeholder p { font-size: 0.88rem; color: var(--slate-600); max-width: 240px; line-height: 1.55; }
-    .success-card-placeholder strong { color: var(--navy); font-size: 1rem; display: block; margin-bottom: 4px; }
+    .story-result-value { font-size: 1.5rem; font-weight: 800; color: var(--secondary); line-height: 1; white-space: nowrap; flex-shrink: 0; }
+    .story-result-label { font-size: 0.82rem; color: var(--slate-600); line-height: 1.4; }
+    .story-link { font-size: 0.88rem; font-weight: 600; color: var(--blue-600); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .story-link::after { content: "→"; }
 
+    /* ─── RESPONSIVE ────────────────────────────────────────── */
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
@@ -511,7 +499,7 @@
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
       .challenge-grid { grid-template-columns: 1fr; }
       .module-grid { grid-template-columns: repeat(2, 1fr); }
-      .success-grid { grid-template-columns: 1fr; }
+      .stories-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       h1, h2, h3, h4 { hyphens: auto; }
@@ -519,6 +507,7 @@
       .hero { padding: 120px 20px 80px; }
       .intro-grid { grid-template-columns: 1fr; }
       .module-grid { grid-template-columns: 1fr; }
+      .stories-grid { grid-template-columns: 1fr; }
       .cta-banner { margin: 0 16px; }
       .cta-banner .section-inner { padding: 60px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
@@ -753,74 +742,47 @@
     </div>
     <div class="module-grid">
       <div class="module-card ani-fade-in" data-delay="0">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
-          <span class="module-tag">Stammdaten</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
         <h4>Mitgliedsdaten &amp; Self-Service</h4>
         <p>Mitglieder pflegen Adresse, Kontaktdaten und Bankverbindung eigenständig. Antragsformulare mit automatischer Weiterverarbeitung ersparen Ihrer Geschäftsstelle manuelle Eingriffe.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">event</span></div>
-          <span class="module-tag">Veranstaltungen</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">event</span></div>
         <h4>Veranstaltungen &amp; Weiterbildung</h4>
         <p>Durchsuchbarer Veranstaltungskalender mit Detailansicht, Online-An- und Abmeldung, Wartelisten und automatischen Teilnahmebestätigungen – direkt im Portal.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">school</span></div>
-          <span class="module-tag">Fortbildung</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">school</span></div>
         <h4>Punktekonto &amp; Nachweise</h4>
         <p>Automatische Pflege von Fortbildungspunkten, Einsicht des persönlichen Kontos und digitale Einreichung von externen Nachweisen – lückenlos und nachvollziehbar.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="0">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">play_circle</span></div>
-          <span class="module-tag">E-Learning</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">play_circle</span></div>
         <h4>Mediathek &amp; E-Learning</h4>
         <p>Videos, interaktive Lerneinheiten und Tests mit automatischer Ausstellung von Teilnahmebescheinigungen – vollständig in Ihr Portal integriert.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">folder_open</span></div>
-          <span class="module-tag">Dokumente</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">folder_open</span></div>
         <h4>Dokumentenportal</h4>
         <p>Satzungen, Protokolle, Formulare und Fachpublikationen strukturiert verwalten und zielgruppengenau bereitstellen – mit Volltextsuche und Versionierung.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">assignment_turned_in</span></div>
-          <span class="module-tag">Antragswesen</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">assignment_turned_in</span></div>
         <h4>Anträge &amp; Vorgangsverfolgung</h4>
         <p>Online-Formulare für Anträge jeder Art mit statusbasierter Rückmeldung – Mitglieder sehen jederzeit, wo ihr Vorgang steht, ohne die Geschäftsstelle anrufen zu müssen.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="0">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">menu_book</span></div>
-          <span class="module-tag">Wissen</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">menu_book</span></div>
         <h4>Wissensdatenbank</h4>
         <p>Strukturiertes Fach- und Rechtswissen, durchsuchbar und nach Themenbereichen gegliedert. Optional mit KI-Assistent für sofortige Antworten auf Mitgliederanfragen.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">groups_3</span></div>
-          <span class="module-tag">Gremien</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">groups_3</span></div>
         <h4>Gremien &amp; Ausschüsse</h4>
         <p>Geschlossene Arbeitsbereiche für Vorstände, Fachgruppen und Ausschüsse mit Dokumentenablage, Terminplanung und digitalen Abstimmungsfunktionen.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-card-top">
-          <div class="module-icon"><span class="material-symbols-rounded">receipt_long</span></div>
-          <span class="module-tag">Finanzen</span>
-        </div>
+        <div class="module-icon"><span class="material-symbols-rounded">receipt_long</span></div>
         <h4>Beitrags- &amp; Rechnungsverwaltung</h4>
         <p>Automatische Beitragsrechnungen, Zahlungsstatus und Mahnläufe – vollständig ins Mitgliederportal integriert, ohne Medienbrüche zu externen Buchhaltungssystemen.</p>
       </div>
@@ -833,48 +795,56 @@
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Referenzen</p>
-      <h2 class="section-title">Organisationen, die SITEFORUM <em>vertrauen</em></h2>
-      <p class="section-sub">Kammern und Berufsverbände in ganz Deutschland nutzen SITEFORUM als digitale Heimat für ihre Mitglieder.</p>
+      <h2 class="section-title">Kunden, die <em>überzeugt sind</em></h2>
+      <p class="section-sub">Echte Projekte – echte Ergebnisse.</p>
     </div>
-    <div class="success-grid">
-      <div class="success-card ani-fade-in">
-        <div class="success-card-header">
-          <div class="success-card-org">Landesapothekerkammer Baden-Württemberg</div>
-          <div class="success-card-title">„Meine LAK" – Das neue Mitgliederportal</div>
+    <div class="stories-grid">
+
+      <a href="#" class="story-card ani-fade-in">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/pharmacy/800/440" alt="LAK Baden-Württemberg" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_lak-bw.jpg" alt="LAK BW" /></div>
         </div>
-        <div class="success-card-body">
-          <p class="success-quote">In nur 7 Monaten haben wir gemeinsam mit SITEFORUM das neue Mitgliederportal entwickelt, das unsere Mitglieder bei ihren täglichen Aufgaben digital unterstützt – von Stammdaten über Fortbildungspunkte bis zur Wissensdatenbank.</p>
-          <div class="success-metrics">
-            <div class="success-metric">
-              <div class="success-metric-num">13.500</div>
-              <div class="success-metric-lbl">Mitglieder</div>
-            </div>
-            <div class="success-metric">
-              <div class="success-metric-num">7 <span>Mo.</span></div>
-              <div class="success-metric-lbl">Entwicklungszeit</div>
-            </div>
-            <div class="success-metric">
-              <div class="success-metric-num">8<span>+</span></div>
-              <div class="success-metric-lbl">Integrierte Module</div>
-            </div>
+        <div class="story-body">
+          <h3 class="story-title">Digitales Mitgliederportal für 13.500 Apothekerinnen und Apotheker</h3>
+          <div class="story-result">
+            <div class="story-result-value">7 Mo.</div>
+            <div class="story-result-label">von Kick-off bis Go-live des neuen Portals „Meine LAK"</div>
           </div>
-          <div class="success-tags">
-            <span class="success-tag">Stammdaten &amp; Self-Service</span>
-            <span class="success-tag">Veranstaltungen</span>
-            <span class="success-tag">Fortbildungspunkte</span>
-            <span class="success-tag">E-Learning / Mediathek</span>
-            <span class="success-tag">Dokumentenportal</span>
-            <span class="success-tag">Wissensdatenbank</span>
-            <span class="success-tag">Antragswesen</span>
-          </div>
+          <span class="story-link">Zur Success Story</span>
         </div>
-      </div>
-      <div class="success-card-placeholder ani-fade-in" data-delay="100">
-        <div class="placeholder-icon"><span class="material-symbols-rounded">add_circle</span></div>
-        <strong>Ihre Organisation hier?</strong>
-        <p>Werden Sie Teil unserer wachsenden Referenzliste und gestalten Sie mit uns die Digitalisierung Ihrer Mitgliederservices.</p>
-        <a href="#kontakt" style="font-size:0.88rem; font-weight:600; color:var(--blue-600); text-decoration:none; margin-top:4px;">Gespräch anfragen →</a>
-      </div>
+      </a>
+
+      <a href="#" class="story-card ani-fade-in" data-delay="80">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/assembly/800/440" alt="VAK Schleswig-Holstein" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_VAK.jpg" alt="VAK" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Digitales Mitgliederportal für 12.000 Nutzer</h3>
+          <div class="story-result">
+            <div class="story-result-value">80%</div>
+            <div class="story-result-label">weniger manuelle Bearbeitungszeit durch Self-Service-Prozesse</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
+      <a href="#" class="story-card ani-fade-in" data-delay="160">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/retirement/800/440" alt="VBL" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_VBL.jpg" alt="VBL" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Versorgungsportal für 4,4 Millionen Versicherte</h3>
+          <div class="story-result">
+            <div class="story-result-value">4,4 Mio</div>
+            <div class="story-result-label">Nutzer verwalten ihre Vorsorge vollständig digital</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
