@@ -996,7 +996,7 @@
   var sio = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) { if (e.isIntersecting) { animateNum(e.target); sio.unobserve(e.target); } });
   }, { threshold: 0.5 });
-  document.querySelectorAll('.stat-value, .benefits-stat-big, .benefits-sub-stat-val, .story-result-value').forEach(function(el) { sio.observe(el); });
+  document.querySelectorAll('.stat-value, .benefits-stat-big, .benefits-sub-stat-val').forEach(function(el) { sio.observe(el); });
 })();
 </script>
 </body>
