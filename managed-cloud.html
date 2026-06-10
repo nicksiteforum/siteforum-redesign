@@ -467,7 +467,13 @@
         </div>
       </li>
       <li><a href="index.html#referenzen">Referenzen</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li class="nav-has-dropdown">
+        <a href="ueber-uns.html">Über uns <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="news.html">News</a>
+        </div>
+      </li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
     <button class="nav-hamburger" id="nav-toggle" aria-label="Menü">
@@ -509,7 +515,13 @@
     </div>
   </div>
   <a href="index.html#referenzen" onclick="closeMenu()">Referenzen</a>
-  <a href="ueber-uns.html" onclick="closeMenu()">Über uns</a>
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Über uns <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="ueber-uns.html" onclick="closeMenu()">Über uns</a>
+      <a href="news.html" onclick="closeMenu()">News</a>
+    </div>
+  </div>
   <a href="kontakt.html" onclick="closeMenu()" style="color:var(--blue-600);font-weight:600;">Gespräch anfragen</a>
 </div>
 <script>
