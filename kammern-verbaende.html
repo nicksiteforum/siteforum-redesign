@@ -445,25 +445,80 @@
     .mob-sub a:hover { background: var(--slate-100); color: var(--navy); }
 
     /* ─── RESPONSIVE ────────────────────────────────────────── */
+    /* ─── MODULE GRID ───────────────────────────────────────── */
+    .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .module-card {
+      padding: 24px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+      background: var(--white); display: flex; flex-direction: column; gap: 14px;
+    }
+    .module-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .module-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; color: var(--secondary); flex-shrink: 0;
+    }
+    .module-icon .material-symbols-rounded { font-size: 22px; }
+    .module-tag {
+      font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--blue-600); background: var(--blue-50); padding: 3px 10px; border-radius: 999px;
+      white-space: nowrap; align-self: flex-start;
+    }
+    .module-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
+    .module-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
+
+    /* ─── SUCCESS STORIES ───────────────────────────────────── */
+    .success-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; align-items: start; }
+    .success-card { border-radius: var(--radius-md); border: 1.5px solid #e5e7eb; background: var(--white); overflow: hidden; }
+    .success-card-header {
+      background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+      padding: 28px 32px; position: relative; overflow: hidden;
+    }
+    .success-card-header::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
+      background-size: 24px 24px; pointer-events: none;
+    }
+    .success-card-org { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 8px; position: relative; }
+    .success-card-title { font-size: 1.1rem; font-weight: 700; color: var(--white); line-height: 1.3; position: relative; }
+    .success-card-body { padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; }
+    .success-quote { font-size: 0.92rem; color: var(--slate-600); line-height: 1.65; border-left: 3px solid var(--blue-100); padding-left: 16px; font-style: italic; }
+    .success-metrics { display: flex; gap: 28px; flex-wrap: wrap; }
+    .success-metric { display: flex; flex-direction: column; gap: 2px; }
+    .success-metric-num { font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: -1px; line-height: 1.1; }
+    .success-metric-num span { color: var(--secondary); font-size: 1rem; }
+    .success-metric-lbl { font-size: 0.75rem; color: var(--slate-600); }
+    .success-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .success-tag { font-size: 0.75rem; font-weight: 500; color: var(--navy); background: var(--slate-100); padding: 4px 12px; border-radius: 999px; }
+    .success-card-placeholder {
+      border-radius: var(--radius-md); border: 2px dashed #e5e7eb;
+      background: #fafafa; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 60px 32px;
+      text-align: center; gap: 12px; min-height: 280px;
+    }
+    .success-card-placeholder .placeholder-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; color: var(--secondary);
+    }
+    .success-card-placeholder .placeholder-icon .material-symbols-rounded { font-size: 28px; }
+    .success-card-placeholder p { font-size: 0.88rem; color: var(--slate-600); max-width: 240px; line-height: 1.55; }
+    .success-card-placeholder strong { color: var(--navy); font-size: 1rem; display: block; margin-bottom: 4px; }
+
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .nav-cta { display: none; }
-      .usecase-layout { grid-template-columns: 1fr; gap: 40px; }
-      .usecase-layout.reverse { direction: ltr; }
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
       .challenge-grid { grid-template-columns: 1fr; }
-      .feature-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .module-grid { grid-template-columns: repeat(2, 1fr); }
+      .success-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       h1, h2, h3, h4 { hyphens: auto; }
       section { padding: 64px 20px; }
       .hero { padding: 120px 20px 80px; }
       .intro-grid { grid-template-columns: 1fr; }
-      .feature-grid { grid-template-columns: 1fr; }
-      .stats-bar { grid-template-columns: 1fr; }
-      .portal-stat-row { grid-template-columns: repeat(3, 1fr); }
+      .module-grid { grid-template-columns: 1fr; }
       .cta-banner { margin: 0 16px; }
       .cta-banner .section-inner { padding: 60px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
@@ -613,30 +668,6 @@
   </div>
 </div>
 
-<!-- STATS -->
-<section style="background:var(--white); padding: 60px 40px;">
-  <div class="section-inner">
-    <div class="stats-bar ani-fade-in">
-      <div class="stat-item">
-        <div class="stat-num">25<span>+</span></div>
-        <div class="stat-lbl">Jahre Erfahrung mit Verbänden &amp; Kammern</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">50<span>+</span></div>
-        <div class="stat-lbl">Portalprojekte für Mitgliedsorganisationen</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">1<span>M+</span></div>
-        <div class="stat-lbl">Verwaltete Mitgliederprofile auf unserer Plattform</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">99<span>%</span></div>
-        <div class="stat-lbl">Verfügbarkeit durch Managed Cloud Infrastructure</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- INTRO -->
 <section style="background:var(--slate-100);">
   <div class="section-inner">
@@ -712,233 +743,137 @@
   </div>
 </section>
 
-<!-- SOLUTIONS -->
-<div id="loesungen"></div>
-
-<!-- SOLUTION 1: Mitgliederportal -->
-<section style="background:var(--slate-100);">
-  <div class="section-inner">
-    <div class="usecase-layout">
-      <div class="usecase-content ani-fade-in">
-        <div class="usecase-label">
-          <span class="material-symbols-rounded" style="font-size:16px;">badge</span>
-          Lösung 1
-        </div>
-        <h3 class="usecase-title">Das Mitgliederportal, das <em>wirklich genutzt wird</em></h3>
-        <p class="usecase-text">Ein modernes Mitgliederportal auf Basis der SITEFORUM-Plattform ermöglicht Ihren Mitgliedern, ihre Daten selbst zu pflegen, Dokumente abzurufen, Veranstaltungen zu buchen und sich untereinander zu vernetzen – 24/7, ohne Ihren Geschäftsstellen-Aufwand zu erhöhen.</p>
-        <div class="usecase-list">
-          <div class="usecase-list-item ani-fade-in" data-delay="0">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Self-Service-Bereich</strong> – Mitglieder aktualisieren Adressen, Kontaktdaten und Bankverbindungen eigenständig.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="80">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Rollenbasierte Sichten</strong> – Fördermitglieder, ordentliche Mitglieder, Ehrenmitglieder und Gäste sehen nur, was für sie relevant ist.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="160">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Mitgliederverzeichnis</strong> – durchsuchbares Verzeichnis für Networking und Geschäftsanbahnungen innerhalb Ihrer Community.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="240">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>SSO-Integration</strong> – Single Sign-On mit bestehenden Systemen wie DATEV, Verbands-CRM oder Active Directory.</p>
-          </div>
-        </div>
-      </div>
-      <div class="portal-mockup ani-fade-in">
-        <div class="portal-topbar">
-          <div class="portal-topbar-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
-          <div>
-            <div class="portal-topbar-title">Mitgliederportal</div>
-            <div class="portal-topbar-sub">Übersicht &amp; Verwaltung</div>
-          </div>
-        </div>
-        <div class="portal-body">
-          <div class="portal-stat-row">
-            <div class="portal-stat">
-              <div class="portal-stat-num">3.842</div>
-              <div class="portal-stat-lbl">Mitglieder</div>
-            </div>
-            <div class="portal-stat">
-              <div class="portal-stat-num">97%</div>
-              <div class="portal-stat-lbl">Aktiv</div>
-            </div>
-            <div class="portal-stat">
-              <div class="portal-stat-num">14</div>
-              <div class="portal-stat-lbl">Neu (30 Tage)</div>
-            </div>
-          </div>
-          <div class="portal-member-row">
-            <div class="portal-avatar">MH</div>
-            <div>
-              <div class="portal-member-name">Max Hofmann</div>
-              <div class="portal-member-org">Hofmann &amp; Partner GmbH</div>
-            </div>
-            <div class="portal-badge aktiv">Aktiv</div>
-          </div>
-          <div class="portal-member-row">
-            <div class="portal-avatar">SK</div>
-            <div>
-              <div class="portal-member-name">Sandra Krause</div>
-              <div class="portal-member-org">Krause Handels KG</div>
-            </div>
-            <div class="portal-badge aktiv">Aktiv</div>
-          </div>
-          <div class="portal-member-row">
-            <div class="portal-avatar">TB</div>
-            <div>
-              <div class="portal-member-name">Thomas Brandt</div>
-              <div class="portal-member-org">Brandt Consulting</div>
-            </div>
-            <div class="portal-badge ausstehend">Beitrag offen</div>
-          </div>
-          <div class="portal-member-row">
-            <div class="portal-avatar">AW</div>
-            <div>
-              <div class="portal-member-name">Anna Weber</div>
-              <div class="portal-member-org">Weber Steuerberatung</div>
-            </div>
-            <div class="portal-badge aktiv">Aktiv</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOLUTION 2: Dokumentenmanagement -->
-<section style="background:var(--white);">
-  <div class="section-inner">
-    <div class="usecase-layout reverse">
-      <div class="usecase-content ani-fade-in">
-        <div class="usecase-label">
-          <span class="material-symbols-rounded" style="font-size:16px;">folder_special</span>
-          Lösung 2
-        </div>
-        <h3 class="usecase-title">Informationsmanagement, das <em>Ordnung schafft</em></h3>
-        <p class="usecase-text">Von der Satzung bis zum Gremienprotokoll: SITEFORUM strukturiert Ihre Dokumente, macht sie durchsuchbar und stellt sie zielgruppengenau bereit – mit vollständiger Versionierung und Zugriffsprotokoll.</p>
-        <div class="usecase-list">
-          <div class="usecase-list-item ani-fade-in" data-delay="0">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Strukturierte Ablage</strong> – Dokumente nach Kategorien, Gremien oder Themenbereichen organisiert und sofort auffindbar.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="80">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Zielgruppensteuerung</strong> – Protokolle für Ausschussmitglieder, Formulare für alle, interne Leitfäden nur für die Geschäftsstelle.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="160">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Volltext-Suche</strong> – Inhalte auch in PDFs und Office-Dokumenten werden indiziert und sekundenschnell gefunden.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="240">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Versionierung &amp; Audit-Trail</strong> – jede Änderung wird protokolliert, ältere Versionen bleiben jederzeit abrufbar.</p>
-          </div>
-        </div>
-      </div>
-      <div class="docs-mockup ani-fade-in">
-        <div class="docs-topbar">
-          <div class="portal-topbar-icon" style="background:#4f46e5;"><span class="material-symbols-rounded">folder_open</span></div>
-          <div>
-            <div class="portal-topbar-title">Dokumentenmanagement</div>
-            <div class="portal-topbar-sub">Gremium: Vorstand 2025</div>
-          </div>
-        </div>
-        <div class="docs-body">
-          <div class="doc-row">
-            <div class="doc-icon pdf"><span class="material-symbols-rounded">picture_as_pdf</span></div>
-            <div>
-              <div class="doc-name">Protokoll_Vorstandssitzung_Mai.pdf</div>
-              <div class="doc-meta">08.05.2025 · 1,2 MB · Version 2</div>
-            </div>
-            <div class="doc-category">Protokoll</div>
-          </div>
-          <div class="doc-row">
-            <div class="doc-icon doc"><span class="material-symbols-rounded">description</span></div>
-            <div>
-              <div class="doc-name">Satzung_Stand_2024.docx</div>
-              <div class="doc-meta">15.01.2024 · 384 KB · Version 5</div>
-            </div>
-            <div class="doc-category">Satzung</div>
-          </div>
-          <div class="doc-row">
-            <div class="doc-icon xls"><span class="material-symbols-rounded">table_chart</span></div>
-            <div>
-              <div class="doc-name">Haushaltsplan_2025.xlsx</div>
-              <div class="doc-meta">03.03.2025 · 92 KB · Version 1</div>
-            </div>
-            <div class="doc-category">Finanzen</div>
-          </div>
-          <div class="doc-row">
-            <div class="doc-icon pdf"><span class="material-symbols-rounded">picture_as_pdf</span></div>
-            <div>
-              <div class="doc-name">Beitragsordnung_2025.pdf</div>
-              <div class="doc-meta">01.01.2025 · 218 KB · Version 3</div>
-            </div>
-            <div class="doc-category">Ordnung</div>
-          </div>
-          <div class="doc-row">
-            <div class="doc-icon doc"><span class="material-symbols-rounded">description</span></div>
-            <div>
-              <div class="doc-name">Tagesordnung_JHV_2025.docx</div>
-              <div class="doc-meta">20.06.2025 · 145 KB · Version 1</div>
-            </div>
-            <div class="doc-category">Jahreshauptversammlung</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE GRID -->
-<section style="background:var(--slate-100);">
+<!-- MODULES -->
+<section id="loesungen" style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Alle Funktionen im Überblick</p>
-      <h2 class="section-title">Was die SITEFORUM-Plattform <em>für Ihre Organisation leistet</em></h2>
-      <p class="section-sub" style="margin-bottom: 60px;">Ein vollständiges Ökosystem digitaler Werkzeuge – maßgeschneidert für die Anforderungen von Kammern, Verbänden und Berufsorganisationen.</p>
+      <p class="section-label">Ihr Mitgliederportal</p>
+      <h2 class="section-title">Module, die Kammern &amp; Verbände <em>wirklich brauchen</em></h2>
+      <p class="section-sub" style="margin-bottom:60px;">SITEFORUM baut kein Portal von der Stange. Wir kombinieren bewährte Bausteine zu einer Lösung, die exakt zu Ihrer Organisation passt – skalierbar von 500 bis 50.000 Mitgliedern.</p>
     </div>
-    <div class="feature-grid">
-      <div class="feature-card ani-fade-in" data-delay="0">
-        <div class="feature-icon"><span class="material-symbols-rounded">event</span></div>
-        <h4>Veranstaltungsmanagement</h4>
-        <p>Eigene Anmeldeformulare, automatische Erinnerungen, Teilnehmerlisten und Wartelisten – alles im Portal integriert.</p>
+    <div class="module-grid">
+      <div class="module-card ani-fade-in" data-delay="0">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
+          <span class="module-tag">Stammdaten</span>
+        </div>
+        <h4>Mitgliedsdaten &amp; Self-Service</h4>
+        <p>Mitglieder pflegen Adresse, Kontaktdaten und Bankverbindung eigenständig. Antragsformulare mit automatischer Weiterverarbeitung ersparen Ihrer Geschäftsstelle manuelle Eingriffe.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="60">
-        <div class="feature-icon"><span class="material-symbols-rounded">campaign</span></div>
-        <h4>Newsletter &amp; Kommunikation</h4>
-        <p>Zielgruppensegmentierte E-Mail-Kommunikation direkt aus der Plattform, mit Öffnungsraten und Klick-Tracking.</p>
+      <div class="module-card ani-fade-in" data-delay="60">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">event</span></div>
+          <span class="module-tag">Veranstaltungen</span>
+        </div>
+        <h4>Veranstaltungen &amp; Weiterbildung</h4>
+        <p>Durchsuchbarer Veranstaltungskalender mit Detailansicht, Online-An- und Abmeldung, Wartelisten und automatischen Teilnahmebestätigungen – direkt im Portal.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="120">
-        <div class="feature-icon"><span class="material-symbols-rounded">how_to_vote</span></div>
-        <h4>Online-Abstimmungen</h4>
-        <p>Sichere digitale Abstimmungen für Gremien und Mitgliederversammlungen – DSGVO-konform und prüfungssicher.</p>
+      <div class="module-card ani-fade-in" data-delay="120">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">school</span></div>
+          <span class="module-tag">Fortbildung</span>
+        </div>
+        <h4>Punktekonto &amp; Nachweise</h4>
+        <p>Automatische Pflege von Fortbildungspunkten, Einsicht des persönlichen Kontos und digitale Einreichung von externen Nachweisen – lückenlos und nachvollziehbar.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="180">
-        <div class="feature-icon"><span class="material-symbols-rounded">receipt_long</span></div>
-        <h4>Beitragsverwaltung</h4>
-        <p>Automatische Beitragsrechnungen, Mahnläufe und Zahlungsabgleich – ohne manuelle Eingriffe Ihrer Geschäftsstelle.</p>
+      <div class="module-card ani-fade-in" data-delay="0">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">play_circle</span></div>
+          <span class="module-tag">E-Learning</span>
+        </div>
+        <h4>Mediathek &amp; E-Learning</h4>
+        <p>Videos, interaktive Lerneinheiten und Tests mit automatischer Ausstellung von Teilnahmebescheinigungen – vollständig in Ihr Portal integriert.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="0">
-        <div class="feature-icon"><span class="material-symbols-rounded">workspace_premium</span></div>
-        <h4>Zertifizierungen &amp; Nachweise</h4>
-        <p>Digitale Ausstellung, Verwaltung und Prüfung von Zertifikaten, Weiterbildungsnachweisen und Befähigungsausweisen.</p>
+      <div class="module-card ani-fade-in" data-delay="60">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">folder_open</span></div>
+          <span class="module-tag">Dokumente</span>
+        </div>
+        <h4>Dokumentenportal</h4>
+        <p>Satzungen, Protokolle, Formulare und Fachpublikationen strukturiert verwalten und zielgruppengenau bereitstellen – mit Volltextsuche und Versionierung.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="60">
-        <div class="feature-icon"><span class="material-symbols-rounded">public</span></div>
-        <h4>Öffentliche Website</h4>
-        <p>Moderne, gepflegte Website für Interessenten und die Öffentlichkeit – nahtlos mit dem Mitgliederbereich verzahnt.</p>
+      <div class="module-card ani-fade-in" data-delay="120">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">assignment_turned_in</span></div>
+          <span class="module-tag">Antragswesen</span>
+        </div>
+        <h4>Anträge &amp; Vorgangsverfolgung</h4>
+        <p>Online-Formulare für Anträge jeder Art mit statusbasierter Rückmeldung – Mitglieder sehen jederzeit, wo ihr Vorgang steht, ohne die Geschäftsstelle anrufen zu müssen.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="120">
-        <div class="feature-icon"><span class="material-symbols-rounded">auto_awesome</span></div>
-        <h4>KI-Assistent</h4>
-        <p>Ein kontextsensitiver Chatbot beantwortet Mitgliederanfragen auf Basis Ihrer eigenen Inhalte – rund um die Uhr.</p>
+      <div class="module-card ani-fade-in" data-delay="0">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">menu_book</span></div>
+          <span class="module-tag">Wissen</span>
+        </div>
+        <h4>Wissensdatenbank</h4>
+        <p>Strukturiertes Fach- und Rechtswissen, durchsuchbar und nach Themenbereichen gegliedert. Optional mit KI-Assistent für sofortige Antworten auf Mitgliederanfragen.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="180">
-        <div class="feature-icon"><span class="material-symbols-rounded">analytics</span></div>
-        <h4>Auswertungen &amp; Reporting</h4>
-        <p>Mitgliederentwicklung, Veranstaltungsauslastung und Beitragseinnahmen jederzeit als Dashboard abrufbar.</p>
+      <div class="module-card ani-fade-in" data-delay="60">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">groups_3</span></div>
+          <span class="module-tag">Gremien</span>
+        </div>
+        <h4>Gremien &amp; Ausschüsse</h4>
+        <p>Geschlossene Arbeitsbereiche für Vorstände, Fachgruppen und Ausschüsse mit Dokumentenablage, Terminplanung und digitalen Abstimmungsfunktionen.</p>
+      </div>
+      <div class="module-card ani-fade-in" data-delay="120">
+        <div class="module-card-top">
+          <div class="module-icon"><span class="material-symbols-rounded">receipt_long</span></div>
+          <span class="module-tag">Finanzen</span>
+        </div>
+        <h4>Beitrags- &amp; Rechnungsverwaltung</h4>
+        <p>Automatische Beitragsrechnungen, Zahlungsstatus und Mahnläufe – vollständig ins Mitgliederportal integriert, ohne Medienbrüche zu externen Buchhaltungssystemen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Referenzen</p>
+      <h2 class="section-title">Organisationen, die SITEFORUM <em>vertrauen</em></h2>
+      <p class="section-sub">Kammern und Berufsverbände in ganz Deutschland nutzen SITEFORUM als digitale Heimat für ihre Mitglieder.</p>
+    </div>
+    <div class="success-grid">
+      <div class="success-card ani-fade-in">
+        <div class="success-card-header">
+          <div class="success-card-org">Landesapothekerkammer Baden-Württemberg</div>
+          <div class="success-card-title">„Meine LAK" – Das neue Mitgliederportal</div>
+        </div>
+        <div class="success-card-body">
+          <p class="success-quote">In nur 7 Monaten haben wir gemeinsam mit SITEFORUM das neue Mitgliederportal entwickelt, das unsere Mitglieder bei ihren täglichen Aufgaben digital unterstützt – von Stammdaten über Fortbildungspunkte bis zur Wissensdatenbank.</p>
+          <div class="success-metrics">
+            <div class="success-metric">
+              <div class="success-metric-num">13.500</div>
+              <div class="success-metric-lbl">Mitglieder</div>
+            </div>
+            <div class="success-metric">
+              <div class="success-metric-num">7 <span>Mo.</span></div>
+              <div class="success-metric-lbl">Entwicklungszeit</div>
+            </div>
+            <div class="success-metric">
+              <div class="success-metric-num">8<span>+</span></div>
+              <div class="success-metric-lbl">Integrierte Module</div>
+            </div>
+          </div>
+          <div class="success-tags">
+            <span class="success-tag">Stammdaten &amp; Self-Service</span>
+            <span class="success-tag">Veranstaltungen</span>
+            <span class="success-tag">Fortbildungspunkte</span>
+            <span class="success-tag">E-Learning / Mediathek</span>
+            <span class="success-tag">Dokumentenportal</span>
+            <span class="success-tag">Wissensdatenbank</span>
+            <span class="success-tag">Antragswesen</span>
+          </div>
+        </div>
+      </div>
+      <div class="success-card-placeholder ani-fade-in" data-delay="100">
+        <div class="placeholder-icon"><span class="material-symbols-rounded">add_circle</span></div>
+        <strong>Ihre Organisation hier?</strong>
+        <p>Werden Sie Teil unserer wachsenden Referenzliste und gestalten Sie mit uns die Digitalisierung Ihrer Mitgliederservices.</p>
+        <a href="#kontakt" style="font-size:0.88rem; font-weight:600; color:var(--blue-600); text-decoration:none; margin-top:4px;">Gespräch anfragen →</a>
       </div>
     </div>
   </div>
