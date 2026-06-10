@@ -417,9 +417,25 @@
       padding: 6px; border: none; background: none; pointer-events: all;
     }
     .nav-hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; display: block; }
+    .nav-mobile-menu { display: none; position: fixed; top: 76px; left: 16px; right: 16px; background: white; border: 1px solid #e5e7eb; border-radius: var(--radius-md); box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 16px; z-index: 99; flex-direction: column; gap: 4px; }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu > a { text-decoration: none; font-size: 0.95rem; font-weight: 500; color: #374151; padding: 12px 16px; border-radius: 10px; transition: background 0.15s; display: block; }
+    .nav-mobile-menu > a:hover { background: var(--slate-100); }
+    .mob-group { display: flex; flex-direction: column; }
+    .mob-group-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; font-size: 0.95rem; font-weight: 500; color: #374151; padding: 12px 16px; border-radius: 10px; cursor: pointer; text-align: left; transition: background 0.15s; font-family: inherit; }
+    .mob-group-toggle:hover { background: var(--slate-100); }
+    .mob-chevron { font-size: 18px !important; transition: transform 0.2s; line-height: 1; flex-shrink: 0; }
+    .mob-group.open .mob-chevron { transform: rotate(180deg); }
+    .mob-sub { display: none; flex-direction: column; padding-left: 12px; }
+    .mob-group.open .mob-sub { display: flex; }
+    .mob-sub a { text-decoration: none; font-size: 0.88rem; font-weight: 400; color: #6b7280; padding: 8px 16px; border-radius: 8px; transition: background 0.15s; display: block; }
+    .mob-sub a:hover { background: var(--slate-100); color: var(--navy); }
 
     /* ─── RESPONSIVE ────────────────────────────────────────── */
     @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-cta { display: none; }
       .usecase-layout { grid-template-columns: 1fr; gap: 40px; }
       .usecase-layout.reverse { direction: ltr; }
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
@@ -434,8 +450,6 @@
       .how-grid { grid-template-columns: 1fr; }
       .cta-banner { margin: 0 16px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
     }
   </style>
 </head>
@@ -484,12 +498,54 @@
       <li><a href="index.html#referenzen">Referenzen</a></li>
       <li><a href="#">Über uns</a></li>
     </ul>
-    <a href="#kontakt" class="nav-cta">Gespräch anfragen</a>
-    <button class="nav-hamburger" aria-label="Menü">
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Menü">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Produkte &amp; Services <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="plattform.html" onclick="closeMenu()">Digitalisierungsplattform</a>
+      <a href="ki.html" onclick="closeMenu()">Künstliche Intelligenz</a>
+      <a href="managed-cloud.html" onclick="closeMenu()">Managed Cloud Infrastructure</a>
+      <a href="index.html#produkte" onclick="closeMenu()">Implementierung &amp; Services</a>
+    </div>
+  </div>
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Lösungen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="mitgliederportale.html" onclick="closeMenu()">Mitgliederportale</a>
+      <a href="#" onclick="closeMenu()">Kundenportale</a>
+      <a href="#" onclick="closeMenu()">Mitarbeiterportale</a>
+      <a href="#" onclick="closeMenu()">Intranet</a>
+      <a href="#" onclick="closeMenu()">Community</a>
+      <a href="#" onclick="closeMenu()">Corporate Websites</a>
+      <a href="#" onclick="closeMenu()">Informationsmanagement</a>
+    </div>
+  </div>
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Branchen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="index.html#branchen" onclick="closeMenu()">Kammern &amp; Verbände</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Finanzen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Personaldienstleistungen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Gesundheitswesen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Medienbranche</a>
+    </div>
+  </div>
+  <a href="index.html#referenzen" onclick="closeMenu()">Referenzen</a>
+  <a href="index.html#ueber-uns" onclick="closeMenu()">Über uns</a>
+</div>
+<script>
+  var navToggle = document.getElementById('nav-toggle');
+  var navMenu = document.getElementById('nav-mobile-menu');
+  navToggle.addEventListener('click', function() { navMenu.classList.toggle('open'); });
+  function closeMenu() { navMenu.classList.remove('open'); }
+  function toggleMobGroup(btn) { btn.closest('.mob-group').classList.toggle('open'); }
+</script>
 
 <!-- HERO -->
 <header class="hero">
