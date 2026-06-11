@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Managed Cloud-Infrastruktur – SITEFORUM</title>
+  <title>Implementierung &amp; Services – SITEFORUM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -88,8 +88,7 @@
     .nav-dropdown-menu a {
       display: block; padding: 8px 14px; border-radius: 8px;
       color: #374151; text-decoration: none; font-size: 0.875rem; font-weight: 500;
-      white-space: nowrap; transition: background 0.12s, color 0.12s;
-      background: none;
+      white-space: nowrap; transition: background 0.12s, color 0.12s; background: none;
     }
     .nav-dropdown-menu a:hover { background: var(--slate-100); color: var(--navy); }
     .nav-dropdown-menu a.active { color: var(--blue-600); background: #eff6ff; }
@@ -99,8 +98,7 @@
       padding: 11px 22px; border-radius: 999px;
       font-size: 0.9rem; font-weight: 600; text-decoration: none;
       transition: background 0.2s, transform 0.15s;
-      display: inline-flex; align-items: center; gap: 8px;
-      white-space: nowrap; flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 6px;
     }
     .nav-cta::after { content: "→"; }
     .nav-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
@@ -116,10 +114,7 @@
       background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
       background-size: 28px 28px; pointer-events: none;
     }
-    .hero-inner {
-      max-width: 1200px; margin: 0 auto;
-      position: relative; z-index: 1;
-    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
     .solution-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);
@@ -182,13 +177,9 @@
       font-size: 1.05rem; color: var(--slate-600);
       max-width: 580px; margin-bottom: 60px;
     }
-    .cta-banner .section-label { color: #93c5fd; }
-    .cta-banner .section-title em { color: #93c5fd; }
 
     /* ─── INTRO GRID ────────────────────────────────────────── */
-    .intro-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-    }
+    .intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .intro-card {
       display: flex; flex-direction: column; gap: 14px;
       padding: 28px 24px; background: var(--white);
@@ -203,109 +194,83 @@
     .intro-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .intro-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
 
-    /* ─── FEATURES GRID ─────────────────────────────────────── */
-    .features-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    /* ─── PROCESS STEPS ─────────────────────────────────────── */
+    .process-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      background: #e5e7eb; border-radius: var(--radius-md); overflow: hidden;
+      border: 1.5px solid #e5e7eb;
     }
+    .process-card {
+      background: var(--white); padding: 36px 28px;
+      display: flex; flex-direction: column; gap: 16px;
+      position: relative;
+    }
+    .process-card:nth-child(1),
+    .process-card:nth-child(2),
+    .process-card:nth-child(3) {
+      border-bottom: 2px solid #e5e7eb;
+    }
+    .process-num {
+      font-size: 4rem; font-weight: 900; color: var(--blue-50);
+      line-height: 1; letter-spacing: -3px;
+      position: absolute; top: 16px; right: 20px;
+      pointer-events: none; user-select: none;
+    }
+    .process-phase {
+      display: inline-flex; align-items: center;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--secondary);
+      background: var(--blue-50); padding: 3px 10px; border-radius: 999px;
+      width: fit-content;
+    }
+    .process-icon {
+      width: 48px; height: 48px; border-radius: var(--radius-sm);
+      background: var(--navy); display: flex; align-items: center;
+      justify-content: center; color: #fff; flex-shrink: 0;
+    }
+    .process-icon .material-symbols-rounded { font-size: 24px; }
+    .process-card h4 { font-size: 1.05rem; font-weight: 800; color: var(--navy); }
+    .process-card p { font-size: 0.87rem; color: var(--slate-600); line-height: 1.65; }
+
+    /* ─── FEATURE GRID ──────────────────────────────────────── */
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .feature-card {
-      background: var(--white); border-radius: var(--radius-md);
-      padding: 24px 22px; border: 1.5px solid #e5e7eb;
-      transition: border-color 0.2s, box-shadow 0.2s; cursor: default;
-    }
-    .feature-card:hover {
-      border-color: var(--blue-200);
-      box-shadow: 0 4px 16px rgba(0,51,102,0.08);
+      padding: 24px 20px; border-radius: var(--radius-md);
+      border: 1.5px solid #e5e7eb; background: var(--white);
+      display: flex; flex-direction: column; gap: 12px;
     }
     .feature-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: var(--blue-100); display: flex; align-items: center;
-      justify-content: center; color: var(--primary); margin-bottom: 16px;
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; color: var(--secondary);
     }
     .feature-icon .material-symbols-rounded { font-size: 22px; }
-    .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .feature-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); }
     .feature-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
 
-    /* ─── BENEFITS / CHECK LIST ─────────────────────────────── */
-    .benefits-list { display: flex; flex-direction: column; gap: 20px; }
-    .benefit-item { display: flex; gap: 16px; align-items: flex-start; }
-    .benefit-check {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary); flex-shrink: 0; margin-top: 2px;
+    /* ─── PROTOTYPE TEASER ──────────────────────────────────── */
+    .prototype-teaser {
+      margin-top: 48px; background: var(--blue-50);
+      border-radius: var(--radius-md); border: 1.5px solid var(--blue-200);
+      padding: 32px 36px; display: flex; align-items: center;
+      gap: 28px; flex-wrap: wrap;
     }
-    .benefit-check .material-symbols-rounded { font-size: 16px; }
-    .benefit-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .benefit-item p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.55; }
-
-    /* ─── TECH SECTION ──────────────────────────────────────── */
-    .tech-layout {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    .prototype-teaser-icon {
+      width: 56px; height: 56px; border-radius: var(--radius-sm);
+      background: var(--secondary); display: flex; align-items: center;
+      justify-content: center; color: #fff; flex-shrink: 0;
     }
-    .tech-visual {
-      background: linear-gradient(160deg, #003366, #004d99);
-      border-radius: var(--radius-lg); padding: 40px;
-      display: flex; flex-direction: column; gap: 20px;
+    .prototype-teaser-icon .material-symbols-rounded { font-size: 28px; }
+    .prototype-teaser-body { flex: 1; min-width: 200px; }
+    .prototype-teaser-body h4 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .prototype-teaser-body p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
+    .prototype-teaser-cta {
+      background: var(--navy); color: #fff;
+      padding: 14px 28px; border-radius: var(--radius-sm);
+      font-size: 0.9rem; font-weight: 700; text-decoration: none;
+      white-space: nowrap; transition: opacity 0.2s; display: inline-block;
     }
-    .tech-visual-label {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: #93c5fd;
-    }
-    .tech-cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .tech-cert-box {
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px;
-    }
-    .tech-cert-icon { color: #93c5fd; }
-    .tech-cert-icon .material-symbols-rounded { font-size: 28px; }
-    .tech-cert-title { font-size: 0.88rem; font-weight: 700; color: #fff; }
-    .tech-cert-desc { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
-
-    /* ─── UPTIME BAR ────────────────────────────────────────── */
-    .uptime-bar-wrap {
-      background: rgba(255,255,255,0.06); border-radius: 999px;
-      height: 6px; overflow: hidden; margin-top: 4px;
-    }
-    .uptime-bar {
-      height: 100%; border-radius: 999px;
-      background: linear-gradient(90deg, #93c5fd, #60a5fa);
-      width: 99.9%;
-    }
-
-    /* ─── COMPARE CARDS ─────────────────────────────────────── */
-    .compare-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .compare-card {
-      background: var(--white); border-radius: var(--radius-md);
-      padding: 32px 28px; border: 1.5px solid #e5e7eb;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .compare-card:hover {
-      border-color: var(--blue-200);
-      box-shadow: 0 4px 16px rgba(0,51,102,0.08);
-    }
-    .compare-card.featured {
-      background: linear-gradient(160deg, #003366, #004d99);
-      border-color: transparent;
-      box-shadow: 0 8px 32px rgba(0,51,102,0.25);
-    }
-    .compare-card.featured h4 { color: var(--white); }
-    .compare-card.featured p { color: rgba(255,255,255,0.65); }
-    .compare-card.featured .compare-vs { color: #93c5fd; }
-    .compare-card.featured .compare-list-item { color: rgba(255,255,255,0.8); }
-    .compare-card.featured .compare-check { color: #93c5fd; }
-    .compare-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-    .compare-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
-    .compare-vs {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.06em; color: #94a3b8; margin-bottom: 16px; display: block;
-    }
-    .compare-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-    .compare-list-item {
-      display: flex; gap: 10px; align-items: flex-start;
-      font-size: 0.85rem; color: var(--slate-600); line-height: 1.45;
-    }
-    .compare-check { flex-shrink: 0; margin-top: 1px; }
-    .compare-check .material-symbols-rounded { font-size: 16px; color: var(--secondary); }
-    .compare-cross .material-symbols-rounded { font-size: 16px; color: #f87171; }
+    .prototype-teaser-cta:hover { opacity: 0.88; }
 
     /* ─── SUCCESS STORIES ───────────────────────────────────── */
     .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -328,8 +293,7 @@
     .story-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
     .story-result {
       display: flex; align-items: center; gap: 14px;
-      background: var(--blue-50); border-radius: 10px;
-      padding: 12px 16px; margin-bottom: 20px;
+      background: var(--blue-50); border-radius: 10px; padding: 12px 16px; margin-bottom: 20px;
     }
     .story-result-value { font-size: 1.5rem; font-weight: 800; color: var(--secondary); line-height: 1; white-space: nowrap; flex-shrink: 0; }
     .story-result-label { font-size: 0.82rem; color: var(--slate-600); line-height: 1.4; }
@@ -348,8 +312,10 @@
       background-size: 28px 28px; pointer-events: none; z-index: 0;
     }
     .cta-banner .section-inner { padding: 80px 60px; position: relative; z-index: 1; text-align: center; }
+    .cta-banner .section-label { color: #93c5fd; }
     .cta-banner .section-title { max-width: 640px; margin: 0 auto 16px; color: var(--white); }
     .cta-banner .section-sub { margin: 0 auto 40px; text-align: center; color: #94a3b8; }
+    .cta-banner .section-title em { color: #93c5fd; }
     .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .cta-contact-block {
       display: flex; flex-direction: column; align-items: center;
@@ -357,32 +323,59 @@
       border-top: 1px solid rgba(255,255,255,0.12);
       border-bottom: 1px solid rgba(255,255,255,0.12);
     }
-    .cta-contact-label-top { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 20px; }
-    .cta-contact-avatar { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255,255,255,0.2); flex-shrink: 0; margin-bottom: 16px; }
+    .cta-contact-label-top {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 20px;
+    }
+    .cta-contact-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      overflow: hidden; border: 3px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; margin-bottom: 16px;
+    }
     .cta-contact-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .cta-contact-name { font-size: 1.05rem; font-weight: 700; color: var(--white); }
     .cta-contact-role { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
     .cta-contact-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-    .cta-contact-link { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.15s; }
+    .cta-contact-link {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; color: rgba(255,255,255,0.75);
+      text-decoration: none; transition: color 0.15s;
+    }
     .cta-contact-link:hover { color: var(--white); }
     .cta-contact-link .material-symbols-rounded { font-size: 16px; color: #93c5fd; }
 
     /* ─── FOOTER ────────────────────────────────────────────── */
-    footer { background: var(--navy); color: #94a3b8; padding: 64px 40px 32px; margin-top: 100px; }
+    footer {
+      background: var(--navy); color: #94a3b8;
+      padding: 64px 40px 32px; margin-top: 100px;
+    }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
     .footer-brand .nav-logo { color: var(--white); display: block; margin-bottom: 16px; }
     .footer-brand p { font-size: 0.88rem; line-height: 1.65; max-width: 260px; }
-    .footer-col h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 20px; }
+    .footer-col h4 {
+      font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--white); margin-bottom: 20px;
+    }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col a { text-decoration: none; color: #94a3b8; font-size: 0.88rem; transition: color 0.2s; }
     .footer-col a:hover { color: var(--white); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; font-size: 0.82rem; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 28px; font-size: 0.82rem; flex-wrap: wrap; gap: 12px;
+    }
     .footer-bottom a { color: #94a3b8; text-decoration: none; }
     .footer-bottom a:hover { color: var(--white); }
 
     /* ─── HAMBURGER ─────────────────────────────────────────── */
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; pointer-events: all; }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      padding: 6px; border: none; background: none; pointer-events: all;
+    }
     .nav-hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; display: block; }
     .nav-mobile-menu { display: none; position: fixed; top: 76px; left: 16px; right: 16px; background: white; border: 1px solid #e5e7eb; border-radius: var(--radius-md); box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 16px; z-index: 99; flex-direction: column; gap: 4px; }
     .nav-mobile-menu.open { display: flex; }
@@ -404,16 +397,14 @@
       .nav-hamburger { display: flex; }
       .nav-cta { display: none; }
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .tech-layout { grid-template-columns: 1fr; }
-      .tech-visual { display: none; }
-      .compare-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-card:nth-child(1),
+      .process-card:nth-child(2),
+      .process-card:nth-child(3) { border-bottom: none; }
+      .process-card:nth-child(odd):not(:nth-last-child(-n+2)) { border-bottom: 2px solid #e5e7eb; }
+      .process-card:nth-child(even):not(:nth-last-child(-n+2)) { border-bottom: 2px solid #e5e7eb; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
       .stories-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .intro-grid { grid-template-columns: 1fr; }
-      .compare-grid { grid-template-columns: 1fr; }
-      .stories-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       h1, h2, h3, h4 { hyphens: auto; }
@@ -421,9 +412,17 @@
       .nav-inner { height: 52px; padding: 0.4rem 0.5rem 0.4rem 1rem; }
       section { padding: 64px 20px; }
       .hero { padding: 120px 20px 80px; }
+      .intro-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-card:nth-child(1),
+      .process-card:nth-child(2),
+      .process-card:nth-child(3) { border-bottom: 2px solid #e5e7eb; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .stories-grid { grid-template-columns: 1fr; }
+      .prototype-teaser { flex-direction: column; }
       .cta-banner { margin: 0 16px; }
+      .cta-banner .section-inner { padding: 60px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
-      .features-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -441,9 +440,9 @@
         <div class="nav-dropdown-menu">
           <a href="plattform.html">Digitalisierungsplattform</a>
           <a href="ki.html">Künstliche Intelligenz</a>
-          <a href="managed-cloud.html" class="active">Managed Cloud Infrastructure</a>
+          <a href="managed-cloud.html">Managed Cloud Infrastructure</a>
           <div class="nav-dropdown-divider"></div>
-          <a href="implementierung-services.html">Implementierung &amp; Services</a>
+          <a href="implementierung-services.html" class="active">Implementierung &amp; Services</a>
         </div>
       </li>
       <li class="nav-has-dropdown">
@@ -491,7 +490,7 @@
       <a href="plattform.html" onclick="closeMenu()">Digitalisierungsplattform</a>
       <a href="ki.html" onclick="closeMenu()">Künstliche Intelligenz</a>
       <a href="managed-cloud.html" onclick="closeMenu()">Managed Cloud Infrastructure</a>
-      <a href="implementierung-services.html" onclick="closeMenu()">Implementierung &amp; Services</a>
+      <a href="implementierung-services.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Implementierung &amp; Services</a>
     </div>
   </div>
   <div class="mob-group">
@@ -510,11 +509,11 @@
     <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Branchen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
     <div class="mob-sub">
       <a href="kammern-verbaende.html" onclick="closeMenu()">Kammern &amp; Verbände</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Finanzen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Personaldienstleistungen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Gesundheitswesen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Medienbranche</a>
+      <a href="#" onclick="closeMenu()">Finanzen</a>
+      <a href="#" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
+      <a href="#" onclick="closeMenu()">Personaldienstleistungen</a>
+      <a href="#" onclick="closeMenu()">Gesundheitswesen</a>
+      <a href="#" onclick="closeMenu()">Medienbranche</a>
     </div>
   </div>
   <a href="index.html#referenzen" onclick="closeMenu()">Referenzen</a>
@@ -539,21 +538,20 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="solution-badge">
-      <span class="material-symbols-rounded" style="font-size:14px;">cloud</span>
-      Produkt
+      <span class="material-symbols-rounded" style="font-size:14px;">build</span>
+      Produkte &amp; Services
     </div>
-    <h1>Ihre Infrastruktur. <em>Vollständig verwaltet.</em></h1>
-    <p class="hero-sub">SITEFORUM betreibt Ihre gesamte Portal-Infrastruktur – sicher, stabil und ISO 27001-zertifiziert. Sie konzentrieren sich auf Ihr Kerngeschäft, wir kümmern uns um den Rest.</p>
+    <h1>Implementierung &amp; Services. <em>Ihr Projekt in besten Händen.</em></h1>
+    <p class="hero-sub">Software-Entwicklung und Implementierung ist unser Kerngeschäft – seit der Gründung von SITEFORUM im Jahr 1998. Wir kennen unsere Digitalisierungsplattform in- und auswendig und begleiten Sie vom ersten Gespräch bis weit über den Go-Live hinaus.</p>
     <div class="hero-actions">
-      <a href="#kontakt" class="btn-primary">Infrastruktur besprechen</a>
-      <a href="#leistungen" class="btn-secondary">Leistungsumfang ansehen</a>
+      <a href="#kontakt" class="btn-primary">Gespräch anfragen</a>
+      <a href="#prozess" class="btn-secondary">Unser Prozess</a>
     </div>
     <div class="hero-tags">
-      <span class="hero-tag"><span class="material-symbols-rounded">verified_user</span> ISO 27001 zertifiziert</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">lock</span> DSGVO-konform</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Deutsche Rechenzentren</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">schedule</span> 24/7 Betrieb</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">signal_cellular_alt</span> 99,9% Verfügbarkeit</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">history</span> Seit 1998</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">sprint</span> Agile Methodik (Scrum)</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">rocket_launch</span> Rapid Prototyping</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">support_agent</span> Langfristiger Support</span>
     </div>
   </div>
 </header>
@@ -566,265 +564,214 @@
       <span style="color:#cbd5e1;">›</span>
       <a href="index.html#produkte" style="color:var(--secondary); text-decoration:none;">Produkte &amp; Services</a>
       <span style="color:#cbd5e1;">›</span>
-      <span style="color:var(--slate-600);">Managed Cloud-Infrastruktur</span>
+      <span style="color:var(--slate-600);">Implementierung &amp; Services</span>
     </div>
   </div>
 </div>
 
 <!-- INTRO -->
-<section style="background:var(--white);">
-  <div class="section-inner">
-    <div class="ani-fade-in">
-      <p class="section-label">Was wir übernehmen</p>
-      <h2 class="section-title">Kein IT-Team nötig. <em>Kein Betriebsstress.</em></h2>
-      <p class="section-sub">Von der Serverüberwachung über Sicherheitsupdates bis hin zur Notfallwiederherstellung – SITEFORUM managt Ihre komplette Infrastruktur, damit Sie es nicht müssen.</p>
-    </div>
-    <div class="intro-grid">
-      <div class="intro-card ani-fade-in" data-delay="0">
-        <div class="intro-icon"><span class="material-symbols-rounded">monitor_heart</span></div>
-        <div>
-          <h4>24/7 Serverüberwachung</h4>
-          <p>Kontinuierliche Echtzeit-Überwachung aller Systeme. Unregelmäßigkeiten werden erkannt und behoben, bevor sie Ihren Betrieb beeinträchtigen.</p>
-        </div>
-      </div>
-      <div class="intro-card ani-fade-in" data-delay="100">
-        <div class="intro-icon"><span class="material-symbols-rounded">security</span></div>
-        <div>
-          <h4>Sicherheit &amp; Compliance</h4>
-          <p>ISO 27001-zertifiziert, DSGVO-konform, regelmäßige Sicherheitsaudits. Ihr Datenschutz liegt in den Händen erfahrener Systemingenieure.</p>
-        </div>
-      </div>
-      <div class="intro-card ani-fade-in" data-delay="200">
-        <div class="intro-icon"><span class="material-symbols-rounded">backup</span></div>
-        <div>
-          <h4>Backup &amp; Recovery</h4>
-          <p>Automatisierte tägliche Datensicherung mit geprüften Wiederherstellungsprozessen. Im Ernstfall sind Ihre Daten schnell und vollständig wiederhergestellt.</p>
-        </div>
-      </div>
-      <div class="intro-card ani-fade-in" data-delay="300">
-        <div class="intro-icon"><span class="material-symbols-rounded">speed</span></div>
-        <div>
-          <h4>Performance &amp; Skalierung</h4>
-          <p>Automatische Infrastruktur-Skalierung bei Lastspitzen. Ihre Lösung bleibt stabil – egal ob 100 oder 100.000 Nutzer gleichzeitig aktiv sind.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LEISTUNGSUMFANG -->
-<section id="leistungen" style="background:var(--slate-100);">
-  <div class="section-inner">
-    <div class="ani-fade-in">
-      <p class="section-label">Leistungsumfang</p>
-      <h2 class="section-title">Was Managed Cloud <em>konkret bedeutet</em></h2>
-      <p class="section-sub">Ein vollständiger Betriebsservice – von der Infrastruktur bis zur Reaktionszeit.</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">monitoring</span></div>
-        <h4>Proaktives Monitoring</h4>
-        <p>Echtzeit-Überwachung von CPU, Speicher, Netzwerk, Festplatten und Dienstverfügbarkeit – mit automatischer Alarmierung bei Anomalien.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">published_with_changes</span></div>
-        <h4>Patch &amp; Update Management</h4>
-        <p>Betriebssystem- und Sicherheitsupdates werden geplant, getestet und eingespielt – ohne ungeplante Ausfälle oder manuelle Eingriffe Ihrerseits.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">shield</span></div>
-        <h4>Firewall &amp; Netzwerksicherheit</h4>
-        <p>Mehrstufige Sicherheitsarchitektur mit Web Application Firewall, Intrusion Detection und Netzwerksegmentierung nach aktuellem Stand der Technik.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">encrypted</span></div>
-        <h4>Datenverschlüsselung</h4>
-        <p>Alle Daten werden sowohl at-rest als auch in-transit verschlüsselt – mit TLS 1.3 für Übertragungen und AES-256 für gespeicherte Daten.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">restore</span></div>
-        <h4>Notfallwiederherstellung</h4>
-        <p>Definierte Failover-Prozesse und Replikationskapazitäten sorgen dafür, dass Ihre Lösung im Ernstfall schnellstmöglich wieder verfügbar ist.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">support_agent</span></div>
-        <h4>SLA-gesicherter Support</h4>
-        <p>Definierte Reaktionszeiten, klare Eskalationsprozesse und ein dediziertes Team – Sie wissen immer, wer zuständig ist und wann reagiert wird.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
-        <h4>Zugriffskontrolle</h4>
-        <p>Rollenbasierte Zugriffsrechte und Zwei-Faktor-Authentifizierung für alle Administrationszugänge. Kein unbefugter Zugriff auf Ihre Systeme.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">analytics</span></div>
-        <h4>Kapazitätsplanung</h4>
-        <p>Regelmäßige Auswertung von Nutzungs- und Lastdaten – damit Engpässe erkannt und Kapazitäten rechtzeitig bereitgestellt werden, bevor Probleme entstehen.</p>
-      </div>
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">fact_check</span></div>
-        <h4>Compliance-Reporting</h4>
-        <p>Regelmäßige Berichte über Sicherheitsstatus, Verfügbarkeit und durchgeführte Maßnahmen – für Ihre internen Audits und Nachweispflichten.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SICHERHEIT & ZERTIFIZIERUNG -->
-<section style="background:var(--white);">
-  <div class="section-inner">
-    <div class="tech-layout">
-      <div>
-        <div class="ani-fade-in">
-          <p class="section-label">Infrastruktur</p>
-          <h2 class="section-title">Sicherheit ohne <em>Kompromisse</em></h2>
-          <p class="section-sub" style="margin-bottom:40px;">Unsere Infrastruktur erfüllt die höchsten Anforderungen an Datenschutz, Verfügbarkeit und Compliance – zertifiziert und nachweisbar.</p>
-        </div>
-        <div class="benefits-list">
-          <div class="benefit-item ani-fade-in">
-            <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
-            <div>
-              <h4>Ausschließlich deutsche Rechenzentren</h4>
-              <p>Hosting in zertifizierten Rechenzentren in Deutschland – keine Daten verlassen den EU-Rechtsraum. Auf Wunsch auch als Private Cloud auf dedizierter Infrastruktur.</p>
-            </div>
-          </div>
-          <div class="benefit-item ani-fade-in">
-            <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
-            <div>
-              <h4>ISO/IEC 27001 zertifiziert</h4>
-              <p>Unser Informationssicherheits-Managementsystem ist nach DIN ISO/IEC 27001 zertifiziert – der international anerkannte Standard für Informationssicherheit.</p>
-            </div>
-          </div>
-          <div class="benefit-item ani-fade-in">
-            <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
-            <div>
-              <h4>Private Cloud Option</h4>
-              <p>Für erhöhte Anforderungen betreiben wir Ihre Lösung auf dedizierter Hardware in einem isolierten Netzwerk – ohne geteilte Ressourcen mit anderen Kunden.</p>
-            </div>
-          </div>
-          <div class="benefit-item ani-fade-in">
-            <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
-            <div>
-              <h4>Regelmäßige Penetrationstests</h4>
-              <p>Unsere Systeme werden regelmäßig durch externe Sicherheitsexperten auf Schwachstellen geprüft – damit potenzielle Angriffsvektoren frühzeitig geschlossen werden.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tech-visual">
-        <div class="tech-visual-label">Zertifizierungen &amp; Standards</div>
-        <div class="tech-cert-grid">
-          <div class="tech-cert-box ani-fade-in">
-            <div class="tech-cert-icon"><span class="material-symbols-rounded">verified_user</span></div>
-            <div class="tech-cert-title">ISO 27001</div>
-            <div class="tech-cert-desc">Zertifiziertes Informationssicherheits-Managementsystem</div>
-          </div>
-          <div class="tech-cert-box ani-fade-in">
-            <div class="tech-cert-icon"><span class="material-symbols-rounded">gavel</span></div>
-            <div class="tech-cert-title">DSGVO-konform</div>
-            <div class="tech-cert-desc">Vollständige EU-DSGVO-Konformität, Hosting in Deutschland</div>
-          </div>
-          <div class="tech-cert-box ani-fade-in">
-            <div class="tech-cert-icon"><span class="material-symbols-rounded">cloud_done</span></div>
-            <div class="tech-cert-title">99,9% Uptime</div>
-            <div class="tech-cert-desc">
-              Garantierte Verfügbarkeit mit SLA
-              <div class="uptime-bar-wrap" style="margin-top:8px;"><div class="uptime-bar"></div></div>
-            </div>
-          </div>
-          <div class="tech-cert-box ani-fade-in">
-            <div class="tech-cert-icon"><span class="material-symbols-rounded">location_city</span></div>
-            <div class="tech-cert-title">Made in Germany</div>
-            <div class="tech-cert-desc">Rechenzentren in Erfurt und Frankfurt am Main</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WARUM SITEFORUM MANAGED CLOUD -->
 <section style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Warum Managed Cloud</p>
-      <h2 class="section-title">Die richtige Wahl für Ihre <em>Anforderungen</em></h2>
-      <p class="section-sub">Verglichen mit Eigenentwicklung oder generischen Cloud-Diensten bietet SITEFORUM Managed Cloud das beste Verhältnis aus Sicherheit, Kontrolle und Aufwand.</p>
+      <p class="section-label">Warum SITEFORUM</p>
+      <h2 class="section-title">Erfahrung, die sich in <em>jedem Projekt zeigt</em></h2>
+      <p class="section-sub">Wir haben hunderte Digitalisierungsprojekte in unterschiedlichsten Branchen umgesetzt – und wissen genau, worauf es ankommt, damit Ihr Projekt erfolgreich wird.</p>
     </div>
-    <div class="compare-grid">
-      <div class="compare-card ani-fade-in">
-        <span class="compare-vs">Alternative</span>
-        <h4>Eigenbetrieb</h4>
-        <p>Sie betreiben und warten die Infrastruktur selbst – mit eigenem IT-Team, eigenen Tools und eigener Verantwortung.</p>
-        <div class="compare-list">
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            Hohe Personalkosten für Betrieb und Bereitschaft
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            Eigene Verantwortung für Sicherheit und Compliance
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            Ungeplante Ausfälle und Notfälle selbst lösen
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            Zertifizierungen eigenständig aufbauen und erhalten
-          </div>
+    <div class="intro-grid">
+      <div class="intro-card ani-fade-in" data-delay="0">
+        <div class="intro-icon"><span class="material-symbols-rounded">groups</span></div>
+        <div>
+          <h4>Erfahrenes Team</h4>
+          <p>Unser interdisziplinäres Team aus Entwicklern, Konzeptern und Projektmanagern hat zahlreiche geschäftskritische Digitalisierungsprojekte weltweit erfolgreich umgesetzt.</p>
         </div>
       </div>
-      <div class="compare-card featured ani-fade-in" data-delay="100">
-        <span class="compare-vs">SITEFORUM</span>
-        <h4>Managed Cloud-Infrastruktur</h4>
-        <p>Wir übernehmen den vollständigen Betrieb – zuverlässig, zertifiziert und mit klaren SLAs.</p>
-        <div class="compare-list">
-          <div class="compare-list-item">
-            <div class="compare-check"><span class="material-symbols-rounded">check</span></div>
-            Kein eigenes IT-Infrastruktur-Team nötig
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-check"><span class="material-symbols-rounded">check</span></div>
-            ISO 27001-zertifiziert, DSGVO-konform
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-check"><span class="material-symbols-rounded">check</span></div>
-            24/7 Monitoring und SLA-gesicherte Reaktionszeiten
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-check"><span class="material-symbols-rounded">check</span></div>
-            Deutsche Rechenzentren, Private Cloud möglich
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-check"><span class="material-symbols-rounded">check</span></div>
-            Persönlicher Ansprechpartner, kein Ticket-System-Chaos
-          </div>
+      <div class="intro-card ani-fade-in" data-delay="100">
+        <div class="intro-icon"><span class="material-symbols-rounded">sprint</span></div>
+        <div>
+          <h4>Agile Projektmethodik</h4>
+          <p>Scrum-basierte Implementierung mit festen Sprints, kontinuierlichem Kundenfeedback und transparenter Fortschrittsverfolgung – damit Sie immer wissen, wo Ihr Projekt steht.</p>
         </div>
       </div>
-      <div class="compare-card ani-fade-in" data-delay="200">
-        <span class="compare-vs">Alternative</span>
-        <h4>Generische Cloud-Anbieter</h4>
-        <p>Hyperscaler wie AWS oder Azure bieten skalierbare Infrastruktur, erfordern aber erhebliches Know-how und eigene Konfigurationsarbeit.</p>
-        <div class="compare-list">
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            US-Anbieter, Datenschutzrisiken durch Cloud Act
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            Hoher Konfigurationsaufwand, kein Managed Service
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            Kein persönlicher Ansprechpartner, Support via Ticket
-          </div>
-          <div class="compare-list-item">
-            <div class="compare-cross"><span class="material-symbols-rounded">close</span></div>
-            Schwer kalkulierbare, nutzungsabhängige Kosten
-          </div>
+      <div class="intro-card ani-fade-in" data-delay="200">
+        <div class="intro-icon"><span class="material-symbols-rounded">handshake</span></div>
+        <div>
+          <h4>Langfristige Partnerschaft</h4>
+          <p>Wir denken nicht in Projekten, sondern in Partnerschaften. Nach dem Go-Live begleiten wir Sie mit Updates, Weiterentwicklung und persönlichem Ansprechpartner auf lange Sicht.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="prozess" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Unsere Methode</p>
+      <h2 class="section-title">So setzen wir Ihr <em>Digitalisierungsprojekt um</em></h2>
+      <p class="section-sub">Dieser strukturierte Prozess ist es, den unsere Kunden besonders schätzen: transparent, iterativ und auf schnelle erste Ergebnisse ausgerichtet – von der ersten Idee bis weit nach dem Go-Live.</p>
+    </div>
+    <div class="process-grid ani-fade-in">
+
+      <div class="process-card">
+        <div class="process-num">1</div>
+        <div class="process-phase">Woche 1</div>
+        <div class="process-icon"><span class="material-symbols-rounded">forum</span></div>
+        <h4>Erstgespräch</h4>
+        <p>In einem ersten Gespräch – bei Ihnen, bei uns oder in einer Web-Konferenz – schildern Sie uns Ihre Ausgangssituation und Ihre Ziele. Wir hören zu, stellen die richtigen Fragen und schaffen gemeinsam Klarheit über den Weg nach vorne.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-num">2</div>
+        <div class="process-phase">Woche 2</div>
+        <div class="process-icon"><span class="material-symbols-rounded">search</span></div>
+        <h4>Bestandsaufnahme</h4>
+        <p>Unser Team analysiert Ihre bestehenden Abläufe, Systeme und Daten. Wir verstehen, was bereits funktioniert, wo Optimierungspotenzial liegt – und worauf das neue System aufbauen kann.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-num">3</div>
+        <div class="process-phase">Woche 2</div>
+        <div class="process-icon"><span class="material-symbols-rounded">flag</span></div>
+        <h4>Ziele definieren</h4>
+        <p>Gemeinsam mit Ihnen entwickeln wir konkrete Ziele, aus denen sich Anforderungen, nächste Schritte und Meilensteine ableiten. Dabei bleiben wir flexibel: Wenn sich Prioritäten ändern, passen wir uns an.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-num">4</div>
+        <div class="process-phase">Woche 3</div>
+        <div class="process-icon"><span class="material-symbols-rounded">draw</span></div>
+        <h4>Prototyp</h4>
+        <p>Rapid Prototyping steht bei SITEFORUM an erster Stelle: Sie können das Produkt anfassen und ausprobieren, bevor es fertig gebaut wird. So vermeiden wir Missverständnisse und liefern genau das, was Sie sich vorstellen.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-num">5</div>
+        <div class="process-phase">Erster Meilenstein</div>
+        <div class="process-icon"><span class="material-symbols-rounded">rocket_launch</span></div>
+        <h4>Go-Live</h4>
+        <p>Wir gehen mit dem ersten Meilenstein live, damit Sie als Organisation erste Erfolge feiern können. Qualität geht dabei vor Geschwindigkeit – aber wir wissen, dass Time-to-Market zählt.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-num">6</div>
+        <div class="process-phase">Dauerhaft</div>
+        <div class="process-icon"><span class="material-symbols-rounded">autorenew</span></div>
+        <h4>Weiterentwicklung</h4>
+        <p>Der Go-Live ist kein Abschluss, sondern ein Anfang. Wir entwickeln gemeinsam eine langfristige digitale Strategie – typischerweise über Fünfjahreshorizonte – und setzen sie Schritt für Schritt um.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background:var(--slate-100);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Unser Leistungsumfang</p>
+      <h2 class="section-title">Alles aus <em>einer Hand</em></h2>
+      <p class="section-sub">Von der strategischen Konzeption bis zum laufenden Betrieb – SITEFORUM begleitet Sie durch alle Phasen Ihres Digitalisierungsprojekts.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card ani-fade-in" data-delay="0">
+        <div class="feature-icon"><span class="material-symbols-rounded">lightbulb</span></div>
+        <h4>Design Thinking</h4>
+        <p>Kollaborative Anforderungserhebung mit Rapid Prototyping – wir entwickeln Lösungen gemeinsam mit Ihnen, nicht für Sie. So entstehen Produkte, die wirklich genutzt werden.</p>
+      </div>
+      <div class="feature-card ani-fade-in" data-delay="60">
+        <div class="feature-icon"><span class="material-symbols-rounded">business_center</span></div>
+        <h4>Business Model Design</h4>
+        <p>Nutzer- und Kundenbedürfnisse in tragfähige digitale Geschäftsmodelle überführen – von der ersten Idee über den Businessplan bis zur technischen Umsetzung.</p>
+      </div>
+      <div class="feature-card ani-fade-in" data-delay="120">
+        <div class="feature-icon"><span class="material-symbols-rounded">task_alt</span></div>
+        <h4>Projektmanagement</h4>
+        <p>Agile Implementierung nach dem Scrum-Framework mit festen Sprints, kontinuierlichem Feedback und transparenter Dokumentation. Ihr Projekt bleibt jederzeit nachvollziehbar.</p>
+      </div>
+      <div class="feature-card ani-fade-in" data-delay="0">
+        <div class="feature-icon"><span class="material-symbols-rounded">rocket_launch</span></div>
+        <h4>Minimum Viable Product</h4>
+        <p>Schnelle Bereitstellung eines funktionsfähigen Minimalprodukts mit iterativer Erweiterung. So erzielen Sie messbare erste Ergebnisse, ohne auf das fertige Gesamtprodukt warten zu müssen.</p>
+      </div>
+      <div class="feature-card ani-fade-in" data-delay="60">
+        <div class="feature-icon"><span class="material-symbols-rounded">system_update</span></div>
+        <h4>Updates &amp; Releases</h4>
+        <p>Regelmäßige Sicherheitspatches, Bugfixes und funktionale Erweiterungen – mehrmals jährlich, ohne Downtime für Ihre Nutzer. Ihr System bleibt immer auf dem neuesten Stand.</p>
+      </div>
+      <div class="feature-card ani-fade-in" data-delay="120">
+        <div class="feature-icon"><span class="material-symbols-rounded">support_agent</span></div>
+        <h4>Support &amp; Schulungen</h4>
+        <p>Persönlicher Ansprechpartner, schnelle Problemlösung und regelmäßige Schulungen für Ihr Team. Wir sorgen dafür, dass Sie Ihre Plattform optimal einsetzen können.</p>
+      </div>
+    </div>
+
+    <div class="prototype-teaser ani-fade-in">
+      <div class="prototype-teaser-icon"><span class="material-symbols-rounded">draw</span></div>
+      <div class="prototype-teaser-body">
+        <h4>Kostenloser digitaler Prototyp</h4>
+        <p>Sobald wir Ihre Ausgangssituation verstehen, erstellen wir Ihnen einen kostenlosen, unverbindlichen Prototyp – damit Sie das Ergebnis sehen können, bevor Sie eine Entscheidung treffen.</p>
+      </div>
+      <a href="kontakt.html" class="prototype-teaser-cta">Prototyp anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Referenzen</p>
+      <h2 class="section-title">Projekte, die <em>für sich sprechen</em></h2>
+      <p class="section-sub">Unsere Methode zeigt Wirkung – in Projekten unterschiedlichster Größe und Branche.</p>
+    </div>
+    <div class="stories-grid">
+
+      <a href="#" class="story-card ani-fade-in">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/pharmacy/800/440" alt="LAK Baden-Württemberg" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_lak-bw.jpg" alt="LAK BW" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Digitales Mitgliederportal für 13.500 Apothekerinnen und Apotheker</h3>
+          <div class="story-result">
+            <div class="story-result-value">7 Mo.</div>
+            <div class="story-result-label">von Kick-off bis Go-live des neuen Portals „Meine LAK"</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
+      <a href="#" class="story-card ani-fade-in" data-delay="80">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/running/800/440" alt="RUN Thüringer Unternehmenslauf" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_TU_Lauf.jpg" alt="TU Lauf" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Teilnehmer-Management für mehr als 10.000 Läufer</h3>
+          <div class="story-result">
+            <div class="story-result-value">10k+</div>
+            <div class="story-result-label">Teilnehmer vollständig digital verwaltet – vom Ticket bis zur Ergebnisliste</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
+      <a href="#" class="story-card ani-fade-in" data-delay="160">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/retirement/800/440" alt="VBL" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_VBL.jpg" alt="VBL" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Versorgungsportal für 4,4 Millionen Versicherte</h3>
+          <div class="story-result">
+            <div class="story-result-value">4,4 Mio</div>
+            <div class="story-result-label">Nutzer verwalten ihre Vorsorge vollständig digital</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -834,8 +781,8 @@
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Jetzt starten</p>
-      <h2 class="section-title">Bereit für <em>sorgloseren Betrieb?</em></h2>
-      <p class="section-sub">Lassen Sie uns gemeinsam herausfinden, welche Infrastruktur-Lösung zu Ihrer Organisation passt – kostenlos und unverbindlich.</p>
+      <h2 class="section-title">Bereit für Ihr <em>nächstes Digitalisierungsprojekt?</em></h2>
+      <p class="section-sub">Lassen Sie uns in einem unverbindlichen Erstgespräch herausfinden, wie wir Ihr Projekt gemeinsam zum Erfolg führen können.</p>
     </div>
     <div class="cta-contact-block">
       <div class="cta-contact-label-top">Ihr Ansprechpartner</div>
@@ -856,7 +803,7 @@
       </div>
     </div>
     <div class="cta-actions">
-      <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--white);color:var(--primary);">Infrastruktur besprechen</a>
+      <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--white);color:var(--primary);">Gespräch anfragen</a>
       <a href="tel:+493616661510" class="btn-secondary" style="background:transparent;color:var(--white);border-color:rgba(255,255,255,0.3);">+49 361 6661 5810</a>
     </div>
   </div>
@@ -876,9 +823,17 @@
           <li><a href="plattform.html">Digitalisierungsplattform</a></li>
           <li><a href="ki.html">Künstliche Intelligenz</a></li>
           <li><a href="managed-cloud.html">Managed Cloud</a></li>
-          <li><a href="#">Kundenportale</a></li>
+          <li><a href="implementierung-services.html">Implementierung &amp; Services</a></li>
           <li><a href="mitgliederportale.html">Mitgliederportale</a></li>
-          <li><a href="#">Factoringportale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branchen</h4>
+        <ul>
+          <li><a href="kammern-verbaende.html">Kammern &amp; Verbände</a></li>
+          <li><a href="#">Finanzen</a></li>
+          <li><a href="#">Gesundheitswesen</a></li>
+          <li><a href="#">Medienbranche</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -890,19 +845,10 @@
           <li><a href="#">Karriere</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Kontakt</h4>
-        <ul>
-          <li><a href="mailto:info@siteforum.com">info@siteforum.com</a></li>
-          <li><a href="tel:+493616661510">+49 361 6661 5810</a></li>
-          <li><a href="#">Straße des Friedens 15a</a></li>
-          <li><a href="#">99094 Erfurt</a></li>
-        </ul>
-      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
-      <div style="display:flex;gap:24px;">
+      <div style="display:flex; gap:24px;">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
         <a href="#">AGB</a>
@@ -912,18 +858,18 @@
 </footer>
 
 <script>
-(function() {
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (!entry.isIntersecting) return;
-      var delay = parseInt(entry.target.dataset.delay || 0, 10);
-      var el = entry.target;
-      setTimeout(function() { el.classList.add('visible'); }, delay);
-      io.unobserve(entry.target);
+  const fadeEls = document.querySelectorAll('.ani-fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), Number(delay));
+        observer.unobserve(entry.target);
+      }
     });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.ani-fade-in').forEach(function(el) { io.observe(el); });
-})();
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
