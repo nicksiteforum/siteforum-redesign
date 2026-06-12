@@ -265,15 +265,13 @@
     .usecase-tile p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.65; }
     .usecase-tile ul { display: flex; flex-direction: column; gap: 10px; list-style: none; }
     .usecase-tile li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; color: var(--slate-600); line-height: 1.5; }
-    .usecase-tile li::before {
-      content: ''; width: 18px; height: 18px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    .usecase-check-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px; font-size: 14px !important;
     }
-    .spnv li::before { background: var(--blue-100); }
-    .gueter li::before { background: #bbf7d0; }
-    .usecase-check-icon { font-size: 11px; flex-shrink: 0; margin-top: 3px; }
-    .spnv .usecase-check-icon { color: var(--secondary); }
-    .gueter .usecase-check-icon { color: #15803d; }
+    .spnv .usecase-check-icon { background: var(--blue-100); color: var(--secondary); }
+    .gueter .usecase-check-icon { background: #bbf7d0; color: #15803d; }
 
     /* ─── SUCCESS STORIES ───────────────────────────────────── */
     .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -447,10 +445,10 @@
           <a href="mitgliederportale.html">Mitgliederportale</a>
           <a href="kundenportale.html">Kundenportale</a>
           <a href="mitarbeiterportale.html">Mitarbeiterportale</a>
+          <a href="informationsmanagement.html" class="active">Informationsmanagement</a>
           <a href="#">Intranet</a>
           <a href="#">Community</a>
           <a href="#">Corporate Websites</a>
-          <a href="informationsmanagement.html" class="active">Informationsmanagement</a>
         </div>
       </li>
       <li class="nav-has-dropdown">
@@ -495,10 +493,10 @@
       <a href="mitgliederportale.html" onclick="closeMenu()">Mitgliederportale</a>
       <a href="kundenportale.html" onclick="closeMenu()">Kundenportale</a>
       <a href="mitarbeiterportale.html" onclick="closeMenu()">Mitarbeiterportale</a>
+      <a href="informationsmanagement.html" onclick="closeMenu()">Informationsmanagement</a>
       <a href="#" onclick="closeMenu()">Intranet</a>
       <a href="#" onclick="closeMenu()">Community</a>
       <a href="#" onclick="closeMenu()">Corporate Websites</a>
-      <a href="informationsmanagement.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Informationsmanagement</a>
     </div>
   </div>
   <div class="mob-group">
