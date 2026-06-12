@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Künstliche Intelligenz – SITEFORUM</title>
+  <title>Informationsmanagement – SITEFORUM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -98,8 +98,7 @@
       padding: 11px 22px; border-radius: 999px;
       font-size: 0.9rem; font-weight: 600; text-decoration: none;
       transition: background 0.2s, transform 0.15s;
-      display: inline-flex; align-items: center; gap: 8px;
-      white-space: nowrap; flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 6px;
     }
     .nav-cta::after { content: "→"; }
     .nav-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
@@ -132,7 +131,7 @@
     .hero h1 em { font-style: normal; color: #93c5fd; }
     .hero-sub {
       font-size: 1.1rem; color: rgba(255,255,255,0.7);
-      max-width: 600px; margin: 0 0 40px; font-weight: 400; line-height: 1.65;
+      max-width: 620px; margin: 0 0 40px; font-weight: 400; line-height: 1.65;
     }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
     .btn-primary {
@@ -195,151 +194,114 @@
     .intro-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .intro-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
 
-    /* ─── USE CASE BLOCK ────────────────────────────────────── */
-    .usecase-layout {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    /* ─── CHALLENGES ────────────────────────────────────────── */
+    .challenge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .challenge-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 28px 24px; background: var(--white);
+      border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
     }
-    .usecase-layout.reverse { direction: rtl; }
-    .usecase-layout.reverse > * { direction: ltr; }
-    .usecase-content { display: flex; flex-direction: column; gap: 24px; }
-    .usecase-label {
+    .challenge-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: #fff7ed; display: flex; align-items: center;
+      justify-content: center; color: #ea580c; flex-shrink: 0;
+    }
+    .challenge-icon .material-symbols-rounded { font-size: 22px; }
+    .challenge-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .challenge-card p { font-size: 0.87rem; color: var(--slate-600); line-height: 1.6; }
+
+    /* ─── CHANNEL GRID ──────────────────────────────────────── */
+    .channel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .channel-card {
+      padding: 28px 20px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+      background: var(--white); display: flex; flex-direction: column;
+      align-items: flex-start; gap: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .channel-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,51,102,0.07); }
+    .channel-icon {
+      width: 48px; height: 48px; border-radius: var(--radius-sm);
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; color: var(--secondary); flex-shrink: 0;
+    }
+    .channel-icon .material-symbols-rounded { font-size: 24px; }
+    .channel-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
+    .channel-card p { font-size: 0.83rem; color: var(--slate-600); line-height: 1.55; }
+
+    /* ─── MODULE GRID ───────────────────────────────────────── */
+    .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .module-card {
+      padding: 24px 20px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+      background: var(--white); display: flex; flex-direction: column; gap: 12px;
+    }
+    .module-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; color: var(--secondary); flex-shrink: 0;
+    }
+    .module-icon .material-symbols-rounded { font-size: 22px; }
+    .module-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
+    .module-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
+
+    /* ─── USE-CASE SPLIT ────────────────────────────────────── */
+    .usecase-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    }
+    .usecase-tile {
+      border-radius: var(--radius-md); padding: 40px 36px;
+      border: 1.5px solid #e5e7eb; display: flex; flex-direction: column; gap: 20px;
+    }
+    .usecase-tile.spnv { background: var(--blue-50); border-color: var(--blue-100); }
+    .usecase-tile.gueter { background: #f0fdf4; border-color: #bbf7d0; }
+    .usecase-tile-badge {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--secondary);
+      text-transform: uppercase; padding: 5px 14px; border-radius: 999px;
+      width: fit-content;
     }
-    .usecase-title {
-      font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800;
-      letter-spacing: -0.5px; line-height: 1.2; color: var(--navy);
+    .spnv .usecase-tile-badge { background: var(--blue-100); color: var(--secondary); }
+    .gueter .usecase-tile-badge { background: #bbf7d0; color: #15803d; }
+    .usecase-tile h3 { font-size: 1.25rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
+    .usecase-tile p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.65; }
+    .usecase-tile ul { display: flex; flex-direction: column; gap: 10px; list-style: none; }
+    .usecase-tile li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; color: var(--slate-600); line-height: 1.5; }
+    .usecase-tile li::before {
+      content: ''; width: 18px; height: 18px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
     }
-    .usecase-title em { font-style: normal; color: var(--secondary); }
-    .usecase-text { font-size: 0.95rem; color: var(--slate-600); line-height: 1.7; }
-    .usecase-list { display: flex; flex-direction: column; gap: 12px; }
-    .usecase-list-item { display: flex; gap: 12px; align-items: flex-start; }
-    .usecase-check {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary); flex-shrink: 0; margin-top: 1px;
-    }
-    .usecase-check .material-symbols-rounded { font-size: 14px; }
-    .usecase-list-item p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.55; }
-    .usecase-list-item strong { color: var(--navy); }
+    .spnv li::before { background: var(--blue-100); }
+    .gueter li::before { background: #bbf7d0; }
+    .usecase-check-icon { font-size: 11px; flex-shrink: 0; margin-top: 3px; }
+    .spnv .usecase-check-icon { color: var(--secondary); }
+    .gueter .usecase-check-icon { color: #15803d; }
 
-    /* ─── VISUAL CARD (chat mockup) ─────────────────────────── */
-    .chat-mockup {
-      background: var(--white); border-radius: 20px;
-      box-shadow: 0 24px 64px rgba(0,51,102,0.12), 0 4px 16px rgba(0,0,0,0.06);
-      border: 1px solid #e5e7eb; overflow: hidden;
+    /* ─── SUCCESS STORIES ───────────────────────────────────── */
+    .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .story-card {
+      background: var(--white); border-radius: var(--radius-md);
+      overflow: hidden; border: 1.5px solid #e5e7eb;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      text-decoration: none; display: block; color: inherit;
     }
-    .chat-topbar {
-      background: #f8fafc; border-bottom: 1px solid #e5e7eb;
-      padding: 14px 20px; display: flex; align-items: center; gap: 12px;
+    .story-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--blue-200); }
+    .story-img-wrap { position: relative; height: 180px; overflow: hidden; background: var(--blue-50); }
+    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .story-customer-badge {
+      position: absolute; bottom: 14px; left: 14px;
+      width: 64px; height: 64px; border-radius: 10px; border: 1.5px solid #e5e7eb;
+      background: #fff; overflow: hidden;
     }
-    .chat-avatar {
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--blue-600); display: flex; align-items: center;
-      justify-content: center; flex-shrink: 0;
+    .story-customer-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .story-body { padding: 24px 24px 28px; }
+    .story-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
+    .story-result {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--blue-50); border-radius: 10px; padding: 12px 16px; margin-bottom: 20px;
     }
-    .chat-avatar .material-symbols-rounded { font-size: 18px; color: #fff; }
-    .chat-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
-    .chat-subtitle { font-size: 0.72rem; color: #94a3b8; }
-    .chat-status { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-left: auto; }
-    .chat-body { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
-    .chat-bubble {
-      max-width: 82%; padding: 10px 14px; border-radius: 14px;
-      font-size: 0.82rem; line-height: 1.5;
-    }
-    .chat-bubble.user {
-      background: var(--blue-600); color: #fff;
-      border-radius: 14px 14px 4px 14px; align-self: flex-end;
-    }
-    .chat-bubble.bot {
-      background: #f1f5f9; color: var(--navy);
-      border-radius: 14px 14px 14px 4px; align-self: flex-start;
-    }
-    .chat-bubble.bot strong { color: var(--secondary); }
-    .chat-source {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 0.68rem; color: #94a3b8; margin-top: 6px;
-    }
-    .chat-source .material-symbols-rounded { font-size: 12px; }
-    .chat-typing {
-      display: flex; gap: 4px; align-items: center;
-      background: #f1f5f9; padding: 10px 14px; border-radius: 14px 14px 14px 4px;
-      align-self: flex-start; width: fit-content;
-    }
-    .chat-dot {
-      width: 6px; height: 6px; border-radius: 50%; background: #94a3b8;
-      animation: chatDot 1.2s ease-in-out infinite;
-    }
-    .chat-dot:nth-child(2) { animation-delay: 0.2s; }
-    .chat-dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes chatDot { 0%,80%,100% { opacity: 0.3; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1); } }
-
-    /* ─── VISUAL CARD (invoice mockup) ─────────────────────── */
-    .invoice-mockup {
-      background: var(--white); border-radius: 20px;
-      box-shadow: 0 24px 64px rgba(0,51,102,0.12), 0 4px 16px rgba(0,0,0,0.06);
-      border: 1px solid #e5e7eb; overflow: hidden;
-    }
-    .invoice-topbar {
-      background: #f8fafc; border-bottom: 1px solid #e5e7eb;
-      padding: 14px 20px; display: flex; align-items: center; gap: 10px;
-    }
-    .invoice-topbar-icon { color: var(--secondary); }
-    .invoice-topbar-icon .material-symbols-rounded { font-size: 20px; }
-    .invoice-topbar-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
-    .invoice-topbar-sub { font-size: 0.72rem; color: #94a3b8; }
-    .invoice-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
-    .invoice-file {
-      display: flex; align-items: center; gap: 12px;
-      background: #f8fafc; border: 1px solid #e5e7eb;
-      border-radius: 10px; padding: 12px 14px;
-    }
-    .invoice-file-icon { color: var(--secondary); }
-    .invoice-file-icon .material-symbols-rounded { font-size: 22px; }
-    .invoice-file-name { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
-    .invoice-file-size { font-size: 0.7rem; color: #94a3b8; }
-    .invoice-progress {
-      background: #e5e7eb; border-radius: 4px; height: 4px; overflow: hidden; margin-top: 4px;
-    }
-    .invoice-progress-bar {
-      height: 100%; background: var(--secondary); border-radius: 4px;
-      animation: progressFill 2s ease-out infinite alternate;
-    }
-    @keyframes progressFill { from { width: 40%; } to { width: 92%; } }
-    .invoice-results { display: flex; flex-direction: column; gap: 8px; }
-    .invoice-result-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 8px 12px; background: #f8fafc; border-radius: 8px;
-      border: 1px solid #e5e7eb;
-    }
-    .invoice-result-label { font-size: 0.78rem; color: var(--slate-600); }
-    .invoice-result-value { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
-    .invoice-result-value.ok { color: #15803d; }
-    .invoice-result-value.warn { color: #d97706; }
-    .invoice-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 999px;
-    }
-    .invoice-badge.green { background: #dcfce7; color: #15803d; }
-    .invoice-badge.orange { background: #fef3c7; color: #d97706; }
-
-    /* ─── HOW WE WORK ───────────────────────────────────────── */
-    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
-    .how-grid::before {
-      content: ''; position: absolute; top: 28px; left: calc(12.5%); right: calc(12.5%);
-      height: 2px; background: var(--blue-100); z-index: 0;
-    }
-    .how-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; z-index: 1; }
-    .how-step-num {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--blue-600); color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; font-weight: 800; margin-bottom: 20px;
-      box-shadow: 0 0 0 6px var(--white);
-    }
-    .how-step h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .how-step p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
+    .story-result-value { font-size: 1.5rem; font-weight: 800; color: var(--secondary); line-height: 1; white-space: nowrap; flex-shrink: 0; }
+    .story-result-label { font-size: 0.82rem; color: var(--slate-600); line-height: 1.4; }
+    .story-link { font-size: 0.88rem; font-weight: 600; color: var(--blue-600); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .story-link::after { content: "→"; }
 
     /* ─── CTA BANNER ────────────────────────────────────────── */
     .cta-banner {
@@ -437,11 +399,12 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .nav-cta { display: none; }
-      .usecase-layout { grid-template-columns: 1fr; gap: 40px; }
-      .usecase-layout.reverse { direction: ltr; }
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
-      .how-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-      .how-grid::before { display: none; }
+      .challenge-grid { grid-template-columns: 1fr; }
+      .module-grid { grid-template-columns: repeat(2, 1fr); }
+      .channel-grid { grid-template-columns: repeat(2, 1fr); }
+      .stories-grid { grid-template-columns: repeat(2, 1fr); }
+      .usecase-split { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       h1, h2, h3, h4 { hyphens: auto; }
@@ -450,8 +413,11 @@
       section { padding: 64px 20px; }
       .hero { padding: 120px 20px 80px; }
       .intro-grid { grid-template-columns: 1fr; }
-      .how-grid { grid-template-columns: 1fr; }
+      .module-grid { grid-template-columns: 1fr; }
+      .channel-grid { grid-template-columns: 1fr; }
+      .stories-grid { grid-template-columns: 1fr; }
       .cta-banner { margin: 0 16px; }
+      .cta-banner .section-inner { padding: 60px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
     }
   </style>
@@ -466,17 +432,17 @@
     </a>
     <ul class="nav-links">
       <li class="nav-has-dropdown">
-        <a href="index.html#produkte" class="active">Produkte &amp; Services <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#produkte">Produkte &amp; Services <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
           <a href="plattform.html">Digitalisierungsplattform</a>
-          <a href="ki.html" class="active">Künstliche Intelligenz</a>
+          <a href="ki.html">Künstliche Intelligenz</a>
           <a href="managed-cloud.html">Managed Cloud Infrastructure</a>
           <div class="nav-dropdown-divider"></div>
           <a href="implementierung-services.html">Implementierung &amp; Services</a>
         </div>
       </li>
       <li class="nav-has-dropdown">
-        <a href="index.html#loesungen">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#loesungen" class="active">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
           <a href="mitgliederportale.html">Mitgliederportale</a>
           <a href="kundenportale.html">Kundenportale</a>
@@ -484,7 +450,7 @@
           <a href="#">Intranet</a>
           <a href="#">Community</a>
           <a href="#">Corporate Websites</a>
-          <a href="informationsmanagement.html">Informationsmanagement</a>
+          <a href="informationsmanagement.html" class="active">Informationsmanagement</a>
         </div>
       </li>
       <li class="nav-has-dropdown">
@@ -532,18 +498,18 @@
       <a href="#" onclick="closeMenu()">Intranet</a>
       <a href="#" onclick="closeMenu()">Community</a>
       <a href="#" onclick="closeMenu()">Corporate Websites</a>
-      <a href="informationsmanagement.html" onclick="closeMenu()">Informationsmanagement</a>
+      <a href="informationsmanagement.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Informationsmanagement</a>
     </div>
   </div>
   <div class="mob-group">
     <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Branchen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
     <div class="mob-sub">
       <a href="kammern-verbaende.html" onclick="closeMenu()">Kammern &amp; Verbände</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Finanzen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Personaldienstleistungen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Gesundheitswesen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Medienbranche</a>
+      <a href="finanzen.html" onclick="closeMenu()">Finanzen</a>
+      <a href="#" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
+      <a href="#" onclick="closeMenu()">Personaldienstleistungen</a>
+      <a href="#" onclick="closeMenu()">Gesundheitswesen</a>
+      <a href="#" onclick="closeMenu()">Medienbranche</a>
     </div>
   </div>
   <a href="index.html#referenzen" onclick="closeMenu()">Referenzen</a>
@@ -568,20 +534,20 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="solution-badge">
-      <span class="material-symbols-rounded" style="font-size:14px;">auto_awesome</span>
-      Produkt
+      <span class="material-symbols-rounded" style="font-size:14px;">bolt</span>
+      Lösung
     </div>
-    <h1>Künstliche Intelligenz. <em>Eingebettet in Ihr Portal.</em></h1>
-    <p class="hero-sub">SITEFORUM ist bereit für KI – als fester Bestandteil Ihres Portals, nicht als Insellösung. Chatbots, Dokumentenanalyse und automatisierte Prozesse, die wirklich zu Ihrer Organisation passen.</p>
+    <h1>Informationsmanagement. <em>Jedes Ereignis. Überall. In Echtzeit.</em></h1>
+    <p class="hero-sub">Betriebsstörungen, Verspätungen, Umleitungen – unsere Lagebericht-Software erfasst alle Ereignisse im Betriebsablauf, analysiert die Auswirkungen und verteilt die richtigen Informationen automatisch über die richtigen Kanäle.</p>
     <div class="hero-actions">
-      <a href="#kontakt" class="btn-primary">Demo anfragen</a>
-      <a href="#anwendungsfaelle" class="btn-secondary">Anwendungsfälle ansehen</a>
+      <a href="#kontakt" class="btn-primary">Gespräch anfragen</a>
+      <a href="#kanaele" class="btn-secondary">Kanäle entdecken</a>
     </div>
     <div class="hero-tags">
-      <span class="hero-tag"><span class="material-symbols-rounded">verified_user</span> DSGVO-konform</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Made in Germany</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">integration_instructions</span> Nahtlos integriert</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">tune</span> Individuell konfigurierbar</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">train</span> Personennahverkehr</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">local_shipping</span> Güterverkehr</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">speed</span> Echtzeit-Verteilung</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">hub</span> Multi-Channel</span>
     </div>
   </div>
 </header>
@@ -592,227 +558,228 @@
     <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem;">
       <a href="index.html" style="color:var(--secondary); text-decoration:none;">Startseite</a>
       <span style="color:#cbd5e1;">›</span>
-      <a href="index.html#produkte" style="color:var(--secondary); text-decoration:none;">Produkte &amp; Services</a>
+      <a href="index.html#loesungen" style="color:var(--secondary); text-decoration:none;">Lösungen</a>
       <span style="color:#cbd5e1;">›</span>
-      <span style="color:var(--slate-600);">Künstliche Intelligenz</span>
+      <span style="color:var(--slate-600);">Informationsmanagement</span>
     </div>
   </div>
 </div>
 
 <!-- INTRO -->
-<section style="background:var(--white);">
-  <div class="section-inner">
-    <div class="ani-fade-in">
-      <p class="section-label">KI bei SITEFORUM</p>
-      <h2 class="section-title">Ihr Portal. <em>Noch smarter.</em></h2>
-      <p class="section-sub">Wir integrieren KI dort, wo sie echten Nutzen bringt: im direkten Kontakt mit Ihren Nutzern und in Ihren internen Abläufen.</p>
-    </div>
-    <div class="intro-grid">
-      <div class="intro-card ani-fade-in" data-delay="0">
-        <div class="intro-icon"><span class="material-symbols-rounded">check_circle</span></div>
-        <div>
-          <h4>KI-ready ab Tag eins</h4>
-          <p>Die SITEFORUM-Plattform ist so gebaut, dass KI-Funktionen jederzeit ergänzt werden können – ohne Systemwechsel oder aufwendige Migration.</p>
-        </div>
-      </div>
-      <div class="intro-card ani-fade-in" data-delay="100">
-        <div class="intro-icon"><span class="material-symbols-rounded">smart_toy</span></div>
-        <div>
-          <h4>KI-Chatbot für Ihr Portal</h4>
-          <p>Ein Assistent, der die Inhalte Ihres Portals kennt und Nutzerfragen sofort und präzise beantwortet – rund um die Uhr, ohne Wartezeit.</p>
-        </div>
-      </div>
-      <div class="intro-card ani-fade-in" data-delay="200">
-        <div class="intro-icon"><span class="material-symbols-rounded">receipt_long</span></div>
-        <div>
-          <h4>Automatisierte Dokumentenanalyse</h4>
-          <p>Rechnungen, Belege und Formulare werden von der KI ausgelesen, geprüft und zur Weiterverarbeitung aufbereitet – schnell und zuverlässig.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- USE CASE 1: CHATBOT -->
-<section id="anwendungsfaelle" style="background:var(--slate-100);">
-  <div class="section-inner">
-    <div class="usecase-layout">
-      <div class="usecase-content">
-        <div>
-          <span class="usecase-label">
-            <span class="material-symbols-rounded" style="font-size:16px;">smart_toy</span>
-            Anwendungsfall 1
-          </span>
-        </div>
-        <h3 class="usecase-title">Der Chatbot, der Ihr Portal <em>kennt</em></h3>
-        <p class="usecase-text">Stellen Sie sich vor, Ihre Mitglieder oder Kunden bekommen auf jede Frage zum Portal sofort eine präzise Antwort – ohne Wartezeit, ohne Hotline. Unser KI-Chatbot liest die Inhalte Ihres Portals, Ihre Dokumente und FAQs und gibt darauf basierend verlässliche Auskunft.</p>
-        <div class="usecase-list">
-          <div class="usecase-list-item ani-fade-in" data-delay="0">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Basiert auf Ihren Inhalten</strong> – der Chatbot antwortet nur auf Basis der von Ihnen freigegebenen Dokumente und Seiten, keine Halluzinationen aus dem Internet.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="80">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Entlastet Ihr Team</strong> – wiederkehrende Standardfragen werden automatisch beantwortet, Ihre Mitarbeiter kümmern sich um komplexe Fälle.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="160">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Immer verfügbar</strong> – 24 Stunden, 7 Tage die Woche, ohne Wartezeit und ohne Warteschleife.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="240">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>DSGVO-konform</strong> – alle Anfragen und Antworten bleiben innerhalb Ihrer geschützten Infrastruktur in Deutschland.</p>
-          </div>
-        </div>
-      </div>
-      <div class="chat-mockup ani-fade-in">
-        <div class="chat-topbar">
-          <div class="chat-avatar"><span class="material-symbols-rounded">smart_toy</span></div>
-          <div>
-            <div class="chat-title">Portal-Assistent</div>
-            <div class="chat-subtitle">Beantwortet Ihre Fragen</div>
-          </div>
-          <div class="chat-status"></div>
-        </div>
-        <div class="chat-body">
-          <div class="chat-bubble user">Wie beantrage ich eine Befreiung von der Fortbildungspflicht?</div>
-          <div class="chat-bubble bot">
-            Eine Befreiung von der Fortbildungspflicht können Sie direkt über das Portal beantragen. Gehen Sie dazu unter <strong>„Mein Bereich" → „Anträge" → „Befreiungsantrag Fortbildung"</strong>.<br><br>
-            Folgende Unterlagen werden benötigt:<br>
-            • Formular FB-07 (ausgefüllt)<br>
-            • Nachweis über den Befreiungsgrund<br><br>
-            Die Bearbeitungszeit beträgt in der Regel 2–3 Werktage.
-            <div class="chat-source"><span class="material-symbols-rounded">description</span> Quelle: Merkblatt Fortbildungspflicht, S. 4</div>
-          </div>
-          <div class="chat-bubble user">Wo finde ich das Formular FB-07?</div>
-          <div class="chat-typing"><div class="chat-dot"></div><div class="chat-dot"></div><div class="chat-dot"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- USE CASE 2: RECHNUNGSANALYSE -->
-<section style="background:var(--white);">
-  <div class="section-inner">
-    <div class="usecase-layout reverse">
-      <div class="usecase-content">
-        <div>
-          <span class="usecase-label">
-            <span class="material-symbols-rounded" style="font-size:16px;">receipt_long</span>
-            Anwendungsfall 2
-          </span>
-        </div>
-        <h3 class="usecase-title">Rechnungen, die sich <em>selbst prüfen</em></h3>
-        <p class="usecase-text">Das manuelle Durchsehen von Eingangsrechnungen kostet Zeit und ist fehleranfällig. Mit KI-gestützter Beleganalyse werden Rechnungen automatisch ausgelesen, relevante Daten extrahiert und direkt in Ihren Verarbeitungsprozess übergeben – ohne Tipparbeit, ohne Fehler.</p>
-        <div class="usecase-list">
-          <div class="usecase-list-item ani-fade-in" data-delay="0">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Automatisches Auslesen</strong> – Lieferant, Betrag, Datum, Steuersatz und Positionen werden zuverlässig erkannt, auch bei unterschiedlichen Layouts.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="80">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Plausibilitätsprüfung</strong> – die KI erkennt ungewöhnliche Beträge, fehlende Pflichtangaben oder Abweichungen von Bestelldaten.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="160">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Nahtlose Weiterverarbeitung</strong> – extrahierte Daten werden direkt in Ihre Buchhaltung, Ihr ERP oder ein Freigabe-Workflow übergeben.</p>
-          </div>
-          <div class="usecase-list-item ani-fade-in" data-delay="240">
-            <div class="usecase-check"><span class="material-symbols-rounded">check</span></div>
-            <p><strong>Bereits im Einsatz</strong> – mehrere SITEFORUM-Kunden nutzen diese Funktion heute produktiv und haben die Bearbeitungszeit deutlich reduziert.</p>
-          </div>
-        </div>
-      </div>
-      <div class="invoice-mockup ani-fade-in">
-        <div class="invoice-topbar">
-          <div class="invoice-topbar-icon"><span class="material-symbols-rounded">auto_awesome</span></div>
-          <div>
-            <div class="invoice-topbar-title">KI-Beleganalyse</div>
-            <div class="invoice-topbar-sub">Automatische Erkennung &amp; Prüfung</div>
-          </div>
-        </div>
-        <div class="invoice-body">
-          <div class="invoice-file">
-            <div class="invoice-file-icon"><span class="material-symbols-rounded">picture_as_pdf</span></div>
-            <div style="flex:1;">
-              <div class="invoice-file-name">Rechnung_2024_04892.pdf</div>
-              <div class="invoice-file-size">248 KB · wird analysiert ...</div>
-              <div class="invoice-progress"><div class="invoice-progress-bar"></div></div>
-            </div>
-          </div>
-          <div class="invoice-results">
-            <div class="invoice-result-row">
-              <span class="invoice-result-label">Lieferant</span>
-              <span class="invoice-result-value">Muster GmbH, Erfurt</span>
-            </div>
-            <div class="invoice-result-row">
-              <span class="invoice-result-label">Rechnungsdatum</span>
-              <span class="invoice-result-value">14.04.2025</span>
-            </div>
-            <div class="invoice-result-row">
-              <span class="invoice-result-label">Nettobetrag</span>
-              <span class="invoice-result-value">4.280,00 €</span>
-            </div>
-            <div class="invoice-result-row">
-              <span class="invoice-result-label">MwSt. (19 %)</span>
-              <span class="invoice-result-value">813,20 €</span>
-            </div>
-            <div class="invoice-result-row">
-              <span class="invoice-result-label">Abgleich Bestellung</span>
-              <span class="invoice-result-value ok"><span class="invoice-badge green">✓ Übereinstimmung</span></span>
-            </div>
-            <div class="invoice-result-row">
-              <span class="invoice-result-label">Zahlungsziel</span>
-              <span class="invoice-result-value warn"><span class="invoice-badge orange">! 3 Tage verbleibend</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW WE WORK -->
 <section style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Unser Ansatz</p>
-      <h2 class="section-title">Wie wir KI <em>einbinden</em></h2>
-      <p class="section-sub" style="margin-bottom:80px;">Kein Expertenteam nötig, kein langer Projektvorlauf. Wir setzen KI pragmatisch und sicher ein.</p>
+      <p class="section-label">Was ist Lagebericht-Software?</p>
+      <h2 class="section-title">Vom Ereignis zur <em>richtigen Information am richtigen Ort</em></h2>
+      <p class="section-sub">Im täglichen Betrieb entstehen ständig Ereignisse, die andere betreffen – Fahrgäste, Disponenten, Behörden, Auftraggeber. Unsere Software schließt die Lücke zwischen Betriebslage und Außenkommunikation.</p>
     </div>
-    <div class="how-grid">
-      <div class="how-step ani-fade-in">
-        <div class="how-step-num">1</div>
-        <h4>Anforderungen klären</h4>
-        <p>Gemeinsam definieren wir, welcher Anwendungsfall für Ihre Organisation den größten Nutzen bringt.</p>
+    <div class="intro-grid">
+      <div class="intro-card ani-fade-in" data-delay="0">
+        <div class="intro-icon"><span class="material-symbols-rounded">edit_note</span></div>
+        <div>
+          <h4>Strukturierte Ereigniserfassung</h4>
+          <p>Alle betrieblichen Ereignisse – Verspätungen, Störungen, Umleitungen, Sonderlagen – werden standardisiert und vollständig in einem zentralen Lageprotokoll erfasst.</p>
+        </div>
       </div>
-      <div class="how-step ani-fade-in">
-        <div class="how-step-num">2</div>
-        <h4>Datengrundlage vorbereiten</h4>
-        <p>Wir verbinden die KI mit Ihren Portal-Inhalten, Dokumenten oder Systemen – DSGVO-konform und in Ihrer Infrastruktur.</p>
+      <div class="intro-card ani-fade-in" data-delay="100">
+        <div class="intro-icon"><span class="material-symbols-rounded">analytics</span></div>
+        <div>
+          <h4>Intelligente Auswirkungsanalyse</h4>
+          <p>Das System berechnet automatisch, welche Züge, Strecken oder Lieferungen betroffen sind, welche Folgeereignisse entstehen könnten – und wer informiert werden muss.</p>
+        </div>
       </div>
-      <div class="how-step ani-fade-in">
-        <div class="how-step-num">3</div>
-        <h4>Pilotbetrieb &amp; Feintuning</h4>
-        <p>Die Lösung wird in einem kontrollierten Piloten getestet und gemeinsam mit Ihnen verfeinert.</p>
+      <div class="intro-card ani-fade-in" data-delay="200">
+        <div class="intro-icon"><span class="material-symbols-rounded">send</span></div>
+        <div>
+          <h4>Automatische Multi-Channel-Verteilung</h4>
+          <p>Die aufbereiteten Informationen werden ohne manuellen Aufwand über alle relevanten Kanäle ausgespielt – Website, App, WhatsApp, E-Mail und mehr – stets aktuell und konsistent.</p>
+        </div>
       </div>
-      <div class="how-step ani-fade-in">
-        <div class="how-step-num">4</div>
-        <h4>Live-Betrieb</h4>
-        <p>Nach dem Go-live überwachen wir die Qualität und passen die KI bei Bedarf kontinuierlich an.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGES -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Typische Herausforderungen</p>
+      <h2 class="section-title">Probleme, die wir <em>kennen und lösen</em></h2>
+      <p class="section-sub">Transportunternehmen stehen täglich vor denselben Kommunikationslücken. Unsere Lösung wurde direkt aus diesen Anforderungen heraus entwickelt.</p>
+    </div>
+    <div class="challenge-grid ani-fade-in">
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">scatter_plot</span></div>
+        <div>
+          <h4>Informationen verteilen sich dezentral</h4>
+          <p>Leitstelle, Disposition, Kundendienst und Pressestelle arbeiten mit verschiedenen Systemen – einheitliche, verlässliche Lagemeldungen gibt es nicht. Jeder kommuniziert anders.</p>
+        </div>
       </div>
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">hourglass_empty</span></div>
+        <div>
+          <h4>Manuelle Kommunikation kostet wertvolle Zeit</h4>
+          <p>Störungsmeldungen werden einzeln per Telefon, E-Mail oder Social-Media-Post verbreitet – während die Lage sich bereits weiterentwickelt hat. Zu langsam für den Betrieb.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">sync_problem</span></div>
+        <div>
+          <h4>Inkonsistente Außendarstellung</h4>
+          <p>Fahrgäste lesen auf der Website etwas anderes als auf der App – oder erfahren gar nichts. Inkonsistente Information kostet Vertrauen und erhöht den Druck auf den Kundendienst.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">description</span></div>
+        <div>
+          <h4>Fehlende Dokumentation für Berichte &amp; Prüfungen</h4>
+          <p>Ereignisse werden nicht oder unvollständig protokolliert. Behördenberichte, interne Auswertungen und Qualitätsnachweise können nicht lückenlos erbracht werden.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section id="kanaele" style="background:var(--slate-100);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Verteilungskanäle</p>
+      <h2 class="section-title">Eine Eingabe. <em>Alle Kanäle gleichzeitig.</em></h2>
+      <p class="section-sub" style="margin-bottom:60px;">Ein Ereignis wird einmal erfasst – die Software übernimmt die zielgruppengerechte Aufbereitung und Verteilung über alle konfigurierten Kanäle automatisch und in Echtzeit.</p>
+    </div>
+    <div class="channel-grid">
+      <div class="channel-card ani-fade-in" data-delay="0">
+        <div class="channel-icon"><span class="material-symbols-rounded">language</span></div>
+        <h4>Website</h4>
+        <p>Live-Statusanzeigen, Störungsmeldungen und Umleitungshinweise werden automatisch auf der Unternehmenswebsite aktualisiert – ohne manuellen Eingriff der Redaktion.</p>
+      </div>
+      <div class="channel-card ani-fade-in" data-delay="60">
+        <div class="channel-icon"><span class="material-symbols-rounded">smartphone</span></div>
+        <h4>Mobile App</h4>
+        <p>Fahrgäste und Auftraggeber erhalten Push-Benachrichtigungen direkt auf das Smartphone – mit aktueller Lage, Alternativrouten und voraussichtlicher Normalisierung.</p>
+      </div>
+      <div class="channel-card ani-fade-in" data-delay="120">
+        <div class="channel-icon"><span class="material-symbols-rounded">chat</span></div>
+        <h4>WhatsApp &amp; Messenger</h4>
+        <p>Verspätungsmeldungen und Lageupdates direkt per WhatsApp an abonnierte Fahrgäste, Kunden oder interne Verteiler – dort, wo die Menschen bereits kommunizieren.</p>
+      </div>
+      <div class="channel-card ani-fade-in" data-delay="180">
+        <div class="channel-icon"><span class="material-symbols-rounded">mail</span></div>
+        <h4>E-Mail &amp; Behörden-Reports</h4>
+        <p>Strukturierte Lageberichte und Ereignisprotokolle werden automatisch an Aufgabenträger, Behörden und interne Verteiler zugestellt – revisionssicher und vollständig dokumentiert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES: SPNV vs. GÜTER -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Einsatzbereiche</p>
+      <h2 class="section-title">Für Personenverkehr <em>und</em> Güterverkehr</h2>
+      <p class="section-sub">Die Software wurde für beide Welten entwickelt – mit den spezifischen Anforderungen jedes Bereichs als eigenständiges Modul.</p>
+    </div>
+    <div class="usecase-split ani-fade-in">
+      <div class="usecase-tile spnv">
+        <div class="usecase-tile-badge">
+          <span class="material-symbols-rounded" style="font-size:14px;">train</span>
+          Schienenpersonennahverkehr
+        </div>
+        <h3>Fahrgäste immer informiert – auch bei Störungen</h3>
+        <p>Im SPNV zählt jede Minute. Wenn ein Zug ausfällt oder sich verspätet, entsteht Informationsbedarf sofort – bei tausenden Fahrgästen gleichzeitig. Unsere Lösung stellt sicher, dass die richtigen Meldungen in Sekunden überall ankommen.</p>
+        <ul>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Störungs- und Verspätungsmeldungen in Echtzeit</li>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Automatische Aktualisierung von Website, App und WhatsApp</li>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Strukturierte Berichte an Aufgabenträger und Behörden</li>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Vollständige Protokollierung aller Ereignisse für Qualitätsnachweise</li>
+        </ul>
+      </div>
+      <div class="usecase-tile gueter">
+        <div class="usecase-tile-badge">
+          <span class="material-symbols-rounded" style="font-size:14px;">local_shipping</span>
+          Güterverkehr &amp; Logistik
+        </div>
+        <h3>Auftraggeber und Disponenten stets auf dem aktuellen Stand</h3>
+        <p>Im Güterverkehr sind Transparenz und Verlässlichkeit gegenüber Auftraggebern entscheidend. Unsere Software liefert jedem Beteiligten genau die Lageinfos, die er braucht – automatisch, ohne Mehraufwand für den Disponenten.</p>
+        <ul>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Lageberichte für Auftraggeber in Echtzeit</li>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Automatische Benachrichtigung bei Abweichungen vom Soll-Plan</li>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Dokumentation von Ereignissen für SLA-Nachweise</li>
+          <li><span class="material-symbols-rounded usecase-check-icon">check_circle</span> Schnittstellen zu bestehenden Leitsystem- und TMS-Lösungen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section style="background:var(--slate-100);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Referenzen</p>
+      <h2 class="section-title">Kunden, die <em>auf uns vertrauen</em></h2>
+      <p class="section-sub">Führende Bahnunternehmen im deutschen SPNV und im internationalen Güterverkehr setzen auf unsere Lagebericht-Software.</p>
+    </div>
+    <div class="stories-grid">
+
+      <a href="#" class="story-card ani-fade-in">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/eurobahn-ops/800/440" alt="eurobahn" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_eurobahn.jpg" alt="eurobahn" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Echtzeit-Fahrgastinformation über Website und Leitstelle</h3>
+          <div class="story-result">
+            <div class="story-result-value">Echtzeit</div>
+            <div class="story-result-label">Ereignisse aus der Leitstelle direkt auf der Fahrgast-Website</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
+      <a href="#" class="story-card ani-fade-in" data-delay="80">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/odeg-app/800/440" alt="ODEG" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_ODEG.jpg" alt="ODEG" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Mobile App für aktive Fahrgastinformation im Ostdeutschen Netz</h3>
+          <div class="story-result">
+            <div class="story-result-value">Push</div>
+            <div class="story-result-label">Fahrgäste aktiv per App über aktuelle Betriebslage informiert</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
+      <a href="#" class="story-card ani-fade-in" data-delay="160">
+        <div class="story-img-wrap">
+          <img src="https://picsum.photos/seed/lineas-freight/800/440" alt="Lineas" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_lineas.png" alt="Lineas" /></div>
+        </div>
+        <div class="story-body">
+          <h3 class="story-title">Lageberichtssystem für Europas größten privaten Güterverkehrsanbieter</h3>
+          <div class="story-result">
+            <div class="story-result-value">EU-weit</div>
+            <div class="story-result-label">Grenzübergreifende Ereigniskommunikation im Güternetz</div>
+          </div>
+          <span class="story-link">Zur Success Story</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
 
 <!-- CTA BANNER -->
-<div class="cta-banner" id="kontakt" style="margin-top: 0;">
+<div class="cta-banner" id="kontakt">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Jetzt starten</p>
-      <h2 class="section-title">Bereit, KI in Ihr Portal zu <em>integrieren?</em></h2>
-      <p class="section-sub">Sprechen Sie mit uns – wir zeigen Ihnen, welcher Anwendungsfall für Ihre Organisation am meisten Sinn ergibt.</p>
+      <h2 class="section-title">Bereit für <em>lückenloses Informationsmanagement?</em></h2>
+      <p class="section-sub">Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, wie unsere Lagebericht-Software in Ihre bestehende Betriebsinfrastruktur passt.</p>
     </div>
     <div class="cta-contact-block">
       <div class="cta-contact-label-top">Ihr Ansprechpartner</div>
@@ -833,7 +800,7 @@
       </div>
     </div>
     <div class="cta-actions">
-      <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--white);color:var(--primary);">Demo anfragen</a>
+      <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--white);color:var(--primary);">Gespräch anfragen</a>
       <a href="tel:+493616661510" class="btn-secondary" style="background:transparent;color:var(--white);border-color:rgba(255,255,255,0.3);">+49 361 6661 5810</a>
     </div>
   </div>
@@ -855,6 +822,17 @@
           <li><a href="managed-cloud.html">Managed Cloud</a></li>
           <li><a href="mitgliederportale.html">Mitgliederportale</a></li>
           <li><a href="kundenportale.html">Kundenportale</a></li>
+          <li><a href="mitarbeiterportale.html">Mitarbeiterportale</a></li>
+          <li><a href="informationsmanagement.html">Informationsmanagement</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branchen</h4>
+        <ul>
+          <li><a href="kammern-verbaende.html">Kammern &amp; Verbände</a></li>
+          <li><a href="finanzen.html">Finanzen</a></li>
+          <li><a href="#">Gesundheitswesen</a></li>
+          <li><a href="#">Medienbranche</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -866,19 +844,10 @@
           <li><a href="#">Karriere</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Kontakt</h4>
-        <ul>
-          <li><a href="mailto:info@siteforum.com">info@siteforum.com</a></li>
-          <li><a href="tel:+493616661510">+49 361 6661 5810</a></li>
-          <li><a href="#">Straße des Friedens 15a</a></li>
-          <li><a href="#">99094 Erfurt</a></li>
-        </ul>
-      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
-      <div style="display:flex;gap:24px;">
+      <div style="display:flex; gap:24px;">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
         <a href="#">AGB</a>
@@ -888,18 +857,18 @@
 </footer>
 
 <script>
-(function() {
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (!entry.isIntersecting) return;
-      var delay = parseInt(entry.target.dataset.delay || 0, 10);
-      var el = entry.target;
-      setTimeout(function() { el.classList.add('visible'); }, delay);
-      io.unobserve(entry.target);
+  const fadeEls = document.querySelectorAll('.ani-fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), Number(delay));
+        observer.unobserve(entry.target);
+      }
     });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.ani-fade-in').forEach(function(el) { io.observe(el); });
-})();
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
