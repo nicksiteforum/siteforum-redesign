@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kammern &amp; Verbände – SITEFORUM</title>
+  <title>Intranet – SITEFORUM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -67,9 +67,7 @@
     .nav-has-dropdown > a { gap: 2px; }
     .nav-chevron { font-size: 16px !important; opacity: 0.55; transition: transform 0.2s; }
     .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); }
-    .nav-has-dropdown::after {
-      content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 24px;
-    }
+    .nav-has-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 24px; }
     .nav-dropdown-menu {
       position: absolute; top: calc(100% + 20px); left: 50%;
       transform: translateX(-50%) translateY(-6px);
@@ -158,12 +156,11 @@
     }
     .hero-tag .material-symbols-rounded { font-size: 14px; color: #93c5fd; }
 
-    /* ─── SECTION WRAPPER ───────────────────────────────────── */
+    /* ─── SECTION ───────────────────────────────────────────── */
     section { padding: 100px 40px; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .ani-fade-in { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease !important; }
     .ani-fade-in.visible { opacity: 1; transform: none; }
-
     .section-label {
       font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--blue-600); margin-bottom: 16px;
@@ -173,10 +170,7 @@
       letter-spacing: -1px; line-height: 1.15; color: var(--navy); margin-bottom: 20px;
     }
     .section-title em { font-style: normal; color: var(--secondary); }
-    .section-sub {
-      font-size: 1.05rem; color: var(--slate-600);
-      max-width: 580px; margin-bottom: 60px;
-    }
+    .section-sub { font-size: 1.05rem; color: var(--slate-600); max-width: 580px; margin-bottom: 60px; }
 
     /* ─── INTRO GRID ────────────────────────────────────────── */
     .intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -195,9 +189,7 @@
     .intro-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
 
     /* ─── CHALLENGES ────────────────────────────────────────── */
-    .challenge-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-    }
+    .challenge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .challenge-card {
       display: flex; gap: 20px; align-items: flex-start;
       padding: 28px 24px; background: var(--white);
@@ -212,148 +204,67 @@
     .challenge-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
     .challenge-card p { font-size: 0.87rem; color: var(--slate-600); line-height: 1.6; }
 
-    /* ─── USE CASE BLOCK ────────────────────────────────────── */
-    .usecase-layout {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    /* ─── PLATFORM GRID ─────────────────────────────────────── */
+    .platform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .platform-card {
+      padding: 24px 20px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+      background: var(--white); display: flex; flex-direction: column; gap: 12px;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .usecase-layout.reverse { direction: rtl; }
-    .usecase-layout.reverse > * { direction: ltr; }
-    .usecase-content { display: flex; flex-direction: column; gap: 24px; }
-    .usecase-label {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--secondary);
-    }
-    .usecase-title {
-      font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800;
-      letter-spacing: -0.5px; line-height: 1.2; color: var(--navy);
-    }
-    .usecase-title em { font-style: normal; color: var(--secondary); }
-    .usecase-text { font-size: 0.95rem; color: var(--slate-600); line-height: 1.7; }
-    .usecase-list { display: flex; flex-direction: column; gap: 12px; }
-    .usecase-list-item { display: flex; gap: 12px; align-items: flex-start; }
-    .usecase-check {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary); flex-shrink: 0; margin-top: 1px;
-    }
-    .usecase-check .material-symbols-rounded { font-size: 14px; }
-    .usecase-list-item p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.55; }
-    .usecase-list-item strong { color: var(--navy); }
-
-    /* ─── PORTAL MOCKUP ─────────────────────────────────────── */
-    .portal-mockup {
-      background: var(--white); border-radius: 20px;
-      box-shadow: 0 24px 64px rgba(0,51,102,0.12), 0 4px 16px rgba(0,0,0,0.06);
-      border: 1px solid #e5e7eb; overflow: hidden;
-    }
-    .portal-topbar {
-      background: #f8fafc; border-bottom: 1px solid #e5e7eb;
-      padding: 14px 20px; display: flex; align-items: center; gap: 12px;
-    }
-    .portal-topbar-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: var(--blue-600); display: flex; align-items: center;
-      justify-content: center; flex-shrink: 0;
-    }
-    .portal-topbar-icon .material-symbols-rounded { font-size: 18px; color: #fff; }
-    .portal-topbar-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
-    .portal-topbar-sub { font-size: 0.72rem; color: #94a3b8; }
-    .portal-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-    .portal-stat-row {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 4px;
-    }
-    .portal-stat {
-      background: var(--blue-50); border-radius: 10px; padding: 12px 14px; text-align: center;
-    }
-    .portal-stat-num { font-size: 1.3rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
-    .portal-stat-lbl { font-size: 0.68rem; color: var(--slate-600); margin-top: 2px; }
-    .portal-member-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 12px; border-radius: 10px; background: #f8fafc; border: 1px solid #e5e7eb;
-    }
-    .portal-avatar {
-      width: 32px; height: 32px; border-radius: 50%; background: var(--blue-100);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.72rem; font-weight: 700; color: var(--navy); flex-shrink: 0;
-    }
-    .portal-member-name { font-size: 0.83rem; font-weight: 600; color: var(--navy); }
-    .portal-member-org { font-size: 0.72rem; color: var(--slate-600); }
-    .portal-badge {
-      margin-left: auto; font-size: 0.68rem; font-weight: 600; padding: 3px 10px;
-      border-radius: 999px;
-    }
-    .portal-badge.aktiv { background: #dcfce7; color: #15803d; }
-    .portal-badge.ausstehend { background: #fef3c7; color: #92400e; }
-
-    /* ─── DOCS MOCKUP ───────────────────────────────────────── */
-    .docs-mockup {
-      background: var(--white); border-radius: 20px;
-      box-shadow: 0 24px 64px rgba(0,51,102,0.12), 0 4px 16px rgba(0,0,0,0.06);
-      border: 1px solid #e5e7eb; overflow: hidden;
-    }
-    .docs-topbar {
-      background: #f8fafc; border-bottom: 1px solid #e5e7eb;
-      padding: 14px 20px; display: flex; align-items: center; gap: 12px;
-    }
-    .docs-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 8px; }
-    .doc-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 12px; border-radius: 10px; border: 1px solid #e5e7eb;
-      transition: background 0.15s;
-    }
-    .doc-icon {
-      width: 34px; height: 34px; border-radius: 8px; display: flex;
-      align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .doc-icon.pdf { background: #fee2e2; color: #dc2626; }
-    .doc-icon.doc { background: #dbeafe; color: #2563eb; }
-    .doc-icon.xls { background: #dcfce7; color: #16a34a; }
-    .doc-icon .material-symbols-rounded { font-size: 18px; }
-    .doc-name { font-size: 0.83rem; font-weight: 600; color: var(--navy); }
-    .doc-meta { font-size: 0.70rem; color: var(--slate-600); margin-top: 2px; }
-    .doc-category {
-      margin-left: auto; font-size: 0.68rem; font-weight: 600; padding: 3px 10px;
-      border-radius: 999px; background: var(--blue-50); color: var(--blue-600); white-space: nowrap;
-    }
-
-    /* ─── FEATURE GRID ──────────────────────────────────────── */
-    .feature-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-    }
-    .feature-card {
-      padding: 24px 20px;
-      border-radius: var(--radius-md);
-      border: 1.5px solid #e5e7eb;
-      background: var(--white);
-      display: flex; flex-direction: column; gap: 12px;
-    }
-    .feature-icon {
+    .platform-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 16px rgba(0,51,102,0.07); }
+    .platform-icon {
       width: 44px; height: 44px; border-radius: var(--radius-sm);
       background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary);
+      justify-content: center; color: var(--secondary); flex-shrink: 0;
     }
-    .feature-icon .material-symbols-rounded { font-size: 22px; }
-    .feature-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); }
-    .feature-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
+    .platform-icon .material-symbols-rounded { font-size: 22px; }
+    .platform-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
+    .platform-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
 
-    /* ─── STATS BAR ─────────────────────────────────────────── */
-    .stats-bar {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: #e5e7eb; border-radius: var(--radius-md);
+    /* ─── MODULE GRID ───────────────────────────────────────── */
+    .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .module-card {
+      padding: 24px 20px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+      background: var(--white); display: flex; flex-direction: column; gap: 12px;
+    }
+    .module-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; color: var(--secondary); flex-shrink: 0;
+    }
+    .module-icon .material-symbols-rounded { font-size: 22px; }
+    .module-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
+    .module-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
+
+    /* ─── SUCCESS STORIES ───────────────────────────────────── */
+    .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .story-card {
+      background: var(--white); border-radius: var(--radius-md);
       overflow: hidden; border: 1.5px solid #e5e7eb;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      text-decoration: none; display: block; color: inherit;
     }
-    .stat-item {
-      background: var(--white); padding: 40px 32px; text-align: center;
+    .story-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--blue-200); }
+    .story-img-wrap { position: relative; height: 180px; overflow: hidden; background: var(--blue-50); }
+    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .story-customer-badge {
+      position: absolute; bottom: 14px; left: 14px;
+      width: 64px; height: 64px; border-radius: 10px; border: 1.5px solid #e5e7eb;
+      background: #fff; overflow: hidden;
     }
-    .stat-num {
-      font-size: 2.8rem; font-weight: 800; color: var(--navy);
-      letter-spacing: -2px; line-height: 1;
+    .story-customer-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .story-body { padding: 24px 24px 28px; }
+    .story-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
+    .story-result {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--blue-50); border-radius: 10px; padding: 12px 16px; margin-bottom: 20px;
     }
-    .stat-num span { color: var(--secondary); }
-    .stat-lbl { font-size: 0.88rem; color: var(--slate-600); margin-top: 8px; }
+    .story-result-value { font-size: 1.5rem; font-weight: 800; color: var(--secondary); line-height: 1; white-space: nowrap; flex-shrink: 0; }
+    .story-result-label { font-size: 0.82rem; color: var(--slate-600); line-height: 1.4; }
+    .story-link { font-size: 0.88rem; font-weight: 600; color: var(--blue-600); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .story-link::after { content: "→"; }
 
-    /* ─── CTA BANNER ────────────────────────────────────────── */
+    /* ─── CTA ───────────────────────────────────────────────── */
     .cta-banner {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
       border-radius: var(--radius-lg); margin: 0 40px;
@@ -444,53 +355,6 @@
     .mob-sub a { text-decoration: none; font-size: 0.88rem; font-weight: 400; color: #6b7280; padding: 8px 16px; border-radius: 8px; transition: background 0.15s; display: block; }
     .mob-sub a:hover { background: var(--slate-100); color: var(--navy); }
 
-    /* ─── MODULE GRID ───────────────────────────────────────── */
-    .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .module-card {
-      padding: 24px 20px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
-      background: var(--white); display: flex; flex-direction: column; gap: 12px;
-    }
-    .module-icon {
-      width: 44px; height: 44px; border-radius: var(--radius-sm);
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary); flex-shrink: 0;
-    }
-    .module-icon .material-symbols-rounded { font-size: 22px; }
-    .module-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
-    .module-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
-
-    /* ─── SUCCESS STORIES ───────────────────────────────────── */
-    .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .story-card {
-      background: var(--white); border-radius: var(--radius-md);
-      overflow: hidden; border: 1.5px solid #e5e7eb;
-      transition: box-shadow 0.2s, border-color 0.2s;
-      text-decoration: none; display: block; color: inherit;
-    }
-    .story-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--blue-200); }
-    .story-img-wrap { position: relative; height: 180px; overflow: hidden; background: var(--blue-50); }
-    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .story-customer-badge {
-      position: absolute; bottom: 14px; left: 14px;
-      width: 64px; height: 64px; border-radius: 10px; border: 1.5px solid #e5e7eb;
-      background: #fff; overflow: hidden;
-    }
-    .story-customer-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
-    .story-body { padding: 24px 24px 28px; }
-    .story-tag {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.07em; color: var(--secondary); margin-bottom: 10px; display: block;
-    }
-    .story-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
-    .story-result {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--blue-50); border-radius: 10px; padding: 12px 16px; margin-bottom: 20px;
-    }
-    .story-result-value { font-size: 1.5rem; font-weight: 800; color: var(--secondary); line-height: 1; white-space: nowrap; flex-shrink: 0; }
-    .story-result-label { font-size: 0.82rem; color: var(--slate-600); line-height: 1.4; }
-    .story-link { font-size: 0.88rem; font-weight: 600; color: var(--blue-600); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
-    .story-link::after { content: "→"; }
-
     /* ─── RESPONSIVE ────────────────────────────────────────── */
     @media (max-width: 1024px) {
       .nav-links { display: none; }
@@ -498,6 +362,7 @@
       .nav-cta { display: none; }
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
       .challenge-grid { grid-template-columns: 1fr; }
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
       .module-grid { grid-template-columns: repeat(2, 1fr); }
       .stories-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -508,6 +373,7 @@
       section { padding: 64px 20px; }
       .hero { padding: 120px 20px 80px; }
       .intro-grid { grid-template-columns: 1fr; }
+      .platform-grid { grid-template-columns: 1fr; }
       .module-grid { grid-template-columns: 1fr; }
       .stories-grid { grid-template-columns: 1fr; }
       .cta-banner { margin: 0 16px; }
@@ -536,21 +402,21 @@
         </div>
       </li>
       <li class="nav-has-dropdown">
-        <a href="index.html#loesungen">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#loesungen" class="active">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
           <a href="mitgliederportale.html">Mitgliederportale</a>
           <a href="kundenportale.html">Kundenportale</a>
           <a href="mitarbeiterportale.html">Mitarbeiterportale</a>
           <a href="informationsmanagement.html">Informationsmanagement</a>
-          <a href="intranet.html">Intranet</a>
-          <a href="communities.html">Community</a>
+          <a href="intranet.html" class="active">Intranet</a>
+          <a href="communities.html">Communities</a>
           <a href="#">Corporate Websites</a>
         </div>
       </li>
       <li class="nav-has-dropdown">
-        <a href="index.html#branchen" class="active">Branchen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#branchen">Branchen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
-          <a href="kammern-verbaende.html" class="active">Kammern &amp; Verbände</a>
+          <a href="kammern-verbaende.html">Kammern &amp; Verbände</a>
           <a href="finanzen.html">Finanzen</a>
           <a href="#">Verkehrs- und Transportwesen</a>
           <a href="#">Personaldienstleistungen</a>
@@ -590,15 +456,15 @@
       <a href="kundenportale.html" onclick="closeMenu()">Kundenportale</a>
       <a href="mitarbeiterportale.html" onclick="closeMenu()">Mitarbeiterportale</a>
       <a href="informationsmanagement.html" onclick="closeMenu()">Informationsmanagement</a>
-      <a href="intranet.html" onclick="closeMenu()">Intranet</a>
-      <a href="communities.html" onclick="closeMenu()">Community</a>
+      <a href="intranet.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Intranet</a>
+      <a href="communities.html" onclick="closeMenu()">Communities</a>
       <a href="#" onclick="closeMenu()">Corporate Websites</a>
     </div>
   </div>
   <div class="mob-group">
     <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Branchen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
     <div class="mob-sub">
-      <a href="kammern-verbaende.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Kammern &amp; Verbände</a>
+      <a href="kammern-verbaende.html" onclick="closeMenu()">Kammern &amp; Verbände</a>
       <a href="finanzen.html" onclick="closeMenu()">Finanzen</a>
       <a href="#" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
       <a href="#" onclick="closeMenu()">Personaldienstleistungen</a>
@@ -628,20 +494,20 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="solution-badge">
-      <span class="material-symbols-rounded" style="font-size:14px;">corporate_fare</span>
-      Branche
+      <span class="material-symbols-rounded" style="font-size:14px;">domain</span>
+      Lösung
     </div>
-    <h1>Kammern &amp; Verbände. <em>Digital auf der Höhe der Zeit.</em></h1>
-    <p class="hero-sub">Von der Mitgliederverwaltung über Gremienarbeit bis zum Informationsmanagement – SITEFORUM bündelt alle digitalen Prozesse Ihrer Organisation in einer leistungsstarken Plattform.</p>
+    <h1>Intranet. <em>Ihr Unternehmen. Eine Plattform. Alle informiert.</em></h1>
+    <p class="hero-sub">Wissen, Neuigkeiten und Zusammenarbeit an einem Ort – browserbasiert, mobil, ohne Installation. Ihre Mitarbeiter finden alles, was sie brauchen, genau dann, wenn sie es brauchen.</p>
     <div class="hero-actions">
       <a href="#kontakt" class="btn-primary">Gespräch anfragen</a>
-      <a href="#loesungen" class="btn-secondary">Module entdecken</a>
+      <a href="#features" class="btn-secondary">Features entdecken</a>
     </div>
     <div class="hero-tags">
       <span class="hero-tag"><span class="material-symbols-rounded">verified_user</span> DSGVO-konform</span>
       <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Made in Germany</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">groups</span> Für Kammern &amp; Verbände</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">settings</span> Individuell konfigurierbar</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">smartphone</span> Mobile-ready</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">public</span> Mehrsprachig &amp; international</span>
     </div>
   </div>
 </header>
@@ -652,9 +518,9 @@
     <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem;">
       <a href="index.html" style="color:var(--secondary); text-decoration:none;">Startseite</a>
       <span style="color:#cbd5e1;">›</span>
-      <a href="index.html#branchen" style="color:var(--secondary); text-decoration:none;">Branchen</a>
+      <a href="index.html#loesungen" style="color:var(--secondary); text-decoration:none;">Lösungen</a>
       <span style="color:#cbd5e1;">›</span>
-      <span style="color:var(--slate-600);">Kammern &amp; Verbände</span>
+      <span style="color:var(--slate-600);">Intranet</span>
     </div>
   </div>
 </div>
@@ -663,30 +529,30 @@
 <section style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Warum SITEFORUM</p>
-      <h2 class="section-title">Eine Plattform für alle <em>Aufgaben Ihrer Organisation</em></h2>
-      <p class="section-sub">Kammern und Verbände stehen vor einzigartigen Anforderungen: komplexe Mitgliederstrukturen, vielfältige Gremien und der Anspruch, Informationen zuverlässig bereitzustellen. SITEFORUM ist genau dafür gebaut.</p>
+      <p class="section-label">Warum ein modernes Intranet</p>
+      <h2 class="section-title">Informierte Mitarbeiter sind <em>produktivere Mitarbeiter</em></h2>
+      <p class="section-sub">Ein gutes Intranet ist mehr als ein schwarzes Brett. Es ist das digitale Zuhause Ihres Unternehmens – der Ort, an dem Wissen entsteht, geteilt und gefunden wird.</p>
     </div>
     <div class="intro-grid">
       <div class="intro-card ani-fade-in" data-delay="0">
-        <div class="intro-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">record_voice_over</span></div>
         <div>
-          <h4>Mitgliederverwaltung</h4>
-          <p>Alle Mitgliedsdaten, Beiträge, Rollen und Kommunikationsverläufe an einem Ort – mit Self-Service-Portal für Ihre Mitglieder.</p>
+          <h4>Interne Kommunikation zentralisieren</h4>
+          <p>Unternehmensankündigungen, Abteilungsnews und CEO-Updates erreichen alle Mitarbeiter zuverlässig – statt in überfüllten E-Mail-Postfächern zu verschwinden.</p>
         </div>
       </div>
       <div class="intro-card ani-fade-in" data-delay="100">
-        <div class="intro-icon"><span class="material-symbols-rounded">folder_open</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">menu_book</span></div>
         <div>
-          <h4>Informations- &amp; Dokumentenmanagement</h4>
-          <p>Satzungen, Protokolle, Formulare und Fachpublikationen strukturiert verwalten und gezielt für bestimmte Mitgliedergruppen bereitstellen.</p>
+          <h4>Wissen sichern und auffindbar machen</h4>
+          <p>Prozessbeschreibungen, Handbücher und Richtlinien sind versioniert, durchsuchbar und immer aktuell – kein Suchen mehr in veralteten Ordnerstrukturen.</p>
         </div>
       </div>
       <div class="intro-card ani-fade-in" data-delay="200">
-        <div class="intro-icon"><span class="material-symbols-rounded">groups_3</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">diversity_3</span></div>
         <div>
-          <h4>Gremien &amp; Ausschüsse</h4>
-          <p>Digitale Arbeitsbereiche für Fachgruppen, Ausschüsse und Projektteams – mit geschlossenen Bereichen, Abstimmungen und Protokollfunktionen.</p>
+          <h4>Zusammenhalt auch über Standorte hinweg</h4>
+          <p>Verteilte Teams, Remote-Mitarbeitende und internationale Standorte bleiben durch eine gemeinsame Plattform kulturell verbunden und fühlen sich eingebunden.</p>
         </div>
       </div>
     </div>
@@ -698,120 +564,158 @@
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Typische Herausforderungen</p>
-      <h2 class="section-title">Probleme, die wir <em>kennen und lösen</em></h2>
-      <p class="section-sub">Viele Kammern und Verbände kämpfen mit denselben strukturellen Hürden bei der Digitalisierung. Wir haben in den letzten 25 Jahren gelernt, wie man sie überwindet.</p>
+      <h2 class="section-title">Warum viele Intranets <em>nicht funktionieren</em></h2>
+      <p class="section-sub">Viele Unternehmen betreiben ein Intranet, das kaum genutzt wird – weil es veraltet, schwer zu bedienen oder schlicht nicht relevant genug ist.</p>
     </div>
     <div class="challenge-grid ani-fade-in">
       <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">inbox</span></div>
+        <div>
+          <h4>E-Mail als Informationskanal</h4>
+          <p>Wichtige Ankündigungen, Prozessdokumente und Neuigkeiten landen in E-Mails – unstrukturiert, schwer auffindbar und nicht für alle gleichzeitig erreichbar.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
         <div class="challenge-icon"><span class="material-symbols-rounded">storage</span></div>
         <div>
-          <h4>Datenpflege in Insellösungen</h4>
-          <p>Mitgliederdaten liegen in Excel-Tabellen, CRM-Systemen und E-Mail-Verläufen verteilt – ohne einheitliche Sicht und ohne Selbstpflege durch die Mitglieder selbst.</p>
+          <h4>Wissenssilos zwischen Abteilungen</h4>
+          <p>Jede Abteilung verwaltet ihr Wissen separat: Sharepoint hier, Google Drive dort, lokale Netzlaufwerke anderswo. Eine einheitliche Suche über alles fehlt.</p>
         </div>
       </div>
       <div class="challenge-card">
-        <div class="challenge-icon"><span class="material-symbols-rounded">lock_person</span></div>
+        <div class="challenge-icon"><span class="material-symbols-rounded">phonelink_off</span></div>
         <div>
-          <h4>Keine rollenbasierte Zugriffssteuerung</h4>
-          <p>Nicht alle Inhalte sollen für alle sichtbar sein – aber die Pflege von Zugriffsrechten in veralteten Systemen ist aufwändig und fehleranfällig.</p>
+          <h4>Kein Zugang für Außendienst und Mobile</h4>
+          <p>Mitarbeitende im Außendienst, im Lager oder auf Montage haben keinen praktikablen Zugang zum Intranet – obwohl sie oft als erste auf Informationen angewiesen sind.</p>
         </div>
       </div>
       <div class="challenge-card">
-        <div class="challenge-icon"><span class="material-symbols-rounded">sync_problem</span></div>
+        <div class="challenge-icon"><span class="material-symbols-rounded">construction</span></div>
         <div>
-          <h4>Manuelle Prozesse binden Ressourcen</h4>
-          <p>Beitragsrechnungen, Eventanmeldungen und Zertifizierungsanfragen werden manuell bearbeitet – obwohl diese Prozesse vollständig automatisiert werden könnten.</p>
-        </div>
-      </div>
-      <div class="challenge-card">
-        <div class="challenge-icon"><span class="material-symbols-rounded">devices_off</span></div>
-        <div>
-          <h4>Veraltete Online-Präsenz</h4>
-          <p>Die Website wirkt nicht mehr zeitgemäß, ist schwer zu pflegen und liefert keine messbaren Mehrwerte für Mitglieder oder Interessenten.</p>
+          <h4>Hoher Pflegeaufwand, veraltete Inhalte</h4>
+          <p>Ohne intuitive Redaktionswerkzeuge bleibt der Inhaltspflege-Aufwand bei der IT hängen. Inhalte veralten, die Nutzung bricht ein – ein Teufelskreis.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MODULES -->
-<section id="loesungen" style="background:var(--slate-100);">
+<!-- PLATFORM FEATURES -->
+<section id="features" style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Ihr Mitgliederportal</p>
-      <h2 class="section-title">Module, die Kammern &amp; Verbände <em>wirklich brauchen</em></h2>
-      <p class="section-sub" style="margin-bottom:60px;">SITEFORUM baut kein Portal von der Stange. Wir kombinieren bewährte Bausteine zu einer Lösung, die exakt zu Ihrer Organisation passt – skalierbar von 500 bis 50.000 Mitgliedern.</p>
+      <p class="section-label">Plattform-Features</p>
+      <h2 class="section-title">Alles, was Ihr Intranet <em>von Anfang an mitbringt</em></h2>
+      <p class="section-sub" style="margin-bottom:60px;">Die SITEFORUM-Plattform liefert alle wesentlichen Intranet-Bausteine direkt mit. Sie konfigurieren, was Sie brauchen – und erweitern, wenn Ihr Unternehmen wächst.</p>
+    </div>
+    <div class="platform-grid">
+      <div class="platform-card ani-fade-in" data-delay="0">
+        <div class="platform-icon"><span class="material-symbols-rounded">newspaper</span></div>
+        <h4>News &amp; Ankündigungen</h4>
+        <p>Unternehmensweite und abteilungsspezifische Neuigkeiten mit Kategorien, Kommentarfunktion und personalisierter Relevanz für jeden Mitarbeitenden.</p>
+      </div>
+      <div class="platform-card ani-fade-in" data-delay="60">
+        <div class="platform-icon"><span class="material-symbols-rounded">menu_book</span></div>
+        <h4>Wissensdatenbank &amp; Wiki</h4>
+        <p>Strukturierte Ablage für Richtlinien, Prozessbeschreibungen und Handbücher – mit Volltextsuche, Verlinkungen und klarer Versionierung.</p>
+      </div>
+      <div class="platform-card ani-fade-in" data-delay="120">
+        <div class="platform-icon"><span class="material-symbols-rounded">folder_open</span></div>
+        <h4>Dokumenten-Management</h4>
+        <p>Zentrale Dokumentenablage mit Zugriffssteuerung, Versionierung und automatischen Ablauffristen – für Qualitätshandbücher, Formulare und Vorlagen.</p>
+      </div>
+      <div class="platform-card ani-fade-in" data-delay="180">
+        <div class="platform-icon"><span class="material-symbols-rounded">badge</span></div>
+        <h4>Mitarbeiter-Verzeichnis</h4>
+        <p>Durchsuchbares Verzeichnis mit Profilbild, Abteilung, Standort und Kontaktdaten – inkl. Organigramm und direktem Kontakt per Klick.</p>
+      </div>
+      <div class="platform-card ani-fade-in" data-delay="0">
+        <div class="platform-icon"><span class="material-symbols-rounded">groups_2</span></div>
+        <h4>Teams &amp; Arbeitsbereiche</h4>
+        <p>Projekt- und Abteilungsräume mit eigenem Newsfeed, Dokumentenablage und Mitgliederliste – offen oder geschlossen, je nach Bedarf.</p>
+      </div>
+      <div class="platform-card ani-fade-in" data-delay="60">
+        <div class="platform-icon"><span class="material-symbols-rounded">assignment_turned_in</span></div>
+        <h4>Formulare &amp; Workflows</h4>
+        <p>Urlaubsanträge, IT-Tickets, Bestellformulare: digitale Prozesse ersetzen Papier und E-Mails mit automatischer Weiterleitung und Statusverfolgung.</p>
+      </div>
+      <div class="platform-card ani-fade-in" data-delay="120">
+        <div class="platform-icon"><span class="material-symbols-rounded">event</span></div>
+        <h4>Veranstaltungen &amp; Kalender</h4>
+        <p>Unternehmensweiter Eventkalender für Schulungen, Townhalls und Betriebsveranstaltungen – mit Anmeldung, Teilnahmebestätigung und Erinnerungsfunktion.</p>
+      </div>
+      <div class="platform-card ani-fade-in" data-delay="180">
+        <div class="platform-icon"><span class="material-symbols-rounded">language</span></div>
+        <h4>Mehrsprachigkeit</h4>
+        <p>Für internationale Unternehmen: Inhalte in mehreren Sprachen parallel pflegen – mit automatischer Anzeige der bevorzugten Sprache jedes Mitarbeitenden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEITERE MODULE -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Erweiterbar nach Bedarf</p>
+      <h2 class="section-title">Module, die Ihr Intranet <em>noch leistungsfähiger machen</em></h2>
+      <p class="section-sub" style="margin-bottom:60px;">Starten Sie mit dem Kern – und ergänzen Sie, wenn Ihre Anforderungen wachsen. Alle Module laufen auf derselben Plattform, kein Systemwechsel nötig.</p>
     </div>
     <div class="module-grid">
       <div class="module-card ani-fade-in" data-delay="0">
-        <div class="module-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
-        <h4>Mitgliedsdaten &amp; Self-Service</h4>
-        <p>Mitglieder pflegen Adresse, Kontaktdaten und Bankverbindung eigenständig. Antragsformulare mit automatischer Weiterverarbeitung ersparen Ihrer Geschäftsstelle manuelle Eingriffe.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">person_check</span></div>
+        <h4>Onboarding-Portal</h4>
+        <p>Strukturierter Einstieg für neue Mitarbeitende: Aufgabenlisten, Schulungsmaterialien, Ansprechpartner und automatisierte Willkommens-Workflows an einem Ort.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-icon"><span class="material-symbols-rounded">event</span></div>
-        <h4>Veranstaltungen &amp; Weiterbildung</h4>
-        <p>Durchsuchbarer Veranstaltungskalender mit Detailansicht, Online-An- und Abmeldung, Wartelisten und automatischen Teilnahmebestätigungen – direkt im Portal.</p>
-      </div>
-      <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-icon"><span class="material-symbols-rounded">school</span></div>
-        <h4>Punktekonto &amp; Nachweise</h4>
-        <p>Automatische Pflege von Fortbildungspunkten, Einsicht des persönlichen Kontos und digitale Einreichung von externen Nachweisen – lückenlos und nachvollziehbar.</p>
-      </div>
-      <div class="module-card ani-fade-in" data-delay="0">
         <div class="module-icon"><span class="material-symbols-rounded">play_circle</span></div>
-        <h4>Mediathek &amp; E-Learning</h4>
-        <p>Videos, interaktive Lerneinheiten und Tests mit automatischer Ausstellung von Teilnahmebescheinigungen – vollständig in Ihr Portal integriert.</p>
-      </div>
-      <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-icon"><span class="material-symbols-rounded">folder_open</span></div>
-        <h4>Dokumentenportal</h4>
-        <p>Satzungen, Protokolle, Formulare und Fachpublikationen strukturiert verwalten und zielgruppengenau bereitstellen – mit Volltextsuche und Versionierung.</p>
+        <h4>Schulungen &amp; E-Learning</h4>
+        <p>Videos, interaktive Kurse und Lerntests direkt im Intranet – mit automatischer Auswertung, Zertifikaten und Pflichtschulung-Tracking für Compliance-Anforderungen.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-icon"><span class="material-symbols-rounded">assignment_turned_in</span></div>
-        <h4>Anträge &amp; Vorgangsverfolgung</h4>
-        <p>Online-Formulare für Anträge jeder Art mit statusbasierter Rückmeldung – Mitglieder sehen jederzeit, wo ihr Vorgang steht, ohne die Geschäftsstelle anrufen zu müssen.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">psychology</span></div>
+        <h4>KI-Assistent</h4>
+        <p>Integrierter KI-Chatbot auf Basis Ihrer Wissensdatenbank: Mitarbeitende erhalten sofortige Antworten auf Fragen zu Richtlinien, Prozessen und internen Abläufen.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="0">
-        <div class="module-icon"><span class="material-symbols-rounded">menu_book</span></div>
-        <h4>Wissensdatenbank</h4>
-        <p>Strukturiertes Fach- und Rechtswissen, durchsuchbar und nach Themenbereichen gegliedert. Optional mit KI-Assistent für sofortige Antworten auf Mitgliederanfragen.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">poll</span></div>
+        <h4>Umfragen &amp; Feedback</h4>
+        <p>Mitarbeiterbefragungen, Puls-Checks und anonymes Feedback – direkt im Intranet, mit automatischer Auswertung und Dashboard für HR und Führungskräfte.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-icon"><span class="material-symbols-rounded">groups_3</span></div>
-        <h4>Gremien &amp; Ausschüsse</h4>
-        <p>Geschlossene Arbeitsbereiche für Vorstände, Fachgruppen und Ausschüsse mit Dokumentenablage, Terminplanung und digitalen Abstimmungsfunktionen.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
+        <h4>HR Self-Service</h4>
+        <p>Gehaltsabrechnungen, Urlaubssaldo und persönliche Stammdaten – Mitarbeitende verwalten ihre HR-Daten eigenständig, HR wird von Routineanfragen entlastet.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-icon"><span class="material-symbols-rounded">receipt_long</span></div>
-        <h4>Beitrags- &amp; Rechnungsverwaltung</h4>
-        <p>Automatische Beitragsrechnungen, Zahlungsstatus und Mahnläufe – vollständig ins Mitgliederportal integriert, ohne Medienbrüche zu externen Buchhaltungssystemen.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">integration_instructions</span></div>
+        <h4>System-Integration</h4>
+        <p>Anbindung an HR-Systeme, ERP, Active Directory und SSO: Mitarbeiterdaten bleiben automatisch synchron, kein doppeltes Pflegen von Nutzerdaten.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SUCCESS STORIES -->
-<section style="background:var(--white);">
+<section style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Referenzen</p>
-      <h2 class="section-title">Kunden, die <em>überzeugt sind</em></h2>
+      <h2 class="section-title">Unternehmen, die auf <em>SITEFORUM vertrauen</em></h2>
       <p class="section-sub">Echte Projekte – echte Ergebnisse.</p>
     </div>
     <div class="stories-grid">
 
       <a href="#" class="story-card ani-fade-in">
         <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/pharmacy/800/440" alt="LAK Baden-Württemberg" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_lak-bw.jpg" alt="LAK BW" /></div>
+          <img src="https://picsum.photos/seed/executive-search/800/440" alt="Odgers Berndtson" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_odgers.png" alt="Odgers Berndtson" /></div>
         </div>
         <div class="story-body">
-          <h3 class="story-title">Digitales Mitgliederportal für 13.500 Apothekerinnen und Apotheker</h3>
+          <h3 class="story-title">Globales Intranet für 2.000 Partner und Mitarbeitende weltweit</h3>
           <div class="story-result">
-            <div class="story-result-value">7 Mo.</div>
-            <div class="story-result-label">von Kick-off bis Go-live des neuen Portals „Meine LAK"</div>
+            <div class="story-result-value">2.000+</div>
+            <div class="story-result-label">Nutzer in internationalen Niederlassungen auf einer Plattform</div>
           </div>
           <span class="story-link">Zur Success Story</span>
         </div>
@@ -819,14 +723,14 @@
 
       <a href="#" class="story-card ani-fade-in" data-delay="80">
         <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/assembly/800/440" alt="VAK Schleswig-Holstein" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_VAK.jpg" alt="VAK" /></div>
+          <img src="https://picsum.photos/seed/spitzke-rail/800/440" alt="Spitzke" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_spitzke.jpg" alt="Spitzke" /></div>
         </div>
         <div class="story-body">
-          <h3 class="story-title">Digitales Mitgliederportal für 12.000 Nutzer</h3>
+          <h3 class="story-title">Mitarbeiterportal für ein führendes Eisenbahn-Infrastrukturunternehmen</h3>
           <div class="story-result">
-            <div class="story-result-value">80%</div>
-            <div class="story-result-label">weniger manuelle Bearbeitungszeit durch Self-Service-Prozesse</div>
+            <div class="story-result-value">100%</div>
+            <div class="story-result-label">digitale Abbildung unternehmensweiter HR-Prozesse</div>
           </div>
           <span class="story-link">Zur Success Story</span>
         </div>
@@ -834,14 +738,14 @@
 
       <a href="#" class="story-card ani-fade-in" data-delay="160">
         <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/retirement/800/440" alt="VBL" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_VBL.jpg" alt="VBL" /></div>
+          <img src="https://picsum.photos/seed/bss-intranet/800/440" alt="BSS" />
+          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_bss.png" alt="BSS" /></div>
         </div>
         <div class="story-body">
-          <h3 class="story-title">Versorgungsportal für 4,4 Millionen Versicherte</h3>
+          <h3 class="story-title">Wissensdatenbank und internes Portal für ein mittelständisches Dienstleistungsunternehmen</h3>
           <div class="story-result">
-            <div class="story-result-value">4,4 Mio</div>
-            <div class="story-result-label">Nutzer verwalten ihre Vorsorge vollständig digital</div>
+            <div class="story-result-value">–60%</div>
+            <div class="story-result-label">weniger interne Anfragen durch Self-Service-Wissensdatenbank</div>
           </div>
           <span class="story-link">Zur Success Story</span>
         </div>
@@ -852,12 +756,13 @@
 </section>
 
 <!-- CTA BANNER -->
-<div class="cta-banner" id="kontakt" style="margin-top: 0;">
+<div style="background:var(--slate-100); padding-top:100px;">
+<div class="cta-banner" id="kontakt">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Jetzt starten</p>
-      <h2 class="section-title">Bereit, Ihre Organisation <em>digital neu aufzustellen?</em></h2>
-      <p class="section-sub">Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welche Lösung am besten zu Ihren Anforderungen passt.</p>
+      <h2 class="section-title">Bereit für ein Intranet, das <em>wirklich genutzt wird?</em></h2>
+      <p class="section-sub">Lassen Sie uns gemeinsam herausfinden, wie ein modernes Intranet auf SITEFORUM-Basis Ihre interne Kommunikation und Zusammenarbeit transformiert.</p>
     </div>
     <div class="cta-contact-block">
       <div class="cta-contact-label-top">Ihr Ansprechpartner</div>
@@ -883,6 +788,7 @@
     </div>
   </div>
 </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -899,6 +805,8 @@
           <li><a href="ki.html">Künstliche Intelligenz</a></li>
           <li><a href="managed-cloud.html">Managed Cloud</a></li>
           <li><a href="mitgliederportale.html">Mitgliederportale</a></li>
+          <li><a href="kundenportale.html">Kundenportale</a></li>
+          <li><a href="intranet.html">Intranet</a></li>
         </ul>
       </div>
       <div class="footer-col">
