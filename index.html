@@ -1438,21 +1438,18 @@
     function getCardW() {
       return slider.querySelectorAll('.card')[0].offsetWidth + 20;
     }
-    function getPerPage() {
-      return Math.max(1, Math.floor(slider.clientWidth / getCardW()));
-    }
     function getActiveIndex() {
       return Math.round(slider.scrollLeft / getCardW());
     }
 
     document.getElementById('slide-prev').addEventListener('click', () => {
       const cards = slider.querySelectorAll('.card');
-      const idx = Math.max(0, getActiveIndex() - getPerPage());
+      const idx = Math.max(0, getActiveIndex() - 1);
       cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     });
     document.getElementById('slide-next').addEventListener('click', () => {
       const cards = slider.querySelectorAll('.card');
-      const idx = Math.min(cards.length - 1, getActiveIndex() + getPerPage());
+      const idx = Math.min(cards.length - 1, getActiveIndex() + 1);
       cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     });
   })();
