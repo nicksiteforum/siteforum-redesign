@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corporate Websites – SITEFORUM</title>
+  <title>Karriere – SITEFORUM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -67,7 +67,9 @@
     .nav-has-dropdown > a { gap: 2px; }
     .nav-chevron { font-size: 16px !important; opacity: 0.55; transition: transform 0.2s; }
     .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); }
-    .nav-has-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 24px; }
+    .nav-has-dropdown::after {
+      content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 24px;
+    }
     .nav-dropdown-menu {
       position: absolute; top: calc(100% + 20px); left: 50%;
       transform: translateX(-50%) translateY(-6px);
@@ -86,7 +88,8 @@
     .nav-dropdown-menu a {
       display: block; padding: 8px 14px; border-radius: 8px;
       color: #374151; text-decoration: none; font-size: 0.875rem; font-weight: 500;
-      white-space: nowrap; transition: background 0.12s, color 0.12s; background: none;
+      white-space: nowrap; transition: background 0.12s, color 0.12s;
+      background: none;
     }
     .nav-dropdown-menu a:hover { background: var(--slate-100); color: var(--navy); }
     .nav-dropdown-menu a.active { color: var(--blue-600); background: #eff6ff; }
@@ -96,7 +99,8 @@
       padding: 11px 22px; border-radius: 999px;
       font-size: 0.9rem; font-weight: 600; text-decoration: none;
       transition: background 0.2s, transform 0.15s;
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 8px;
+      white-space: nowrap; flex-shrink: 0;
     }
     .nav-cta::after { content: "→"; }
     .nav-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
@@ -112,7 +116,10 @@
       background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
       background-size: 28px 28px; pointer-events: none;
     }
-    .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
     .solution-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);
@@ -129,9 +136,40 @@
     .hero h1 em { font-style: normal; color: #93c5fd; }
     .hero-sub {
       font-size: 1.1rem; color: rgba(255,255,255,0.7);
-      max-width: 620px; margin: 0 0 40px; font-weight: 400; line-height: 1.65;
+      max-width: 640px; margin: 0 0 40px; font-weight: 400; line-height: 1.65;
     }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      padding: 5px 12px; border-radius: 999px;
+    }
+    .hero-tag .material-symbols-rounded { font-size: 14px; color: #93c5fd; }
+
+    /* ─── SECTION WRAPPER ───────────────────────────────────── */
+    section { padding: 100px 40px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .ani-fade-in { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease !important; }
+    .ani-fade-in.visible { opacity: 1; transform: none; }
+
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--blue-600); margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.15; color: var(--navy); margin-bottom: 20px;
+    }
+    .section-title em { font-style: normal; color: var(--secondary); }
+    .section-sub {
+      font-size: 1.05rem; color: var(--slate-600);
+      max-width: 580px; margin-bottom: 60px;
+    }
+    .cta-banner .section-label { color: #93c5fd; }
+    .cta-banner .section-title em { color: #93c5fd; }
+
     .btn-primary {
       background: var(--white); color: var(--primary);
       padding: 16px 32px; border-radius: var(--radius-sm);
@@ -147,105 +185,55 @@
       transition: border-color 0.2s, transform 0.15s; display: inline-block;
     }
     .btn-secondary:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-1px); }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.65);
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
-      padding: 5px 12px; border-radius: 999px;
-    }
-    .hero-tag .material-symbols-rounded { font-size: 14px; color: #93c5fd; }
 
-    /* ─── SECTION ───────────────────────────────────────────── */
-    section { padding: 100px 40px; }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
-    .ani-fade-in { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease !important; }
-    .ani-fade-in.visible { opacity: 1; transform: none; }
-    .section-label {
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--blue-600); margin-bottom: 16px;
-    }
-    .section-title {
-      font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800;
-      letter-spacing: -1px; line-height: 1.15; color: var(--navy); margin-bottom: 20px;
-    }
-    .section-title em { font-style: normal; color: var(--secondary); }
-    .section-sub { font-size: 1.05rem; color: var(--slate-600); max-width: 580px; margin-bottom: 60px; }
-
-    /* ─── POSITIONING BLOCK ─────────────────────────────────── */
-    .positioning-layout {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
-    }
-    .positioning-text { display: flex; flex-direction: column; gap: 20px; }
-    .positioning-text p { font-size: 1rem; color: var(--slate-600); line-height: 1.75; }
-    .positioning-text strong { color: var(--navy); }
-    .positioning-callout {
-      background: var(--blue-50); border-left: 4px solid var(--secondary);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 20px 24px;
-    }
-    .positioning-callout p { font-size: 0.95rem; color: var(--navy); font-weight: 500; line-height: 1.6; font-style: italic; }
-    .positioning-cards { display: flex; flex-direction: column; gap: 16px; }
-    .pos-card {
-      display: flex; gap: 16px; align-items: flex-start;
-      padding: 20px; background: var(--white);
-      border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
-    }
-    .pos-icon {
-      width: 40px; height: 40px; border-radius: var(--radius-sm);
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary); flex-shrink: 0;
-    }
-    .pos-icon .material-symbols-rounded { font-size: 20px; }
-    .pos-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .pos-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
-
-    /* ─── FEATURE GRID ──────────────────────────────────────── */
-    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .feature-card {
-      padding: 24px 20px; border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
-      background: var(--white); display: flex; flex-direction: column; gap: 12px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .feature-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 16px rgba(0,51,102,0.07); }
-    .feature-icon {
-      width: 44px; height: 44px; border-radius: var(--radius-sm);
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; color: var(--secondary);
-    }
-    .feature-icon .material-symbols-rounded { font-size: 22px; }
-    .feature-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
-    .feature-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
-
-    /* ─── SUCCESS STORIES ───────────────────────────────────── */
-    .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .story-card {
+    /* ─── BENEFITS GRID ─────────────────────────────────────── */
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .benefit-card {
       background: var(--white); border-radius: var(--radius-md);
-      overflow: hidden; border: 1.5px solid #e5e7eb;
+      border: 1.5px solid #e5e7eb; padding: 32px 28px;
       transition: box-shadow 0.2s, border-color 0.2s;
-      text-decoration: none; display: block; color: inherit;
     }
-    .story-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--blue-200); }
-    .story-img-wrap { position: relative; height: 180px; overflow: hidden; background: var(--blue-50); }
-    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .story-customer-badge {
-      position: absolute; bottom: 14px; left: 14px;
-      width: 64px; height: 64px; border-radius: 10px; border: 1.5px solid #e5e7eb;
-      background: #fff; overflow: hidden;
+    .benefit-card:hover { box-shadow: 0 8px 32px rgba(0,51,102,0.08); border-color: var(--blue-200); }
+    .benefit-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--blue-50); display: flex; align-items: center;
+      justify-content: center; margin-bottom: 20px;
     }
-    .story-customer-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
-    .story-body { padding: 24px 24px 28px; }
-    .story-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
-    .story-result {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--blue-50); border-radius: 10px; padding: 12px 16px; margin-bottom: 20px;
-    }
-    .story-result-value { font-size: 1.5rem; font-weight: 800; color: var(--secondary); line-height: 1; white-space: nowrap; flex-shrink: 0; }
-    .story-result-label { font-size: 0.82rem; color: var(--slate-600); line-height: 1.4; }
-    .story-link { font-size: 0.88rem; font-weight: 600; color: var(--blue-600); display: inline-flex; align-items: center; gap: 6px; }
-    .story-link::after { content: "→"; }
+    .benefit-icon .material-symbols-rounded { font-size: 26px; color: var(--blue-600); }
+    .benefit-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .benefit-card p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.7; }
 
-    /* ─── CTA ───────────────────────────────────────────────── */
+    /* ─── JOB AREAS GRID ────────────────────────────────────── */
+    .jobs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .job-card {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--white); border-radius: var(--radius-md);
+      border: 1.5px solid #e5e7eb; padding: 22px 24px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .job-card:hover { box-shadow: 0 4px 16px rgba(0,51,102,0.08); border-color: var(--blue-200); }
+    .job-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm); flex-shrink: 0;
+      background: var(--blue-50); display: flex; align-items: center; justify-content: center;
+      color: var(--secondary);
+    }
+    .job-icon .material-symbols-rounded { font-size: 22px; }
+    .job-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .job-card p { font-size: 0.8rem; color: var(--slate-600); margin-top: 2px; }
+
+    /* ─── PROCESS STEPS ─────────────────────────────────────── */
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .step-card { position: relative; padding: 8px 4px; }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--blue-600); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 800; margin-bottom: 20px;
+    }
+    .step-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .step-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.65; }
+
+    /* ─── CTA BANNER ────────────────────────────────────────── */
     .cta-banner {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
       border-radius: var(--radius-lg); margin: 0 40px;
@@ -257,10 +245,8 @@
       background-size: 28px 28px; pointer-events: none; z-index: 0;
     }
     .cta-banner .section-inner { padding: 80px 60px; position: relative; z-index: 1; text-align: center; }
-    .cta-banner .section-label { color: #93c5fd; }
     .cta-banner .section-title { max-width: 640px; margin: 0 auto 16px; color: var(--white); }
     .cta-banner .section-sub { margin: 0 auto 40px; text-align: center; color: #94a3b8; }
-    .cta-banner .section-title em { color: #93c5fd; }
     .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .cta-contact-block {
       display: flex; flex-direction: column; align-items: center;
@@ -268,34 +254,20 @@
       border-top: 1px solid rgba(255,255,255,0.12);
       border-bottom: 1px solid rgba(255,255,255,0.12);
     }
-    .cta-contact-label-top {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 20px;
-    }
-    .cta-contact-avatar {
-      width: 100px; height: 100px; border-radius: 50%;
-      overflow: hidden; border: 3px solid rgba(255,255,255,0.2);
-      flex-shrink: 0; margin-bottom: 16px;
-    }
+    .cta-contact-label-top { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 20px; }
+    .cta-contact-avatar { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255,255,255,0.2); flex-shrink: 0; margin-bottom: 16px; }
     .cta-contact-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .cta-contact-name { font-size: 1.05rem; font-weight: 700; color: var(--white); }
     .cta-contact-role { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
     .cta-contact-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-    .cta-contact-link {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.85rem; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.15s;
-    }
+    .cta-contact-link { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.15s; }
     .cta-contact-link:hover { color: var(--white); }
     .cta-contact-link .material-symbols-rounded { font-size: 16px; color: #93c5fd; }
 
     /* ─── FOOTER ────────────────────────────────────────────── */
     footer { background: var(--navy); color: #94a3b8; padding: 64px 40px 32px; margin-top: 100px; }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-top {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px; padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .footer-brand .nav-logo { color: var(--white); display: block; margin-bottom: 16px; }
     .footer-brand p { font-size: 0.88rem; line-height: 1.65; max-width: 260px; }
     .footer-col h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 20px; }
@@ -328,9 +300,13 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .nav-cta { display: none; }
-      .positioning-layout { grid-template-columns: 1fr; gap: 48px; }
-      .feature-grid { grid-template-columns: repeat(2, 1fr); }
-      .stories-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+      .jobs-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .benefit-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
     @media (max-width: 640px) {
       h1, h2, h3, h4 { hyphens: auto; }
@@ -338,10 +314,9 @@
       .nav-inner { height: 52px; padding: 0.4rem 0.5rem 0.4rem 1rem; }
       section { padding: 64px 20px; }
       .hero { padding: 120px 20px 80px; }
-      .feature-grid { grid-template-columns: 1fr; }
-      .stories-grid { grid-template-columns: 1fr; }
+      .jobs-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
       .cta-banner { margin: 0 16px; }
-      .cta-banner .section-inner { padding: 60px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
     }
   </style>
@@ -366,15 +341,15 @@
         </div>
       </li>
       <li class="nav-has-dropdown">
-        <a href="index.html#loesungen" class="active">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#loesungen">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
           <a href="mitgliederportale.html">Mitgliederportale</a>
           <a href="kundenportale.html">Kundenportale</a>
           <a href="mitarbeiterportale.html">Mitarbeiterportale</a>
           <a href="informationsmanagement.html">Informationsmanagement</a>
           <a href="intranet.html">Intranet</a>
-          <a href="communities.html">Communities</a>
-          <a href="corporate-websites.html" class="active">Corporate Websites</a>
+          <a href="communities.html">Community</a>
+          <a href="corporate-websites.html">Corporate Websites</a>
         </div>
       </li>
       <li class="nav-has-dropdown">
@@ -382,18 +357,18 @@
         <div class="nav-dropdown-menu">
           <a href="kammern-verbaende.html">Kammern &amp; Verbände</a>
           <a href="finanzen.html">Finanzen</a>
-          <a href="#">Verkehrs- und Transportwesen</a>
-          <a href="#">Personaldienstleistungen</a>
-          <a href="#">Gesundheitswesen</a>
-          <a href="#">Medienbranche</a>
+          <a href="index.html#branchen">Verkehrs- und Transportwesen</a>
+          <a href="index.html#branchen">Personaldienstleistungen</a>
+          <a href="index.html#branchen">Gesundheitswesen</a>
+          <a href="index.html#branchen">Medienbranche</a>
         </div>
       </li>
       <li><a href="index.html#referenzen">Referenzen</a></li>
       <li class="nav-has-dropdown">
-        <a href="ueber-uns.html">Über uns <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="ueber-uns.html" class="active">Über uns <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
           <a href="ueber-uns.html">Über uns</a>
-          <a href="karriere.html">Karriere</a>
+          <a href="karriere.html" class="active">Karriere</a>
           <a href="news.html">News</a>
         </div>
       </li>
@@ -422,8 +397,8 @@
       <a href="mitarbeiterportale.html" onclick="closeMenu()">Mitarbeiterportale</a>
       <a href="informationsmanagement.html" onclick="closeMenu()">Informationsmanagement</a>
       <a href="intranet.html" onclick="closeMenu()">Intranet</a>
-      <a href="communities.html" onclick="closeMenu()">Communities</a>
-      <a href="corporate-websites.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Corporate Websites</a>
+      <a href="communities.html" onclick="closeMenu()">Community</a>
+      <a href="corporate-websites.html" onclick="closeMenu()">Corporate Websites</a>
     </div>
   </div>
   <div class="mob-group">
@@ -431,10 +406,10 @@
     <div class="mob-sub">
       <a href="kammern-verbaende.html" onclick="closeMenu()">Kammern &amp; Verbände</a>
       <a href="finanzen.html" onclick="closeMenu()">Finanzen</a>
-      <a href="#" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
-      <a href="#" onclick="closeMenu()">Personaldienstleistungen</a>
-      <a href="#" onclick="closeMenu()">Gesundheitswesen</a>
-      <a href="#" onclick="closeMenu()">Medienbranche</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Personaldienstleistungen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Gesundheitswesen</a>
+      <a href="index.html#branchen" onclick="closeMenu()">Medienbranche</a>
     </div>
   </div>
   <a href="index.html#referenzen" onclick="closeMenu()">Referenzen</a>
@@ -442,7 +417,7 @@
     <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Über uns <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
     <div class="mob-sub">
       <a href="ueber-uns.html" onclick="closeMenu()">Über uns</a>
-      <a href="karriere.html" onclick="closeMenu()">Karriere</a>
+      <a href="karriere.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Karriere</a>
       <a href="news.html" onclick="closeMenu()">News</a>
     </div>
   </div>
@@ -460,20 +435,23 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="solution-badge">
-      <span class="material-symbols-rounded" style="font-size:14px;">language</span>
-      Lösung
+      <span class="material-symbols-rounded" style="font-size:14px;">rocket_launch</span>
+      Karriere
     </div>
-    <h1>Der Webauftritt, der <em>nahtlos aus Ihrem Portalprojekt</em> herauswächst.</h1>
-    <p class="hero-sub">Wenn Sie ein Portal bei uns bauen, lassen viele Kunden gleich auch den öffentlichen Webauftritt anpassen – einheitliches Design, eine Plattform, ein Ansprechpartner.</p>
+    <h1>Werde Teil eines Teams, das <em>Digitalisierung lebt.</em></h1>
+    <p class="hero-sub">
+      Wir suchen talentierte und motivierte Menschen, die mit uns die digitale Zukunft gestalten –
+      in einem internationalen Team aus acht Nationen, mit flachen Hierarchien und echter Wertschätzung.
+    </p>
     <div class="hero-actions">
-      <a href="#kontakt" class="btn-primary">Gespräch anfragen</a>
-      <a href="#leistungen" class="btn-secondary">Was wir anbieten</a>
+      <a href="#bewerben" class="btn-primary">Jetzt bewerben</a>
+      <a href="#bereiche" class="btn-secondary">Offene Bereiche</a>
     </div>
     <div class="hero-tags">
-      <span class="hero-tag"><span class="material-symbols-rounded">verified_user</span> DSGVO-konform</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Made in Germany</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">edit_note</span> Selbst pflegbar per CMS</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">link</span> Nahtlos mit dem Portal verbunden</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">home_work</span> Homeoffice Standard</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">schedule</span> Vertrauensarbeitszeit</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">public</span> 8 Nationalitäten</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">verified</span> Seit 1998 am Markt</span>
     </div>
   </div>
 </header>
@@ -482,197 +460,177 @@
 <div style="background:var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px;">
   <div style="max-width:1200px; margin:0 auto;">
     <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem;">
-      <a href="index.html" style="color:var(--secondary); text-decoration:none;">Startseite</a>
-      <span style="color:#cbd5e1;">›</span>
-      <a href="index.html#loesungen" style="color:var(--secondary); text-decoration:none;">Lösungen</a>
-      <span style="color:#cbd5e1;">›</span>
-      <span style="color:var(--slate-600);">Corporate Websites</span>
+      <a href="index.html" style="color:var(--slate-600); text-decoration:none;">Startseite</a>
+      <span class="material-symbols-rounded" style="font-size:14px; color:#94a3b8;">chevron_right</span>
+      <a href="ueber-uns.html" style="color:var(--slate-600); text-decoration:none;">Über uns</a>
+      <span class="material-symbols-rounded" style="font-size:14px; color:#94a3b8;">chevron_right</span>
+      <span style="color:var(--navy); font-weight:600;">Karriere</span>
     </div>
   </div>
 </div>
 
-<!-- POSITIONING -->
-<section style="background:var(--slate-100);">
+<!-- BENEFITS -->
+<section style="background:var(--white);">
   <div class="section-inner">
-    <div class="positioning-layout">
-      <div class="positioning-text ani-fade-in">
-        <p class="section-label">Unsere Haltung</p>
-        <h2 class="section-title" style="margin-bottom:0;">Wir sind <em>keine Website-Agentur.</em> Und das ist gut so.</h2>
-        <p>SITEFORUM hat sich auf digitale Portale und komplexe Webanwendungen spezialisiert – Mitgliederportale, Kundenportale, Intranets und Communities. Das ist unser Kerngeschäft, und darin sind wir sehr gut.</p>
-        <p>Wenn unsere Kunden im Zuge eines Portalprojekts entscheiden, <strong>auch den öffentlichen Webauftritt zu modernisieren</strong>, begleiten wir das gern. Nicht als Website-Agentur, sondern als Partner, der beide Welten kennt und nahtlos verbindet.</p>
-        <div class="positioning-callout">
-          <p>„Das Portal läuft auf SITEFORUM – da macht es Sinn, die Website gleich mitzumachen. Einheitliches Design, ein System, ein Team."</p>
+    <div class="ani-fade-in">
+      <p class="section-label">Warum SITEFORUM</p>
+      <h2 class="section-title">Was dich bei uns <em>erwartet</em></h2>
+      <p class="section-sub">Stabilität eines etablierten Unternehmens, gepaart mit der Flexibilität und Atmosphäre eines kleinen, eingespielten Teams.</p>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card ani-fade-in" data-delay="0">
+        <div class="benefit-icon"><span class="material-symbols-rounded">home_work</span></div>
+        <h4>Homeoffice &amp; Flexibilität</h4>
+        <p>Homeoffice ist bei uns Standard, nicht die Ausnahme. Teilzeit oder Vollzeit – wir finden das Modell, das zu deinem Leben passt.</p>
+      </div>
+      <div class="benefit-card ani-fade-in" data-delay="80">
+        <div class="benefit-icon"><span class="material-symbols-rounded">schedule</span></div>
+        <h4>Vertrauensarbeitszeit</h4>
+        <p>Wir zählen keine Stunden, sondern setzen auf Ergebnisse und Eigenverantwortung. Du teilst dir deinen Tag so ein, wie er für dich am besten funktioniert.</p>
+      </div>
+      <div class="benefit-card ani-fade-in" data-delay="160">
+        <div class="benefit-icon"><span class="material-symbols-rounded">diversity_3</span></div>
+        <h4>Internationales Team</h4>
+        <p>Acht Nationalitäten unter einem Dach, alle per Du. Eine lockere, positive Arbeitsatmosphäre, in der sich Kolleginnen und Kollegen gegenseitig unterstützen.</p>
+      </div>
+      <div class="benefit-card ani-fade-in" data-delay="0">
+        <div class="benefit-icon"><span class="material-symbols-rounded">account_tree</span></div>
+        <h4>Flache Hierarchien</h4>
+        <p>Kurze Entscheidungswege und viel Freiraum für eigene Ideen. Du gestaltest aktiv mit, statt nur Vorgaben abzuarbeiten.</p>
+      </div>
+      <div class="benefit-card ani-fade-in" data-delay="80">
+        <div class="benefit-icon"><span class="material-symbols-rounded">verified</span></div>
+        <h4>Sicherheit &amp; Stabilität</h4>
+        <p>Seit 1998 inhabergeführt und erfolgreich am Markt. Ein solides Fundament, auf dem du langfristig planen kannst.</p>
+      </div>
+      <div class="benefit-card ani-fade-in" data-delay="160">
+        <div class="benefit-icon"><span class="material-symbols-rounded">local_cafe</span></div>
+        <h4>Büro mit Wohlfühlfaktor</h4>
+        <p>Zentral in der Erfurter Innenstadt, nahe Dom und Bahnhof. Mit Getränken, Fahrradstellplatz, Parkmöglichkeiten und Dachterrasse für die Pause.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB AREAS -->
+<section id="bereiche" style="background:var(--slate-100);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Offene Bereiche</p>
+      <h2 class="section-title">Wo wir <em>Verstärkung suchen</em></h2>
+      <p class="section-sub">Du findest dich in einem dieser Bereiche wieder? Dann freuen wir uns auf deine Bewerbung – gerne auch initiativ.</p>
+    </div>
+    <div class="jobs-grid">
+      <div class="job-card ani-fade-in" data-delay="0">
+        <div class="job-icon"><span class="material-symbols-rounded">code</span></div>
+        <div>
+          <h4>Software-Entwicklung</h4>
+          <p>Backend, Plattform &amp; Web</p>
         </div>
       </div>
-      <div class="positioning-cards ani-fade-in" data-delay="100">
-        <div class="pos-card">
-          <div class="pos-icon"><span class="material-symbols-rounded">palette</span></div>
-          <div>
-            <h4>Konsistentes Markenerlebnis</h4>
-            <p>Website und Portal sehen aus einem Guss aus – gleiches Design-System, gleiche Komponenten, gleiche Sprache. Keine sichtbare Bruchstelle für den Nutzer.</p>
-          </div>
+      <div class="job-card ani-fade-in" data-delay="60">
+        <div class="job-icon"><span class="material-symbols-rounded">dns</span></div>
+        <div>
+          <h4>Server-Administration</h4>
+          <p>Infrastruktur &amp; Betrieb</p>
         </div>
-        <div class="pos-card">
-          <div class="pos-icon"><span class="material-symbols-rounded">person</span></div>
-          <div>
-            <h4>Ein Ansprechpartner für alles</h4>
-            <p>Kein Koordinationsaufwand zwischen Website-Agentur und Portal-Entwickler. Anforderungen, Änderungen und Rollout laufen über ein Team.</p>
-          </div>
+      </div>
+      <div class="job-card ani-fade-in" data-delay="120">
+        <div class="job-icon"><span class="material-symbols-rounded">palette</span></div>
+        <div>
+          <h4>User Interfaces &amp; Webdesign</h4>
+          <p>UX/UI &amp; Frontend</p>
         </div>
-        <div class="pos-card">
-          <div class="pos-icon"><span class="material-symbols-rounded">login</span></div>
-          <div>
-            <h4>Nahtloser Übergang ins Portal</h4>
-            <p>Login-Bereich, Registrierung und die Verbindung von öffentlicher Website zu geschlossenem Portal funktionieren technisch reibungslos – weil beides aus einer Hand kommt.</p>
-          </div>
+      </div>
+      <div class="job-card ani-fade-in" data-delay="0">
+        <div class="job-icon"><span class="material-symbols-rounded">checklist</span></div>
+        <div>
+          <h4>Projekt- &amp; Account-Management</h4>
+          <p>Kundenprojekte &amp; Betreuung</p>
         </div>
-        <div class="pos-card">
-          <div class="pos-icon"><span class="material-symbols-rounded">edit_note</span></div>
-          <div>
-            <h4>Selbst pflegbar per SITEFORUM CMS</h4>
-            <p>Nach dem Go-live übernimmt Ihr Team die Pflege eigenständig. Texte, Bilder, Seiten – alles über das vertraute SITEFORUM CMS ohne IT-Aufwand.</p>
-          </div>
+      </div>
+      <div class="job-card ani-fade-in" data-delay="60">
+        <div class="job-icon"><span class="material-symbols-rounded">campaign</span></div>
+        <div>
+          <h4>Sales &amp; Marketing</h4>
+          <p>Vertrieb &amp; Kommunikation</p>
+        </div>
+      </div>
+      <div class="job-card ani-fade-in" data-delay="120">
+        <div class="job-icon"><span class="material-symbols-rounded">support_agent</span></div>
+        <div>
+          <h4>QA &amp; Support</h4>
+          <p>Qualität &amp; Kundenservice</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LEISTUNGEN -->
-<section id="leistungen" style="background:var(--white);">
+<!-- PROCESS -->
+<section style="background:var(--white);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Was wir anbieten</p>
-      <h2 class="section-title">Von der Konzeption bis zum <em>Go-live</em></h2>
-      <p class="section-sub" style="margin-bottom:60px;">Wir übernehmen alles, was für einen professionellen Webauftritt nötig ist – strukturiert, effizient und aufeinander abgestimmt mit dem Portal-Projekt.</p>
+      <p class="section-label">Bewerbungsprozess</p>
+      <h2 class="section-title">In vier Schritten <em>zu uns</em></h2>
+      <p class="section-sub">Unkompliziert, transparent und auf Augenhöhe – so läuft deine Bewerbung bei SITEFORUM ab.</p>
     </div>
-    <div class="feature-grid">
-      <div class="feature-card ani-fade-in" data-delay="0">
-        <div class="feature-icon"><span class="material-symbols-rounded">architecture</span></div>
-        <h4>Konzept &amp; Informationsarchitektur</h4>
-        <p>Seitenstruktur, Navigation und Nutzerpfade werden gemeinsam mit Ihnen entwickelt – immer mit Blick auf den Übergang vom öffentlichen Bereich ins Portal.</p>
+    <div class="steps-grid">
+      <div class="step-card ani-fade-in" data-delay="0">
+        <div class="step-num">1</div>
+        <h4>Bewerbung senden</h4>
+        <p>Schick uns Anschreiben, Lebenslauf und Zeugnisse – am liebsten als PDF. Erzähl uns, was dich motiviert.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="60">
-        <div class="feature-icon"><span class="material-symbols-rounded">draw</span></div>
-        <h4>UI-Design &amp; Corporate Design</h4>
-        <p>Modernes, responsives Design auf Basis Ihrer Markenidentität – abgestimmt auf das Portal-Design, damit Website und Portal wie ein Produkt wirken.</p>
+      <div class="step-card ani-fade-in" data-delay="80">
+        <div class="step-num">2</div>
+        <h4>Kennenlernen</h4>
+        <p>Wir melden uns zeitnah und laden dich zu einem ersten, lockeren Gespräch ein – persönlich oder per Video.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="120">
-        <div class="feature-icon"><span class="material-symbols-rounded">code</span></div>
-        <h4>Technische Umsetzung</h4>
-        <p>Entwicklung auf der SITEFORUM-Plattform: performant, barrierefrei, DSGVO-konform und vollständig in das CMS-System integriert.</p>
+      <div class="step-card ani-fade-in" data-delay="160">
+        <div class="step-num">3</div>
+        <h4>Team treffen</h4>
+        <p>Du lernst dein zukünftiges Team kennen und bekommst einen echten Eindruck von unserer Arbeit und Atmosphäre.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="0">
-        <div class="feature-icon"><span class="material-symbols-rounded">web</span></div>
-        <h4>CMS &amp; Redaktions-Workflow</h4>
-        <p>Ihr Redaktionsteam pflegt Inhalte eigenständig: Seiten anlegen, Texte ändern, Bilder tauschen – ohne Programmierkenntnisse, ohne IT-Ticket.</p>
+      <div class="step-card ani-fade-in" data-delay="240">
+        <div class="step-num">4</div>
+        <h4>Willkommen an Bord</h4>
+        <p>Passt es für beide Seiten, machen wir es offiziell – und du startest mit einer strukturierten Einarbeitung.</p>
       </div>
-      <div class="feature-card ani-fade-in" data-delay="60">
-        <div class="feature-icon"><span class="material-symbols-rounded">smartphone</span></div>
-        <h4>Responsive &amp; Mobile-first</h4>
-        <p>Optimale Darstellung auf allen Geräten – von Desktop über Tablet bis Smartphone. Barrierefreiheit (WCAG) und Core Web Vitals werden von Anfang an berücksichtigt.</p>
-      </div>
-      <div class="feature-card ani-fade-in" data-delay="120">
-        <div class="feature-icon"><span class="material-symbols-rounded">search</span></div>
-        <h4>SEO-Grundoptimierung</h4>
-        <p>Saubere Seitenstruktur, semantisches HTML, schnelle Ladezeiten und konfigurierbare Meta-Daten legen die technische Grundlage für gute Sichtbarkeit in Suchmaschinen.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SUCCESS STORIES -->
-<section style="background:var(--slate-100);">
-  <div class="section-inner">
-    <div class="ani-fade-in">
-      <p class="section-label">Referenzen</p>
-      <h2 class="section-title">Website und Portal – <em>aus einem Guss</em></h2>
-      <p class="section-sub">Kunden, die im Zuge ihres Portalprojekts auch den Webauftritt mit SITEFORUM umgesetzt haben.</p>
-    </div>
-    <div class="stories-grid">
-
-      <a href="#" class="story-card ani-fade-in">
-        <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/vbl-website/800/440" alt="VBL" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_VBL.jpg" alt="VBL" /></div>
-        </div>
-        <div class="story-body">
-          <h3 class="story-title">Website und Kundenportal für 4,4 Millionen Versicherte auf einer Plattform</h3>
-          <div class="story-result">
-            <div class="story-result-value">2004</div>
-            <div class="story-result-label">betreibt VBL Website und Portal durchgehend auf SITEFORUM</div>
-          </div>
-          <span class="story-link">Zur Success Story</span>
-        </div>
-      </a>
-
-      <a href="#" class="story-card ani-fade-in" data-delay="80">
-        <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/gpdm-website/800/440" alt="GPDM" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_gpdm.jpg" alt="GPDM" /></div>
-        </div>
-        <div class="story-body">
-          <h3 class="story-title">Öffentlicher Webauftritt und geschlossenes Mitgliederportal im einheitlichen Design</h3>
-          <div class="story-result">
-            <div class="story-result-value">1 System</div>
-            <div class="story-result-label">für öffentliche Website und geschlossenen Mitgliederbereich</div>
-          </div>
-          <span class="story-link">Zur Success Story</span>
-        </div>
-      </a>
-
-      <a href="#" class="story-card ani-fade-in" data-delay="160">
-        <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/dermacon-site/800/440" alt="Dermacon" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_dermacon.png" alt="Dermacon" /></div>
-        </div>
-        <div class="story-body">
-          <h3 class="story-title">Kongresswebsite mit integrierter Teilnehmer- und Programmverwaltung</h3>
-          <div class="story-result">
-            <div class="story-result-value">100%</div>
-            <div class="story-result-label">eigenständige Inhaltspflege durch das Redaktionsteam per CMS</div>
-          </div>
-          <span class="story-link">Zur Success Story</span>
-        </div>
-      </a>
-
     </div>
   </div>
 </section>
 
 <!-- CTA BANNER -->
-<div style="background:var(--slate-100); padding-top:100px;">
-<div class="cta-banner" id="kontakt">
+<div class="cta-banner" id="bewerben" style="margin-top: 0;">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Jetzt starten</p>
-      <h2 class="section-title">Website und Portal <em>gemeinsam denken?</em></h2>
-      <p class="section-sub">Wenn Sie ohnehin ein Portal planen, ist jetzt der richtige Zeitpunkt, auch den Webauftritt auf den Prüfstand zu stellen. Sprechen Sie uns an.</p>
+      <p class="section-label">Jetzt bewerben</p>
+      <h2 class="section-title">Lust, mit uns <em>etwas zu bewegen?</em></h2>
+      <p class="section-sub">Auch ohne passende Ausschreibung freuen wir uns über deine Initiativbewerbung. Erzähl uns, was du kannst und wo du hinwillst.</p>
     </div>
     <div class="cta-contact-block">
-      <div class="cta-contact-label-top">Ihr Ansprechpartner</div>
+      <div class="cta-contact-label-top">Dein Ansprechpartner</div>
       <div class="cta-contact-avatar">
-        <img src="team/SF_Team_Nick.jpg" alt="Nick Walter" />
+        <img src="team/peter.jpg" alt="Peter Hess" />
       </div>
-      <div class="cta-contact-name">Nick Walter</div>
-      <div class="cta-contact-role">Projektleiter</div>
+      <div class="cta-contact-name">Peter Hess</div>
+      <div class="cta-contact-role">Product &amp; Project Manager</div>
       <div class="cta-contact-links">
-        <a href="mailto:n.walter@siteforum.com" class="cta-contact-link">
+        <a href="mailto:jobs@siteforum.com" class="cta-contact-link">
           <span class="material-symbols-rounded">mail</span>
-          n.walter@siteforum.com
+          jobs@siteforum.com
         </a>
-        <a href="tel:+493616661811" class="cta-contact-link">
+        <a href="tel:+493616661510" class="cta-contact-link">
           <span class="material-symbols-rounded">phone</span>
-          +49 361 6661 5811
+          +49 361 6661 5810
         </a>
       </div>
     </div>
     <div class="cta-actions">
-      <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--white);color:var(--primary);">Gespräch anfragen</a>
-      <a href="tel:+493616661510" class="btn-secondary" style="background:transparent;color:var(--white);border-color:rgba(255,255,255,0.3);">+49 361 6661 5810</a>
+      <a href="mailto:jobs@siteforum.com" class="btn-primary">Bewerbung senden</a>
+      <a href="tel:+493616661510" class="btn-secondary">+49 361 6661 5810</a>
     </div>
   </div>
-</div>
 </div>
 
 <!-- FOOTER -->
@@ -689,18 +647,8 @@
           <li><a href="plattform.html">Digitales Ökosystem</a></li>
           <li><a href="ki.html">Künstliche Intelligenz</a></li>
           <li><a href="managed-cloud.html">Managed Cloud</a></li>
+          <li><a href="kundenportale.html">Kundenportale</a></li>
           <li><a href="mitgliederportale.html">Mitgliederportale</a></li>
-          <li><a href="intranet.html">Intranet</a></li>
-          <li><a href="communities.html">Communities</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Branchen</h4>
-        <ul>
-          <li><a href="kammern-verbaende.html">Kammern &amp; Verbände</a></li>
-          <li><a href="finanzen.html">Finanzen</a></li>
-          <li><a href="#">Gesundheitswesen</a></li>
-          <li><a href="#">Medienbranche</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -712,10 +660,19 @@
           <li><a href="karriere.html">Karriere</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:info@siteforum.com">info@siteforum.com</a></li>
+          <li><a href="tel:+493616661510">+49 361 6661 5810</a></li>
+          <li><a href="#">Straße des Friedens 15a</a></li>
+          <li><a href="#">99094 Erfurt</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
-      <div style="display:flex; gap:24px;">
+      <div style="display:flex;gap:24px;">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
         <a href="#">AGB</a>
@@ -725,18 +682,18 @@
 </footer>
 
 <script>
-  const fadeEls = document.querySelectorAll('.ani-fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => entry.target.classList.add('visible'), Number(delay));
-        observer.unobserve(entry.target);
-      }
+(function() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      var delay = parseInt(entry.target.dataset.delay || 0, 10);
+      var el = entry.target;
+      setTimeout(function() { el.classList.add('visible'); }, delay);
+      io.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
-  fadeEls.forEach(el => observer.observe(el));
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.ani-fade-in').forEach(function(el) { io.observe(el); });
+})();
 </script>
-
 </body>
 </html>
