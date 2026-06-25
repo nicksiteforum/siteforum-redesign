@@ -484,6 +484,10 @@
       transition: opacity 0.3s;
     }
     .solutions-slider-wrap.at-end::after { opacity: 0; }
+    /* Touch-Geräte: kein Fade – der sichtbare Karten-Peek zeigt, dass es weitergeht */
+    @media (pointer: coarse) {
+      .solutions-slider-wrap::after { display: none; }
+    }
     .solutions-slider {
       display: flex;
       gap: 20px;
@@ -703,7 +707,7 @@
     @media (max-width: 768px) { .stories-grid { grid-template-columns: 1fr; } }
 
     /* ─── BRANCHEN ──────────────────────────────────────────── */
-    .branchen { background: var(--slate-100); }
+    .branchen { background: var(--blue-50); }
     .branchen-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
