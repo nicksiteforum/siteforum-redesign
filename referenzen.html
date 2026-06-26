@@ -23,14 +23,6 @@
       background-size: 28px 28px; pointer-events: none;
     }
     .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-    .breadcrumb {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 0.82rem; margin-bottom: 28px; white-space: nowrap; overflow-x: auto;
-    }
-    .breadcrumb a { text-decoration: none; color: #93c5fd; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb-sep { color: rgba(255,255,255,0.3); }
-    .breadcrumb span { color: rgba(255,255,255,0.6); }
     .hero h1 {
       font-size: clamp(2.4rem, 4vw, 3.4rem);
       font-weight: 800; letter-spacing: -1.5px;
@@ -271,12 +263,12 @@
 </header>
 
 <!-- BREADCRUMB -->
-<div class="bc-bar" style="background:var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px;">
-  <div style="max-width:1200px; margin:0 auto;">
-    <div class="breadcrumb" style="margin-bottom:0; color:var(--slate-600);">
-      <a href="index.html" aria-label="Startseite" title="Startseite" style="color:var(--secondary); text-decoration:none; display:inline-flex; align-items:center;"><span class="material-symbols-rounded" style="font-size:18px;">home</span></a>
-      <span class="breadcrumb-sep" style="color:#cbd5e1;">›</span>
-      <span style="color:var(--slate-600);">Referenzen</span>
+<div class="bc-bar">
+  <div class="bc-inner">
+    <div class="bc-row">
+      <a href="index.html" aria-label="Startseite" title="Startseite" class="bc-home"><span class="material-symbols-rounded">home</span></a>
+      <span class="bc-sep">›</span>
+      <span class="bc-current">Referenzen</span>
     </div>
   </div>
 </div>

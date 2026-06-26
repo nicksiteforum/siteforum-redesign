@@ -282,6 +282,16 @@ footer { background: var(--navy); color: #94a3b8; padding: 64px 40px 32px; margi
 .footer-bottom a { color: #94a3b8; text-decoration: none; }
 .footer-bottom a:hover { color: var(--white); }
 
+/* ─── BREADCRUMB ─────────────────────────────────────────── */
+.bc-bar { background: var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px; }
+.bc-inner { max-width: 1200px; margin: 0 auto; }
+.bc-row { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; white-space: nowrap; overflow-x: auto; }
+.bc-row a { color: var(--secondary); text-decoration: none; display: inline-flex; align-items: center; }
+.bc-row a:hover { text-decoration: underline; }
+.bc-home .material-symbols-rounded { font-size: 18px; }
+.bc-sep { color: #cbd5e1; }
+.bc-current { color: var(--slate-600); }
+
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .nav-links { display: none; }
@@ -297,7 +307,7 @@ footer { background: var(--navy); color: #94a3b8; padding: 64px 40px 32px; margi
   nav { padding: 10px 16px; }
   .nav-inner { height: 52px; padding: 0.4rem 0.5rem 0.4rem 1rem; }
   section { padding: 64px 20px; }
-  .bc-bar { padding-left: 20px !important; padding-right: 20px !important; }
+  .bc-bar { padding-left: 20px; padding-right: 20px; }
   .cta-banner { margin: 0 16px; }
   .cta-banner .section-inner { padding: 60px 24px; }
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
