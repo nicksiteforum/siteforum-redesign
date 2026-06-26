@@ -180,10 +180,22 @@
         </div>
       </li>
     </ul>
-    <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
-    <button class="nav-hamburger" id="nav-toggle" aria-label="Menü">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-actions" style="display:flex;align-items:center;gap:12px;">
+      <div class="nav-lang">
+        <button class="nav-lang-btn" aria-label="Sprache wählen" aria-haspopup="true">
+          <span class="material-symbols-rounded nav-globe">language</span>
+          <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span>
+        </button>
+        <div class="nav-lang-menu">
+          <a href="#" class="active">Deutsch <span class="lang-code">DE</span></a>
+          <a href="#">English <span class="lang-code">EN</span></a>
+        </div>
+      </div>
+      <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
@@ -226,6 +238,13 @@
       <a href="ueber-uns.html" onclick="closeMenu()">Team</a>
       <a href="karriere.html" onclick="closeMenu()">Karriere</a>
       <a href="news.html" onclick="closeMenu()">News</a>
+    </div>
+  </div>
+  <div class="mob-group">
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)"><span class="material-symbols-rounded" style="font-size:20px;vertical-align:middle;margin-right:6px;">language</span>Sprache <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <div class="mob-sub">
+      <a href="#" onclick="closeMenu()">Deutsch</a>
+      <a href="#" onclick="closeMenu()">English</a>
     </div>
   </div>
   <a href="kontakt.html" onclick="closeMenu()" style="color:var(--blue-600);font-weight:600;">Gespräch anfragen</a>
@@ -410,7 +429,7 @@
 </section>
 
 <!-- CTA BANNER -->
-<div class="cta-banner" id="kontakt" style="margin-top: 0;">
+<div class="cta-banner" id="kontakt" style="margin-top: 80px;">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Interessiert?</p>
