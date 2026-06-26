@@ -137,7 +137,7 @@
     }
     .breadcrumb {
       display: flex; align-items: center; gap: 8px;
-      font-size: 0.82rem; margin-bottom: 28px;
+      font-size: 0.82rem; margin-bottom: 28px; white-space: nowrap; overflow-x: auto;
     }
     .breadcrumb a { text-decoration: none; color: #93c5fd; }
     .breadcrumb a:hover { text-decoration: underline; }
@@ -549,6 +549,7 @@
       nav { padding: 10px 16px; }
       .nav-inner { height: 52px; padding: 0.4rem 0.5rem 0.4rem 1rem; }
       section { padding: 64px 20px; }
+      .bc-bar { padding-left: 20px !important; padding-right: 20px !important; }
       .hero { padding: 120px 20px 80px; }
       .stats { padding: 40px 20px; }
       .features-grid { grid-template-columns: 1fr; }
@@ -701,10 +702,10 @@
 </header>
 
 <!-- BREADCRUMB -->
-<div style="background:var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px;">
+<div class="bc-bar" style="background:var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px;">
   <div style="max-width:1200px; margin:0 auto;">
     <div class="breadcrumb" style="margin-bottom:0; color:var(--slate-600);">
-      <a href="index.html" style="color:var(--secondary); text-decoration:none;">Startseite</a>
+      <a href="index.html" aria-label="Startseite" title="Startseite" style="color:var(--secondary); text-decoration:none; display:inline-flex; align-items:center;"><span class="material-symbols-rounded" style="font-size:18px;">home</span></a>
       <span class="breadcrumb-sep" style="color:#cbd5e1;">›</span>
       <a href="loesungen.html" style="color:var(--secondary); text-decoration:none;">Lösungen</a>
       <span class="breadcrumb-sep" style="color:#cbd5e1;">›</span>

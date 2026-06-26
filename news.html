@@ -152,6 +152,7 @@
       nav { padding: 10px 16px; }
       .nav-inner { height: 52px; padding: 0.4rem 0.5rem 0.4rem 1rem; }
       section { padding: 64px 20px; }
+      .bc-bar { padding-left: 20px !important; padding-right: 20px !important; }
       .hero { padding: 120px 20px 80px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .news-grid { grid-template-columns: 1fr; }
@@ -292,10 +293,10 @@
 </header>
 
 <!-- BREADCRUMB -->
-<div style="background:var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px;">
+<div class="bc-bar" style="background:var(--white); border-bottom: 1px solid #e5e7eb; padding: 14px 40px;">
   <div style="max-width:1200px; margin:0 auto;">
-    <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem;">
-      <a href="index.html" style="color:var(--slate-600); text-decoration:none;">Startseite</a>
+    <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem; white-space:nowrap; overflow-x:auto;">
+      <a href="index.html" aria-label="Startseite" title="Startseite" style="color:var(--slate-600); text-decoration:none; display:inline-flex; align-items:center;"><span class="material-symbols-rounded" style="font-size:18px;">home</span></a>
       <span class="material-symbols-rounded" style="font-size:14px; color:#94a3b8;">chevron_right</span>
       <a href="ueber-uns.html" style="color:var(--slate-600); text-decoration:none;">Über uns</a>
       <span class="material-symbols-rounded" style="font-size:14px; color:#94a3b8;">chevron_right</span>
