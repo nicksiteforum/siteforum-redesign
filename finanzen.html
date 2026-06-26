@@ -364,7 +364,8 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .nav-cta { display: none; }
-      .nav-lang { display: none; }
+      .nav-chevron { display: none; }
+      .nav-actions { gap: 4px !important; margin-right: 10px; }
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
       .challenge-grid { grid-template-columns: 1fr; }
       .module-grid { grid-template-columns: repeat(2, 1fr); }
@@ -496,15 +497,7 @@
       <a href="karriere.html" onclick="closeMenu()">Karriere</a>
       <a href="news.html" onclick="closeMenu()">News</a>
     </div>
-  </div>
-  <div class="mob-group">
-    <button class="mob-group-toggle" onclick="toggleMobGroup(this)"><span class="material-symbols-rounded" style="font-size:20px;vertical-align:middle;margin-right:6px;">language</span>Sprache <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
-    <div class="mob-sub">
-      <a href="#" onclick="closeMenu()">Deutsch</a>
-      <a href="#" onclick="closeMenu()">English</a>
-    </div>
-  </div>
-  <a href="kontakt.html" onclick="closeMenu()" style="color:var(--blue-600);font-weight:600;">Gespräch anfragen</a>
+  </div>  <a href="kontakt.html" onclick="closeMenu()" style="color:var(--blue-600);font-weight:600;">Gespräch anfragen</a>
 </div>
 <script>
   var navToggle = document.getElementById('nav-toggle');

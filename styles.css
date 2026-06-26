@@ -287,7 +287,8 @@ footer { background: var(--navy); color: #94a3b8; padding: 64px 40px 32px; margi
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-cta { display: none; }
-  .nav-lang { display: none; }
+  .nav-chevron { display: none; }
+  .nav-actions { gap: 4px !important; margin-right: 10px; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
