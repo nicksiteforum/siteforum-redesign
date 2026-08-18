@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mitarbeiterportale – SITEFORUM</title>
+  <title>Personaldienstleistungen – SITEFORUM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -208,7 +208,9 @@
     .intro-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
 
     /* ─── CHALLENGES ────────────────────────────────────────── */
-    .challenge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .challenge-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
     .challenge-card {
       display: flex; gap: 20px; align-items: flex-start;
       padding: 28px 24px; background: var(--white);
@@ -239,7 +241,7 @@
     .module-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
 
     /* ─── SUCCESS STORIES ───────────────────────────────────── */
-    .stories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 840px; }
+    .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .story-card {
       background: var(--white); border-radius: var(--radius-md);
       overflow: hidden; border: 1.5px solid #e5e7eb;
@@ -367,7 +369,7 @@
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
       .challenge-grid { grid-template-columns: 1fr; }
       .module-grid { grid-template-columns: repeat(2, 1fr); }
-      .stories-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .stories-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       h1, h2, h3, h4 { hyphens: auto; }
@@ -404,11 +406,11 @@
         </div>
       </li>
       <li class="nav-has-dropdown">
-        <a href="loesungen.html" class="active">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="loesungen.html">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
           <a href="mitgliederportale.html">Mitgliederportale</a>
           <a href="kundenportale.html">Kundenportale</a>
-          <a href="mitarbeiterportale.html" class="active">Mitarbeiterportale</a>
+          <a href="mitarbeiterportale.html">Mitarbeiterportale</a>
           <a href="informationsmanagement.html">Informationsmanagement</a>
           <a href="intranet.html">Intranet</a>
           <a href="communities.html">Community</a>
@@ -416,12 +418,12 @@
         </div>
       </li>
       <li class="nav-has-dropdown">
-        <a href="index.html#branchen">Branchen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#branchen" class="active">Branchen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
           <a href="kammern-verbaende.html">Kammern &amp; Verbände</a>
           <a href="finanzen.html">Finanzen</a>
           <a href="#">Verkehrs- und Transportwesen</a>
-          <a href="personaldienstleistungen.html">Personaldienstleistungen</a>
+          <a href="personaldienstleistungen.html" class="active">Personaldienstleistungen</a>
           <a href="#">Gesundheitswesen</a>
           <a href="#">Medienbranche</a>
         </div>
@@ -469,7 +471,7 @@
     <div class="mob-sub">
       <a href="mitgliederportale.html" onclick="closeMenu()">Mitgliederportale</a>
       <a href="kundenportale.html" onclick="closeMenu()">Kundenportale</a>
-      <a href="mitarbeiterportale.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Mitarbeiterportale</a>
+      <a href="mitarbeiterportale.html" onclick="closeMenu()">Mitarbeiterportale</a>
       <a href="informationsmanagement.html" onclick="closeMenu()">Informationsmanagement</a>
       <a href="intranet.html" onclick="closeMenu()">Intranet</a>
       <a href="communities.html" onclick="closeMenu()">Community</a>
@@ -482,7 +484,7 @@
       <a href="kammern-verbaende.html" onclick="closeMenu()">Kammern &amp; Verbände</a>
       <a href="finanzen.html" onclick="closeMenu()">Finanzen</a>
       <a href="#" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
-      <a href="personaldienstleistungen.html" onclick="closeMenu()">Personaldienstleistungen</a>
+      <a href="personaldienstleistungen.html" onclick="closeMenu()" style="color:var(--primary);font-weight:600;">Personaldienstleistungen</a>
       <a href="#" onclick="closeMenu()">Gesundheitswesen</a>
       <a href="#" onclick="closeMenu()">Medienbranche</a>
     </div>
@@ -509,20 +511,20 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="solution-badge">
-      <span class="material-symbols-rounded" style="font-size:14px;">badge</span>
-      Lösung
+      <span class="material-symbols-rounded" style="font-size:14px;">groups</span>
+      Branche
     </div>
-    <h1>Weniger Verwaltungsaufwand. Mehr Fokus auf <em>das, was in Ihrer Organisation wirklich zählt.</em></h1>
-    <p class="hero-sub">Von der digitalen Zeiterfassung über Urlaubsanträge bis zum Qualifikationsmanagement – SITEFORUM verwandelt komplexe HR-Prozesse in einfache digitale Self-Services für Ihre Mitarbeitenden.</p>
+    <h1>Personaldienstleistungen. <em>Digital vom ersten Einsatz an.</em></h1>
+    <p class="hero-sub">Von der mobilen Zeiterfassung über digitale Qualifikationsprofile bis zum blitzschnellen Matching von Mitarbeitenden und Aufträgen – SITEFORUM digitalisiert die Kernprozesse von Personaldienstleistern und macht sie skalierbar.</p>
     <div class="hero-actions">
       <a href="#kontakt" class="btn-primary">Gespräch anfragen</a>
-      <a href="#module" class="btn-secondary">Module entdecken</a>
+      <a href="#loesungen" class="btn-secondary">Module entdecken</a>
     </div>
     <div class="hero-tags">
       <span class="hero-tag"><span class="material-symbols-rounded">verified_user</span> DSGVO-konform</span>
       <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Made in Germany</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">smartphone</span> Mobile-first</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">language</span> Mehrsprachig</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">tablet_android</span> Mobil &amp; Tablet-ready</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">integration_instructions</span> ERP-Anbindung</span>
     </div>
   </div>
 </header>
@@ -533,9 +535,9 @@
     <div class="bc-row">
       <a href="index.html" aria-label="Startseite" title="Startseite" class="bc-home"><span class="material-symbols-rounded">home</span></a>
       <span class="bc-sep">›</span>
-      <a href="loesungen.html">Lösungen</a>
+      <a href="index.html#branchen">Branchen</a>
       <span class="bc-sep">›</span>
-      <span class="bc-current">Mitarbeiterportale</span>
+      <span class="bc-current">Personaldienstleistungen</span>
     </div>
   </div>
 </div>
@@ -544,30 +546,30 @@
 <section style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Warum ein Mitarbeiterportal</p>
-      <h2 class="section-title">Ihre Mitarbeitenden erwarten <em>digitale Prozesse</em></h2>
-      <p class="section-sub">Papierstapel, E-Mail-Ketten und manuelle Abläufe kosten täglich wertvolle Arbeitszeit. Ein zentrales Mitarbeiterportal löst genau diese Probleme – und entlastet gleichzeitig HR und Verwaltung.</p>
+      <p class="section-label">Warum SITEFORUM</p>
+      <h2 class="section-title">Weniger Papier. <em>Mehr Einsätze.</em></h2>
+      <p class="section-sub">Personaldienstleister jonglieren mit hunderten Mitarbeitenden, wechselnden Einsatzorten und individuellen Qualifikationen. SITEFORUM ersetzt Stundenzettel, Excel-Listen und Aktenordner durch ein Portal, das täglich mit Ihren Abläufen mitwächst.</p>
     </div>
     <div class="intro-grid">
       <div class="intro-card ani-fade-in" data-delay="0">
-        <div class="intro-icon"><span class="material-symbols-rounded">self_improvement</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">schedule</span></div>
         <div>
-          <h4>Entlastung durch Self-Service</h4>
-          <p>Mitarbeitende erledigen Anfragen eigenständig: Gehaltsabrechnungen abrufen, Urlaubsanträge stellen, Qualifikationen pflegen – ohne Wartezeit und ohne Rückfragen ans HR-Team.</p>
+          <h4>Digitale Zeiterfassung</h4>
+          <p>Mitarbeitende erfassen ihre Stunden direkt vor Ort per Tablet, Kunden unterschreiben digital. Die Daten stehen der Buchhaltung in Sekunden statt Tagen zur Verfügung.</p>
         </div>
       </div>
       <div class="intro-card ani-fade-in" data-delay="100">
-        <div class="intro-icon"><span class="material-symbols-rounded">autorenew</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">workspace_premium</span></div>
         <div>
-          <h4>Automatisierte Workflows</h4>
-          <p>Genehmigungsprozesse, Zeiterfassung und Dokumentenfreigaben laufen automatisch ab – mit Statusbenachrichtigungen, definierten Eskalationsstufen und revisionssicherer Protokollierung.</p>
+          <h4>Qualifikationsmanagement</h4>
+          <p>Alle Kompetenzen Ihrer Mitarbeitenden werden strukturiert erfasst und durchsuchbar – so finden Sie in Sekunden den passenden Fachmann für jede Kundenanforderung.</p>
         </div>
       </div>
       <div class="intro-card ani-fade-in" data-delay="200">
-        <div class="intro-icon"><span class="material-symbols-rounded">savings</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">hub</span></div>
         <div>
-          <h4>Kosten- und Zeitersparnis</h4>
-          <p>Papierbasierte Prozesse, Postversand und manuelle Dateneingaben entfallen. Ihre Verwaltung gewinnt Zeit für wertschöpfende Aufgaben statt für wiederkehrende Routinearbeiten.</p>
+          <h4>Nahtlose Systemintegration</h4>
+          <p>Erfasste Daten fließen direkt in Ihre Buchhaltung und Ihr ERP – ohne doppelte Eingaben, mit revisionssicherer Archivierung und automatischer Rechnungserstellung.</p>
         </div>
       </div>
     </div>
@@ -580,35 +582,35 @@
     <div class="ani-fade-in">
       <p class="section-label">Typische Herausforderungen</p>
       <h2 class="section-title">Probleme, die wir <em>kennen und lösen</em></h2>
-      <p class="section-sub">Viele Unternehmen kämpfen mit denselben ineffizienten Prozessen in der Mitarbeiterkommunikation und -verwaltung. Wir wissen, wie man sie überwindet.</p>
+      <p class="section-sub">Viele Personaldienstleister kämpfen mit denselben strukturellen Hürden. Wir haben sie gemeinsam mit Kunden wie THOR® gelöst – für über 1.000 Mitarbeitende im Einsatz.</p>
     </div>
     <div class="challenge-grid ani-fade-in">
       <div class="challenge-card">
         <div class="challenge-icon"><span class="material-symbols-rounded">description</span></div>
         <div>
-          <h4>Papierbasierte HR-Prozesse</h4>
-          <p>Stundenzettel per Post, Urlaubsanträge auf Papier, Gehaltsabrechnungen als Ausdruck – fehleranfällig, langsam und mit hohem Archivierungsaufwand verbunden.</p>
+          <h4>Papierbasierte Stundenzettel</h4>
+          <p>Handschriftliche Zettel werden wöchentlich per Post verschickt, ausgepackt, sortiert und manuell erfasst – ein fehleranfälliger Prozess, der Tage kostet und Portokosten verursacht.</p>
         </div>
       </div>
       <div class="challenge-card">
-        <div class="challenge-icon"><span class="material-symbols-rounded">hub</span></div>
+        <div class="challenge-icon"><span class="material-symbols-rounded">psychology_alt</span></div>
         <div>
-          <h4>Informationen in Insellösungen</h4>
-          <p>Qualifikationen im Excel, Dienstpläne im Aushang, Dokumente im Shared Drive – kein Mitarbeitender und kein Manager hat eine konsistente, aktuelle Gesamtsicht.</p>
+          <h4>Qualifikationen nur im Kopf</h4>
+          <p>Wer kann was? Wissen über Kompetenzen steckt in Aktenordnern und in den Köpfen weniger Disponenten – und geht bei jedem Personalwechsel verloren.</p>
         </div>
       </div>
       <div class="challenge-card">
-        <div class="challenge-icon"><span class="material-symbols-rounded">devices_off</span></div>
+        <div class="challenge-icon"><span class="material-symbols-rounded">manage_search</span></div>
         <div>
-          <h4>Kein mobiler Zugang für Außendienst</h4>
-          <p>Mitarbeitende im Außendienst, auf Baustellen oder bei Kunden vor Ort können auf Informationen und Prozesse nicht zugreifen – obwohl sie es täglich bräuchten.</p>
+          <h4>Langsames Matching von Auftrag und Mitarbeiter</h4>
+          <p>Die passende Fachkraft für eine Kundenanforderung zu finden, ist manuell mühsam. Ohne durchsuchbare Profile bleiben qualifizierte Mitarbeitende und lukrative Einsätze ungenutzt.</p>
         </div>
       </div>
       <div class="challenge-card">
-        <div class="challenge-icon"><span class="material-symbols-rounded">support_agent</span></div>
+        <div class="challenge-icon"><span class="material-symbols-rounded">trending_up</span></div>
         <div>
-          <h4>HR-Team durch Routineanfragen gebunden</h4>
-          <p>Gehaltszettel, Urlaubssaldo, Bescheinigungen – wiederkehrende Standardanfragen binden Ihre HR-Mitarbeitenden und halten sie von strategischen Aufgaben ab.</p>
+          <h4>Wachstum ohne Skalierbarkeit</h4>
+          <p>Mehr Mitarbeitende und Einsätze bedeuten ohne Digitalisierung proportional mehr Verwaltungsaufwand in Buchhaltung und Disposition – das bremst ambitionierte Wachstumsziele aus.</p>
         </div>
       </div>
     </div>
@@ -616,58 +618,58 @@
 </section>
 
 <!-- MODULES -->
-<section id="module" style="background:var(--slate-100);">
+<section id="loesungen" style="background:var(--slate-100);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Ihr Mitarbeiterportal</p>
-      <h2 class="section-title">Module, die Ihre Mitarbeitenden <em>und Ihr HR-Team entlasten</em></h2>
-      <p class="section-sub" style="margin-bottom:60px;">Wir kombinieren bewährte Bausteine zu einem Portal, das exakt zu Ihrer Organisation, Ihren Prozessen und Ihrer IT-Landschaft passt – skalierbar für 50 bis 10.000 Mitarbeitende.</p>
+      <p class="section-label">Ihr Digitales Ökosystem</p>
+      <h2 class="section-title">Module, die Personaldienstleister <em>nach vorne bringen</em></h2>
+      <p class="section-sub" style="margin-bottom:60px;">SITEFORUM baut kein Portal von der Stange. Wir kombinieren bewährte Bausteine zu einer Lösung, die exakt zu Ihren Einsatz-, Erfassungs- und Abrechnungsprozessen passt.</p>
     </div>
     <div class="module-grid">
       <div class="module-card ani-fade-in" data-delay="0">
+        <div class="module-icon"><span class="material-symbols-rounded">badge</span></div>
+        <h4>Digitales Mitarbeiterportal</h4>
+        <p>Ein zentraler Zugang für alle Mitarbeitenden – für Zeiterfassung, Qualifikationen, Urlaubsanträge und Dokumente, rund um die Uhr und von jedem Gerät aus.</p>
+      </div>
+      <div class="module-card ani-fade-in" data-delay="60">
         <div class="module-icon"><span class="material-symbols-rounded">schedule</span></div>
-        <h4>Digitale Zeiterfassung</h4>
-        <p>Mitarbeitende erfassen Arbeitszeiten, Projektzeiten und Überstunden direkt im Portal – per Desktop oder Smartphone. Stundenzettel werden automatisch aufbereitet, archiviert und an Ihr ERP übergeben.</p>
-      </div>
-      <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-icon"><span class="material-symbols-rounded">beach_access</span></div>
-        <h4>Urlaubs- &amp; Abwesenheitsverwaltung</h4>
-        <p>Urlaubsanträge stellen, genehmigen und verwalten – vollständig digital mit automatischen Benachrichtigungen, Resturlaubsübersicht und Vertretungsregelung.</p>
+        <h4>Mobile Zeiterfassung</h4>
+        <p>Stundenzettel werden täglich direkt vor Ort per Tablet ausgefüllt. Kein Postweg, keine Übertragungsfehler – die Buchhaltung erhält die Daten in Sekunden.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-icon"><span class="material-symbols-rounded">school</span></div>
-        <h4>Qualifikationsmanagement</h4>
-        <p>Mitarbeitende pflegen ihre Fähigkeiten, Zertifikate und Qualifikationen eigenständig im Self-Service. Manager können gezielt nach geeigneten Mitarbeitenden für Projekte und Aufträge suchen.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">draw</span></div>
+        <h4>Digitale Unterschrift</h4>
+        <p>Kunden bestätigen geleistete Stunden direkt auf dem Tablet. Rechtssicher, sofort dokumentiert und ohne Papier – als Grundlage für die Abrechnung.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="0">
-        <div class="module-icon"><span class="material-symbols-rounded">receipt</span></div>
-        <h4>Gehaltsabrechnungen &amp; Dokumente</h4>
-        <p>Lohnabrechnungen, Arbeitsverträge und Bescheinigungen stehen im Portal als Download bereit – jederzeit abrufbar, papierlos und revisionssicher archiviert.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">workspace_premium</span></div>
+        <h4>Qualifikationsprofile</h4>
+        <p>Ein mehrstufiger Fragebogen erfasst alle Kompetenzen jedes Mitarbeitenden – ein vollständiges Profil entsteht in unter 30 Minuten, mehrsprachig und im Self-Service.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-icon"><span class="material-symbols-rounded">dynamic_form</span></div>
-        <h4>Digitale Formulare &amp; Anträge</h4>
-        <p>Reisekostenabrechnungen, Beschaffungsanfragen, Schulungsanmeldungen – strukturierte Online-Formulare mit automatischer Weiterleitung an die zuständigen Stellen und Genehmigungsworkflows.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">manage_search</span></div>
+        <h4>Kandidatensuche &amp; Matching</h4>
+        <p>Filtern und durchsuchen Sie Ihren gesamten Mitarbeiterpool nach Qualifikationen. Gespeicherte Suchvorlagen liefern das passende Ranking für jede Kundenanforderung.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
-        <div class="module-icon"><span class="material-symbols-rounded">campaign</span></div>
-        <h4>Interne Kommunikation &amp; News</h4>
-        <p>Unternehmensankündigungen, Abteilungsnews und wichtige Informationen werden zielgruppengenau ausgespielt – über das Portal, per Push-Benachrichtigung oder E-Mail.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">event_available</span></div>
+        <h4>Digitale Urlaubs- &amp; Abwesenheitsanträge</h4>
+        <p>Anträge werden im Portal gestellt, freigegeben und dokumentiert – mit klarem Überblick über Verfügbarkeiten für die Einsatzplanung.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="0">
-        <div class="module-icon"><span class="material-symbols-rounded">folder_open</span></div>
-        <h4>Wissensdatenbank &amp; Handbücher</h4>
-        <p>Betriebshandbücher, Arbeitsanweisungen und FAQs strukturiert bereitstellen – volltext-durchsuchbar, immer aktuell und auf jedem Gerät abrufbar.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">receipt_long</span></div>
+        <h4>Automatische Rechnungserstellung</h4>
+        <p>Aus erfassten Stunden werden per Knopfdruck PDF-Rechnungen generiert und direkt per E-Mail versendet – statt Papier mit angehefteten Stundenzetteln.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="60">
-        <div class="module-icon"><span class="material-symbols-rounded">language</span></div>
-        <h4>Mehrsprachigkeit</h4>
-        <p>Für internationale Teams oder Belegschaften mit unterschiedlichen Muttersprachen: Das Portal ist von Anfang an mehrsprachig ausgelegt – Inhalte und Oberfläche vollständig lokalisierbar.</p>
+        <div class="module-icon"><span class="material-symbols-rounded">archive</span></div>
+        <h4>Rechtssichere Archivierung</h4>
+        <p>Alle Stundenzettel, Nachweise und Dokumente werden automatisch archiviert, sind volltext-durchsuchbar und auf Knopfdruck abrufbar – für Prüfungen und Nachweise.</p>
       </div>
       <div class="module-card ani-fade-in" data-delay="120">
         <div class="module-icon"><span class="material-symbols-rounded">integration_instructions</span></div>
-        <h4>ERP- &amp; HR-System-Integration</h4>
-        <p>Anbindung an Ihre bestehenden Systeme: SAP, DATEV, Personio, Sage und weitere HR- und ERP-Lösungen – für konsistente Daten ohne manuelle Doppelpflege.</p>
+        <h4>ERP- &amp; System-Integration</h4>
+        <p>Offene Schnittstellen übergeben erfasste Daten direkt an Buchhaltung, ERP und Fachanwendungen – für lückenlosen Datenfluss ohne redundante Pflege.</p>
       </div>
     </div>
   </div>
@@ -679,35 +681,35 @@
     <div class="ani-fade-in">
       <p class="section-label">Referenzen</p>
       <h2 class="section-title">Kunden, die <em>überzeugt sind</em></h2>
-      <p class="section-sub">Echte Projekte – echte Ergebnisse.</p>
+      <p class="section-sub">Echte Projekte – echte Ergebnisse. Für THOR®, einen Personaldienstleister mit 1.000 Mitarbeitenden.</p>
     </div>
     <div class="stories-grid">
 
-      <a href="#" class="story-card ani-fade-in">
+      <a href="https://www.siteforum.com/de/loesungen/mitarbeiterportale/digitale-zeiterfassung-im-handwerk_ky323umg.html" class="story-card ani-fade-in">
         <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/thor-time/800/440" alt="THOR" />
+          <img src="https://picsum.photos/seed/thor-zeiterfassung/800/440" alt="Digitale Zeiterfassung" />
           <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_THOR.jpg" alt="THOR" /></div>
         </div>
         <div class="story-body">
-          <h3 class="story-title">Digitale Zeiterfassung für 1.000 Handwerker im Außendienst</h3>
+          <h3 class="story-title">Digitale Zeiterfassung im Handwerk</h3>
           <div class="story-result">
-            <div class="story-result-value">Tage → Sek.</div>
-            <div class="story-result-label">Übertragungszeit von Stundenzetteln von Tagen auf Sekunden reduziert</div>
+            <div class="story-result-value">Sekunden</div>
+            <div class="story-result-label">statt Postweg – Stundenzettel sofort in der Buchhaltung</div>
           </div>
           <span class="story-link">Zur Success Story</span>
         </div>
       </a>
 
-      <a href="#" class="story-card ani-fade-in" data-delay="80">
+      <a href="https://www.siteforum.com/de/loesungen/mitarbeiterportale/erfassung-von-qualifikationen-fuer-1-000-handwerker_ky31gqy4.html" class="story-card ani-fade-in" data-delay="100">
         <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/thor-skills/800/440" alt="THOR" />
+          <img src="https://picsum.photos/seed/thor-qualifikationen/800/440" alt="Qualifikationserfassung" />
           <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_THOR.jpg" alt="THOR" /></div>
         </div>
         <div class="story-body">
-          <h3 class="story-title">Qualifikationsmanagement für 1.000 Mitarbeitende in 7 Gewerken</h3>
+          <h3 class="story-title">Erfassung von Qualifikationen für 1.000 Handwerker</h3>
           <div class="story-result">
-            <div class="story-result-value">&lt; 30 Min.</div>
-            <div class="story-result-label">für ein vollständiges Qualifikationsprofil im Self-Service</div>
+            <div class="story-result-value">1.000</div>
+            <div class="story-result-label">Handwerker mit vollständigem, durchsuchbarem Kompetenzprofil</div>
           </div>
           <span class="story-link">Zur Success Story</span>
         </div>
@@ -718,12 +720,12 @@
 </section>
 
 <!-- CTA BANNER -->
-<div class="cta-banner" id="kontakt">
+<div class="cta-banner" id="kontakt" style="margin-top: 100px;">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Jetzt starten</p>
-      <h2 class="section-title">Bereit, Ihre HR-Prozesse <em>endlich zu digitalisieren?</em></h2>
-      <p class="section-sub">Lassen Sie uns gemeinsam herausfinden, welche Module für Ihre Organisation und Ihre Mitarbeitenden den größten Unterschied machen.</p>
+      <h2 class="section-title">Bereit, Ihre Prozesse <em>zu digitalisieren?</em></h2>
+      <p class="section-sub">Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welche Lösung am besten zu Ihren Einsatz- und Abrechnungsprozessen passt.</p>
     </div>
     <div class="cta-contact-block">
       <div class="cta-contact-label-top">Ihr Ansprechpartner</div>
@@ -776,6 +778,7 @@
         <ul>
           <li><a href="kammern-verbaende.html">Kammern &amp; Verbände</a></li>
           <li><a href="finanzen.html">Finanzen</a></li>
+          <li><a href="personaldienstleistungen.html">Personaldienstleistungen</a></li>
           <li><a href="#">Gesundheitswesen</a></li>
           <li><a href="#">Medienbranche</a></li>
         </ul>
