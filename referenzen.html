@@ -74,11 +74,11 @@
     .case-logo {
       position: absolute; top: 24px; right: 24px;
       background: var(--white); border-radius: 8px;
-      height: 44px; padding: 8px 12px;
+      height: 56px; width: 56px; padding: 8px; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-    .case-logo img { max-height: 26px; max-width: 92px; width: auto; height: auto; object-fit: contain; display: block; }
+    .case-logo img { max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; display: block; }
     .case-tag {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px;
@@ -183,10 +183,11 @@
     .sol-card h3, .case-body h3, .news-title { color: var(--navy); }
     .sol-card p, .case-body p, .news-teaser { color: var(--slate-600); }
     .case-top { background: linear-gradient(135deg, #10233D 0%, #0C1A2E 100%); }
+    .case-stat { color: #fff; }
     .case-tag { color: var(--blue-600); }
 
     /* ── LOGO WALL (helle Kacheln für JPG-Logos) ── */
-    .logo-frame { background: #F5F6F8; border-color: rgba(255,255,255,0.10); opacity: 0.82; transition: opacity 0.2s, border-color 0.2s, box-shadow 0.2s; }
+    .logo-frame { background: var(--bg-alt); border-color: rgba(255,255,255,0.10); opacity: 0.7; transition: opacity 0.2s, border-color 0.2s, box-shadow 0.2s; }
     .logo-frame:hover { opacity: 1; border-color: var(--blue-200); box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
 
     /* ── CTA BANNER ── */
@@ -491,18 +492,18 @@
     </div>
     <div class="logo-grid-wrap">
     <div class="logo-grid">
-      <div class="logo-frame ani-fade-in" data-delay="0"><img src="customer-logos/SITEFORUM_Kunden_national-express.jpg" alt="National Express" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="60"><img src="customer-logos/SITEFORUM_Kunden_VBL.jpg" alt="VBL" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="120"><img src="customer-logos/SITEFORUM_Kunden_nordwest-factoring.png" alt="nordwest Factoring" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="180"><img src="customer-logos/SITEFORUM_Kunden_VAK.jpg" alt="VAK" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="240"><img src="customer-logos/SITEFORUM_Kunden_THOR.jpg" alt="THOR" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="300"><img src="customer-logos/SITEFORUM_Kunden_ODEG.jpg" alt="ODEG" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="0"><img src="customer-logos/SITEFORUM_Kunden_abellio.jpg" alt="Abellio" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="60"><img src="customer-logos/SITEFORUM_Kunden_eurobahn.jpg" alt="Eurobahn" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="120"><img src="customer-logos/SITEFORUM_Kunden_spitzke.jpg" alt="Spitzke" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="180"><img src="customer-logos/SITEFORUM_Kunden_desag.jpg" alt="DESAG" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="240"><img src="customer-logos/SITEFORUM_Kunden_kompetenznetz-mittelstand.jpg" alt="Kompetenznetz Mittelstand" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="300"><img src="customer-logos/SITEFORUM_Kunden_lak-bw.jpg" alt="Landesapothekerkammer BW" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="0"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_national-express_mono.png" alt="National Express" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="60"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_vbl_mono.png" alt="VBL" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="120"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_nordwest_mono.png" alt="nordwest" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="180"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_odeg_mono.png" alt="ODEG" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="240"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_THOR_mono.png" alt="THOR" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="300"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_abellio_mono.png" alt="Abellio" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="0"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_eurobahn_mono.png" alt="Eurobahn" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="60"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_hrcom_mono.png" alt="HR.com" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="120"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_knm_mono.png" alt="Kompetenznetz Mittelstand" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="180"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_lineas_mono.png" alt="Lineas" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="240"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_myfavorito_mono.png" alt="myfavorito" /></div>
+      <div class="logo-frame ani-fade-in" data-delay="300"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_national-express_mono.png" alt="National Express" /></div>
     </div>
     </div>
   </div>
