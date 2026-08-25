@@ -6,7 +6,7 @@
   <title>Informationsmanagement – SITEFORUM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -433,6 +433,103 @@
       .cta-banner .section-inner { padding: 60px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
     }
+
+    /* ═══════════════════════════════════════════════════════════
+       DARK THEME (dunkel & kontrast-reich) – zuletzt = gewinnt
+       ═══════════════════════════════════════════════════════════ */
+    :root {
+      --primary:   #5FC9F5;
+      --secondary: #5FC9F5;
+      --blue-50:   #0D1526;
+      --blue-100:  rgba(95,201,245,0.14);
+      --blue-200:  rgba(95,201,245,0.45);
+      --blue-600:  #5FC9F5;
+      --blue-700:  #8ADAF9;
+      --navy:      #F5F6F8;
+      --slate-600: #9AA7BD;
+      --slate-100: #101B2E;
+      --white:     #0A101E;
+      --bg-alt:    #0D1526;
+      --bg-deep:   #060A12;
+      --line:      rgba(255,255,255,0.10);
+    }
+    body { background: var(--white); color: var(--navy); }
+
+    /* ── NAV ── */
+    .nav-inner { background: rgba(13,21,38,0.85); border-color: var(--line); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    .nav-links a { color: rgba(245,246,248,0.75); }
+    .nav-links a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
+    .nav-links a.active { color: var(--navy); background: rgba(95,201,245,0.12); }
+    .nav-dropdown-menu, .nav-lang-menu { background: rgba(13,21,38,0.97); border-color: var(--line); box-shadow: 0 8px 32px rgba(0,0,0,0.55); }
+    .nav-dropdown-menu a, .nav-lang-menu a { color: rgba(245,246,248,0.75); }
+    .nav-dropdown-menu a:hover, .nav-lang-menu a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
+    .nav-dropdown-menu a.active, .nav-lang-menu a.active { color: var(--blue-600); background: rgba(95,201,245,0.12); }
+    .nav-dropdown-divider { background: var(--line); }
+    .nav-lang-btn { color: rgba(245,246,248,0.75); }
+    .nav-lang-btn:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
+    .nav-lang-menu a .lang-code { color: rgba(245,246,248,0.4); }
+    .nav-hamburger span { background: var(--navy); }
+    .nav-mobile-menu { background: rgba(13,21,38,0.98); border-color: var(--line); box-shadow: 0 8px 32px rgba(0,0,0,0.55); }
+    .nav-mobile-menu > a, .mob-group-toggle { color: rgba(245,246,248,0.8); }
+    .nav-mobile-menu > a:hover, .mob-group-toggle:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
+    .mob-sub a { color: rgba(245,246,248,0.55); }
+    .mob-sub a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
+
+    /* ── BREADCRUMB ── */
+    .bc-bar { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .bc-sep { color: rgba(255,255,255,0.25); }
+    .bc-current { color: var(--slate-600); }
+
+    /* ── HERO (dunkel, Cyan-Akzent) ── */
+    .hero { background: linear-gradient(135deg, #0D1B30 0%, #0A1322 100%); }
+    .hero h1 { color: var(--navy); }
+    .hero h1 em { color: var(--blue-600); }
+    .hero-tag .material-symbols-rounded { color: var(--blue-600); }
+    .hero-visual { --white:#fff; --navy:#0f172a; --blue-50:#e6f0f7; --blue-100:#cce0ee; --blue-200:#99c2dd; --blue-600:#006699; --blue-700:#003366; --primary:#003366; --secondary:#006699; --slate-600:#475569; --slate-100:#f1f5f9; }
+
+    /* ── STATS ── */
+    .stats { background: var(--white); border-bottom-color: var(--line); }
+
+    /* ── BUTTONS ── */
+    .btn-primary { background: var(--blue-600); color: #0A101E; }
+    .btn-secondary { background: transparent; color: var(--navy); border-color: rgba(255,255,255,0.25); }
+    .btn-secondary:hover { border-color: var(--blue-600); }
+
+    /* ── CARDS ── */
+    .intro-card, .feature-card, .story-card, .challenge-card, .channel-card, .module-card { background: var(--bg-alt); border-color: var(--line); }
+    .intro-card:hover, .feature-card:hover, .story-card:hover, .challenge-card:hover, .channel-card:hover, .module-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .intro-icon, .feature-icon, .benefit-check { background: var(--blue-100); color: var(--blue-600); }
+    .benefits-visual { background: var(--bg-alt); }
+    .benefits-divider { border-top-color: var(--line); }
+    .story-img-wrap { background: var(--bg-alt); }
+    .story-result { background: rgba(95,201,245,0.10); }
+    .story-customer-badge { background: #F5F6F8; border-color: var(--line); }
+
+    /* ── CTA BANNER (dunkles Panel) ── */
+    .cta-banner { background: linear-gradient(150deg, #0F1D33 0%, #0A1322 100%); border: 1px solid var(--line); }
+    .cta-banner::before { background-image: none; }
+    .cta-banner .section-title { color: var(--navy); }
+    .cta-banner .section-title em, .cta-banner .section-label { color: var(--blue-600); }
+    .cta-contact-label-top, .cta-contact-link .material-symbols-rounded { color: var(--blue-600); }
+    .cta-contact-name { color: var(--navy); }
+    .cta-contact-link:hover { color: var(--navy); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg-deep); color: var(--slate-600); }
+    .footer-brand .nav-logo, .footer-col h4 { color: var(--navy); }
+    .footer-col a, .footer-bottom a { color: var(--slate-600); }
+    .footer-col a:hover, .footer-bottom a:hover { color: var(--navy); }
+
+    /* ── TYPOGRAFIE: Outfit-Headlines ── */
+    h1, h2, h3, h4,
+    .hero h1, .section-title, .section-title em,
+    .stat-value, .story-title, .benefits-stat-big { font-family: 'Outfit', 'Inter', sans-serif; font-weight: 600; }
+
+    /* ── DEKO-LINIE vor Section-Labels ── */
+    .section-label { display: inline-flex; align-items: center; gap: 14px; }
+    .section-label::before { content: ''; width: 48px; height: 1px; background: var(--blue-600); flex: 0 0 auto; }
+    .cta-banner .section-label { justify-content: center; }
+    .cta-banner .section-label::before { display: none; }
   </style>
 </head>
 <body>
@@ -441,7 +538,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="SITEFORUM_logo_blue.png" alt="SITEFORUM" style="height:32px; width:auto;" />
+      <img src="SITEFORUM_logo_white.png" alt="SITEFORUM" style="height:32px; width:auto;" />
     </a>
     <ul class="nav-links">
       <li class="nav-has-dropdown">
@@ -801,7 +898,7 @@
 
 <!-- CTA BANNER -->
 <div style="background:var(--slate-100); padding-top:100px;">
-<div class="cta-banner" id="kontakt">
+<div class="cta-banner" id="kontakt" style="margin-top: 100px;">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Jetzt starten</p>
@@ -823,8 +920,8 @@
       </div>
     </div>
     <div class="cta-actions">
-      <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--white);color:var(--primary);">Gespräch anfragen</a>
-      <a href="tel:+493616661510" class="btn-secondary" style="background:transparent;color:var(--white);border-color:rgba(255,255,255,0.3);">+49 361 6661 5810</a>
+      <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--blue-600);color:#0A101E;">Gespräch anfragen</a>
+      <a href="tel:+493616661510" class="btn-secondary" style="background:transparent;color:var(--navy);border-color:rgba(255,255,255,0.3);">+49 361 6661 5810</a>
     </div>
   </div>
 </div>
