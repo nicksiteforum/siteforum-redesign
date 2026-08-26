@@ -582,9 +582,11 @@
     .intro-card:hover, .feature-card:hover, .story-card:hover, .compare-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
     .intro-icon, .feature-icon, .benefit-check { background: var(--blue-100); color: var(--blue-600); }
     .benefits-visual { background: var(--bg-alt); border: 1px solid var(--line); }
+    .tech-visual { background: linear-gradient(160deg, #0F1D33 0%, #0A1322 100%); border: 1px solid var(--line); }
+    .tech-visual-label, .tech-cert-icon { color: var(--blue-600); }
     .benefits-divider { border-top-color: var(--line); }
     .story-img-wrap { background: var(--bg-alt); }
-    .story-result { background: rgba(95,201,245,0.10); }
+    .story-result { background: transparent; padding: 0; }
     .story-customer-badge { background: #F5F6F8; border-color: var(--line); }
 
     /* ── CTA BANNER (dunkles Panel) ── */
@@ -1067,14 +1069,13 @@
 <!-- TECHNOLOGIE & SICHERHEIT -->
 <section style="background:var(--white);">
   <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Infrastruktur</p>
+      <h2 class="section-title">Sicherheit &amp; Betrieb - <em>ohne Kompromisse</em></h2>
+      <p class="section-sub" style="margin-bottom:40px;">SITEFORUM übernimmt den vollständigen Betrieb Ihres Portals – auf einer Infrastruktur, die höchste Sicherheitsanforderungen erfüllt.</p>
+    </div>
     <div class="tech-layout">
-      <div>
-        <div class="ani-fade-in">
-          <p class="section-label">Infrastruktur</p>
-          <h2 class="section-title">Sicherheit &amp; Betrieb - <em>ohne Kompromisse</em></h2>
-          <p class="section-sub" style="margin-bottom:40px;">SITEFORUM übernimmt den vollständigen Betrieb Ihres Portals – auf einer Infrastruktur, die höchste Sicherheitsanforderungen erfüllt.</p>
-        </div>
-        <div class="benefits-list">
+      <div class="benefits-list">
           <div class="benefit-item ani-fade-in">
             <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
             <div>
@@ -1104,7 +1105,6 @@
             </div>
           </div>
         </div>
-      </div>
       <div class="tech-visual">
         <div class="tech-visual-label">Zertifizierungen &amp; Standards</div>
         <div class="tech-cert-grid">
