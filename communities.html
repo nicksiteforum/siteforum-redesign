@@ -216,8 +216,8 @@
     }
     .challenge-icon {
       width: 44px; height: 44px; border-radius: var(--radius-sm);
-      background: #fff7ed; display: flex; align-items: center;
-      justify-content: center; color: #ea580c; flex-shrink: 0;
+      background: rgba(239,68,68,0.12); display: flex; align-items: center;
+      justify-content: center; color: #f87171; flex-shrink: 0;
     }
     .challenge-icon .material-symbols-rounded { font-size: 22px; }
     .challenge-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
@@ -504,6 +504,18 @@
     .section-label::before { content: ''; width: 48px; height: 1px; background: var(--blue-600); flex: 0 0 auto; }
     .cta-banner .section-label { justify-content: center; }
     .cta-banner .section-label::before { display: none; }
+    .section-label.challenge-label { color: #f87171; }
+    .section-label.challenge-label::before { background: #f87171; }
+    .challenge-card { border-color: rgba(239,68,68,0.22); }
+    .challenge-card:hover { border-color: rgba(239,68,68,0.5); }
+    .section-title.challenge-title em { color: var(--navy); }
+    .challenge-section { position: relative; }
+    .challenge-section::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image: radial-gradient(circle, rgba(239,68,68,0.22) 1.3px, transparent 1.3px);
+      background-size: 24px 24px;
+    }
+    .challenge-section > * { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -697,11 +709,11 @@
 </section>
 
 <!-- CHALLENGES -->
-<section style="background:var(--white);">
+<section class="challenge-section" style="background:var(--white);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Typische Herausforderungen</p>
-      <h2 class="section-title">Was Community-Aufbau <em>oft scheitern lässt</em></h2>
+      <p class="section-label challenge-label">Typische Herausforderungen</p>
+      <h2 class="section-title challenge-title">Was Community-Aufbau <em>oft scheitern lässt</em></h2>
       <p class="section-sub">Viele Organisationen versuchen Community mit zusammengewürfelten Tools zu betreiben. Das kostet Zeit, Geld und Mitgliedervertrauen.</p>
     </div>
     <div class="challenge-grid ani-fade-in">
