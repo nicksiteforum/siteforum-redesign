@@ -207,36 +207,38 @@
     .intro-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .intro-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
 
-    /* ─── PROCESS STEPS ─────────────────────────────────────── */
-    .process-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
-      background: #e5e7eb; border-radius: var(--radius-md); overflow: hidden;
-      border: 1.5px solid #e5e7eb;
+    /* ─── PROCESS TIMELINE ──────────────────────────────────── */
+    .process-timeline { position: relative; margin: 0; }
+    .process-timeline::before {
+      content: ''; position: absolute; left: 31px; top: 32px; bottom: 32px; width: 2px;
+      background: linear-gradient(to bottom, var(--blue-200), var(--line));
+      z-index: 0;
     }
-    .process-card {
-      background: var(--white); padding: 36px 28px;
-      display: flex; flex-direction: column; gap: 16px;
-      position: relative;
+    .process-step {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 64px 1fr; gap: 28px;
+      padding-bottom: 44px;
     }
-    .process-card:nth-child(1),
-    .process-card:nth-child(2),
-    .process-card:nth-child(3) {
-      border-bottom: 2px solid #e5e7eb;
+    .process-step:last-child { padding-bottom: 0; }
+    .process-marker { position: relative; width: 64px; height: 64px; }
+    .process-node {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--bg-alt); border: 2px solid var(--blue-200);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue-600);
     }
-    .process-num {
-      font-size: 4rem; font-weight: 900; color: var(--blue-50);
-      line-height: 1; letter-spacing: -3px;
-      position: absolute; top: 16px; right: 20px;
-      pointer-events: none; user-select: none;
+    .process-node .material-symbols-rounded { font-size: 28px; }
+    .process-step-num {
+      position: absolute; top: -4px; right: -4px;
+      min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px;
+      background: var(--blue-600); color: #0A101E;
+      font-size: 0.72rem; font-weight: 800; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid var(--white);
     }
-    .process-icon {
-      width: 48px; height: 48px; border-radius: var(--radius-sm);
-      background: var(--navy); display: flex; align-items: center;
-      justify-content: center; color: #fff; flex-shrink: 0;
-    }
-    .process-icon .material-symbols-rounded { font-size: 24px; }
-    .process-card h4 { font-size: 1.05rem; font-weight: 800; color: var(--navy); }
-    .process-card p { font-size: 0.87rem; color: var(--slate-600); line-height: 1.65; }
+    .process-body { padding-top: 14px; }
+    .process-body h4 { font-size: 1.1rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .process-body p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.65; }
 
     /* ─── FEATURE GRID ──────────────────────────────────────── */
     .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -253,30 +255,6 @@
     .feature-icon .material-symbols-rounded { font-size: 22px; }
     .feature-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); }
     .feature-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
-
-    /* ─── PROTOTYPE TEASER ──────────────────────────────────── */
-    .prototype-teaser {
-      margin-top: 48px; background: var(--blue-50);
-      border-radius: var(--radius-md); border: 1.5px solid var(--blue-200);
-      padding: 32px 36px; display: flex; align-items: center;
-      gap: 28px; flex-wrap: wrap;
-    }
-    .prototype-teaser-icon {
-      width: 56px; height: 56px; border-radius: var(--radius-sm);
-      background: var(--secondary); display: flex; align-items: center;
-      justify-content: center; color: #fff; flex-shrink: 0;
-    }
-    .prototype-teaser-icon .material-symbols-rounded { font-size: 28px; }
-    .prototype-teaser-body { flex: 1; min-width: 200px; }
-    .prototype-teaser-body h4 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .prototype-teaser-body p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
-    .prototype-teaser-cta {
-      background: var(--navy); color: #fff;
-      padding: 14px 28px; border-radius: var(--radius-sm);
-      font-size: 0.9rem; font-weight: 700; text-decoration: none;
-      white-space: nowrap; transition: opacity 0.2s; display: inline-block;
-    }
-    .prototype-teaser-cta:hover { opacity: 0.88; }
 
     /* ─── SUCCESS STORIES ───────────────────────────────────── */
     .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -405,12 +383,6 @@
       .nav-chevron { display: none; }
       .nav-actions { gap: 4px !important; margin-right: 10px; }
       .intro-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-card:nth-child(1),
-      .process-card:nth-child(2),
-      .process-card:nth-child(3) { border-bottom: none; }
-      .process-card:nth-child(odd):not(:nth-last-child(-n+2)) { border-bottom: 2px solid #e5e7eb; }
-      .process-card:nth-child(even):not(:nth-last-child(-n+2)) { border-bottom: 2px solid #e5e7eb; }
       .feature-grid { grid-template-columns: repeat(2, 1fr); }
       .stories-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -421,13 +393,8 @@
       section { padding: 64px 20px; }
       .hero { padding: 120px 20px 80px; }
       .intro-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; }
-      .process-card:nth-child(1),
-      .process-card:nth-child(2),
-      .process-card:nth-child(3) { border-bottom: 2px solid #e5e7eb; }
       .feature-grid { grid-template-columns: 1fr; }
       .stories-grid { grid-template-columns: 1fr; }
-      .prototype-teaser { flex-direction: column; }
       .cta-banner { margin: 0 16px; }
       .cta-banner .section-inner { padding: 60px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
@@ -729,48 +696,72 @@
       <h2 class="section-title">So setzen wir Ihr <em>Digitalisierungsprojekt um</em></h2>
       <p class="section-sub">Dieser strukturierte Prozess ist es, den unsere Kunden besonders schätzen: transparent, iterativ und auf schnelle erste Ergebnisse ausgerichtet – von der ersten Idee bis weit nach dem Go-Live.</p>
     </div>
-    <div class="process-grid ani-fade-in">
+    <div class="process-timeline ani-fade-in">
 
-      <div class="process-card">
-        <div class="process-num">1</div>
-        <div class="process-icon"><span class="material-symbols-rounded">forum</span></div>
-        <h4>Erstgespräch</h4>
-        <p>In einem ersten Gespräch – bei Ihnen, bei uns oder in einer Web-Konferenz – schildern Sie uns Ihre Ausgangssituation und Ihre Ziele. Wir hören zu, stellen die richtigen Fragen und schaffen gemeinsam Klarheit über den Weg nach vorne.</p>
+      <div class="process-step">
+        <div class="process-marker">
+          <div class="process-node"><span class="material-symbols-rounded">forum</span></div>
+          <span class="process-step-num">1</span>
+        </div>
+        <div class="process-body">
+          <h4>Erstgespräch</h4>
+          <p>In einem ersten Gespräch – bei Ihnen, bei uns oder in einer Web-Konferenz – schildern Sie uns Ihre Ausgangssituation und Ihre Ziele. Wir hören zu, stellen die richtigen Fragen und schaffen gemeinsam Klarheit über den Weg nach vorne.</p>
+        </div>
       </div>
 
-      <div class="process-card">
-        <div class="process-num">2</div>
-        <div class="process-icon"><span class="material-symbols-rounded">search</span></div>
-        <h4>Bestandsaufnahme</h4>
-        <p>Unser Team analysiert Ihre bestehenden Abläufe, Systeme und Daten. Wir verstehen, was bereits funktioniert, wo Optimierungspotenzial liegt – und worauf das neue System aufbauen kann.</p>
+      <div class="process-step">
+        <div class="process-marker">
+          <div class="process-node"><span class="material-symbols-rounded">search</span></div>
+          <span class="process-step-num">2</span>
+        </div>
+        <div class="process-body">
+          <h4>Bestandsaufnahme</h4>
+          <p>Unser Team analysiert Ihre bestehenden Abläufe, Systeme und Daten. Wir verstehen, was bereits funktioniert, wo Optimierungspotenzial liegt – und worauf das neue System aufbauen kann.</p>
+        </div>
       </div>
 
-      <div class="process-card">
-        <div class="process-num">3</div>
-        <div class="process-icon"><span class="material-symbols-rounded">flag</span></div>
-        <h4>Ziele definieren</h4>
-        <p>Gemeinsam mit Ihnen entwickeln wir konkrete Ziele, aus denen sich Anforderungen, nächste Schritte und Meilensteine ableiten. Dabei bleiben wir flexibel: Wenn sich Prioritäten ändern, passen wir uns an.</p>
+      <div class="process-step">
+        <div class="process-marker">
+          <div class="process-node"><span class="material-symbols-rounded">flag</span></div>
+          <span class="process-step-num">3</span>
+        </div>
+        <div class="process-body">
+          <h4>Ziele definieren</h4>
+          <p>Gemeinsam mit Ihnen entwickeln wir konkrete Ziele, aus denen sich Anforderungen, nächste Schritte und Meilensteine ableiten. Dabei bleiben wir flexibel: Wenn sich Prioritäten ändern, passen wir uns an.</p>
+        </div>
       </div>
 
-      <div class="process-card">
-        <div class="process-num">4</div>
-        <div class="process-icon"><span class="material-symbols-rounded">draw</span></div>
-        <h4>Prototyp</h4>
-        <p>Rapid Prototyping steht bei SITEFORUM an erster Stelle: Sie können das Produkt anfassen und ausprobieren, bevor es fertig gebaut wird. So vermeiden wir Missverständnisse und liefern genau das, was Sie sich vorstellen.</p>
+      <div class="process-step">
+        <div class="process-marker">
+          <div class="process-node"><span class="material-symbols-rounded">draw</span></div>
+          <span class="process-step-num">4</span>
+        </div>
+        <div class="process-body">
+          <h4>Prototyp</h4>
+          <p>Rapid Prototyping steht bei SITEFORUM an erster Stelle: Sie können das Produkt anfassen und ausprobieren, bevor es fertig gebaut wird. So vermeiden wir Missverständnisse und liefern genau das, was Sie sich vorstellen.</p>
+        </div>
       </div>
 
-      <div class="process-card">
-        <div class="process-num">5</div>
-        <div class="process-icon"><span class="material-symbols-rounded">rocket_launch</span></div>
-        <h4>Go-Live</h4>
-        <p>Wir gehen mit dem ersten Meilenstein live, damit Sie als Organisation erste Erfolge feiern können. Qualität geht dabei vor Geschwindigkeit – aber wir wissen, dass Time-to-Market zählt.</p>
+      <div class="process-step">
+        <div class="process-marker">
+          <div class="process-node"><span class="material-symbols-rounded">rocket_launch</span></div>
+          <span class="process-step-num">5</span>
+        </div>
+        <div class="process-body">
+          <h4>Go-Live</h4>
+          <p>Wir gehen mit dem ersten Meilenstein live, damit Sie als Organisation erste Erfolge feiern können. Qualität geht dabei vor Geschwindigkeit – aber wir wissen, dass Time-to-Market zählt.</p>
+        </div>
       </div>
 
-      <div class="process-card">
-        <div class="process-num">6</div>
-        <div class="process-icon"><span class="material-symbols-rounded">autorenew</span></div>
-        <h4>Weiterentwicklung</h4>
-        <p>Der Go-Live ist kein Abschluss, sondern ein Anfang. Wir entwickeln gemeinsam eine langfristige digitale Strategie – typischerweise über Fünfjahreshorizonte – und setzen sie Schritt für Schritt um.</p>
+      <div class="process-step">
+        <div class="process-marker">
+          <div class="process-node"><span class="material-symbols-rounded">autorenew</span></div>
+          <span class="process-step-num">6</span>
+        </div>
+        <div class="process-body">
+          <h4>Weiterentwicklung</h4>
+          <p>Der Go-Live ist kein Abschluss, sondern ein Anfang. Wir entwickeln gemeinsam eine langfristige digitale Strategie – typischerweise über Fünfjahreshorizonte – und setzen sie Schritt für Schritt um.</p>
+        </div>
       </div>
 
     </div>
@@ -817,15 +808,6 @@
         <p>Persönlicher Ansprechpartner, schnelle Problemlösung und regelmäßige Schulungen für Ihr Team. Wir sorgen dafür, dass Sie Ihre Plattform optimal einsetzen können.</p>
       </div>
     </div>
-
-    <div class="prototype-teaser ani-fade-in">
-      <div class="prototype-teaser-icon"><span class="material-symbols-rounded">draw</span></div>
-      <div class="prototype-teaser-body">
-        <h4>Kostenloser digitaler Prototyp</h4>
-        <p>Sobald wir Ihre Ausgangssituation verstehen, erstellen wir Ihnen einen kostenlosen, unverbindlichen Prototyp – damit Sie das Ergebnis sehen können, bevor Sie eine Entscheidung treffen.</p>
-      </div>
-      <a href="kontakt.html" class="prototype-teaser-cta">Prototyp anfragen</a>
-    </div>
   </div>
 </section>
 
@@ -846,10 +828,6 @@
         </div>
         <div class="story-body">
           <h3 class="story-title">Digitales Mitgliederportal für 13.500 Apothekerinnen und Apotheker</h3>
-          <div class="story-result">
-            <div class="story-result-value">7 Mo.</div>
-            <div class="story-result-label">von Kick-off bis Go-live des neuen Portals „Meine LAK"</div>
-          </div>
           <span class="story-link">Zur Success Story</span>
         </div>
       </a>
@@ -861,10 +839,6 @@
         </div>
         <div class="story-body">
           <h3 class="story-title">Teilnehmer-Management für mehr als 10.000 Läufer</h3>
-          <div class="story-result">
-            <div class="story-result-value">10k+</div>
-            <div class="story-result-label">Teilnehmer vollständig digital verwaltet – vom Ticket bis zur Ergebnisliste</div>
-          </div>
           <span class="story-link">Zur Success Story</span>
         </div>
       </a>
@@ -876,10 +850,6 @@
         </div>
         <div class="story-body">
           <h3 class="story-title">Versorgungsportal für 4,4 Millionen Versicherte</h3>
-          <div class="story-result">
-            <div class="story-result-value">4,4 Mio</div>
-            <div class="story-result-label">Nutzer verwalten ihre Vorsorge vollständig digital</div>
-          </div>
           <span class="story-link">Zur Success Story</span>
         </div>
       </a>

@@ -232,6 +232,28 @@ section { padding: 100px 40px; }
 .cta-banner .section-title em { color: #93c5fd; }
 .cta-banner .section-sub { margin: 0 auto 40px; text-align: center; color: #94a3b8; }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Equal-width button pairs (hero + CTA). Two 1fr columns in a shrink-to-fit
+   grid size both buttons to the wider label. Double-class raises specificity
+   above each page's inline <style> container rule. */
+.hero-actions.hero-actions,
+.cta-actions.cta-actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 16px;
+  width: fit-content;
+  max-width: 100%;
+}
+.cta-actions.cta-actions { margin-left: auto; margin-right: auto; }
+.hero-actions .btn-primary, .hero-actions .btn-secondary,
+.cta-actions .btn-primary, .cta-actions .btn-secondary {
+  width: auto; text-align: center; justify-content: center;
+}
+@media (max-width: 640px) {
+  .hero-actions.hero-actions,
+  .cta-actions.cta-actions { grid-auto-flow: row; width: 100%; }
+}
 .cta-contact-block {
   display: flex; flex-direction: column; align-items: center;
   gap: 4px; margin: 40px 0; padding: 32px 0;
