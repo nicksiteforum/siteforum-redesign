@@ -71,7 +71,7 @@
 
     /* ─── HERO ──────────────────────────────────────────────── */
     .hero { background: linear-gradient(135deg, #003366 0%, #004d99 100%); padding: 220px 40px 170px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px); background-size: 28px 28px; pointer-events: none; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.16) 1.5px, transparent 1.5px); background-size: 28px 28px; pointer-events: none; }
     .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
     .solution-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.2); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border-radius: 999px; margin-bottom: 24px; }
     .hero h1 { font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin: 0 0 24px; color: var(--white); }
@@ -225,7 +225,7 @@
     .filter-bar { border-bottom-color: var(--line); }
     .filter-btn { border-color: var(--line); background: var(--bg-alt); color: var(--slate-600); }
     .intro-icon, .feature-icon, .benefit-check { background: var(--blue-100); color: var(--blue-600); }
-    .benefits-visual { background: var(--bg-alt); }
+    .benefits-visual { background: var(--bg-alt); border: 1px solid var(--line); }
     .benefits-divider { border-top-color: var(--line); }
     .story-img-wrap { background: var(--bg-alt); }
     .story-result { background: rgba(95,201,245,0.10); }
