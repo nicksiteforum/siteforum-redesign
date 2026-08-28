@@ -246,20 +246,25 @@
     .team-name { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
     .team-role { font-size: 0.75rem; color: var(--slate-600); margin-top: 3px; line-height: 1.35; }
 
-    /* ─── CULTURE GRID ──────────────────────────────────────── */
-    .culture-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .culture-card {
-      background: var(--white); border-radius: var(--radius-md);
-      border: 1.5px solid #e5e7eb; padding: 36px 32px;
+    /* ─── CULTURE ────────────────────────────────────────────── */
+    .culture-layout {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start;
     }
-    .culture-icon {
-      width: 52px; height: 52px; border-radius: 14px;
-      background: var(--blue-50); display: flex; align-items: center;
-      justify-content: center; margin-bottom: 20px;
+    .culture-left .section-title { margin-bottom: 0; }
+    .culture-right { display: flex; flex-direction: column; gap: 0; }
+    .culture-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line, #e5e7eb);
     }
-    .culture-icon .material-symbols-rounded { font-size: 26px; color: var(--blue-600); }
-    .culture-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .culture-card p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.75; }
+    .culture-item:last-child { border-bottom: none; }
+    .culture-ico {
+      font-size: 20px; color: var(--blue-600);
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .culture-item p {
+      font-size: 0.92rem; color: var(--slate-600); line-height: 1.65; margin: 0;
+    }
 
     /* ─── LOCATION CARD ─────────────────────────────────────── */
     .location-card {
@@ -285,6 +290,41 @@
     .location-visual .material-symbols-rounded { font-size: 48px; opacity: 0.5; }
     .location-visual span { font-size: 0.88rem; font-weight: 600; color: var(--slate-600); }
 
+
+    /* ─── NAME BLOCK ────────────────────────────────────────── */
+    .name-section { text-align: center; }
+    .name-big {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 700;
+      letter-spacing: 0.06em; line-height: 1; margin-bottom: 48px;
+      text-transform: uppercase;
+    }
+    .name-big .name-site { color: var(--blue-600); }
+    .name-big .name-forum { color: var(--navy); }
+    .name-cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      max-width: 800px; margin: 0 auto; text-align: left;
+    }
+    .name-col-label {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .name-col:first-child .name-col-label { color: var(--blue-600); }
+    .name-col:last-child .name-col-label { color: var(--slate-600); }
+    .name-col-title {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-size: 1.25rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .name-col-desc {
+      font-size: 0.92rem; color: var(--slate-600); line-height: 1.7;
+    }
+    .name-conclusion {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-size: 1.05rem; font-weight: 600; color: var(--blue-600);
+      margin-top: 56px; text-align: center;
+    }
 
     /* ─── CTA BANNER ────────────────────────────────────────── */
     .cta-banner {
@@ -376,9 +416,9 @@
       .location-card { grid-template-columns: 1fr; gap: 32px; }
     }
     @media (max-width: 768px) {
-.mgmt-grid { grid-template-columns: 1fr; }
+      .mgmt-grid { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: repeat(3, 1fr); }
-      .culture-grid { grid-template-columns: 1fr; }
+      .culture-layout { grid-template-columns: 1fr; gap: 32px; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
     @media (max-width: 640px) {
@@ -391,6 +431,7 @@
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .team-grid { grid-template-columns: repeat(2, 1fr); }
       .location-card { padding: 28px 20px; }
+      .name-cols { grid-template-columns: 1fr; gap: 36px; }
     }
 
     /* ═══════════════════════════════════════════════════════════
@@ -646,6 +687,28 @@
   </div>
 </section>
 
+<!-- NAME -->
+<section class="name-section" style="background:var(--bg-alt, var(--slate-100));">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <h2 class="name-big"><span class="name-site">SITE</span><span class="name-forum">FORUM</span></h2>
+      <div class="name-cols">
+        <div class="name-col">
+          <div class="name-col-label">SITE</div>
+          <h3 class="name-col-title">Der digitale Ort.</h3>
+          <p class="name-col-desc">Infrastruktur, Plattform und Technologie – das Fundament, auf dem sichere und skalierbare Lösungen entstehen.</p>
+        </div>
+        <div class="name-col">
+          <div class="name-col-label">FORUM</div>
+          <h3 class="name-col-title">Der Raum für Austausch.</h3>
+          <p class="name-col-desc">Portale, in denen Menschen zusammenkommen – Mitglieder, Kunden, Teams. Kommunikation, Zusammenarbeit, Wissen.</p>
+        </div>
+      </div>
+    </div>
+    <p class="name-conclusion ani-fade-in" data-delay="150">Seit 1998 verbinden wir beides.</p>
+  </div>
+</section>
+
 <!-- TEAM -->
 <section style="background:var(--slate-100);">
   <div class="section-inner">
@@ -682,34 +745,31 @@
   </div>
 </section>
 
-<!-- KULTUR & WERTE -->
+<!-- KULTUR -->
 <section style="background:var(--white);">
   <div class="section-inner">
-    <div class="ani-fade-in">
-      <p class="section-label">Kultur &amp; Werte</p>
-      <h2 class="section-title">Was uns zusammenhält – <em>abseits des Codes</em></h2>
-      <p class="section-sub"><br></p>
-    </div>
-    <div class="culture-grid">
-      <div class="culture-card ani-fade-in">
-        <div class="culture-icon"><span class="material-symbols-rounded">coffee</span></div>
-        <h4>Die Kaffeemaschine macht niemals Pause</h4>
-        <p>Kaffee ist unser inoffizielles Teamritual. Und weil wir unsere Kunden wirklich schätzen, trinken wir unseren Kaffee ausschließlich aus Tassen, die von eben diesen gebrandeten Exemplaren stammen.</p>
+    <div class="culture-layout ani-fade-in">
+      <div class="culture-left">
+        <p class="section-label">Kultur</p>
+        <h2 class="section-title">8 Nationalitäten,<br><em>ein Team.</em></h2>
       </div>
-      <div class="culture-card ani-fade-in" data-delay="100">
-        <div class="culture-icon"><span class="material-symbols-rounded">sports_soccer</span></div>
-        <h4>Sport als Ausgleich zum Coding-Alltag</h4>
-        <p>Fußball, Basketball und Cycling – unsere liebsten Wege, den Kopf freizubekommen. Bewegung hält uns kreativ, und ein bisschen Teamgeist auf dem Platz schadet auch im Büro nicht.</p>
-      </div>
-      <div class="culture-card ani-fade-in" data-delay="0">
-        <div class="culture-icon"><span class="material-symbols-rounded">ramen_dining</span></div>
-        <h4>Asiatische Küche verbindet 8 Nationalitäten</h4>
-        <p>Mindestens dreimal pro Woche bestellen wir gemeinsam asiatisches Essen. Was als Mittagskompromiss begann, ist heute festes Teamritual – und der Beweis, dass Vielfalt auch am Esstisch funktioniert.</p>
-      </div>
-      <div class="culture-card ani-fade-in" data-delay="100">
-        <div class="culture-icon"><span class="material-symbols-rounded">handshake</span></div>
-        <h4>Authentizität statt Buzzwords</h4>
-        <p>Echte Kollegialität, eine angenehme Atmosphäre und Freude an der gemeinsamen Arbeit – das sind unsere wichtigsten Erfolgsfaktoren. Nicht weil es im Leitbild steht, sondern weil wir es täglich so erleben.</p>
+      <div class="culture-right">
+        <div class="culture-item">
+          <span class="material-symbols-rounded culture-ico">coffee</span>
+          <p>Kaffee ist unser Teamritual – ausschließlich aus den gebrandeten Tassen unserer Kunden.</p>
+        </div>
+        <div class="culture-item">
+          <span class="material-symbols-rounded culture-ico">ramen_dining</span>
+          <p>Dreimal pro Woche asiatisch bestellen. Was als Kompromiss begann, ist heute feste Tradition.</p>
+        </div>
+        <div class="culture-item">
+          <span class="material-symbols-rounded culture-ico">sports_soccer</span>
+          <p>Fußball, Basketball, Cycling – Bewegung hält uns kreativ, Teamgeist schadet auch im Büro nicht.</p>
+        </div>
+        <div class="culture-item">
+          <span class="material-symbols-rounded culture-ico">handshake</span>
+          <p>Echte Kollegialität statt Leitbild-Phrasen. Nicht aufgeschrieben, sondern täglich gelebt.</p>
+        </div>
       </div>
     </div>
   </div>
