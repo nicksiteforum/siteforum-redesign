@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SITEFORUM – Building Digital Leaders</title>
+  <title>SITEFORUM – Ihr digitales Ökosystem</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -185,7 +185,7 @@
     /* ─── HERO ─────────────────────────────────────────────── */
     .hero {
       background: linear-gradient(160deg, #001a33 0%, #002b52 55%, #003a6b 100%);
-      padding: 200px 40px 160px;
+      padding: 200px 40px 100px;
       text-align: center;
     }
     .hero-inner {
@@ -264,7 +264,7 @@
     /* ─── STATS ─────────────────────────────────────────────── */
     .stats {
       background: var(--white);
-      padding: 56px 40px;
+      padding: 36px 40px;
       border-bottom: 1px solid var(--slate-100);
     }
     .stats-inner {
@@ -323,6 +323,37 @@
     }
 
     /* ─── LEISTUNGEN ────────────────────────────────────────── */
+    /* ─── ECOSYSTEM FLOW ──────────────────────────────────── */
+    .eco-flow {
+      display: flex; align-items: stretch; gap: 0;
+    }
+    .eco-flow-card {
+      flex: 1; min-width: 0;
+      background: var(--slate-100);
+      border-radius: var(--radius-md);
+      padding: 40px 36px;
+      border: 1.5px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      cursor: pointer; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+    }
+    .eco-flow-card:hover {
+      border-color: var(--blue-200);
+      box-shadow: 0 4px 16px rgba(0,51,102,0.08);
+    }
+    .eco-flow-card.eco-active {
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 2px var(--blue-600), 0 4px 20px rgba(0,51,102,0.15);
+    }
+    .eco-flow-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--navy); }
+    .eco-flow-card p { font-size: 0.92rem; color: var(--slate-600); line-height: 1.65; flex: 1; }
+    .eco-flow-arrow {
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; width: 48px;
+      color: var(--blue-600); opacity: 0.4;
+    }
+    .eco-flow-arrow .material-symbols-rounded { font-size: 28px; }
+
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -336,6 +367,8 @@
       transition: border-color 0.2s, box-shadow 0.2s;
       cursor: pointer;
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
     }
     .card:hover {
       border-color: var(--blue-200);
@@ -360,6 +393,7 @@
       font-size: 0.92rem;
       color: var(--slate-600);
       line-height: 1.65;
+      flex: 1;
     }
     .card-link {
       display: inline-flex;
@@ -878,7 +912,7 @@
       .nav-chevron { display: none; }
       .nav-actions { gap: 4px !important; margin-right: 10px; }
 
-      .stats-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .stats-inner { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
 
       .ki-inner {
         grid-template-columns: 1fr;
@@ -914,7 +948,7 @@
 
       /* Stats */
       .stats { padding: 40px 20px; }
-      .stats-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .stats-inner { grid-template-columns: 1fr; gap: 28px; }
       .stat-value { font-size: 2.2rem; }
 
       /* Sections */
@@ -928,6 +962,11 @@
       .section-title { font-size: 1.8rem; }
       .section-sub { font-size: 0.95rem; }
 
+      /* Eco Flow */
+      .eco-flow { flex-direction: column; gap: 0; }
+      .eco-flow-arrow { width: auto; height: 32px; transform: rotate(90deg); }
+      .eco-flow-card { padding: 28px 24px; }
+
       /* Cards */
       .cards-grid { grid-template-columns: 1fr; }
       .card { padding: 28px 24px; }
@@ -938,7 +977,7 @@
       .ki-inner { padding: 48px 28px; gap: 32px; }
       .ki-section .section-title { font-size: 1.8rem; }
 
-      /* Branchen */
+      /* REFERenzen */
       .branchen-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
       .branche-card { padding: 20px 16px; font-size: 0.85rem; }
 
@@ -1018,6 +1057,11 @@
     /* ── BUTTONS ── */
     .btn-secondary { background: transparent; color: var(--navy); border-color: rgba(255,255,255,0.25); }
     .btn-secondary:hover { border-color: var(--blue-600); }
+
+    /* ── ECO FLOW ── */
+    .eco-flow-card { background: var(--bg-alt); border-color: var(--line); }
+    .eco-flow-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+    .eco-flow-card.eco-active { border-color: var(--blue-600); box-shadow: 0 0 0 2px var(--blue-600), 0 4px 20px rgba(0,0,0,0.3); }
 
     /* ── CARDS / SLIDER ── */
     .card { background: var(--bg-alt); border-color: var(--line); }
@@ -1122,11 +1166,11 @@
     </a>
     <ul class="nav-links">
       <li class="nav-has-dropdown">
-        <a href="#produkte">Produkte &amp; Services <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="#produkte">Kompetenzen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
-          <a href="plattform.html">Digitales Ökosystem</a>
-          <a href="ki.html">Künstliche Intelligenz</a>
-          <a href="managed-cloud.html">Managed Cloud Infrastructure</a>
+          <a href="cloud.html">Cloud</a>
+          <a href="plattform.html">Portale</a>
+          <a href="ki.html">Angewandte KI</a>
           <div class="nav-dropdown-divider"></div>
           <a href="implementierung-services.html">Implementierung &amp; Services</a>
         </div>
@@ -1134,24 +1178,11 @@
       <li class="nav-has-dropdown">
         <a href="loesungen.html">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
-          <a href="mitgliederportale.html">Mitgliederportale</a>
-          <a href="kundenportale.html">Kundenportale</a>
-          <a href="mitarbeiterportale.html">Mitarbeiterportale</a>
-          <a href="informationsmanagement.html">Informationsmanagement</a>
-          <a href="intranet.html">Intranet</a>
+          <a href="mitgliederportale.html">Mitgliederportal</a>
+          <a href="kundenportale.html">Kundenportal</a>
+          <a href="mitarbeiterportale.html">Mitarbeiterportal</a>
+          <a href="informationsmanagement.html">Ereignis-Dokumentation</a>
           <a href="communities.html">Community</a>
-          <a href="corporate-websites.html">Corporate Websites</a>
-        </div>
-      </li>
-      <li class="nav-has-dropdown">
-        <a href="#branchen">Branchen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
-        <div class="nav-dropdown-menu">
-          <a href="kammern-verbaende.html">Kammern &amp; Verbände</a>
-          <a href="finanzen.html">Finanzen</a>
-          <a href="#branchen">Verkehrs- und Transportwesen</a>
-          <a href="personaldienstleistungen.html">Personaldienstleistungen</a>
-          <a href="#branchen">Gesundheitswesen</a>
-          <a href="#branchen">Medienbranche</a>
         </div>
       </li>
       <li><a href="referenzen.html">Referenzen</a></li>
@@ -1184,11 +1215,11 @@
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
   <div class="mob-group">
-    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Produkte &amp; Services <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Kompetenzen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
     <div class="mob-sub">
-      <a href="plattform.html" onclick="closeMenu()">Digitales Ökosystem</a>
-      <a href="ki.html" onclick="closeMenu()">Künstliche Intelligenz</a>
-      <a href="managed-cloud.html" onclick="closeMenu()">Managed Cloud Infrastructure</a>
+      <a href="cloud.html" onclick="closeMenu()">Cloud</a>
+      <a href="plattform.html" onclick="closeMenu()">Portale</a>
+      <a href="ki.html" onclick="closeMenu()">Angewandte KI</a>
       <a href="implementierung-services.html" onclick="closeMenu()">Implementierung &amp; Services</a>
     </div>
   </div>
@@ -1198,21 +1229,8 @@
       <a href="mitgliederportale.html" onclick="closeMenu()">Mitgliederportale</a>
       <a href="kundenportale.html" onclick="closeMenu()">Kundenportale</a>
       <a href="mitarbeiterportale.html" onclick="closeMenu()">Mitarbeiterportale</a>
-      <a href="informationsmanagement.html" onclick="closeMenu()">Informationsmanagement</a>
-      <a href="intranet.html" onclick="closeMenu()">Intranet</a>
+      <a href="informationsmanagement.html" onclick="closeMenu()">Ereignis-Dokumentation</a>
       <a href="communities.html" onclick="closeMenu()">Community</a>
-      <a href="corporate-websites.html" onclick="closeMenu()">Corporate Websites</a>
-    </div>
-  </div>
-  <div class="mob-group">
-    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Branchen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
-    <div class="mob-sub">
-      <a href="kammern-verbaende.html" onclick="closeMenu()">Kammern &amp; Verbände</a>
-      <a href="finanzen.html" onclick="closeMenu()">Finanzen</a>
-      <a href="#branchen" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
-      <a href="personaldienstleistungen.html" onclick="closeMenu()">Personaldienstleistungen</a>
-      <a href="#branchen" onclick="closeMenu()">Gesundheitswesen</a>
-      <a href="#branchen" onclick="closeMenu()">Medienbranche</a>
     </div>
   </div>
   <a href="referenzen.html" onclick="closeMenu()">Referenzen</a>
@@ -1240,14 +1258,10 @@
   </video>
   <div class="hero-inner">
     <div class="hero-content">
-      <h1>Ein System.<br />Kein <em>Flickenteppich.</em></h1>
-      <p class="hero-sub">
-        Webbasierte Portal-Software, Managed Cloud und angewandte KI für Ihre Daten aus einer Hand –
-        seit über 25 Jahren, für Organisationen, die täglich digitale Prozesse abwickeln (wollen).
-      </p>
+      <h1>Das dig<em>it</em>ale<br>Ökosystem<em>.</em></h1>
+      <p class="hero-sub">Cloud | Portale | KI: Ihre Lösung für digitale Prozesse.</p>
       <div class="hero-actions">
-        <a href="#produkte" class="btn-primary">Produkte &amp; Services</a>
-        <a href="#kontakt" class="btn-secondary">Beratungsgespräch anfragen</a>
+        <a href="#produkte" class="btn-primary">Jetzt kennenlernen<br></a>
       </div>
     </div>
   </div>
@@ -1257,20 +1271,19 @@
 <div class="stats">
   <div class="stats-inner">
     <div>
-      <div class="stat-value">25<span>+</span></div>
-      <div class="stat-label">Jahre Erfahrung in der Digitalisierung</div>
+      <div class="stat-label">in</div>
+      <div class="stat-value">320<span>+</span></div>
+      <div class="stat-label">Projekten</div>
     </div>
     <div>
-      <div class="stat-value">150<span>+</span></div>
-      <div class="stat-label">Erfolgreich abgeschlossene Projekte</div>
+      <div class="stat-label">mehr als</div>
+      <div class="stat-value">99,95<span>%</span></div>
+      <div class="stat-label">Verfügbarkeit</div>
     </div>
     <div>
-      <div class="stat-value">4 Mio<span>.</span></div>
-      <div class="stat-label">Täglich aktive Nutzer unserer Plattformen</div>
-    </div>
-    <div>
-      <div class="stat-value">100<span>%</span></div>
-      <div class="stat-label">Branchen­unabhängige Lösungen</div>
+      <div class="stat-label">dank</div>
+      <div class="stat-value">28<span>+</span></div>
+      <div class="stat-label">Jahren Erfahrung</div>
     </div>
   </div>
 </div>
@@ -1279,83 +1292,33 @@
 <section id="produkte" class="pattern-dots" style="background:var(--white);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Produkte &amp; Services</p>
-      <h2 class="section-title">Die Basis für Ihren <em>digitalen Erfolg</em></h2>
-      <p class="section-sub">Unsere Plattform, Infrastruktur und unser Expertenteam bilden das Fundament für alle digitalen Lösungen.</p>
+      <p class="section-label">Kompetenzen</p>
+      <h2 class="section-title">Drei Bausteine. Ein System<em>. Keine Insellösungen.</em></h2>
+      <p class="section-sub"><br></p>
     </div>
-    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); margin-bottom: 40px;">
-
-      <div class="card ani-fade-in">
-        <div class="card-icon"><span class="material-symbols-rounded">dashboard</span></div>
-        <h3>Digitales Ökosystem</h3>
-        <p>Eine hochmoderne Technologieplattform, die 80 % Ihrer Anforderungen out-of-the-box erfüllt – mit Portal-Technologie, CMS, CRM, DAM, Collaboration und Entwickler-Tools in einem System.</p>
-        <a href="#" class="card-link">Zur Plattform</a>
-      </div>
-
-      <div class="card ani-fade-in">
-        <div class="card-icon" style="background:#ede9fe;color:#7c3aed"><span class="material-symbols-rounded">psychology</span></div>
-        <h3>Künstliche Intelligenz</h3>
-        <p>KI-Assistenten auf Ihren Daten, automatisierte Workflows und intelligente Auswertung – wir integrieren Large Language Models nahtlos in Ihre bestehenden Portale und Prozesse.</p>
-        <a href="#kontakt" class="card-link">KI-Potenzial besprechen</a>
-      </div>
-
-      <div class="card ani-fade-in">
+    <div class="eco-flow ani-fade-in">
+      <a href="cloud.html" class="eco-flow-card">
         <div class="card-icon" style="background:#dcfce7;color:#15803d"><span class="material-symbols-rounded">cloud_done</span></div>
-        <h3>Managed Cloud Infrastructure</h3>
-        <p>Stabile, sichere und zertifizierte Cloud-Infrastruktur (ISO 27001), die vollständig von uns verwaltet wird – 24/7, skalierbar, mit deutschen Rechenzentren.</p>
-        <a href="#" class="card-link">Zur Cloud</a>
-      </div>
-
+        <h3>Cloud</h3>
+        <p>Eine stabile, sichere und zertifizierte Cloud-Infrastruktur (ISO 27001), die vollumfänglich für Sie verwaltet wird – skalierbar, in deutschen Rechenzentren.</p>
+        <span class="card-link">Mehr zu Cloud</span>
+      </a>
+      <div class="eco-flow-arrow"><span class="material-symbols-rounded">arrow_forward</span></div>
+      <a href="plattform.html" class="eco-flow-card">
+        <div class="card-icon"><span class="material-symbols-rounded">dashboard</span></div>
+        <h3>Portale</h3>
+        <p>Die modulare Plattform für Self-Services und automatisierten Prozesse deckt out-of-the-box einen Großteil Ihrer individuellen Anforderungen ab.</p>
+        <span class="card-link">Mehr zu Portale</span>
+      </a>
+      <div class="eco-flow-arrow"><span class="material-symbols-rounded">arrow_forward</span></div>
+      <a href="ki.html" class="eco-flow-card">
+        <div class="card-icon" style="background:#ede9fe;color:#7c3aed"><span class="material-symbols-rounded">psychology</span></div>
+        <h3>Angewandte KI</h3>
+        <p>KI in Ihrer Lösung integriert - kein Extra. Fortschrittliche Verarbeitung Ihrer Daten mit einsatzbereiten Modellen - ohne Umwege und DSGVO-konform.</p>
+        <span class="card-link">Mehr zu KI</span>
+      </a>
     </div>
 
-    <a href="implementierung-services.html" class="card-services-strip ani-fade-in">
-      <div class="card-services-strip-icon"><span class="material-symbols-rounded">engineering</span></div>
-      <div class="card-services-strip-body">
-        <h4>Implementierung &amp; Services</h4>
-        <p>Von Design Thinking über agile Umsetzung bis zum Go-live – inklusive kostenlosem digitalem Prototyp zum Start.</p>
-      </div>
-      <span class="card-link" style="margin-top:0; white-space:nowrap;">Mehr erfahren</span>
-    </a>
-  </div>
-</section>
-
-<!-- KI HIGHLIGHT -->
-<section style="padding: 0 0 100px; background: var(--white);">
-  <div class="ki-section">
-    <div class="ki-inner">
-      <div class="ani-fade-in">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-          <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.15);color:#fff;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.25);">NEU</span>
-          <p class="section-label" style="margin-bottom:0;">Künstliche Intelligenz</p>
-        </div>
-        <h2 class="section-title">KI, die <em>Ihre Daten</em> versteht</h2>
-        <p class="section-sub">Wir integrieren Large Language Models direkt in Ihre Portale – auf Basis Ihrer eigenen Daten, DSGVO-konform und vollständig unter Ihrer Kontrolle.</p>
-        <a href="#kontakt" class="btn-primary">KI-Potenzial besprechen</a>
-      </div>
-      <div class="ki-features">
-        <div class="ki-feature ani-fade-in" data-delay="0">
-          <div class="ki-feature-icon"><span class="material-symbols-rounded">chat</span></div>
-          <div>
-            <h4>KI-Assistent auf Ihren Daten</h4>
-            <p>Chatbots und Assistenten, die Ihre internen Dokumente, Prozesse und Wissensbasen verstehen – nicht das offene Internet.</p>
-          </div>
-        </div>
-        <div class="ki-feature ani-fade-in" data-delay="100">
-          <div class="ki-feature-icon"><span class="material-symbols-rounded">auto_awesome</span></div>
-          <div>
-            <h4>Automatisierte Workflows</h4>
-            <p>Klassifizierung, Zusammenfassung und Weiterleitung von Informationen – vollautomatisch und in Echtzeit.</p>
-          </div>
-        </div>
-        <div class="ki-feature ani-fade-in" data-delay="200">
-          <div class="ki-feature-icon"><span class="material-symbols-rounded">lock</span></div>
-          <div>
-            <h4>Maßgeschneiderte Integration</h4>
-            <p>Wir integrieren führende KI-Plattformen wie Claude, OpenAI oder Azure AI und entwickeln daraus passgenaue Lösungen für Ihren konkreten Anwendungsfall – ohne Overhead, ohne Umwege.</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1365,8 +1328,8 @@
     <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
       <div class="ani-fade-in">
         <p class="section-label">Lösungen</p>
-        <h2 class="section-title" style="margin-bottom:12px;">Portale für <em>jeden</em> Anwendungsfall</h2>
-        <p class="section-sub" style="margin-bottom:0;">Auf Basis unserer Plattform entwickeln wir maßgeschneiderte Portale – branchenunabhängig und schnell einsatzbereit.</p>
+        <h2 class="section-title" style="margin-bottom:12px;">Portale für <em>Ihren</em> Anwendungsfall.</h2>
+        <p class="section-sub" style="margin-bottom:0;">Modularer Aufbau, Self-Services und Prozess-Automatisierung.&nbsp;</p>
       </div>
       <div class="slider-controls">
         <button class="slider-btn" id="slide-prev" aria-label="Zurück"><span class="material-symbols-rounded">arrow_back</span></button>
@@ -1379,7 +1342,7 @@
         <div class="card ani-fade-in">
           <div class="card-icon"><span class="material-symbols-rounded">badge</span></div>
           <h3>Mitarbeiterportale</h3>
-          <p>Komplexe HR-Prozesse als digitale Self-Services – von Onboarding über Dokumentenverwaltung bis zur internen Kommunikation.</p>
+          <p>Komplexe Prozesse als digitale Self-Services – von Onboarding über interne Kommunikation, Dokumentenverwaltung,&nbsp; Einsatzplanung bis Stundennachweisen.</p>
           <a href="#" class="card-link">Mehr erfahren</a>
         </div>
 
@@ -1393,28 +1356,28 @@
         <div class="card ani-fade-in">
           <div class="card-icon"><span class="material-symbols-rounded">groups</span></div>
           <h3>Mitgliederportale</h3>
-          <p>Der Game-Changer für Verbände und Organisationen: Mitgliederverwaltung, Self-Service und digitale Zusammenarbeit in einem Portal.</p>
+          <p>Für Verbände und Organisationen: Mitgliederverwaltung, Self-Services und digitale Zusammenarbeit in einer Lösung.</p>
           <a href="#" class="card-link">Mehr erfahren</a>
         </div>
 
         <div class="card ani-fade-in">
           <div class="card-icon"><span class="material-symbols-rounded">train</span></div>
-          <h3>Informationsmanagement</h3>
-          <p>Standardisierte Erfassung, Verteilung und Dokumentation von Lageberichten für Transport- und Schienenbetreiber – in Echtzeit.</p>
+          <h3>Ereignis-Dokumentation</h3>
+          <p>Erfassung, Dokumentation und Verteilung von Ereignissen im ÖPNV, ergeben einen standardisierten Lagebericht für verteilte Leitstellen.</p>
           <a href="#" class="card-link">Mehr erfahren</a>
         </div>
 
         <div class="card ani-fade-in">
           <div class="card-icon"><span class="material-symbols-rounded">account_balance</span></div>
           <h3>Factoringportale</h3>
-          <p>Digitale Plattform für Factoring-Dienstleister: Kundenanbindung, Workflow-Automatisierung und transparente Finanzprozesse.</p>
+          <p>Eine mandantenfähige Plattform für Factoring-Dienstleister: Kundenanbindung, KI gestützte Workflow-Automatisierung und transparente Finanzprozesse.</p>
           <a href="#" class="card-link">Mehr erfahren</a>
         </div>
 
         <div class="card ani-fade-in">
           <div class="card-icon"><span class="material-symbols-rounded">hub</span></div>
-          <h3>Intranet &amp; Communities</h3>
-          <p>Wissensmanagement, interne Kommunikation und Community-Building – als moderne Plattform für Zusammenarbeit und Austausch.</p>
+          <h3>Netzwerke &amp; Communities</h3>
+          <p>Wissensmanagement, Kommunikation und Community-Building – eine moderne Plattform für Zusammenarbeit und Austausch.</p>
           <a href="#" class="card-link">Mehr erfahren</a>
         </div>
 
@@ -1455,137 +1418,62 @@
   })();
 </script>
 
-
-<!-- SUCCESS STORIES -->
-<section style="background:var(--slate-100);">
-  <div class="section-inner">
-    <div class="ani-fade-in">
-      <p class="section-label">Success Stories</p>
-      <h2 class="section-title">Projekte, die <em>überzeugen</em></h2>
-      <p class="section-sub">Echte Ergebnisse aus realen Projekten – so sieht digitale Transformation mit SITEFORUM aus.</p>
-    </div>
-    <div class="stories-grid">
-
-      <a href="#" class="story-card ani-fade-in">
-        <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/assembly/800/440" alt="VAK Portal" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_VAK.jpg" alt="VAK" /></div>
-        </div>
-        <div class="story-body">
-          <span class="story-tag">Mitgliederportal</span>
-          <h3 class="story-title">Digitales Mitgliederportal für 12.000 Nutzer</h3>
-          <div class="story-result">
-            <div class="story-result-value">80%</div>
-            <div class="story-result-label">weniger manuelle Bearbeitungszeit durch automatisierte Self-Service-Prozesse</div>
+<!-- KI HIGHLIGHT -->
+<section style="padding: 0 0 100px; background: var(--white);">
+  <div class="ki-section">
+    <div class="ki-inner">
+      <div class="ani-fade-in">
+        <p class="section-label" style="margin-bottom:16px;">Angewandte KI</p>
+        <h2 class="section-title">KI, die <em>Ihre Prozesse</em> unterstützt.</h2>
+        <p class="section-sub">Wir integrieren KI direkt in Ihr Portal – auf Basis Ihrer Daten, DSGVO-konform und vollständig unter Ihrer Kontrolle.</p>
+        <a href="ki.html" class="btn-primary">Mehr zu KI</a>
+      </div>
+      <div class="ki-features">
+        <div class="ki-feature ani-fade-in" data-delay="0">
+          <div class="ki-feature-icon"><span class="material-symbols-rounded">chat</span></div>
+          <div>
+            <h4>KI-Assistenten&nbsp;</h4>
+            <p>Chatbots oder Assistenten mit geschützten Zugriff auf Ihre Dokumente, Prozesse oder Wissensbasen.</p>
           </div>
-          <span class="story-link">Zur Success Story</span>
         </div>
-      </a>
-
-      <a href="#" class="story-card ani-fade-in">
-        <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/trainrail/800/440" alt="Eurobahn Portal" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_eurobahn.jpg" alt="Eurobahn" /></div>
-        </div>
-        <div class="story-body">
-          <span class="story-tag">Informationsmanagement</span>
-          <h3 class="story-title">Echtzeit-Lageberichte für den Schienenpersonennahverkehr</h3>
-          <div class="story-result">
-            <div class="story-result-value">Echtzeit</div>
-            <div class="story-result-label">Erfassung und Verteilung von Lageberichten an alle Stakeholder</div>
+        <div class="ki-feature ani-fade-in" data-delay="100">
+          <div class="ki-feature-icon"><span class="material-symbols-rounded">auto_awesome</span></div>
+          <div>
+            <h4>Intelligente Agenten</h4>
+            <p>Automatisierte Workflows, Klassifizierung und intelligente Zusammenfassung und Verarbeitung von Informationen und Prozessen für effiziente, fehlerfreie Abläufe.</p>
           </div>
-          <span class="story-link">Zur Success Story</span>
         </div>
-      </a>
-
-      <a href="#" class="story-card ani-fade-in">
-        <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/officedesk/800/440" alt="nordwest Factoring" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_nordwest-factoring.png" alt="nordwest Factoring" /></div>
-        </div>
-        <div class="story-body">
-          <span class="story-tag">Factoringportal</span>
-          <h3 class="story-title">Digitale Kundenplattform für Factoring-Prozesse</h3>
-          <div class="story-result">
-            <div class="story-result-value">3×</div>
-            <div class="story-result-label">schnellere Bearbeitungszeit durch vollautomatisierte Workflows</div>
+        <div class="ki-feature ani-fade-in" data-delay="200">
+          <div class="ki-feature-icon"><span class="material-symbols-rounded">lock</span></div>
+          <div>
+            <h4>Maßgeschneiderte Integration</h4>
+            <p>Führende KI-Modelle von Claude, OpenAI oder Azure AI&nbsp; nach Wunsch für maßgeschneiderte Lösungen für Ihren konkreten Anwendungsfall.</p>
           </div>
-          <span class="story-link">Zur Success Story</span>
         </div>
-      </a>
-
-      <a href="#" class="story-card ani-fade-in">
-        <div class="story-img-wrap">
-          <img src="https://picsum.photos/seed/colleagues/800/440" alt="ODEG" />
-          <div class="story-customer-badge"><img src="customer-logos/SITEFORUM_Kunden_ODEG.jpg" alt="ODEG" /></div>
-        </div>
-        <div class="story-body">
-          <span class="story-tag">Mitarbeiterportal</span>
-          <h3 class="story-title">Zentrales HR- und Kommunikationsportal für 1.200 Mitarbeitende</h3>
-          <div class="story-result">
-            <div class="story-result-value">100%</div>
-            <div class="story-result-label">digitale Onboarding-Prozesse – papierlos und standortunabhängig</div>
-          </div>
-          <span class="story-link">Zur Success Story</span>
-        </div>
-      </a>
-
+      </div>
     </div>
   </div>
 </section>
 
 <!-- BRANCHEN -->
-<section class="branchen pattern-dots" id="branchen">
+<section class="branchen pattern-dots" id="branchen" style="padding-top:60px;">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Branchen</p>
-      <h2 class="section-title">Etablierte Lösungen für <em>Ihre Branche</em></h2>
-      <p class="section-sub" style="margin-bottom:48px;">In diesen Branchen haben wir tiefe Expertise und bewährte Lösungen – schnell einsatzbereit, individuell anpassbar.</p>
+      <h2 class="section-title">Einsatzfälle in verschiedenen<em>&nbsp;Branchen.</em></h2>
+      <p class="section-sub" style="margin-bottom:48px;">In folgenden Branchen haben wir tiefe Expertise und bewährte Lösungen – einsatzbereit, individuell anpassbar.</p>
     </div>
     <div class="branchen-grid">
-      <a href="kammern-verbaende.html" class="branche-card ani-fade-in" data-delay="0"><span class="branche-icon"><span class="material-symbols-rounded">domain</span></span> Kammern &amp; Verbände</a>
-      <a href="finanzen.html" class="branche-card ani-fade-in" data-delay="75"><span class="branche-icon"><span class="material-symbols-rounded">currency_exchange</span></span> Finanzen</a>
-      <div class="branche-card ani-fade-in" data-delay="150"><span class="branche-icon"><span class="material-symbols-rounded">train</span></span> Verkehrs- und Transportwesen</div>
-      <div class="branche-card ani-fade-in" data-delay="225"><span class="branche-icon"><span class="material-symbols-rounded">work</span></span> Personaldienstleistungen</div>
-      <div class="branche-card ani-fade-in" data-delay="300"><span class="branche-icon"><span class="material-symbols-rounded">health_and_safety</span></span> Gesundheitswesen</div>
-      <div class="branche-card ani-fade-in" data-delay="375"><span class="branche-icon"><span class="material-symbols-rounded">newspaper</span></span> Medienbranche</div>
-      <div class="branche-card ani-fade-in" data-delay="450"><span class="branche-icon"><span class="material-symbols-rounded">add_circle</span></span> Weitere Branchen</div>
+      <a href="referenzen.html#kammern" class="branche-card ani-fade-in" data-delay="0"><span class="branche-icon"><span class="material-symbols-rounded">domain</span></span> Kammern &amp; Verbände</a>
+      <a href="referenzen.html#finanzen" class="branche-card ani-fade-in" data-delay="75"><span class="branche-icon"><span class="material-symbols-rounded">currency_exchange</span></span> Finanzen</a>
+      <a href="referenzen.html#verkehr" class="branche-card ani-fade-in" data-delay="150"><span class="branche-icon"><span class="material-symbols-rounded">train</span></span> Verkehr &amp; Transport</a>
+      <a href="referenzen.html#personal" class="branche-card ani-fade-in" data-delay="225"><span class="branche-icon"><span class="material-symbols-rounded">work</span></span> Personaldienstleistungen</a>
+      <a href="referenzen.html#events" class="branche-card ani-fade-in" data-delay="300"><span class="branche-icon"><span class="material-symbols-rounded">celebration</span></span> Events &amp; Vereine</a>
+      <a href="referenzen.html#weitere" class="branche-card ani-fade-in" data-delay="375"><span class="branche-icon"><span class="material-symbols-rounded">add_circle</span></span> Weitere Projekte</a>
     </div>
   </div>
 </section>
 
-<!-- REFERENZEN -->
-<section class="referenzen" id="referenzen" style="padding-bottom: 40px;">
-  <div class="section-inner">
-    <div class="ani-fade-in">
-      <p class="section-label">Referenzen</p>
-      <h2 class="section-title">Unternehmen, die <em>uns vertrauen</em></h2>
-      <p class="section-sub">Über 150 Projekte – von mittelständischen Unternehmen bis zu Großkonzernen.</p>
-    </div>
-    <div class="logo-grid-wrap">
-    <div class="logo-grid">
-      <div class="logo-frame ani-fade-in" data-delay="0"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_national-express_mono.png" alt="National Express" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="60"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_vbl_mono.png" alt="VBL" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="120"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_nordwest_mono.png" alt="nordwest" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="180"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_THOR_mono.png" alt="THOR" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="240"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_odeg_mono.png" alt="ODEG" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="300"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_abellio_mono.png" alt="Abellio" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="0"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_eurobahn_mono.png" alt="Eurobahn" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="60"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_hrcom_mono.png" alt="HR.com" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="120"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_knm_mono.png" alt="Kompetenznetz Mittelstand" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="180"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_lineas_mono.png" alt="Lineas" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="240"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_myfavorito_mono.png" alt="myfavorito" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="300"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_national-express_mono.png" alt="National Express" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="0"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_vbl_mono.png" alt="VBL" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="60"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_nordwest_mono.png" alt="nordwest" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="120"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_eurobahn_mono.png" alt="Eurobahn" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="180"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_THOR_mono.png" alt="THOR" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="240"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_odeg_mono.png" alt="ODEG" /></div>
-      <div class="logo-frame ani-fade-in" data-delay="300"><img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_abellio_mono.png" alt="Abellio" /></div>
-    </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA BANNER -->
 <div class="cta-banner" id="kontakt" style="margin-top: 0;">
@@ -1593,11 +1481,11 @@
     <div class="ani-fade-in">
       <p class="section-label">Jetzt starten</p>
       <h2 class="section-title">Bereit für <em>Ihre digitale Zukunft?</em></h2>
-      <p class="section-sub">Lassen Sie uns gemeinsam herausfinden, welche Lösung zu Ihnen passt – kostenlos und unverbindlich.</p>
+      <p class="section-sub">Lassen Sie uns gemeinsam herausfinden, welche Lösung zu Ihnen passt.</p>
     </div>
     <div class="cta-actions">
       <a href="mailto:info@siteforum.com" class="btn-primary">Gespräch anfragen</a>
-      <a href="tel:+493616661510" class="btn-secondary">+49 361 6661 5810</a>
+      <a href="tel:+4936166615810" class="btn-secondary">+49 361 6661 5810</a>
     </div>
   </div>
 </div>
@@ -1607,43 +1495,46 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo"><img src="SITEFORUM_logo_white.png" alt="SITEFORUM" style="height:28px; width:auto;" /></a>
-        <p>Webbasierte Portale und intelligente Digitalisierungslösungen aus Erfurt – seit über 25 Jahren.</p>
+        <a href="index.html" class="nav-logo"><img src="SITEFORUM_logo_white.png" alt="SITEFORUM" style="height:44px; width:auto;" /></a>
+        <p>Das Digitale Ökosystem<div>Cloud | Portale | KI</div></p>
         <p style="margin-top:14px;">Straße des Friedens 15a<br />99094 Erfurt</p>
-        <p style="margin-top:14px;"><a href="mailto:info@siteforum.com" style="color:inherit;text-decoration:none;">info@siteforum.com</a><br /><a href="tel:+493616661510" style="color:inherit;text-decoration:none;">+49 361 6661 5810</a></p>
+        <p style="margin-top:14px;"><a href="mailto:info@siteforum.com" style="color:inherit;text-decoration:none;">info@siteforum.com</a><br /><a href="tel:+4936166615810" style="color:inherit;text-decoration:none;">+49 361 6661 5810</a></p>
       </div>
       <div class="footer-col">
-        <h4>Produkte &amp; Lösungen</h4>
+        <h4>Kompetenzen</h4>
         <ul>
-          <li><a href="plattform.html">Digitales Ökosystem</a></li>
-          <li><a href="ki.html">Künstliche Intelligenz</a></li>
-          <li><a href="managed-cloud.html">Managed Cloud</a></li>
-          <li><a href="kundenportale.html">Kundenportale</a></li>
-          <li><a href="mitgliederportale.html">Mitgliederportale</a></li>
-          <li><a href="communities.html">Communities</a></li>
+          <li><a href="cloud.html">Cloud</a></li>
+          <li><a href="plattform.html">Portale</a></li>
+          <li><a href="ki.html">Angewandte KI</a></li>
+          <li><a href="implementierung-services.html">Implementierung &amp; Services</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Branchen</h4>
+        <h4>Lösungen</h4>
         <ul>
-          <li><a href="kammern-verbaende.html">Kammern &amp; Verbände</a></li>
-          <li><a href="finanzen.html">Finanzen</a></li>
-          <li><a href="#">Gesundheitswesen</a></li>
-          <li><a href="#">Medienbranche</a></li>
+          <li><a href="mitgliederportale.html">Mitgliederportal</a></li>
+          <li><a href="kundenportale.html">Kundenportal</a></li>
+          <li><a href="mitarbeiterportale.html">Mitarbeiterportal</a></li>
+          <li><a href="informationsmanagement.html">Ereignis-Dokumentation</a></li>
+          <li><a href="communities.html">Community</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Unternehmen</h4>
+        <h4>Referenzen</h4>
         <ul>
-          <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="referenzen.html">Referenzen</a></li>
+          <li><a href="referenzen.html">Kundenprojekte</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Über uns</h4>
+        <ul>
+          <li><a href="ueber-uns.html">Team</a></li>
           <li><a href="karriere.html">Karriere</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
+      <span>© 2026 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
       <div style="display:flex; gap:24px;">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lösungen – Portale für jeden Anwendungsfall | SITEFORUM</title>
-  <meta name="description" content="Maßgeschneiderte Portale auf Basis der SITEFORUM-Plattform: Mitglieder-, Kunden- und Mitarbeiterportale, Informationsmanagement, Intranet, Communities und Corporate Websites – branchenunabhängig und schnell einsatzbereit." />
+  <meta name="description" content="Maßgeschneiderte Portale auf Basis der SITEFORUM-Plattform: Mitglieder-, Kunden- und Mitarbeiterportale, Ereignis-Dokumentation, Intranet, Communities und Corporate Websites – branchenunabhängig und schnell einsatzbereit." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -190,11 +190,11 @@
     </a>
     <ul class="nav-links">
       <li class="nav-has-dropdown">
-        <a href="index.html#produkte">Produkte &amp; Services <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#produkte">Kompetenzen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
-          <a href="plattform.html">Digitales Ökosystem</a>
-          <a href="ki.html">Künstliche Intelligenz</a>
-          <a href="managed-cloud.html">Managed Cloud Infrastructure</a>
+          <a href="cloud.html">Cloud</a>
+          <a href="plattform.html">Portale</a>
+          <a href="ki.html">Angewandte KI</a>
           <div class="nav-dropdown-divider"></div>
           <a href="index.html#produkte">Implementierung &amp; Services</a>
         </div>
@@ -205,24 +205,11 @@
           <a href="mitgliederportale.html">Mitgliederportale</a>
           <a href="kundenportale.html">Kundenportale</a>
           <a href="mitarbeiterportale.html">Mitarbeiterportale</a>
-          <a href="informationsmanagement.html">Informationsmanagement</a>
-          <a href="intranet.html">Intranet</a>
+          <a href="informationsmanagement.html">Ereignis-Dokumentation</a>
           <a href="communities.html">Community</a>
-          <a href="corporate-websites.html">Corporate Websites</a>
         </div>
       </li>
-      <li class="nav-has-dropdown">
-        <a href="index.html#branchen">Branchen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
-        <div class="nav-dropdown-menu">
-          <a href="kammern-verbaende.html">Kammern &amp; Verbände</a>
-          <a href="finanzen.html">Finanzen</a>
-          <a href="index.html#branchen">Verkehrs- und Transportwesen</a>
-          <a href="personaldienstleistungen.html">Personaldienstleistungen</a>
-          <a href="index.html#branchen">Gesundheitswesen</a>
-          <a href="index.html#branchen">Medienbranche</a>
-        </div>
-      </li>
-      <li><a href="referenzen.html">Referenzen</a></li>
+<li><a href="referenzen.html">Referenzen</a></li>
       <li class="nav-has-dropdown">
         <a href="ueber-uns.html">Über uns <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
@@ -252,11 +239,11 @@
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
   <div class="mob-group">
-    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Produkte &amp; Services <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
+    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Kompetenzen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
     <div class="mob-sub">
-      <a href="plattform.html" onclick="closeMenu()">Digitales Ökosystem</a>
-      <a href="ki.html" onclick="closeMenu()">Künstliche Intelligenz</a>
-      <a href="managed-cloud.html" onclick="closeMenu()">Managed Cloud Infrastructure</a>
+      <a href="cloud.html" onclick="closeMenu()">Cloud</a>
+      <a href="plattform.html" onclick="closeMenu()">Portale</a>
+      <a href="ki.html" onclick="closeMenu()">Angewandte KI</a>
       <a href="implementierung-services.html" onclick="closeMenu()">Implementierung &amp; Services</a>
     </div>
   </div>
@@ -266,21 +253,8 @@
       <a href="mitgliederportale.html" onclick="closeMenu()">Mitgliederportale</a>
       <a href="kundenportale.html" onclick="closeMenu()">Kundenportale</a>
       <a href="mitarbeiterportale.html" onclick="closeMenu()">Mitarbeiterportale</a>
-      <a href="informationsmanagement.html" onclick="closeMenu()">Informationsmanagement</a>
-      <a href="intranet.html" onclick="closeMenu()">Intranet</a>
+      <a href="informationsmanagement.html" onclick="closeMenu()">Ereignis-Dokumentation</a>
       <a href="communities.html" onclick="closeMenu()">Community</a>
-      <a href="corporate-websites.html" onclick="closeMenu()">Corporate Websites</a>
-    </div>
-  </div>
-  <div class="mob-group">
-    <button class="mob-group-toggle" onclick="toggleMobGroup(this)">Branchen <span class="material-symbols-rounded mob-chevron">keyboard_arrow_down</span></button>
-    <div class="mob-sub">
-      <a href="kammern-verbaende.html" onclick="closeMenu()">Kammern &amp; Verbände</a>
-      <a href="finanzen.html" onclick="closeMenu()">Finanzen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Verkehrs- und Transportwesen</a>
-      <a href="personaldienstleistungen.html" onclick="closeMenu()">Personaldienstleistungen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Gesundheitswesen</a>
-      <a href="index.html#branchen" onclick="closeMenu()">Medienbranche</a>
     </div>
   </div>
   <a href="referenzen.html" onclick="closeMenu()">Referenzen</a>
@@ -308,7 +282,7 @@
       <span class="material-symbols-rounded" style="font-size:14px;">apps</span>
       Lösungen
     </div>
-    <h1>Portale für <em>jeden</em> Anwendungsfall</h1>
+    <h1>Portale für <em>Ihren</em> Anwendungsfall.</h1>
     <p class="hero-sub">Auf Basis unserer Plattform entwickeln wir maßgeschneiderte Portale – branchenunabhängig, sicher und schnell einsatzbereit. Von Mitglieder- und Kundenportalen bis zu Intranet, Communities und Corporate Websites.</p>
     <div class="hero-actions">
       <a href="kontakt.html" class="btn-primary">Beratung anfragen</a>
@@ -367,15 +341,8 @@
 
       <a href="informationsmanagement.html" class="sol-card ani-fade-in">
         <div class="sol-icon"><span class="material-symbols-rounded">train</span></div>
-        <h3>Informationsmanagement</h3>
+        <h3>Ereignis-Dokumentation</h3>
         <p>Standardisierte Erfassung, Verteilung und Dokumentation von Lageberichten – in Echtzeit, für Transport- und Schienenbetreiber.</p>
-        <span class="sol-link">Mehr erfahren</span>
-      </a>
-
-      <a href="intranet.html" class="sol-card ani-fade-in">
-        <div class="sol-icon"><span class="material-symbols-rounded">hub</span></div>
-        <h3>Intranet</h3>
-        <p>Wissensmanagement und interne Kommunikation als moderne Plattform für Zusammenarbeit und Austausch.</p>
         <span class="sol-link">Mehr erfahren</span>
       </a>
 
@@ -383,13 +350,6 @@
         <div class="sol-icon"><span class="material-symbols-rounded">forum</span></div>
         <h3>Communities</h3>
         <p>Community-Building und Vernetzung – digitale Räume für Austausch, Engagement und gemeinsames Arbeiten.</p>
-        <span class="sol-link">Mehr erfahren</span>
-      </a>
-
-      <a href="corporate-websites.html" class="sol-card ani-fade-in">
-        <div class="sol-icon"><span class="material-symbols-rounded">language</span></div>
-        <h3>Corporate Websites</h3>
-        <p>Performante, sichere Unternehmenswebsites auf Basis unserer Plattform – CMS, Mehrsprachigkeit und volle Markenkontrolle.</p>
         <span class="sol-link">Mehr erfahren</span>
       </a>
 
@@ -425,7 +385,7 @@
     </div>
     <div class="cta-actions">
       <a href="mailto:info@siteforum.com" class="btn-primary" style="background:var(--blue-600);color:#0A101E;">Beratung anfragen</a>
-      <a href="tel:+493616661510" class="btn-secondary" style="background:transparent;color:var(--navy);border-color:rgba(255,255,255,0.25);">+49 361 6661 5810</a>
+      <a href="tel:+4936166615810" class="btn-secondary" style="background:transparent;color:var(--navy);border-color:rgba(255,255,255,0.25);">+49 361 6661 5810</a>
     </div>
   </div>
 </div>
@@ -435,43 +395,46 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo"><img src="SITEFORUM_logo_white.png" alt="SITEFORUM" style="height:28px; width:auto;" /></a>
-        <p>Webbasierte Portale und intelligente Digitalisierungslösungen aus Erfurt – seit über 25 Jahren.</p>
+        <a href="index.html" class="nav-logo"><img src="SITEFORUM_logo_white.png" alt="SITEFORUM" style="height:44px; width:auto;" /></a>
+        <p>Das Digitale Ökosystem<div>Cloud | Portale | KI</div></p>
         <p style="margin-top:14px;">Straße des Friedens 15a<br />99094 Erfurt</p>
-        <p style="margin-top:14px;"><a href="mailto:info@siteforum.com" style="color:inherit;text-decoration:none;">info@siteforum.com</a><br /><a href="tel:+493616661510" style="color:inherit;text-decoration:none;">+49 361 6661 5810</a></p>
+        <p style="margin-top:14px;"><a href="mailto:info@siteforum.com" style="color:inherit;text-decoration:none;">info@siteforum.com</a><br /><a href="tel:+4936166615810" style="color:inherit;text-decoration:none;">+49 361 6661 5810</a></p>
       </div>
       <div class="footer-col">
-        <h4>Produkte &amp; Lösungen</h4>
+        <h4>Kompetenzen</h4>
         <ul>
-          <li><a href="plattform.html">Digitales Ökosystem</a></li>
-          <li><a href="ki.html">Künstliche Intelligenz</a></li>
-          <li><a href="managed-cloud.html">Managed Cloud</a></li>
-          <li><a href="kundenportale.html">Kundenportale</a></li>
-          <li><a href="mitgliederportale.html">Mitgliederportale</a></li>
-          <li><a href="communities.html">Communities</a></li>
+          <li><a href="cloud.html">Cloud</a></li>
+          <li><a href="plattform.html">Portale</a></li>
+          <li><a href="ki.html">Angewandte KI</a></li>
+          <li><a href="implementierung-services.html">Implementierung &amp; Services</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Branchen</h4>
+        <h4>Lösungen</h4>
         <ul>
-          <li><a href="kammern-verbaende.html">Kammern &amp; Verbände</a></li>
-          <li><a href="finanzen.html">Finanzen</a></li>
-          <li><a href="#">Gesundheitswesen</a></li>
-          <li><a href="#">Medienbranche</a></li>
+          <li><a href="mitgliederportale.html">Mitgliederportal</a></li>
+          <li><a href="kundenportale.html">Kundenportal</a></li>
+          <li><a href="mitarbeiterportale.html">Mitarbeiterportal</a></li>
+          <li><a href="informationsmanagement.html">Ereignis-Dokumentation</a></li>
+          <li><a href="communities.html">Community</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Unternehmen</h4>
+        <h4>Referenzen</h4>
         <ul>
-          <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="referenzen.html">Referenzen</a></li>
+          <li><a href="referenzen.html">Kundenprojekte</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Über uns</h4>
+        <ul>
+          <li><a href="ueber-uns.html">Team</a></li>
           <li><a href="karriere.html">Karriere</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
+      <span>© 2026 SITEFORUM GmbH. Alle Rechte vorbehalten.</span>
       <div style="display:flex; gap:24px;">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>

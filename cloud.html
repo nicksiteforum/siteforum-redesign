@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mitgliederportale – SITEFORUM</title>
+  <title>Cloud – SITEFORUM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -63,12 +63,10 @@
     }
     .nav-links a:hover { background: var(--slate-100); color: var(--navy); }
     .nav-links a.active { color: var(--navy); background: var(--blue-50); font-weight: 600; }
-    /* ─── NAV DROPDOWN ──────────────────────────────────────── */
     .nav-has-dropdown { position: relative; }
     .nav-has-dropdown > a { gap: 2px; }
     .nav-chevron { font-size: 16px !important; opacity: 0.55; transition: transform 0.2s; }
     .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); }
-    /* invisible bridge fills the gap so mouse movement stays within hover zone */
     .nav-has-dropdown::after {
       content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 24px;
     }
@@ -120,7 +118,7 @@
     .nav-cta::after { content: "→"; }
     .nav-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
 
-    /* ─── HERO (SUBPAGE) ────────────────────────────────────── */
+    /* ─── HERO ──────────────────────────────────────────────── */
     .hero {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
       padding: 140px 40px 80px;
@@ -151,7 +149,7 @@
     .hero h1 em { font-style: normal; color: #93c5fd; }
     .hero-sub {
       font-size: 1.1rem; color: rgba(255,255,255,0.7);
-      max-width: 580px; margin: 0 0 40px; font-weight: 400; line-height: 1.65;
+      max-width: 600px; margin: 0 0 40px; font-weight: 400; line-height: 1.65;
     }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
     .btn-primary {
@@ -178,104 +176,6 @@
     }
     .hero-tag .material-symbols-rounded { font-size: 14px; color: #93c5fd; }
 
-    /* ─── HERO VISUAL / HUB MAP ─────────────────────────────── */
-    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-    .hub-map { width: 100%; max-width: 440px; display: block; }
-    .hub-icon {
-      font-family: 'Material Symbols Rounded';
-      font-feature-settings: 'liga' 1;
-      font-variation-settings: 'FILL' 1, 'wght' 400;
-    }
-    @keyframes hubPulse {
-      0%, 100% { transform: scale(1); opacity: 0.45; }
-      50% { transform: scale(1.18); opacity: 0.75; }
-    }
-    .hub-glow { transform-origin: 210px 210px; animation: hubPulse 3.5s ease-in-out infinite; }
-    .mockup-window {
-      background: var(--white); border-radius: 16px;
-      box-shadow: 0 32px 80px rgba(0,51,102,0.18), 0 4px 16px rgba(0,0,0,0.06);
-      border: 1px solid rgba(0,51,102,0.08); overflow: hidden;
-    }
-    .mockup-topbar {
-      background: #f8fafc; border-bottom: 1px solid #e5e7eb;
-      padding: 10px 16px; display: flex; align-items: center; gap: 10px;
-    }
-    .mockup-dots { display: flex; gap: 6px; }
-    .mockup-dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
-    .mockup-url {
-      font-size: 0.7rem; color: #94a3b8;
-      background: #e2e8f0; padding: 3px 10px; border-radius: 4px;
-    }
-    .mockup-nav {
-      padding: 0 16px; display: flex;
-      border-bottom: 1px solid #e5e7eb; background: var(--white);
-    }
-    .mockup-nav-item {
-      font-size: 0.72rem; font-weight: 500; padding: 9px 12px;
-      color: #94a3b8; border-bottom: 2px solid transparent;
-      margin-bottom: -1px; cursor: default; white-space: nowrap;
-    }
-    .mockup-nav-item.active {
-      color: var(--primary); font-weight: 600; border-bottom-color: var(--secondary);
-    }
-    .mockup-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-    .mockup-stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-    .mockup-stat-card {
-      background: #f8fafc; border: 1px solid #e5e7eb;
-      border-radius: 8px; padding: 10px 12px;
-    }
-    .mockup-stat-card.accent { background: var(--blue-50); border-color: var(--blue-100); }
-    .mockup-stat-value { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1; }
-    .mockup-stat-card.accent .mockup-stat-value { color: var(--secondary); }
-    .mockup-stat-label { font-size: 0.62rem; color: #94a3b8; margin-top: 3px; }
-    .mockup-stat-trend { font-size: 0.58rem; font-weight: 600; color: #94a3b8; margin-top: 2px; }
-    .mockup-stat-trend.up { color: #15803d; }
-    .mockup-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #374151; }
-    .mockup-list { display: flex; flex-direction: column; gap: 6px; }
-    .mockup-list-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 8px 10px; background: #f8fafc;
-      border-radius: 8px; border: 1px solid #e5e7eb;
-    }
-    .mockup-avatar {
-      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.6rem; font-weight: 700;
-    }
-    .mockup-lines { flex: 1; display: flex; flex-direction: column; gap: 5px; }
-    .mockup-line { height: 6px; border-radius: 3px; background: #e2e8f0; }
-    .mockup-pill {
-      font-size: 0.6rem; font-weight: 600; padding: 2px 8px;
-      border-radius: 999px; white-space: nowrap;
-    }
-    .mockup-pill.green { background: #dcfce7; color: #15803d; }
-    .mockup-pill.blue { background: #dbeafe; color: #1d4ed8; }
-    .mockup-pill.orange { background: #fef3c7; color: #d97706; }
-    .mockup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .mockup-bar-chart {
-      display: flex; gap: 4px; align-items: flex-end;
-      height: 60px; margin-top: 8px;
-    }
-    .mockup-bar { flex: 1; background: var(--blue-100); border-radius: 3px 3px 0 0; min-height: 4px; }
-    .mockup-bar.accent { background: var(--secondary); }
-
-    /* ─── STATS ─────────────────────────────────────────────── */
-    .stats {
-      background: var(--white); padding: 56px 40px;
-      border-bottom: 1px solid var(--slate-100);
-    }
-    .stats-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px; text-align: center;
-    }
-    .stat-value {
-      font-size: 2.8rem; font-weight: 800; letter-spacing: -1px;
-      color: var(--navy); line-height: 1;
-    }
-    .stat-value span { color: var(--blue-600); }
-    .stat-label { margin-top: 8px; font-size: 0.9rem; color: var(--slate-600); font-weight: 500; }
-
     /* ─── SECTION WRAPPER ───────────────────────────────────── */
     section { padding: 100px 40px; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
@@ -295,14 +195,13 @@
       font-size: 1.05rem; color: var(--slate-600);
       max-width: 580px; margin-bottom: 60px;
     }
-    .cta-banner .section-title em { color: #93c5fd; }
 
-    /* ─── INTRO ─────────────────────────────────────────────── */
+    /* ─── INTRO GRID ────────────────────────────────────────── */
     .intro-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
     }
     .intro-card {
-      display: flex; flex-direction: column; gap: 16px;
+      display: flex; flex-direction: column; gap: 14px;
       padding: 28px 24px; background: var(--white);
       border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
     }
@@ -313,11 +212,18 @@
     }
     .intro-icon .material-symbols-rounded { font-size: 24px; }
     .intro-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .intro-card p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.6; }
+    .intro-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; }
 
-    /* ─── FEATURES ──────────────────────────────────────────── */
+    /* ─── FEATURES GROUPED ──────────────────────────────────── */
+    .features-group { margin-bottom: 48px; }
+    .features-group:last-child { margin-bottom: 0; }
+    .features-group-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--blue-600); margin-bottom: 20px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--line, #e5e7eb);
+    }
     .features-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
     }
     .feature-card {
       background: var(--white); border-radius: var(--radius-md);
@@ -337,10 +243,7 @@
     .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
     .feature-card p { font-size: 0.84rem; color: var(--slate-600); line-height: 1.55; }
 
-    /* ─── BENEFITS ──────────────────────────────────────────── */
-    .benefits-layout {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-    }
+    /* ─── BENEFITS / CHECK LIST ─────────────────────────────── */
     .benefits-list { display: flex; flex-direction: column; gap: 20px; }
     .benefit-item { display: flex; gap: 16px; align-items: flex-start; }
     .benefit-check {
@@ -351,158 +254,171 @@
     .benefit-check .material-symbols-rounded { font-size: 16px; }
     .benefit-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .benefit-item p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.55; }
-    .benefits-visual {
-      background: var(--blue-50); border-radius: var(--radius-lg);
-      padding: 40px; display: flex; flex-direction: column; gap: 16px;
-    }
-    .benefits-visual-label {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--secondary);
-    }
-    .benefits-stat-big {
-      font-size: 4rem; font-weight: 800; color: var(--navy);
-      letter-spacing: -2px; line-height: 1;
-    }
-    .benefits-stat-big span { color: var(--secondary); }
-    .benefits-stat-desc { font-size: 1rem; color: var(--slate-600); line-height: 1.6; }
-    .benefits-divider {
-      border: none; border-top: 1px solid var(--blue-100); margin: 4px 0;
-    }
-    .benefits-sub-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .benefits-sub-stat-val {
-      font-size: 1.8rem; font-weight: 800; color: var(--navy);
-      letter-spacing: -1px; line-height: 1;
-    }
-    .benefits-sub-stat-val span { color: var(--secondary); }
-    .benefits-sub-stat-label { font-size: 0.82rem; color: var(--slate-600); margin-top: 4px; }
 
-    /* ─── SUCCESS STORIES ───────────────────────────────────── */
-    .stories-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    /* ─── TECH SECTION ──────────────────────────────────────── */
+    .tech-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
-    .story-card {
-      background: var(--white); border-radius: var(--radius-md);
-      overflow: hidden; border: 1.5px solid #e5e7eb;
-      transition: box-shadow 0.2s, border-color 0.2s;
-      text-decoration: none; display: block; color: inherit;
+    .tech-visual {
+      background: linear-gradient(160deg, #003366, #004d99);
+      border-radius: var(--radius-lg); padding: 40px;
+      display: flex; flex-direction: column; gap: 20px;
     }
-    .story-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--blue-200); }
-    .story-img-wrap {
-      position: relative; height: 180px; overflow: hidden; background: var(--blue-50);
-    }
-    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .story-customer-badge {
-      position: absolute; bottom: 14px; left: 14px;
-      width: 64px; height: 64px;
-      border-radius: 10px; border: 1.5px solid #e5e7eb;
-      background: #fff; overflow: hidden;
-    }
-    .story-customer-badge img {
-      width: 100%; height: 100%; object-fit: contain; display: block;
-    }
-    .story-body { padding: 24px 24px 28px; }
-    .story-tag {
+    .tech-visual-label {
       font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.07em; color: var(--secondary); margin-bottom: 10px; display: block;
+      letter-spacing: 0.08em; color: #93c5fd;
     }
-    .story-title {
-      font-size: 1.05rem; font-weight: 700; color: var(--navy);
-      margin-bottom: 16px; line-height: 1.4;
+    .tech-cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .tech-cert-box {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px;
     }
-    .story-result {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--blue-50); border-radius: 10px;
-      padding: 12px 16px; margin-bottom: 20px;
-    }
-    .story-result-value {
-      font-size: 1.5rem; font-weight: 800; color: var(--secondary);
-      line-height: 1; white-space: nowrap; flex-shrink: 0;
-    }
-    .story-result-label { font-size: 0.82rem; color: var(--slate-600); line-height: 1.4; }
-    .story-link {
-      font-size: 0.88rem; font-weight: 600; color: var(--blue-600);
-      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-    }
-    .story-link::after { content: "→"; }
+    .tech-cert-icon { color: #93c5fd; }
+    .tech-cert-icon .material-symbols-rounded { font-size: 28px; }
+    .tech-cert-title { font-size: 0.88rem; font-weight: 700; color: #fff; }
+    .tech-cert-desc { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
 
-    /* ─── CTA BANNER ────────────────────────────────────────── */
-    .cta-banner {
+    /* ─── UPTIME BAR ────────────────────────────────────────── */
+    .uptime-bar-wrap {
+      background: rgba(255,255,255,0.06); border-radius: 999px;
+      height: 6px; overflow: hidden; margin-top: 4px;
+    }
+    .uptime-bar {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, #93c5fd, #60a5fa);
+      width: 99.9%;
+    }
+
+    /* ─── ECOSYSTEM FLOW ──────────────────────────────────── */
+    .eco-flow {
+      display: flex; align-items: stretch; gap: 0;
+    }
+    .eco-flow-card {
+      flex: 1; min-width: 0;
+      background: var(--bg-alt, #0D1526);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      border: 1.5px solid var(--line, #e5e7eb);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+    }
+    .eco-flow-card:hover {
+      border-color: var(--blue-200);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .eco-flow-card.eco-active {
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 2px var(--blue-600), 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .eco-flow-icon {
+      width: 48px; height: 48px; border-radius: var(--radius-sm);
+      background: var(--blue-100); display: flex; align-items: center;
+      justify-content: center; color: var(--blue-600); margin-bottom: 20px;
+    }
+    .eco-flow-icon .material-symbols-rounded { font-size: 24px; }
+    .eco-flow-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+    .eco-flow-card p { font-size: 0.88rem; color: var(--slate-600); line-height: 1.6; flex: 1; }
+    .eco-flow-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--blue-600);
+    }
+    .eco-flow-badge::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue-600); flex-shrink: 0;
+    }
+    .card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px; font-size: 0.88rem; font-weight: 600;
+      color: var(--blue-600); text-decoration: none;
+    }
+    .card-link::after { content: "→"; }
+    .eco-flow-arrow {
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; width: 48px;
+      color: var(--blue-600); opacity: 0.4;
+    }
+    .eco-flow-arrow .material-symbols-rounded { font-size: 28px; }
+
+    /* ─── COMPLEXITY SECTION ─────────────────────────────────── */
+    .complexity-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+    }
+    .complexity-left { }
+    .complexity-right {
+      background: var(--bg-alt, #f1f5f9); border: 1.5px solid var(--line, #e5e7eb);
+      border-radius: var(--radius-md); padding: 32px;
+    }
+    .complexity-stat {
+      display: flex; align-items: baseline; gap: 12px;
+      padding: 16px 0; border-bottom: 1px solid var(--line, #e5e7eb);
+    }
+    .complexity-stat:last-child { border-bottom: none; }
+    .complexity-stat-value {
+      font-size: 1.6rem; font-weight: 800; color: var(--blue-600);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .complexity-stat-label { font-size: 0.88rem; color: var(--slate-600); line-height: 1.45; }
+
+    /* ─── BRIDGE SECTION ────────────────────────────────────── */
+    .bridge-banner {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
       border-radius: var(--radius-lg); margin: 0 40px;
       text-align: center; position: relative; overflow: hidden;
     }
-    .cta-banner::before {
+    .bridge-banner::before {
       content: ''; position: absolute; inset: 0;
       background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
       background-size: 28px 28px; pointer-events: none; z-index: 0;
     }
-    .cta-banner .section-inner { padding: 80px 60px; position: relative; z-index: 1; text-align: center; }
-    .cta-banner .section-label { color: #93c5fd; }
-    .cta-banner .section-title { max-width: 640px; margin: 0 auto 16px; color: var(--white); }
-    .cta-banner .section-sub { margin: 0 auto 40px; text-align: center; color: #94a3b8; }
-    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .cta-contact-block {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 4px; margin: 40px 0;
-      padding: 32px 0;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+    .bridge-inner { padding: 80px 60px; position: relative; z-index: 1; }
+    .bridge-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #93c5fd; margin-bottom: 16px;
+      display: inline-flex; align-items: center; gap: 14px;
     }
-    .cta-contact-label-top {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: #93c5fd; margin-bottom: 20px;
+    .bridge-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.15; color: #fff;
+      max-width: 640px; margin: 0 auto 16px;
     }
-    .cta-contact-avatar {
-      width: 100px; height: 100px; border-radius: 50%;
-      overflow: hidden; border: 3px solid rgba(255,255,255,0.2);
-      flex-shrink: 0; margin-bottom: 16px;
+    .bridge-title em { font-style: normal; color: #93c5fd; }
+    .bridge-sub {
+      font-size: 1.05rem; color: #94a3b8;
+      max-width: 580px; margin: 0 auto 40px;
     }
-    .cta-contact-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .cta-contact-name { font-size: 1.05rem; font-weight: 700; color: var(--white); }
-    .cta-contact-role { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
-    .cta-contact-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-    .cta-contact-link {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.85rem; color: rgba(255,255,255,0.75);
-      text-decoration: none; transition: color 0.15s;
+    .bridge-links {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
     }
-    .cta-contact-link:hover { color: var(--white); }
-    .cta-contact-link .material-symbols-rounded { font-size: 16px; color: #93c5fd; }
+    .bridge-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);
+      color: #fff; text-decoration: none;
+      padding: 16px 28px; border-radius: var(--radius-sm);
+      font-size: 0.95rem; font-weight: 600;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .bridge-link:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.35); transform: translateY(-1px); }
+    .bridge-link .material-symbols-rounded { font-size: 20px; color: #93c5fd; }
 
     /* ─── FOOTER ────────────────────────────────────────────── */
-    footer {
-      background: var(--navy); color: #94a3b8;
-      padding: 64px 40px 32px; margin-top: 100px;
-    }
+    footer { background: var(--navy); color: #94a3b8; padding: 64px 40px 32px; margin-top: 100px; }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-top {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px; padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .footer-brand .nav-logo { color: var(--white); display: block; margin-bottom: 16px; }
     .footer-brand p { font-size: 0.88rem; line-height: 1.65; max-width: 260px; }
-    .footer-col h4 {
-      font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.06em; color: var(--white); margin-bottom: 20px;
-    }
+    .footer-col h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 20px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col a {
-      text-decoration: none; color: #94a3b8; font-size: 0.88rem; transition: color 0.2s;
-    }
+    .footer-col a { text-decoration: none; color: #94a3b8; font-size: 0.88rem; transition: color 0.2s; }
     .footer-col a:hover { color: var(--white); }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 28px; font-size: 0.82rem; flex-wrap: wrap; gap: 12px;
-    }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; font-size: 0.82rem; flex-wrap: wrap; gap: 12px; }
     .footer-bottom a { color: #94a3b8; text-decoration: none; }
     .footer-bottom a:hover { color: var(--white); }
 
     /* ─── HAMBURGER ─────────────────────────────────────────── */
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      padding: 6px; border: none; background: none; pointer-events: all;
-    }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; pointer-events: all; }
     .nav-hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; display: block; }
     .nav-mobile-menu { display: none; position: fixed; top: 76px; left: 16px; right: 16px; background: white; border: 1px solid #e5e7eb; border-radius: var(--radius-md); box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 16px; z-index: 99; flex-direction: column; gap: 4px; }
     .nav-mobile-menu.open { display: flex; }
@@ -525,16 +441,14 @@
       .nav-cta { display: none; }
       .nav-chevron { display: none; }
       .nav-actions { gap: 4px !important; margin-right: 10px; }
+      .intro-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .benefits-layout { grid-template-columns: 1fr; }
-      .benefits-visual { display: none; }
-      .stories-grid { grid-template-columns: repeat(2, 1fr); }
+      .tech-layout { grid-template-columns: 1fr; }
+      .tech-visual { display: none; }
+      .complexity-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-visual { display: none; }
-      .intro-grid { grid-template-columns: 1fr; gap: 24px; }
-      .stories-grid { grid-template-columns: 1fr; }
+      .intro-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       h1, h2, h3, h4 { hyphens: auto; }
@@ -542,14 +456,18 @@
       .nav-inner { height: 52px; padding: 0.4rem 0.5rem 0.4rem 1rem; }
       section { padding: 64px 20px; }
       .hero { padding: 120px 20px 80px; }
-      .stats { padding: 40px 20px; }
-      .features-grid { grid-template-columns: 1fr; }
-      .cta-banner { margin: 0 16px; }
+      .bridge-banner { margin: 0 16px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .eco-flow { flex-direction: column; gap: 0; }
+      .eco-flow-arrow { width: auto; height: 32px; transform: rotate(90deg); }
+      .eco-flow-card { padding: 28px 20px; }
+      .bridge-inner { padding: 48px 24px; }
+      .bridge-links { flex-direction: column; align-items: center; }
     }
 
     /* ═══════════════════════════════════════════════════════════
-       DARK THEME (dunkel & kontrast-reich) – zuletzt = gewinnt
+       DARK THEME
        ═══════════════════════════════════════════════════════════ */
     :root {
       --primary:   #5FC9F5;
@@ -594,16 +512,11 @@
     .bc-sep { color: rgba(255,255,255,0.25); }
     .bc-current { color: var(--slate-600); }
 
-    /* ── HERO (dunkel, Cyan-Akzent) ── */
+    /* ── HERO ── */
     .hero { background: linear-gradient(135deg, #0D1B30 0%, #0A1322 100%); }
     .hero h1 { color: var(--navy); }
     .hero h1 em { color: var(--blue-600); }
     .hero-tag .material-symbols-rounded { color: var(--blue-600); }
-    /* Hero-Illustration (Browser-Mockup) hell halten */
-    .hero-visual { --white:#fff; --navy:#0f172a; --blue-50:#e6f0f7; --blue-100:#cce0ee; --blue-200:#99c2dd; --blue-600:#006699; --blue-700:#003366; --primary:#003366; --secondary:#006699; --slate-600:#475569; --slate-100:#f1f5f9; }
-
-    /* ── STATS ── */
-    .stats { background: var(--white); border-bottom-color: var(--line); }
 
     /* ── BUTTONS ── */
     .btn-primary { background: var(--blue-600); color: #0A101E; }
@@ -611,23 +524,22 @@
     .btn-secondary:hover { border-color: var(--blue-600); }
 
     /* ── CARDS ── */
-    .intro-card, .feature-card, .story-card { background: var(--bg-alt); border-color: var(--line); }
-    .intro-card:hover, .feature-card:hover, .story-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .intro-card, .feature-card { background: var(--bg-alt); border-color: var(--line); }
+    .intro-card:hover, .feature-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
     .intro-icon, .feature-icon, .benefit-check { background: var(--blue-100); color: var(--blue-600); }
-    .benefits-visual { background: var(--bg-alt); }
-    .benefits-divider { border-top-color: var(--line); }
-    .story-img-wrap { background: var(--bg-alt); }
-    .story-result { background: rgba(95,201,245,0.10); }
-    .story-customer-badge { background: #F5F6F8; border-color: var(--line); }
 
-    /* ── CTA BANNER (dunkles Panel) ── */
-    .cta-banner { background: linear-gradient(150deg, #0F1D33 0%, #0A1322 100%); border: 1px solid var(--line); }
-    .cta-banner::before { background-image: none; }
-    .cta-banner .section-title { color: var(--navy); }
-    .cta-banner .section-title em, .cta-banner .section-label { color: var(--blue-600); }
-    .cta-contact-label-top, .cta-contact-link .material-symbols-rounded { color: var(--blue-600); }
-    .cta-contact-name { color: var(--navy); }
-    .cta-contact-link:hover { color: var(--navy); }
+    /* ── ECOSYSTEM FLOW ── */
+    .eco-flow-card { background: var(--bg-alt); border-color: var(--line); }
+    .eco-flow-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+    .eco-flow-card.eco-active { border-color: var(--blue-600); box-shadow: 0 0 0 2px var(--blue-600), 0 4px 20px rgba(0,0,0,0.3); }
+
+    /* ── COMPLEXITY ── */
+    .complexity-right { background: var(--bg-alt); border-color: var(--line); }
+    .complexity-stat { border-bottom-color: var(--line); }
+
+    /* ── BRIDGE ── */
+    .bridge-banner { background: linear-gradient(150deg, #0F1D33 0%, #0A1322 100%); border: 1px solid var(--line); }
+    .bridge-banner::before { background-image: none; }
 
     /* ── FOOTER ── */
     footer { background: var(--bg-deep); color: var(--slate-600); }
@@ -635,16 +547,15 @@
     .footer-col a, .footer-bottom a { color: var(--slate-600); }
     .footer-col a:hover, .footer-bottom a:hover { color: var(--navy); }
 
-    /* ── TYPOGRAFIE: Outfit-Headlines ── */
+    /* ── TYPOGRAFIE ── */
     h1, h2, h3, h4,
     .hero h1, .section-title, .section-title em,
-    .stat-value, .story-title, .benefits-stat-big { font-family: 'Outfit', 'Inter', sans-serif; font-weight: 600; }
+    .stat-value, .bridge-title, .bridge-title em,
+    .complexity-stat-value { font-family: 'Outfit', 'Inter', sans-serif; font-weight: 600; }
 
     /* ── DEKO-LINIE vor Section-Labels ── */
     .section-label { display: inline-flex; align-items: center; gap: 14px; }
     .section-label::before { content: ''; width: 48px; height: 1px; background: var(--blue-600); flex: 0 0 auto; }
-    .cta-banner .section-label { justify-content: center; }
-    .cta-banner .section-label::before { display: none; }
   </style>
 </head>
 <body>
@@ -657,26 +568,26 @@
     </a>
     <ul class="nav-links">
       <li class="nav-has-dropdown">
-        <a href="index.html#produkte">Kompetenzen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="index.html#produkte" class="active">Kompetenzen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
-          <a href="cloud.html">Cloud</a>
+          <a href="cloud.html" class="active">Cloud</a>
           <a href="plattform.html">Portale</a>
           <a href="ki.html">Angewandte KI</a>
           <div class="nav-dropdown-divider"></div>
-          <a href="index.html#produkte">Implementierung &amp; Services</a>
+          <a href="implementierung-services.html">Implementierung &amp; Services</a>
         </div>
       </li>
       <li class="nav-has-dropdown">
-        <a href="loesungen.html" class="active">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
+        <a href="loesungen.html">Lösungen <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
-          <a href="mitgliederportale.html" class="active">Mitgliederportale</a>
+          <a href="mitgliederportale.html">Mitgliederportale</a>
           <a href="kundenportale.html">Kundenportale</a>
           <a href="mitarbeiterportale.html">Mitarbeiterportale</a>
           <a href="informationsmanagement.html">Ereignis-Dokumentation</a>
           <a href="communities.html">Community</a>
         </div>
       </li>
-<li><a href="referenzen.html">Referenzen</a></li>
+      <li><a href="referenzen.html">Referenzen</a></li>
       <li class="nav-has-dropdown">
         <a href="ueber-uns.html">Über uns <span class="material-symbols-rounded nav-chevron">keyboard_arrow_down</span></a>
         <div class="nav-dropdown-menu">
@@ -732,7 +643,8 @@
       <a href="karriere.html" onclick="closeMenu()">Karriere</a>
       <a href="news.html" onclick="closeMenu()">News</a>
     </div>
-  </div>  <a href="kontakt.html" onclick="closeMenu()" style="color:var(--blue-600);font-weight:600;">Gespräch anfragen</a>
+  </div>
+  <a href="kontakt.html" onclick="closeMenu()" style="color:var(--blue-600);font-weight:600;">Gespräch anfragen</a>
 </div>
 <script>
   var navToggle = document.getElementById('nav-toggle');
@@ -746,18 +658,20 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="solution-badge">
-      <span class="material-symbols-rounded" style="font-size:14px;">groups</span>
-      Mitgliederportale
+      <span class="material-symbols-rounded" style="font-size:14px;">cloud</span>
+      Das Fundament des Ökosystems
     </div>
-    <h1>Ein geschützter Bereich und Self-Services für Ihre Mitglieder.</h1>
-    <p class="hero-sub">Vereinfachen Sie die Zusammenarbeit mit Ihren Mitgliedern, binden Sie sie direkt in Ihre Prozesse ein – und entlasten Sie Ihr Personal spürbar.</p>
-    <div class="hero-actions">      <a href="#funktionen" class="btn-primary">Funktionen entdecken</a>
+    <h1>Moderne Infrastruktur. <em>Vollständig verwaltet.</em></h1>
+    <p class="hero-sub">Jede SITEFORUM-Lösung läuft auf unserer Managed Cloud – sicher, stabil und zertifiziert.&nbsp;</p>
+    <div class="hero-actions">
+      <a href="#leistungen" class="btn-primary">Leistungsumfang ansehen</a>
     </div>
     <div class="hero-tags">
       <span class="hero-tag"><span class="material-symbols-rounded">verified_user</span> ISO 27001 zertifiziert</span>
       <span class="hero-tag"><span class="material-symbols-rounded">lock</span> DSGVO-konform</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">cloud_done</span> SaaS-Betrieb</span>
-      <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Made in Germany</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">location_on</span> Deutsche Rechenzentren</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">schedule</span> 24/7 Betrieb</span>
+      <span class="hero-tag"><span class="material-symbols-rounded">signal_cellular_alt</span> 99,95 % Verfügbarkeit</span>
     </div>
   </div>
 </header>
@@ -768,216 +682,227 @@
     <div class="bc-row">
       <a href="index.html" aria-label="Startseite" title="Startseite" class="bc-home"><span class="material-symbols-rounded">home</span></a>
       <span class="bc-sep">›</span>
-      <a href="loesungen.html">Lösungen</a>
+      <a href="index.html#produkte">Kompetenzen</a>
       <span class="bc-sep">›</span>
-      <span class="bc-current">Mitgliederportale</span>
+      <span class="bc-current">Cloud</span>
     </div>
   </div>
 </div>
 
-<!-- STATS -->
-<div class="stats" style="display:none;">
-  <div class="stats-inner">
-    <div>
-      <div class="stat-value">4,4 Mio<span>.</span></div>
-      <div class="stat-label">Nutzer auf SITEFORUM-Mitgliederportalen</div>
-    </div>
-    <div>
-      <div class="stat-value">30<span>+</span></div>
-      <div class="stat-label">Antragstypen vollständig digitalisiert</div>
-    </div>
-    <div>
-      <div class="stat-value">80<span>%</span></div>
-      <div class="stat-label">Weniger manuelle Bearbeitungszeit</div>
-    </div>
-    <div>
-      <div class="stat-value">100<span>%</span></div>
-      <div class="stat-label">Digitale Einreichungen bei Pilotkunden</div>
-    </div>
-  </div>
-</div>
-
-<!-- INTRO -->
+<!-- ÖKOSYSTEM-EINORDNUNG -->
 <section style="background:var(--white);">
   <div class="section-inner">
+    <div class="ani-fade-in" style="text-align:center; margin-bottom:60px;">
+      <p class="section-label" style="justify-content:center;">Digitales Ökosystem</p>
+      <h2 class="section-title" style="max-width:700px; margin:0 auto 20px;">Cloud ist die Basis. <em>Portale und KI bauen darauf auf.</em></h2>
+      <p class="section-sub" style="max-width:620px; margin:0 auto;">Unsere Managed Cloud ist kein eigenständiges Produkt – sie ist das Fundament, auf dem alle SITEFORUM-Lösungen laufen. Sicherheit, Verfügbarkeit und Compliance sind damit von Anfang an gelöst.</p>
+    </div>
+    <div class="eco-flow ani-fade-in">
+      <div class="eco-flow-card eco-active">
+        <div class="eco-flow-icon"><span class="material-symbols-rounded">cloud_done</span></div>
+        <h3>Cloud</h3>
+        <p>Infrastruktur, Sicherheit, Monitoring, Backup, Compliance – alles, was im Hintergrund laufen muss, damit Ihre Lösung einfach funktioniert.</p>
+        <span class="eco-flow-badge">Sie sind hier</span>
+      </div>
+      <div class="eco-flow-arrow"><span class="material-symbols-rounded">arrow_forward</span></div>
+      <a href="plattform.html" class="eco-flow-card">
+        <div class="eco-flow-icon"><span class="material-symbols-rounded">dashboard</span></div>
+        <h3>Portale</h3>
+        <p>Mitglieder-, Kunden- und Mitarbeiterportale mit allen Werkzeugen für Kommunikation, Zusammenarbeit und Verwaltung.</p>
+        <span class="card-link">Mehr zu Portalen</span>
+      </a>
+      <div class="eco-flow-arrow"><span class="material-symbols-rounded">arrow_forward</span></div>
+      <a href="ki.html" class="eco-flow-card">
+        <div class="eco-flow-icon"><span class="material-symbols-rounded">psychology</span></div>
+        <h3>Angewandte KI</h3>
+        <p>Intelligente Funktionen wie automatische Klassifikation, Suchoptimierung und Inhaltsanalyse – eingebettet in Ihre Portale.</p>
+        <span class="card-link">Mehr zu KI</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WAS WIR ÜBERNEHMEN -->
+<section style="background:var(--slate-100);">
+  <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Was ist ein Mitgliederportal?</p>
-      <h2 class="section-title">Ihre Mitglieder erwarten <em>mehr.</em></h2>
-      <p class="section-sub">Der Einsatz eines Mitgliederportals verändert die Zusammenarbeit mit Ihren Mitgliedern grundlegend. Es bindet sie direkt in Ihre Prozesse ein und entlastet Ihr Personal spürbar.</p>
+      <p class="section-label">Was wir übernehmen</p>
+      <h2 class="section-title">Kein IT-Team nötig. <em>Kein Betriebsstress.</em></h2>
+      <p class="section-sub">Wir übernehmen die Verantwortung für den Betrieb Ihrer Lösung – vollständig und ab dem ersten Tag.</p>
     </div>
     <div class="intro-grid">
       <div class="intro-card ani-fade-in" data-delay="0">
-        <div class="intro-icon"><span class="material-symbols-rounded">touch_app</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">monitor_heart</span></div>
         <div>
-          <h4>Digitale Self-Services</h4>
-          <p>Mitglieder stellen Anträge, laden Dokumente herunter und verwalten ihr Profil – jederzeit, ohne Telefonanruf oder Brief.</p>
+          <h4>24/7 Serverüberwachung</h4>
+          <p>Kontinuierliche Echtzeit-Überwachung aller Systeme. Unregelmäßigkeiten werden erkannt und behoben, bevor sie Ihren Betrieb beeinträchtigen.</p>
         </div>
       </div>
       <div class="intro-card ani-fade-in" data-delay="100">
-        <div class="intro-icon"><span class="material-symbols-rounded">autorenew</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">security</span></div>
         <div>
-          <h4>Automatisierte Prozesse</h4>
-          <p>Workflows übernehmen Prüfung, Weiterleitung und Benachrichtigung – Ihr Team konzentriert sich auf das Wesentliche.</p>
+          <h4>Sicherheit &amp; Compliance</h4>
+          <p>ISO 27001-zertifiziert, DSGVO-konform, regelmäßige Sicherheitsaudits. Ihr Datenschutz liegt in den Händen erfahrener Systemingenieure.</p>
         </div>
       </div>
       <div class="intro-card ani-fade-in" data-delay="200">
-        <div class="intro-icon"><span class="material-symbols-rounded">cloud_done</span></div>
+        <div class="intro-icon"><span class="material-symbols-rounded">backup</span></div>
         <div>
-          <h4>SaaS – sorglos betrieben</h4>
-          <p>SITEFORUM betreibt das Portal vollständig für Sie – ISO 27001-zertifiziert, DSGVO-konform, 24/7 verfügbar.</p>
+          <h4>Backup &amp; Recovery</h4>
+          <p>Automatisierte tägliche Datensicherung mit geprüften Wiederherstellungsprozessen. Im Ernstfall sind Ihre Daten schnell und vollständig wiederhergestellt.</p>
+        </div>
+      </div>
+      <div class="intro-card ani-fade-in" data-delay="300">
+        <div class="intro-icon"><span class="material-symbols-rounded">speed</span></div>
+        <div>
+          <h4>Performance &amp; Skalierung</h4>
+          <p>Automatische Infrastruktur-Skalierung bei Lastspitzen. Ihre Lösung bleibt stabil – egal ob 100 oder 100.000 Nutzer gleichzeitig aktiv sind.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FUNKTIONEN -->
-<section id="funktionen" style="background:var(--slate-100);">
+<!-- LEISTUNGSUMFANG – GRUPPIERT -->
+<section id="leistungen" style="background:var(--white);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Standardfunktionen</p>
-      <h2 class="section-title">Alles, was Ihr Portal <em>braucht</em></h2>
-      <p class="section-sub">12 bewährte Kernfunktionen – sofort einsatzbereit und individuell erweiterbar.</p>
+      <p class="section-label">Leistungsumfang</p>
+      <h2 class="section-title">Was im Hintergrund <em>passiert.</em></h2>
+      <p class="section-sub">Ein vollständiger Betriebsservice – von der Infrastruktur bis zur Reaktionszeit.</p>
     </div>
-    <div class="features-grid">
 
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">login</span></div>
-        <h4>Mitglieder-Login</h4>
-        <p>Personalisierter Portalzugang mit sicherem Single Sign-On und Rollenverwaltung.</p>
+    <div class="features-group ani-fade-in">
+      <p class="features-group-label">Betrieb &amp; Überwachung</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">monitoring</span></div>
+          <h4>Proaktives Monitoring</h4>
+          <p>Echtzeit-Überwachung von CPU, Speicher, Netzwerk, Festplatten und Dienstverfügbarkeit – mit automatischer Alarmierung bei Anomalien.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">published_with_changes</span></div>
+          <h4>Patch &amp; Update Management</h4>
+          <p>Betriebssystem- und Sicherheitsupdates werden geplant, getestet und eingespielt – ohne ungeplante Ausfälle oder manuelle Eingriffe Ihrerseits.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">analytics</span></div>
+          <h4>Kapazitätsplanung</h4>
+          <p>Regelmäßige Auswertung von Nutzungs- und Lastdaten – damit Engpässe erkannt und Kapazitäten rechtzeitig bereitgestellt werden.</p>
+        </div>
       </div>
+    </div>
 
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">lock</span></div>
-        <h4>Berechtigungen</h4>
-        <p>Feingranulare Rechteverwaltung nach Rollen, Gruppen und Mitgliedschaftsstatus.</p>
+    <div class="features-group ani-fade-in">
+      <p class="features-group-label">Sicherheit &amp; Schutz</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">shield</span></div>
+          <h4>Firewall &amp; Netzwerksicherheit</h4>
+          <p>Mehrstufige Sicherheitsarchitektur mit Web Application Firewall, Intrusion Detection und Netzwerksegmentierung nach aktuellem Stand der Technik.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">encrypted</span></div>
+          <h4>Datenverschlüsselung</h4>
+          <p>Alle Daten werden sowohl at-rest als auch in-transit verschlüsselt – mit TLS 1.3 für Übertragungen und AES-256 für gespeicherte Daten.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
+          <h4>Zugriffskontrolle</h4>
+          <p>Rollenbasierte Zugriffsrechte und Zwei-Faktor-Authentifizierung für alle Administrationszugänge. Kein unbefugter Zugriff auf Ihre Systeme.</p>
+        </div>
       </div>
+    </div>
 
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">newspaper</span></div>
-        <h4>News &amp; Kommunikation</h4>
-        <p>Zielgruppengerechte Informationsverteilung direkt im Portal – schnell und papierlos.</p>
+    <div class="features-group ani-fade-in">
+      <p class="features-group-label">Verfügbarkeit &amp; Compliance</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">restore</span></div>
+          <h4>Notfallwiederherstellung</h4>
+          <p>Definierte Failover-Prozesse und Replikationskapazitäten sorgen dafür, dass Ihre Lösung im Ernstfall schnellstmöglich wieder verfügbar ist.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">support_agent</span></div>
+          <h4>SLA-gesicherter Support</h4>
+          <p>Definierte Reaktionszeiten, klare Eskalationsprozesse und ein dediziertes Team – Sie wissen immer, wer zuständig ist und wann reagiert wird.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-rounded">fact_check</span></div>
+          <h4>Compliance-Reporting</h4>
+          <p>Regelmäßige Berichte über Sicherheitsstatus, Verfügbarkeit und durchgeführte Maßnahmen – für Ihre internen Audits und Nachweispflichten.</p>
+        </div>
       </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">description</span></div>
-        <h4>Digitale Anträge</h4>
-        <p>Formularbaukasten für beliebige Antragstypen mit automatischer Verarbeitung.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">folder_open</span></div>
-        <h4>Dokumente</h4>
-        <p>Zentrales Dokumentenmanagement – Mitglieder laden Nachweise hoch und Unterlagen herunter.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">account_tree</span></div>
-        <h4>Automatische Workflows</h4>
-        <p>Parameterbasierte Automatisierung von Prüfung, Genehmigung und Benachrichtigung.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">api</span></div>
-        <h4>Schnittstellen (APIs)</h4>
-        <p>Flexible Anbindung an ERP, E-Akte, Datenbanken und Drittsysteme über standardisierte APIs.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">devices</span></div>
-        <h4>Responsive Design</h4>
-        <p>Optimale Nutzererfahrung auf Smartphone, Tablet und Desktop – ohne extra App.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">schedule</span></div>
-        <h4>24/7 Verfügbarkeit</h4>
-        <p>Hochverfügbarer Betrieb durch redundante Infrastruktur in deutschen Rechenzentren.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">verified_user</span></div>
-        <h4>Sicherheit &amp; DSGVO</h4>
-        <p>ISO 27001-zertifizierte Rechenzentren, DSGVO-konforme Datenhaltung in Deutschland.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
-        <h4>Mitgliederverwaltung</h4>
-        <p>Integriertes CRM für Stammdaten, Mitgliedschaftsstatus und Kommunikationshistorie.</p>
-      </div>
-
-      <div class="feature-card ani-fade-in">
-        <div class="feature-icon"><span class="material-symbols-rounded">extension</span></div>
-        <h4>Individuelle Erweiterungen</h4>
-        <p>Von Veranstaltungsmanagement bis KI-Assistent – jederzeit modular erweiterbar.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- VORTEILE -->
-<section style="background:var(--white);">
+<!-- SICHERHEIT & ZERTIFIZIERUNG -->
+<section style="background:var(--slate-100);">
   <div class="section-inner">
-    <div class="benefits-layout">
+    <div class="tech-layout">
       <div>
         <div class="ani-fade-in">
-          <p class="section-label">Ihre Vorteile</p>
-          <h2 class="section-title">Mehr Service. Weniger <em>Aufwand.</em></h2>
-          <p class="section-sub" style="margin-bottom: 40px;">Was SITEFORUM-Kunden durch ein Mitgliederportal gewinnen.</p>
+          <p class="section-label">Infrastruktur</p>
+          <h2 class="section-title">Sicherheit ohne <em>Kompromisse.</em></h2>
+          <p class="section-sub" style="margin-bottom:40px;">Unsere Infrastruktur erfüllt die höchsten Anforderungen an Datenschutz, Verfügbarkeit und Compliance – zertifiziert und nachweisbar.</p>
         </div>
         <div class="benefits-list">
           <div class="benefit-item ani-fade-in">
             <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
             <div>
-              <h4>Höherer Mitgliederkomfort</h4>
-              <p>Rund um die Uhr verfügbare Self-Services erhöhen die Zufriedenheit und stärken die Bindung.</p>
+              <h4>Ausschließlich deutsche Rechenzentren</h4>
+              <p>Hosting in zertifizierten Rechenzentren in Deutschland – keine Daten verlassen den EU-Rechtsraum. Auf Wunsch auch als Private Cloud auf dedizierter Infrastruktur.</p>
             </div>
           </div>
           <div class="benefit-item ani-fade-in">
             <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
             <div>
-              <h4>Entlastung Ihres Teams</h4>
-              <p>Automatisierte Workflows übernehmen repetitive Aufgaben – Ihr Personal kümmert sich um komplexe Fälle.</p>
+              <h4>ISO/IEC 27001 zertifiziert</h4>
+              <p>Unser Informationssicherheits-Managementsystem ist nach DIN ISO/IEC 27001 zertifiziert – der international anerkannte Standard für Informationssicherheit.</p>
             </div>
           </div>
           <div class="benefit-item ani-fade-in">
             <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
             <div>
-              <h4>Kostensenkung</h4>
-              <p>Kein Papier, keine Post, kein Fax: Die vollständige Digitalisierung spart messbare Kosten.</p>
+              <h4>Private Cloud Option</h4>
+              <p>Für erhöhte Anforderungen betreiben wir Ihre Lösung auf dedizierter Hardware in einem isolierten Netzwerk – ohne geteilte Ressourcen mit anderen Kunden.</p>
             </div>
           </div>
           <div class="benefit-item ani-fade-in">
             <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
             <div>
-              <h4>Backend-Integration</h4>
-              <p>Nahtlose Anbindung an bestehende Systeme wie E-Akte, ERP oder Mitgliederdatenbank.</p>
-            </div>
-          </div>
-          <div class="benefit-item ani-fade-in">
-            <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
-            <div>
-              <h4>Erfahrung im öffentlichen Sektor</h4>
-              <p>Über 25 Jahre Erfahrung mit Kammern, Verbänden und öffentlichen Einrichtungen aller Größen.</p>
+              <h4>Regelmäßige Penetrationstests</h4>
+              <p>Unsere Systeme werden regelmäßig durch externe Sicherheitsexperten auf Schwachstellen geprüft – damit potenzielle Angriffsvektoren frühzeitig geschlossen werden.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="benefits-visual">
-        <div class="benefits-visual-label">VAK Schleswig-Holstein</div>
-        <div class="benefits-stat-big">100<span>%</span></div>
-        <div class="benefits-stat-desc">der Anträge werden heute digital eingereicht – zuvor waren es 30+ Papierformulare.</div>
-        <hr class="benefits-divider" />
-        <div class="benefits-sub-stats">
-          <div>
-            <div class="benefits-sub-stat-val">80<span>%</span></div>
-            <div class="benefits-sub-stat-label">weniger manuelle Bearbeitungszeit</div>
+      <div class="tech-visual">
+        <div class="tech-visual-label">Zertifizierungen &amp; Standards</div>
+        <div class="tech-cert-grid">
+          <div class="tech-cert-box ani-fade-in">
+            <div class="tech-cert-icon"><span class="material-symbols-rounded">verified_user</span></div>
+            <div class="tech-cert-title">ISO 27001</div>
+            <div class="tech-cert-desc">Zertifiziertes Informationssicherheits-Managementsystem</div>
           </div>
-          <div>
-            <div class="benefits-sub-stat-val">12k<span>+</span></div>
-            <div class="benefits-sub-stat-label">aktive Mitglieder im Portal</div>
+          <div class="tech-cert-box ani-fade-in">
+            <div class="tech-cert-icon"><span class="material-symbols-rounded">gavel</span></div>
+            <div class="tech-cert-title">DSGVO-konform</div>
+            <div class="tech-cert-desc">Vollständige EU-DSGVO-Konformität, Hosting in Deutschland</div>
+          </div>
+          <div class="tech-cert-box ani-fade-in">
+            <div class="tech-cert-icon"><span class="material-symbols-rounded">cloud_done</span></div>
+            <div class="tech-cert-title">99,95 % Uptime</div>
+            <div class="tech-cert-desc">
+              Garantierte Verfügbarkeit mit SLA
+              <div class="uptime-bar-wrap" style="margin-top:8px;"><div class="uptime-bar"></div></div>
+            </div>
+          </div>
+          <div class="tech-cert-box ani-fade-in">
+            <div class="tech-cert-icon"><span class="material-symbols-rounded">location_city</span></div>
+            <div class="tech-cert-title">Made in Germany</div>
+            <div class="tech-cert-desc">Rechenzentren in Erfurt und Frankfurt am Main</div>
           </div>
         </div>
       </div>
@@ -985,16 +910,85 @@
   </div>
 </section>
 
-<!-- REFERENZEN LINK -->
-<section style="background:var(--slate-100);padding:60px 40px;">
-  <div class="section-inner" style="text-align:center;">
-    <p class="section-label" style="justify-content:center;">Referenzen</p>
-    <h2 class="section-title" style="margin-bottom:16px;">Echte Projekte – <em>echte Ergebnisse</em></h2>
-    <p class="section-sub" style="margin:0 auto 32px;">Erfahren Sie, wie unsere Kunden ihre Prozesse mit SITEFORUM digitalisiert haben.</p>
-    <a href="referenzen.html" class="btn-primary" style="background:var(--primary);color:var(--white);display:inline-block;">Referenzen ansehen</a>
+<!-- KOMPLEXITÄT BELEUCHTEN -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Warum Managed</p>
+      <h2 class="section-title">Infrastruktur ist <em>komplex.</em> Ihr Alltag muss es nicht sein.</h2>
+      <p class="section-sub">Den Betrieb einer sicheren, skalierbaren Plattform zu verantworten bindet Ressourcen. Wir nehmen Ihnen diese Verantwortung ab.</p>
+    </div>
+    <div class="complexity-grid">
+      <div class="benefits-list ani-fade-in">
+        <div class="benefit-item">
+          <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
+          <div>
+            <h4>Kein eigenes Infrastruktur-Team aufbauen</h4>
+            <p>Systemadministration, Netzwerksicherheit, Patch Management – Kompetenzen, die Sie nicht intern vorhalten müssen.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
+          <div>
+            <h4>Keine Zertifizierungen eigenständig erhalten</h4>
+            <p>ISO 27001, DSGVO-Nachweise, Audit-Reports – das übernehmen wir und stellen Ihnen die Dokumentation bereit.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
+          <div>
+            <h4>Keine Nachtschichten bei Incidents</h4>
+            <p>24/7-Bereitschaft, Eskalationsprozesse und Notfallwiederherstellung liegen bei unserem Team – nicht bei Ihrem.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><span class="material-symbols-rounded">check</span></div>
+          <div>
+            <h4>Ein Ansprechpartner statt Ticket-Systeme</h4>
+            <p>Sie erreichen direkt einen Menschen, der Ihre Lösung kennt – keine Warteschleifen, keine anonymen Ticket-Nummern.</p>
+          </div>
+        </div>
+      </div>
+      <div class="complexity-right ani-fade-in" data-delay="150">
+        <div class="complexity-stat">
+          <div class="complexity-stat-value">28+</div>
+          <div class="complexity-stat-label">Jahre Erfahrung im Betrieb digitaler Plattformen</div>
+        </div>
+        <div class="complexity-stat">
+          <div class="complexity-stat-value">320+</div>
+          <div class="complexity-stat-label">Projekte erfolgreich betrieben und betreut</div>
+        </div>
+        <div class="complexity-stat">
+          <div class="complexity-stat-value">99,95 %</div>
+          <div class="complexity-stat-label">garantierte Verfügbarkeit per SLA</div>
+        </div>
+        <div class="complexity-stat">
+          <div class="complexity-stat-value">24/7</div>
+          <div class="complexity-stat-label">Monitoring und Bereitschaft durch unser Team</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ÜBERLEITUNG INS ÖKOSYSTEM -->
+<div class="bridge-banner">
+  <div class="bridge-inner">
+    <p class="bridge-label">Nächste Schicht</p>
+    <h2 class="bridge-title">Auf dieser Grundlage entsteht <em>Ihr Portal.</em></h2>
+    <p class="bridge-sub">Die Cloud sichert den Betrieb. Die Portale bringen Ihre Mitglieder, Kunden und Teams zusammen. Wertvolle Daten entstehen. Die KI macht sie noch besser nutzbar.</p>
+    <div class="bridge-links">
+      <a href="plattform.html" class="bridge-link">
+        <span class="material-symbols-rounded">web</span>
+        Portale entdecken
+      </a>
+      <a href="ki.html" class="bridge-link">
+        <span class="material-symbols-rounded">psychology</span>
+        Angewandte KI entdecken
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -1062,28 +1056,6 @@
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('.ani-fade-in').forEach(function(el) { io.observe(el); });
-
-  function animateNum(el) {
-    var node = Array.from(el.childNodes).find(function(n) { return n.nodeType === 3; });
-    if (!node) return;
-    var raw = node.textContent;
-    var m = raw.match(/^(\d[\d,\.]*)/);
-    if (!m) return;
-    var isFloat = m[1].indexOf(',') > -1;
-    var target = parseFloat(m[1].replace(',', '.'));
-    if (isNaN(target)) return;
-    var suffix = raw.slice(m[1].length);
-    var t0 = performance.now(), dur = 1400;
-    (function tick(now) {
-      var p = Math.min((now - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3), v = target * e;
-      node.textContent = (isFloat ? v.toFixed(1).replace('.', ',') : Math.round(v)) + suffix;
-      if (p < 1) requestAnimationFrame(tick); else node.textContent = raw;
-    })(t0);
-  }
-  var sio = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) { animateNum(e.target); sio.unobserve(e.target); } });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.stat-value, .benefits-stat-big, .benefits-sub-stat-val').forEach(function(el) { sio.observe(el); });
 })();
 </script>
 </body>
