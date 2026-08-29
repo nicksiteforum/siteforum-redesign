@@ -121,12 +121,12 @@
     /* ─── HERO ──────────────────────────────────────────────── */
     .hero {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-      padding: 140px 40px 80px;
+      padding: 220px 40px 170px;
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
+      background-image: radial-gradient(circle, rgba(255,255,255,0.16) 1.5px, transparent 1.5px);
       background-size: 28px 28px; pointer-events: none;
     }
     .hero-inner {
@@ -289,6 +289,28 @@
     }
     .location-visual .material-symbols-rounded { font-size: 48px; opacity: 0.5; }
     .location-visual span { font-size: 0.88rem; font-weight: 600; color: var(--slate-600); }
+    .office-slider { position: relative; padding: 0; width: 400px; height: 400px; max-width: 100%; margin-left: auto; }
+    .office-slide {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0; transition: opacity 0.6s ease;
+    }
+    .office-slide.active { opacity: 1; }
+    .office-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 36px; height: 36px; border-radius: 50%; border: none; z-index: 2;
+      background: rgba(10,16,30,0.55); color: #fff; font-size: 22px; line-height: 1;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(4px); transition: background 0.2s;
+    }
+    .office-nav:hover { background: rgba(10,16,30,0.85); }
+    .office-nav.prev { left: 12px; }
+    .office-nav.next { right: 12px; }
+    .office-dots { position: absolute; bottom: 12px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 2; }
+    .office-dots button {
+      width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0;
+      background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s;
+    }
+    .office-dots button.active { background: #fff; }
 
 
     /* ─── NAME BLOCK ────────────────────────────────────────── */
@@ -456,7 +478,7 @@
     body { background: var(--white); color: var(--navy); }
 
     /* ── NAV ── */
-    .nav-inner { background: rgba(13,21,38,0.85); border-color: var(--line); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    .nav-inner { background: rgba(13,21,38,0.85); border-color: var(--blue-200); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
     .nav-links a { color: rgba(245,246,248,0.75); }
     .nav-links a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
     .nav-links a.active { color: var(--navy); background: rgba(95,201,245,0.12); }
@@ -481,7 +503,8 @@
     .bc-current { color: var(--slate-600); }
 
     /* ── HERO (dunkel, Cyan-Akzent) ── */
-    .hero { background: linear-gradient(135deg, #0D1B30 0%, #0A1322 100%); }
+    .hero { background: var(--white); }
+    .solution-badge { background: rgba(95,201,245,0.12); border-color: rgba(95,201,245,0.3); color: var(--blue-600); }
     .hero h1 { color: var(--navy); }
     .hero h1 em { color: var(--blue-600); }
     .hero-tag .material-symbols-rounded { color: var(--blue-600); }
@@ -499,7 +522,7 @@
     .intro-card, .feature-card, .story-card, .mgmt-card, .team-card, .culture-card, .location-card { background: var(--bg-alt); border-color: var(--line); }
     .intro-card:hover, .feature-card:hover, .story-card:hover, .mgmt-card:hover, .culture-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
     .intro-icon, .feature-icon, .benefit-check { background: var(--blue-100); color: var(--blue-600); }
-    .benefits-visual { background: var(--bg-alt); }
+    .benefits-visual { background: var(--bg-alt); border: 1px solid var(--line); }
     .benefits-divider { border-top-color: var(--line); }
     .story-img-wrap { background: var(--bg-alt); }
     .story-result { background: rgba(95,201,245,0.10); }
@@ -814,9 +837,14 @@
           </div>
         </div>
       </div>
-      <div class="location-visual">
-        <span class="material-symbols-rounded">location_city</span>
-        <span>Erfurt, Thüringen</span>
+      <div class="location-visual office-slider" id="officeSlider">
+        <img src="office/IMG_1824.jpeg" alt="SITEFORUM Büro in Erfurt" class="office-slide active">
+        <img src="office/IMG_1825.jpeg" alt="SITEFORUM Büro in Erfurt" class="office-slide">
+        <img src="office/IMG_1826.jpeg" alt="SITEFORUM Büro in Erfurt" class="office-slide">
+        <img src="office/IMG_7723.jpeg" alt="SITEFORUM Büro in Erfurt" class="office-slide">
+        <button class="office-nav prev" type="button" aria-label="Vorheriges Bild">&lsaquo;</button>
+        <button class="office-nav next" type="button" aria-label="Nächstes Bild">&rsaquo;</button>
+        <div class="office-dots"></div>
       </div>
     </div>
   </div>
@@ -890,6 +918,33 @@
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('.ani-fade-in').forEach(function(el) { io.observe(el); });
+})();
+
+(function() {
+  var slider = document.getElementById('officeSlider');
+  if (!slider) return;
+  var slides = slider.querySelectorAll('.office-slide');
+  var dotsWrap = slider.querySelector('.office-dots');
+  var idx = 0, timer;
+  slides.forEach(function(s, i) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.setAttribute('aria-label', 'Bild ' + (i + 1));
+    if (i === 0) d.classList.add('active');
+    d.addEventListener('click', function() { go(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots = dotsWrap.querySelectorAll('button');
+  function go(n) {
+    idx = (n + slides.length) % slides.length;
+    slides.forEach(function(s, i) { s.classList.toggle('active', i === idx); });
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+    restart();
+  }
+  function restart() { clearInterval(timer); timer = setInterval(function() { go(idx + 1); }, 5000); }
+  slider.querySelector('.office-nav.prev').addEventListener('click', function() { go(idx - 1); });
+  slider.querySelector('.office-nav.next').addEventListener('click', function() { go(idx + 1); });
+  restart();
 })();
 </script>
 </body>

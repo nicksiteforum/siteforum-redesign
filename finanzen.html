@@ -119,12 +119,12 @@
     /* ─── HERO ──────────────────────────────────────────────── */
     .hero {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-      padding: 140px 40px 80px;
+      padding: 220px 40px 170px;
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
+      background-image: radial-gradient(circle, rgba(255,255,255,0.16) 1.5px, transparent 1.5px);
       background-size: 28px 28px; pointer-events: none;
     }
     .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
@@ -218,8 +218,8 @@
     }
     .challenge-icon {
       width: 44px; height: 44px; border-radius: var(--radius-sm);
-      background: #fff7ed; display: flex; align-items: center;
-      justify-content: center; color: #ea580c; flex-shrink: 0;
+      background: rgba(239,68,68,0.12); display: flex; align-items: center;
+      justify-content: center; color: #f87171; flex-shrink: 0;
     }
     .challenge-icon .material-symbols-rounded { font-size: 22px; }
     .challenge-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
@@ -407,7 +407,7 @@
     body { background: var(--white); color: var(--navy); }
 
     /* ── NAV ── */
-    .nav-inner { background: rgba(13,21,38,0.85); border-color: var(--line); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    .nav-inner { background: rgba(13,21,38,0.85); border-color: var(--blue-200); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
     .nav-links a { color: rgba(245,246,248,0.75); }
     .nav-links a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
     .nav-links a.active { color: var(--navy); background: rgba(95,201,245,0.12); }
@@ -432,7 +432,9 @@
     .bc-current { color: var(--slate-600); }
 
     /* ── HERO (dunkel, Cyan-Akzent) ── */
-    .hero { background: linear-gradient(135deg, #0D1B30 0%, #0A1322 100%); }
+    .hero { background: var(--white); }
+    .solution-badge { background: rgba(95,201,245,0.12); border-color: rgba(95,201,245,0.3); color: var(--blue-600); }
+    .hero-actions .btn-secondary { background: var(--white); }
     .hero h1 { color: var(--navy); }
     .hero h1 em { color: var(--blue-600); }
     .hero-tag .material-symbols-rounded { color: var(--blue-600); }
@@ -450,7 +452,7 @@
     .intro-card, .feature-card, .story-card, .challenge-card, .module-card { background: var(--bg-alt); border-color: var(--line); }
     .intro-card:hover, .feature-card:hover, .story-card:hover, .challenge-card:hover, .module-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
     .intro-icon, .feature-icon, .benefit-check { background: var(--blue-100); color: var(--blue-600); }
-    .benefits-visual { background: var(--bg-alt); }
+    .benefits-visual { background: var(--bg-alt); border: 1px solid var(--line); }
     .benefits-divider { border-top-color: var(--line); }
     .story-img-wrap { background: var(--bg-alt); }
     .story-result { background: rgba(95,201,245,0.10); }
@@ -481,6 +483,18 @@
     .section-label::before { content: ''; width: 48px; height: 1px; background: var(--blue-600); flex: 0 0 auto; }
     .cta-banner .section-label { justify-content: center; }
     .cta-banner .section-label::before { display: none; }
+    .section-label.challenge-label { color: #f87171; }
+    .section-label.challenge-label::before { background: #f87171; }
+    .challenge-card { border-color: rgba(239,68,68,0.22); }
+    .challenge-card:hover { border-color: rgba(239,68,68,0.5); }
+    .section-title.challenge-title em { color: var(--navy); }
+    .challenge-section { position: relative; }
+    .challenge-section::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image: radial-gradient(circle, rgba(239,68,68,0.22) 1.3px, transparent 1.3px);
+      background-size: 24px 24px;
+    }
+    .challenge-section > * { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -646,11 +660,11 @@
 </section>
 
 <!-- CHALLENGES -->
-<section style="background:var(--white);">
+<section class="challenge-section" style="background:var(--white);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Typische Herausforderungen</p>
-      <h2 class="section-title">Probleme, die wir <em>kennen und lösen</em></h2>
+      <p class="section-label challenge-label">Typische Herausforderungen</p>
+      <h2 class="section-title challenge-title">Probleme, die wir <em>kennen und lösen</em></h2>
       <p class="section-sub">Viele Finanzdienstleister kämpfen mit denselben strukturellen Hürden bei der Digitalisierung. Wir haben in über 25 Jahren gelernt, wie man sie überwindet.</p>
     </div>
     <div class="challenge-grid ani-fade-in">

@@ -121,12 +121,12 @@
     /* ─── HERO ──────────────────────────────────────────────── */
     .hero {
       background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-      padding: 140px 40px 80px;
+      padding: 220px 40px 170px;
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
+      background-image: radial-gradient(circle, rgba(255,255,255,0.16) 1.5px, transparent 1.5px);
       background-size: 28px 28px; pointer-events: none;
     }
     .hero-inner {
@@ -373,7 +373,7 @@
     body { background: var(--white); color: var(--navy); }
 
     /* ── NAV ── */
-    .nav-inner { background: rgba(13,21,38,0.85); border-color: var(--line); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    .nav-inner { background: rgba(13,21,38,0.85); border-color: var(--blue-200); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
     .nav-links a { color: rgba(245,246,248,0.75); }
     .nav-links a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
     .nav-links a.active { color: var(--navy); background: rgba(95,201,245,0.12); }
@@ -398,7 +398,9 @@
     .bc-current { color: var(--slate-600); }
 
     /* ── HERO (dunkel, Cyan-Akzent) ── */
-    .hero { background: linear-gradient(135deg, #0D1B30 0%, #0A1322 100%); }
+    .hero { background: var(--white); }
+    .solution-badge { background: rgba(95,201,245,0.12); border-color: rgba(95,201,245,0.3); color: var(--blue-600); }
+    .hero-actions .btn-secondary { background: var(--white); }
     .hero h1 { color: var(--navy); }
     .hero h1 em { color: var(--blue-600); }
     .hero-tag .material-symbols-rounded { color: var(--blue-600); }
@@ -417,7 +419,7 @@
     .intro-card:hover, .feature-card:hover, .story-card:hover, .benefit-card:hover, .job-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
     .form-group input, .form-group select, .form-group textarea { border-color: var(--line); background: var(--white); color: var(--navy); }
     .intro-icon, .feature-icon, .benefit-check { background: var(--blue-100); color: var(--blue-600); }
-    .benefits-visual { background: var(--bg-alt); }
+    .benefits-visual { background: var(--bg-alt); border: 1px solid var(--line); }
     .benefits-divider { border-top-color: var(--line); }
     .story-img-wrap { background: var(--bg-alt); }
     .story-result { background: rgba(95,201,245,0.10); }
