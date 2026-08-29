@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SITEFORUM – Ihr digitales Ökosystem</title>
+  <title>SITEFORUM – We Build Digital Leaders</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -245,21 +245,61 @@
     }
     .btn-secondary:hover { border-color: var(--blue-300, #93c5fd); transform: translateY(-1px); }
 
-    /* ─── HERO KI BADGE ────────────────────────────────────── */
-    .hero-ki-badge {
+    /* ─── HERO SCROLL CTA ──────────────────────────────────── */
+    .hero-scroll-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%);
-      color: #4c1d95;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 999px;
-      margin-bottom: 28px;
-      border: 1px solid rgba(139,92,246,0.2);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+      flex-direction: column;
     }
-    .hero-ki-badge .material-symbols-rounded { font-size: 18px; color: #7c3aed; }
+    .hero-scroll-cta:hover { color: #ffffff; }
+    .hero-scroll-cta .material-symbols-rounded {
+      font-size: 28px;
+      animation: bounce-down 2s ease infinite;
+    }
+    @keyframes bounce-down {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ─── CHALLENGE GRID ───────────────────────────────────── */
+    .challenge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .challenge-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 28px 24px; background: var(--white);
+      border-radius: var(--radius-md); border: 1.5px solid #e5e7eb;
+    }
+    .challenge-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: rgba(245,158,11,0.12); display: flex; align-items: center;
+      justify-content: center; color: #d97706; flex-shrink: 0;
+    }
+    .challenge-icon .material-symbols-rounded { font-size: 22px; }
+    .challenge-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .challenge-card p { font-size: 0.87rem; color: var(--slate-600); line-height: 1.6; }
+
+    /* ─── SCROLL GUIDE ─────────────────────────────────────── */
+    .scroll-guide {
+      text-align: center;
+      margin-top: 56px;
+    }
+    .scroll-guide .hero-scroll-cta {
+      color: var(--slate-600);
+    }
+    .scroll-guide .hero-scroll-cta:hover {
+      color: var(--blue-600);
+    }
+
+    /* ─── WENDEPUNKT ───────────────────────────────────────── */
+    .wendepunkt {
+      background: var(--white);
+      padding: 80px 40px;
+    }
 
     /* ─── STATS ─────────────────────────────────────────────── */
     .stats {
@@ -962,6 +1002,12 @@
       .section-title { font-size: 1.8rem; }
       .section-sub { font-size: 0.95rem; }
 
+      /* Challenge Grid */
+      .challenge-grid { grid-template-columns: 1fr; }
+
+      /* Wendepunkt */
+      .wendepunkt { padding: 56px 20px; }
+
       /* Eco Flow */
       .eco-flow { flex-direction: column; gap: 0; }
       .eco-flow-arrow { width: auto; height: 32px; transform: rotate(90deg); }
@@ -1035,9 +1081,15 @@
     .mob-sub a { color: rgba(245,246,248,0.55); }
     .mob-sub a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
 
+    /* ── CHALLENGE GRID ── */
+    .challenge-card { background: var(--bg-alt); border-color: var(--line); }
+    .challenge-card:hover { border-color: var(--blue-200); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .challenge-icon { background: rgba(245,158,11,0.15); color: #f59e0b; }
+
+    /* ── WENDEPUNKT ── */
+    .wendepunkt { background: var(--white); }
+
     /* ── HERO ── */
-    .hero-ki-badge { background: rgba(95,201,245,0.12); color: #8ADAF9; border-color: rgba(95,201,245,0.28); }
-    .hero-ki-badge .material-symbols-rounded { color: #5FC9F5; }
     .hero h1 em { color: var(--blue-600); }
     .hero-sub { color: rgba(245,246,248,0.65); }
     /* Weicher Verlauf am Hero-Ende → nahtloser Übergang zur nächsten Section */
@@ -1258,33 +1310,65 @@
   </video>
   <div class="hero-inner">
     <div class="hero-content">
-      <h1>Das dig<em>it</em>ale<br>Ökosystem<em>.</em></h1>
-      <p class="hero-sub">Cloud | Portale | KI: Ihre Lösung für digitale Prozesse.</p>
+      <h1>We Build<br>Digital Leaders<em>.</em></h1>
+      <p class="hero-sub">Komplexität verstehen. Strukturen verbinden. Prozesse vereinfachen. Digitalisierung weiterdenken.</p>
       <div class="hero-actions">
-        <a href="#produkte" class="btn-primary">Jetzt kennenlernen<br></a>
+        <a href="#ausgangslage" class="hero-scroll-cta"><span>Mehr erfahren</span><span class="material-symbols-rounded">keyboard_arrow_down</span></a>
       </div>
     </div>
   </div>
 </header>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-inner">
-    <div>
-      <div class="stat-label">in</div>
-      <div class="stat-value">320<span>+</span></div>
-      <div class="stat-label">Projekten</div>
+<!-- PAIN SECTION -->
+<section id="ausgangslage" class="pain-section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="ani-fade-in">
+      <p class="section-label">Die Ausgangslage</p>
+      <h2 class="section-title">Gewachsene Strukturen<em>. Steigende Komplexität.</em></h2>
+      <p class="section-sub">Organisationen wachsen. Systeme wachsen mit – aber selten zusammen.</p>
     </div>
-    <div>
-      <div class="stat-label">mehr als</div>
-      <div class="stat-value">99,95<span>%</span></div>
-      <div class="stat-label">Verfügbarkeit</div>
+    <div class="challenge-grid ani-fade-in">
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">scatter_plot</span></div>
+        <div>
+          <h4>Verteilte Systeme, kein Gesamtbild</h4>
+          <p>Daten in unterschiedlichen Tools, keine zentrale Sicht – Entscheidungen dauern länger als nötig.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">pending_actions</span></div>
+        <div>
+          <h4>Manuelle Prozesse, die Zeit kosten</h4>
+          <p>Wiederkehrende Aufgaben binden Kapazitäten, die in Wertschöpfung fließen sollten.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">trending_up</span></div>
+        <div>
+          <h4>Steigende Anforderungen, starre Systeme</h4>
+          <p>Compliance, Sicherheit, Skalierung – die Anforderungen wachsen schneller als die bestehende IT.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon"><span class="material-symbols-rounded">person_off</span></div>
+        <div>
+          <h4>Kein Self-Service für Mitglieder und Kunden</h4>
+          <p>Stakeholder erwarten digitale Zugänge – ohne Portal bleibt jede Anfrage ein manueller Vorgang.</p>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="stat-label">dank</div>
-      <div class="stat-value">28<span>+</span></div>
-      <div class="stat-label">Jahren Erfahrung</div>
+    <div class="scroll-guide ani-fade-in">
+      <a href="#produkte" class="hero-scroll-cta"><span>Zur Lösung</span><span class="material-symbols-rounded">keyboard_arrow_down</span></a>
     </div>
+  </div>
+</section>
+
+<!-- WENDEPUNKT -->
+<div class="wendepunkt">
+  <div class="section-inner" style="text-align:center; max-width:720px;">
+    <h2 class="section-title" style="color:var(--navy); margin-bottom:16px;">Es gibt einen besseren Weg<em>.</em></h2>
+    <p style="font-size:1.05rem; color:var(--slate-600); line-height:1.7; margin-bottom:12px;">Seit 28 Jahren begleiten wir Organisationen dabei, gewachsene Strukturen in ein verbundenes System zu verwandeln – Schritt für Schritt, ohne Brüche.</p>
+    <p style="font-size:0.95rem; color:var(--blue-600); font-weight:600;">Cloud | Portale | KI – drei Bausteine, ein System.</p>
   </div>
 </div>
 
@@ -1292,8 +1376,8 @@
 <section id="produkte" class="pattern-dots" style="background:var(--white);">
   <div class="section-inner">
     <div class="ani-fade-in">
-      <p class="section-label">Kompetenzen</p>
-      <h2 class="section-title">Drei Bausteine. Ein System<em>. Keine Insellösungen.</em></h2>
+      <p class="section-label">So lösen wir es</p>
+      <h2 class="section-title">Drei Bausteine. Eine Plattform<em>.</em></h2>
       <p class="section-sub"><br></p>
     </div>
     <div class="eco-flow ani-fade-in">
@@ -1322,13 +1406,42 @@
   </div>
 </section>
 
+<!-- VERSPRECHEN -->
+<div class="wendepunkt">
+  <div class="section-inner" style="text-align:center; max-width:720px;">
+    <h2 class="section-title" style="color:var(--navy); margin-bottom:16px;">Bessere Services. Zentrale Informationen. Mehr Automatisierung<em>.</em></h2>
+    <p style="font-size:1.05rem; color:var(--slate-600); line-height:1.7;">Eine Plattform, die mit Ihren Anforderungen wächst.</p>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-label">in</div>
+      <div class="stat-value">320<span>+</span></div>
+      <div class="stat-label">Projekten</div>
+    </div>
+    <div>
+      <div class="stat-label">mehr als</div>
+      <div class="stat-value">99,95<span>%</span></div>
+      <div class="stat-label">Verfügbarkeit</div>
+    </div>
+    <div>
+      <div class="stat-label">dank</div>
+      <div class="stat-value">28<span>+</span></div>
+      <div class="stat-label">Jahren Erfahrung</div>
+    </div>
+  </div>
+</div>
+
 <!-- LÖSUNGEN -->
 <section id="loesungen" style="background:var(--blue-50);">
   <div class="section-inner">
     <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
       <div class="ani-fade-in">
         <p class="section-label">Lösungen</p>
-        <h2 class="section-title" style="margin-bottom:12px;">Portale für <em>Ihren</em> Anwendungsfall.</h2>
+        <h2 class="section-title" style="margin-bottom:12px;"><em>Lösungen,&nbsp;</em>die zu Ihnen passen.</h2>
         <p class="section-sub" style="margin-bottom:0;">Modularer Aufbau, Self-Services und Prozess-Automatisierung.&nbsp;</p>
       </div>
       <div class="slider-controls">
@@ -1476,7 +1589,7 @@
 
 
 <!-- CTA BANNER -->
-<div class="cta-banner" id="kontakt" style="margin-top: 0;">
+<div class="cta-banner" id="kontakt" style="margin-top: 80px;">
   <div class="section-inner">
     <div class="ani-fade-in">
       <p class="section-label">Jetzt starten</p>
@@ -1496,7 +1609,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo"><img src="SITEFORUM_logo_white.png" alt="SITEFORUM" style="height:44px; width:auto;" /></a>
-        <p>Das Digitale Ökosystem<div>Cloud | Portale | KI</div></p>
+        <p>We Build Digital Leaders.<div>Cloud | Portale | KI</div></p>
         <p style="margin-top:14px;">Straße des Friedens 15a<br />99094 Erfurt</p>
         <p style="margin-top:14px;"><a href="mailto:info@siteforum.com" style="color:inherit;text-decoration:none;">info@siteforum.com</a><br /><a href="tel:+4936166615810" style="color:inherit;text-decoration:none;">+49 361 6661 5810</a></p>
       </div>
