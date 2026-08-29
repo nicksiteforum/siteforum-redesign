@@ -217,6 +217,7 @@
       display: flex;
       gap: 16px;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
     }
     .btn-primary {
@@ -329,6 +330,25 @@
       color: var(--slate-600);
       font-weight: 500;
     }
+
+    .stats-logos {
+      max-width: 1200px;
+      margin: 36px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 0 40px;
+    }
+    .stats-logos img {
+      height: 120px;
+      width: auto;
+      opacity: 0.35;
+      filter: grayscale(100%) brightness(1.8);
+      transition: opacity 0.2s;
+    }
+    .stats-logos img:hover { opacity: 0.7; }
 
     /* ─── SECTION WRAPPER ───────────────────────────────────── */
     section { padding: 100px 40px; }
@@ -984,7 +1004,8 @@
       .hero h1 { font-size: 2.6rem; letter-spacing: -1px; }
       .hero-sub { font-size: 1.05rem; }
       .hero-actions { flex-direction: column; align-items: center; }
-      .hero-actions a { width: 100%; text-align: center; justify-content: center; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary { width: 100%; text-align: center; justify-content: center; }
 
       /* Stats */
       .stats { padding: 40px 20px; }
@@ -1001,6 +1022,10 @@
       .solutions-slider-wrap::after { display: none; }
       .section-title { font-size: 1.8rem; }
       .section-sub { font-size: 0.95rem; }
+
+      /* Stats Logos */
+      .stats-logos { gap: 24px; padding: 0 20px; }
+      .stats-logos img { height: 72px; }
 
       /* Challenge Grid */
       .challenge-grid { grid-template-columns: 1fr; }
@@ -1080,6 +1105,10 @@
     .nav-mobile-menu > a:hover, .mob-group-toggle:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
     .mob-sub a { color: rgba(245,246,248,0.55); }
     .mob-sub a:hover { background: rgba(255,255,255,0.07); color: var(--navy); }
+
+    /* ── STATS LOGOS ── */
+    .stats-logos img { filter: grayscale(100%) brightness(3); opacity: 0.25; }
+    .stats-logos img:hover { opacity: 0.6; }
 
     /* ── CHALLENGE GRID ── */
     .challenge-card { background: var(--bg-alt); border-color: var(--line); }
@@ -1309,12 +1338,10 @@
     <source src="videos/hero-waves.mp4" type="video/mp4" />
   </video>
   <div class="hero-inner">
-    <div class="hero-content">
-      <h1>We Build<br>Digital Leaders<em>.</em></h1>
+    <div class="hero-content" style="display:flex; flex-direction:column; align-items:center;">
+      <h1>We Build<br><font color="#5fc9f5">Digital Leaders.</font></h1>
       <p class="hero-sub">Komplexität verstehen. Strukturen verbinden. Prozesse vereinfachen. Digitalisierung weiterdenken.</p>
-      <div class="hero-actions">
-        <a href="#ausgangslage" class="hero-scroll-cta"><span>Mehr erfahren</span><span class="material-symbols-rounded">keyboard_arrow_down</span></a>
-      </div>
+      <a href="#ausgangslage" class="hero-scroll-cta"><span>Mehr erfahren</span><span class="material-symbols-rounded">keyboard_arrow_down</span></a>
     </div>
   </div>
 </header>
@@ -1432,6 +1459,15 @@
       <div class="stat-value">28<span>+</span></div>
       <div class="stat-label">Jahren Erfahrung</div>
     </div>
+  </div>
+  <div class="stats-logos">
+    <img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_vbl_mono.png" alt="VBL" />
+    <img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_abellio_mono.png" alt="Abellio" />
+    <img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_national-express_mono.png" alt="National Express" />
+    <img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_odeg_mono.png" alt="ODEG" />
+    <img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_THOR_mono.png" alt="THOR" />
+    <img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_nordwest_mono.png" alt="Nordwest Factoring" />
+    <img src="customer-logos/monochrome/website-versions/SITEFORUM_Kunden_hrcom_mono.png" alt="HRcom" />
   </div>
 </div>
 
